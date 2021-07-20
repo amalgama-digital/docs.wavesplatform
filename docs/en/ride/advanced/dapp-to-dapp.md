@@ -49,7 +49,7 @@ Parameters:
 | :--- | :--- |
 | dApp: [Address](/en/ride/structures/common-structures/address)&#124;[Alias](/en/ride/structures/common-structures/alias) | [Address](/en/blockchain/account/address) or [alias](/en/blockchain/account/alias) of a dApp to invoke |
 | function: [String](/en/ride/data-types/string)&#124;[Unit](/en/ride/data-types/unit) | Name of a callable function. `unit` for a default function invocation |
-| arguments: [List](/en/ride/data-types/list)[[Any](/en/ride/data-types/any)] | Parameters of a callable function. `unit` for a default function invocation |
+| arguments: [List](/en/ride/data-types/list)[[Any](/en/ride/data-types/any)] | Parameters of a callable function |
 | payments: [List](/en/ride/data-types/list)[[AttachedPayment](/en/ride/structures/common-structures/attached-payment)] | Payments to transfer from the parent dApp to the invoked dApp, up to 10 |
 
 ```
