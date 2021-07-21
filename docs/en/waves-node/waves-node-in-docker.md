@@ -144,7 +144,7 @@ The following example command runs image with:
 docker run -v /docker/waves/waves-data:/var/lib/waves -v /docker/waves/waves-config:/etc/waves -p 6870:6870 -p 6868:6868 -e JAVA_OPTS="-Dwaves.network.declared-address=0.0.0.0:6868 -Dwaves.rest-api.port=6870 -Dwaves.rest-api.bind-address=0.0.0.0 -Dwaves.rest-api.enable=yes" -e WAVES_WALLET_PASSWORD=myWalletSuperPassword -ti  wavesplatform/wavesnode
 </code></pre>
 
-**Note**: By default, port 6868 is used to connect peers, and port 6869 is used for the REST API.
+**Note**: The default network port for connecting peers depends on the network type: 6868 for Mainnet, 6863 for Testnet or custom, 6862 for Stagenet. The default port for the REST API is 6869.
 
 To check that the REST API is up, navigate to the following URL from the host side: http://localhost:6870/api-docs/index.html
 
