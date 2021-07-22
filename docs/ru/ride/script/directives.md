@@ -12,7 +12,7 @@
 
 | Название директивы | Функция директивы | Возможные значения |
 | :--- | :--- | :--- |
-| STDLIB_VERSION | Версия [Стандартной библиотеки](/ru/ride/script/standard-library) | `5` (доступна с момента активации фичи №&nbsp;16 “Ride V5, dApp-to-dApp invocations”)<br>`4` (доступна с момента активации фичи №&nbsp;15 “Ride V4, VRF, Protobuf, Failed transactions”)<br>`3`<br>`2`<br>`1` |
+| STDLIB_VERSION | Версия [Стандартной библиотеки](/ru/ride/script/standard-library) | `6`: доступна с момента активации фичи №&nbsp;17 “Ride V6” (в настоящее время только на Stagenet)<br>`5`: доступна с момента активации фичи №&nbsp;16 “Ride V5, dApp-to-dApp invocations”)<br>`4`: доступна с момента активации фичи №&nbsp;15 “Ride V4, VRF, Protobuf, Failed transactions”)<br>`3`<br>`2`<br>`1` |
 | CONTENT_TYPE | Содержание скрипта | `DAPP` — скрипт представляет собой набор определений и содержит функции, которые можно вызвать с другого аккаунта.<br>`EXPRESSION` — скрипт представляет собой логическое выражение, используется для верификации транзакций<br> |
 | SCRIPT_TYPE | Объект, к которому прикреплен скрипт | `ACCOUNT`<br>`ASSET` |
 

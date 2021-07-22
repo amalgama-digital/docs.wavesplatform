@@ -74,6 +74,7 @@ message Transaction {
         SetAssetScriptTransactionData set_asset_script = 115;
         InvokeScriptTransactionData invoke_script = 116;
         UpdateAssetInfoTransactionData update_asset_info = 117;
+        InvokeExpressionTransactionData invoke_expression = 118;
     };
 };
 
@@ -111,4 +112,8 @@ message Amount {
 * [Транзакция спонсирования](/ru/blockchain/binary-format/transaction-binary-format/sponsor-fee-transaction-binary-format)
 * [Транзакция установки скрипта](/ru/blockchain/binary-format/transaction-binary-format/set-script-transaction-binary-format)
 * [Транзакция установки скрипта ассета](/ru/blockchain/binary-format/transaction-binary-format/set-asset-script-transaction-binary-format)
+* [Транзакция применения выражения](/ru/blockchain/binary-format/transaction-binary-format/invoke-expression-transaction-binary-format)
+
+> Транзакция применения выражения добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6”.
+
 <!-- * [Транзакция продолжения](/ru/blockchain/binary-format/transaction-binary-format/continuation-transaction-binary-format) -->
