@@ -110,7 +110,7 @@ module.exports = deepmerge(mixin, {
                 buttonSet: {
                     launch: {
                         text: 'Запуск ноды',
-                        link: '/en/waves-node/waves-node-in-docker',
+                        link: '/ru/waves-node/how-to-install-a-node/how-to-install-a-node',
                     },
                     grpc: {
                         text: 'gRPC server',
