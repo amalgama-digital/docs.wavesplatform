@@ -38,7 +38,7 @@ dApp-скрипт может содержать несколько вызыва�
   * [ByteVector](/ru/ride/data-types/byte-vector),
   * [Int](/ru/ride/data-types/int),
   * [String](/ru/ride/data-types/string),
-  * [List](/ru/ride/data-types/list).
+  * [Union](/ru/ride/data-types/union).
 
 ## Результат выполнения<a id="invocation-result"/>
 

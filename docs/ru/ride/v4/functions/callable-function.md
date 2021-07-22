@@ -41,7 +41,7 @@ dApp-скрипт может содержать несколько вызыва�
   * [ByteVector](/ru/ride/v4/data-types/byte-vector),
   * [Int](/ru/ride/v4/data-types/int),
   * [String](/ru/ride/v4/data-types/string),
-  * [List](/ru/ride/v4/data-types/list).
+  * [Union](/ru/ride/v4/data-types/union).
 
 ### Результат выполнения
 
