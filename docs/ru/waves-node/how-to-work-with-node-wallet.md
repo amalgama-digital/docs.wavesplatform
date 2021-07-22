@@ -58,7 +58,7 @@ wallet {
 
 В результате в указанной папке на основе заданной секретной фразы будет сгенерирован `wallet.dat`.
 
-[Пример конфигурационного файла ноды](https://github.com/wavesplatform/Waves/blob/master/node/src/main/resources/application.conf)
+[Подробнее о файле конфигурации](/ru/waves-node/node-configuration)
 
 ## Использование имеющегося кошелька <a id="existing-wallet"></a>
 

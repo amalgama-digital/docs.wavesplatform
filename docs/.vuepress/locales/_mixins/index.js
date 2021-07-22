@@ -98,7 +98,7 @@ module.exports = {
                 buttonSet: {
                     launch: {
                         text: 'Launch a node',
-                        link: '/en/waves-node/waves-node-in-docker',
+                        link: '/en/waves-node/how-to-install-a-node/how-to-install-a-node',
                     },
                     grpc: {
                         text: 'gRPC server',

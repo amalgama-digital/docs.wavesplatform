@@ -48,6 +48,13 @@ sudo apt update
 sudo apt install waves
 ```
 
+Файл конфигурации ноды вложен в пакет и распаковывается в папку:
+* для Mainnet: `/usr/share/waves/conf/waves.conf` с символической ссылкой на `/etc/waves/waves.conf`;
+* для Testnet: `/usr/share/waves-testnet/conf/waves.conf` с символической ссылкой на `/etc/waves-testnet/waves.conf`;
+* для Stagenet: `/usr/share/waves-stagenet/conf/waves.conf` с символической ссылкой на `/etc/waves-stagenet/waves.conf`.
+
+Укажите в файле обязательные параметры ноды. **Будьте внимательны: от конфигурации ноды зависит безопасность вашего кошелька и средств.** Подробная информация приведена в статье [Конфигурация ноды](/ru/waves-node/node-configuration).
+
 Запустите ноду с помощью следующей команды (`waves-testnet` для Testnet):
 
 ```bash
@@ -75,7 +82,12 @@ sudo apt upgrade
 sudo dpkg -i waves*.deb
 ```
 
-Файл конфигурации ноды вложен в архив `.deb` и распаковывается в папку `/usr/share/waves/conf/waves.conf` (или `waves-testnet` для Testnet) с символической ссылкой на `/etc/waves/waves.conf`. Редактируйте файл с особой осторожностью. Подробнее в статье [Конфигурация ноды](/ru/waves-node/node-configuration).
+Файл конфигурации ноды вложен в пакет и распаковывается в папку:
+* для Mainnet: `/usr/share/waves/conf/waves.conf` с символической ссылкой на `/etc/waves/waves.conf`;
+* для Testnet: `/usr/share/waves-testnet/conf/waves.conf` с символической ссылкой на `/etc/waves-testnet/waves.conf`;
+* для Stagenet: `/usr/share/waves-stagenet/conf/waves.conf` с символической ссылкой на `/etc/waves-stagenet/waves.conf`.
+
+Укажите в файле обязательные параметры ноды. **Будьте внимательны: от конфигурации зависит безопасность вашего кошелька и средств.** Подробная информация приведена в статье [Конфигурация ноды](/ru/waves-node/node-configuration).
 
 Запустите ноду с помощью следующей команды (`waves-testnet` для Testnet):
 
@@ -99,11 +111,11 @@ journalctl -u waves.service -f
 
 ## Установка для продвинутых пользователей
 
-Загрузите [последнюю версию](https://github.com/wavesplatform/Waves/releases) архива `waves.jar` и файла конфигурации [.conf](https://github.com/wavesplatform/Waves/tree/master/node) (для Mainnet, Testnet или Stagenet) в любую папку, например `/opt/waves`.
+Загрузите [последнюю версию](https://github.com/wavesplatform/Waves/releases) `waves-all-<номер версии>.jar` в любой каталог, например `/opt/waves`.
 
-Отредактируйте файл конфигурации. Подробнее в статье [Конфигурация ноды](/ru/waves-node/node-configuration).
+Скачайте [образец файла конфигурации](https://github.com/wavesplatform/Waves/blob/master/node/waves-sample.conf) и разместите в том же каталоге. Укажите в файле обязательные параметры ноды. **Будьте внимательны: от конфигурации зависит безопасность вашего кошелька и средств.** Подробная информация приведена в статье [Конфигурация ноды](/ru/waves-node/node-configuration).
 
-Запустите консоль, перейдите в папку с файлом `.jar` с помощью команды `cd /opt/waves` и запустите ноду с помощью следующей команды (замените `{*}` именем файла):
+Запустите консоль, перейдите в папку с файлом `jar` с помощью команды `cd /opt/waves` и запустите ноду с помощью следующей команды (замените `{*}` именем файла):
 
 ```bash
 java -jar {*}.jar {*}.conf
@@ -117,6 +129,6 @@ java -jar {*}.jar {*}.conf
 
 Скрипт DEB-пакета Waves создает пользователя `waves`. Приложение waves, кошелек и папки с данными по умолчанию принадлежат этому пользователю.
 
-Если вы хотите использовать RPC, необходимо защитить Ubuntu с помощью встроенного `ufw` или любого другого файрвола. Подробно об этом [тут](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server). Если ваш сервер находится в публичном доступе и вы хотите использовать RPC, задействуйте только определенные методы, используя [Nginx's proxy\_pass module](http://nginx.org/ru/docs/http/ngx_http_proxy_module.html), и не забудьте указать хеш API-ключа `apiKeyHash` хэш в файле конфигурации Waves.
+Если вы хотите использовать RPC, необходимо защитить Ubuntu с помощью встроенного `ufw` или любого другого файрвола. Подробно об этом [тут](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server). Если ваш сервер находится в публичном доступе и вы хотите использовать RPC, задействуйте только определенные методы, используя [Nginx's proxy\_pass module](http://nginx.org/ru/docs/http/ngx_http_proxy_module.html), и не забудьте указать хеш API-ключа `apiKeyHash` в файле конфигурации.
 
 Не забывайте своевременно обновлять операционную систему и антивирусное программное обеспечение.
