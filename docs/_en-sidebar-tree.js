@@ -968,7 +968,7 @@ module.exports = {
       path: ridePath + 'operators/match-case',
     },
     {
-      title: 'Interations with FOLD<N>',
+      title: 'Iterations with FOLD<N>',
       path: ridePath + 'fold-macro',
     },
     {
