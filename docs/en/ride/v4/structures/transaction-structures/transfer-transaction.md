@@ -14,7 +14,7 @@ TransferTransaction(feeAssetId: ByteVector|Unit, amount: Int, assetId: ByteVecto
 
 | # | Name | Data type | Description |
 | :--- | :--- | :--- | :--- |
-| 1 | feeAssetId | [ByteVector](/en/ride/v4/data-types/byte-vector)&#124;[Unit](/en/ride/v4/data-types/unit) | [Token](/en/blockchain/token/) to pay the commission. Currently it can be [WAVES](/en/blockchain/token/waves) only |
+| 1 | feeAssetId | [ByteVector](/en/ride/v4/data-types/byte-vector)&#124;[Unit](/en/ride/v4/data-types/unit) | [Token](/en/blockchain/token/) to pay the commission |
 | 2 | amount | [Int](/en/ride/v4/data-types/int) | Amount of tokens to transfer |
 | 3 | assetId | [ByteVector](/en/ride/v4/data-types/byte-vector)&#124;[Unit](/en/ride/v4/data-types/unit) | ID of a token |
 | 4 | recipient | [Address](/en/ride/v4/structures/common-structures/address)&#124;[Alias](/en/ride/v4/structures/common-structures/alias) | [Address](/en/blockchain/account/address) or [alias](/en/blockchain/account/alias) of the recipient |

@@ -14,7 +14,7 @@ InvokeScriptTransaction(dApp: Address|Alias, payments: List[AttachedPayments], f
 | :--- | :--- | :--- | :--- |
 | 1 | dApp | [Address](/ru/ride/structures/common-structures/address)&#124;[Alias](/ru/ride/structures/common-structures/alias) | [Адрес](/ru/blockchain/account/address) или [псевдоним](/ru/blockchain/account/alias) [аккаунта](/ru/blockchain/account/), который вызывает функцию |
 | 2 | payments | List[[AttachedPayment](/ru/ride/structures/common-structures/attached-payment)] | Приложенные платежи |
-| 3 | feeAssetId | [ByteVector](/ru/ride/data-types/byte-vector)&#124;[Unit](/ru/ride/data-types/unit) | [Токен](/ru/blockchain/token/) комиссии. В настоящее время им может быть только [WAVES](/ru/blockchain/token/waves) |
+| 3 | feeAssetId | [ByteVector](/ru/ride/data-types/byte-vector)&#124;[Unit](/ru/ride/data-types/unit) | [Токен](/ru/blockchain/token/) комиссии |
 | 4 | function | [String](/ru/ride/data-types/string) | Имя [вызываемой функции](/ru/ride/functions/callable-function) |
 | 5 | args | [List](/ru/ride/data-types/list)[[Boolean](/ru/ride/data-types/boolean)&#124;[ByteVector](/ru/ride/data-types/byte-vector)&#124;[Int](/ru/ride/data-types/int)&#124;[String](/ru/ride/data-types/string)&#124;[List](/ru/ride/data-types/list)[[Boolean](/ru/ride/data-types/boolean)&#124;[ByteVector](/ru/ride/data-types/byte-vector)&#124;[Int](/ru/ride/data-types/int)&#124;[String](/ru/ride/data-types/string)]]  | Параметры вызываемой функции |
 | 6 | id | [ByteVector](/ru/ride/data-types/byte-vector) | ID транзакции |
