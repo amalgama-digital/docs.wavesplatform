@@ -37,7 +37,7 @@
   </tr>
   <tr>
     <td>i<a id="i"></a></td>
-    <td>Для <a href="/ru/rive/v6/script/script-types/call-script">скрипта вызова</a>: структура <a href="/ru/ride/structures/common-structures/invocation">Invocation</a>, которая содержит поля <a href="/ru/blockchain/transaction-type/invoke-expression-transaction">транзакции применения выражения</a>, доступные скрипту</td>
+    <td>Для <a href="/ru/rive/v6/script/script-types/call-script">скрипта вызова</a>: структура <a href="/ru/ride/v6/structures/common-structures/invocation">Invocation</a>, которая содержит поля <a href="/ru/blockchain/transaction-type/invoke-expression-transaction">транзакции применения выражения</a>, доступные скрипту</td>
   </tr>
   <tr>
     <td>nil</td>
