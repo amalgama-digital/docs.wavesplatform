@@ -1,4 +1,4 @@
-# Встроенные переменные
+# [Ride v6] Встроенные переменные
 
 :warning: Это документация Стандартной библиотеки версии 6, которая в настоящее время доступна только на [Stagenet](/ru/blockchain/blockchain-network/). [Перейти к версии для Mainnet](/ru/ride/variables/built-in-variables)
 
@@ -37,7 +37,7 @@
   </tr>
   <tr>
     <td>i<a id="i"></a></td>
-    <td>Для [скрипта вызова](/ru/rive/v6/script/script-types/call-script): структура [Invocation](/ru/ride/structures/common-structures/invocation), которая содержит поля [транзакции применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction), доступные скрипту</td>
+    <td>Для <a href="/ru/rive/v6/script/script-types/call-script">скрипта вызова</a>: структура <a href="/ru/ride/structures/common-structures/invocation">Invocation</a>, которая содержит поля <a href="/ru/blockchain/transaction-type/invoke-expression-transaction">транзакции применения выражения</a>, доступные скрипту</td>
   </tr>
   <tr>
     <td>nil</td>

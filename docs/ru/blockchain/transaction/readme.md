@@ -46,7 +46,7 @@
 | :--- | :--- |
 | senderPublicKey | [Открытый ключ](/ru/blockchain/account/#открытый-и-закрытый-кnючи-аккаунта) отправителя: байты в кодировке base58 |
 | *sender* | [Адрес](/ru/blockchain/account/address) отправителя: байты в кодировке base58 |
-| feeAssetId | ID токена, в котором указана комиссия: байты в кодировке base58.<br>`null` означает, что комиссия указана в WAVES.<br>Для транзакций вызова скрипта и транзакций перевода комиссия может быть указана в спонсорском ассете, см. раздел [Спонсирование комиссии](/ru/blockchain/waves-protocol/sponsored-fee) |
+| feeAssetId | ID токена, в котором указана комиссия: байты в кодировке base58.<br>`null` означает, что комиссия указана в WAVES.<br>Для транзакций вызова скрипта, транзакций применения выражения и транзакций перевода комиссия может быть указана в спонсорском ассете, см. раздел [Спонсирование комиссии](/ru/blockchain/waves-protocol/sponsored-fee) |
 | proofs | Массив [подтверждений транзакции](/ru/blockchain/transaction/transaction-proof). До 8 подтверждений, каждое подтверждение до 64 байт, байты в кодировке base58 |
 | fee | [Комиссия за транзакцию](/ru/blockchain/transaction/transaction-fee). Всегда целое число, выраженное в [атомарных единицах](/ru/blockchain/token/#атомарная-единица) ассета. Например, если комиссия составляет 0,001 WAVES, в JSON-представлении указывается 100000, поскольку 1 WAVES = 10<sup>8</sup> WAVELET |
 | *id* | Идентификатор транзакции: байты в кодировке base58. Как вычисляется идентификатор транзакции, см. в разделе [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details#calculating-transaction-id) |

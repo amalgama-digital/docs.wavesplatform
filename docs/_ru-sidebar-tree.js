@@ -140,6 +140,10 @@ module.exports = {
               title: 'Перевод',
               path: blockchainPath + 'transaction-type/transfer-transaction',
             },
+            {
+              title: 'Применение выражения',
+              path: blockchainPath + 'transaction-type/invoke-expression-transaction',
+            },
 /*            {
               title: 'Продолжение',
               path: blockchainPath + 'transaction-type/continuation-transaction',
@@ -399,6 +403,10 @@ module.exports = {
                 {
                   title: 'Перевод',
                   path: blockchainPath + 'binary-format/transaction-binary-format/transfer-transaction-binary-format',
+                },
+                {
+                  title: 'Применение выражения',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/invoke-expression-transaction-binary-format',
                 },
 /*                {
                   title: 'Продолжение',
@@ -1009,8 +1017,26 @@ module.exports = {
           path: rideV6Path + 'script/script-types/call-script',
         },
         {
+          title: 'Структуры',
+          path: rideV6Path + 'structures',
+          children: [
+            {
+              title: 'Invocation',
+              path: rideV6Path + 'structures/common-structures/invocation',
+            },
+            {
+              title: 'InvokeExpressionTransaction',
+              path: rideV6Path + 'structures/transaction-structures/invoke-expression-transaction',
+            },
+          ],
+        },
+        {
           title: 'Встроенные переменные',
           path: rideV6Path + 'variables/built-in-variables',
+        },
+        {
+          title: 'Ограничения',
+          path: rideV6Path + 'limits',
         },
       ],
     },

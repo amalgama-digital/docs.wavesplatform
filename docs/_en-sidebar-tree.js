@@ -121,6 +121,10 @@ module.exports = {
               path: blockchainPath + 'transaction-type/genesis-transaction',
             },
             {
+              title: 'Invoke Expression Transaction',
+              path: blockchainPath + 'transaction-type/invoke-expression-transaction',
+            },
+            {
               title: 'Invoke Script Transaction',
               path: blockchainPath + 'transaction-type/invoke-script-transaction',
             },
@@ -367,6 +371,10 @@ module.exports = {
                 {
                   title: 'Genesis Transaction Binary Format',
                   path: blockchainPath + 'binary-format/transaction-binary-format/genesis-transaction-binary-format',
+                },
+                {
+                  title: 'Invoke Expression Transaction Binary Format',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/invoke-script-transaction-binary-format',
                 },
                 {
                   title: 'Invoke Script Transaction Binary Format',
@@ -1009,8 +1017,26 @@ module.exports = {
           path: rideV6Path + 'script/script-types/call-script',
         },
         {
+          title: 'Structures',
+          path: rideV6Path + 'structures',
+          children: [
+            {
+              title: 'Invocation',
+              path: rideV6Path + 'structures/common-structures/invocation',
+            },
+            {
+              title: 'InvokeExpressionTransaction',
+              path: rideV6Path + 'structures/transaction-structures/invoke-expression-transaction',
+            },
+          ],
+        },
+        {
           title: 'Built-in Variables',
           path: rideV6Path + 'variables/built-in-variables',
+        },
+        {
+          title: 'Limitations',
+          path: rideV6Path + 'limits',
         },
       ],
     },

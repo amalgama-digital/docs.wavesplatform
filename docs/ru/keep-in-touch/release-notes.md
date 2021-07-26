@@ -1,6 +1,6 @@
 # Release Notes
 
-## Версия 1.4
+## Версия 1.4 (Stagenet)
 
 ### Развитие протокола
 
@@ -10,13 +10,18 @@
 
 * Выпущена [версия 6](/ru/ride/v6/) Стандартной библиотеки.
 * Добавлен новый тип скрипта — [скрипт вызова](/ru/ride/v6/script/call-script), предназначенный для однократного выполнения с помощью транзакции применения выражения.
-* Добавлена встроенная переменная [i](/ru/ride/v6/variables/built-in-variables#i), доступная в скрипте вызова и содержащая структуру [Invocation](/ru/ride/structures/common-structures/invocation).
+* Добавлена встроенная переменная [i](/ru/ride/v6/variables/built-in-variables#i), доступная в скрипте вызова и содержащая структуру [Invocation](/ru/ride/v6/structures/common-structures/invocation).
+* Добавлена структура [InvokeExpressionTransaction](/ru/ride/v6/structures/transaction-structures/invoke-expression-transaction), предназначенная для верификации транзакции применения выражения в смарт-контрактах.
 
 ### Node REST API
 
 #### Ломающие изменения
 
 * Добавлен новый тип транзакции: транзакция применения выражения.
+
+### Активация
+
+Чтобы активировать перечисленные выше улучшения, голосуйте за фичу №&nbsp;17 “Ride V6”.
 
 ## Версия 1.3 Jumeirah
 

@@ -1,4 +1,4 @@
-# Бинарный формат транзакции вызова скрипта
+# Бинарный формат транзакции применения выражения
 
 > Узнать больше о [транзакции применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction).
 
@@ -16,8 +16,4 @@ message InvokeExpressionTransactionData {
 
 | Поле | Размер | Описание |
 | :--- | :--- | :--- |
-| expression | До 32&nbsp;767 байт | Скомпилированный [скрипт вызова](/ru/ride/script/script-types/call-script) |
-
-## JSON-представление транзакции
-
-Смотрите [пример](https://nodes.wavesnodes.com/transactions/info/7CVjf5KGRRYj6UyTC2Etuu4cUxx9qQnCJox8vw9Gy9yq) в Node API.
+| expression | До 32&nbsp;767 байт | Скомпилированный [скрипт вызова](/ru/ride/v6/script/script-types/call-script) |
