@@ -114,6 +114,6 @@ message Amount {
 * [Транзакция установки скрипта ассета](/ru/blockchain/binary-format/transaction-binary-format/set-asset-script-transaction-binary-format)
 * [Транзакция применения выражения](/ru/blockchain/binary-format/transaction-binary-format/invoke-expression-transaction-binary-format)
 
-> Транзакция применения выражения добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6”.
+> Транзакция применения выражения добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/).
 
 <!-- * [Транзакция продолжения](/ru/blockchain/binary-format/transaction-binary-format/continuation-transaction-binary-format) -->

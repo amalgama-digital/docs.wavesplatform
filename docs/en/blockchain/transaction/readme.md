@@ -46,7 +46,7 @@ Here is an example of JSON representation:
 | :--- | :--- |
 | senderPublicKey | [Public key](/en/blockchain/account/#account-public-and-private-keys) of the transaction sender: base58 encoded byte array |
 | *sender* | [Address](/en/blockchain/account/address) of the transaction sender: base58 encoded byte array |
-| feeAssetId | ID of the fee token.<br>`null` means that the fee is in WAVES.<br>The sender can specify the fee for Invoke Script transactions and Transfer transactions in a sponsored asset, see the [Sponsored Fee](/en/blockchain/waves-protocol/sponsored-fee) article for details |
+| feeAssetId | ID of the fee token.<br>`null` means that the fee is in WAVES.<br>The sender can specify the fee for Invoke Script transactions, Invoke Expression transactions, and Transfer transactions in a sponsored asset, see the [Sponsored Fee](/en/blockchain/waves-protocol/sponsored-fee) article for details |
 | proofs | Array of [transaction proofs](/en/blockchain/transaction/transaction-proof). Up to 8 proofs, each proof up to 64 bytes base58 encoded |
 | fee | [Transaction fee](/en/blockchain/transaction/transaction-fee): an integer value indicated in the minimum fraction (“cent”) of the fee asset. For example, if the fee is 0.001 WAVES, 100000 is indicated in the JSON representation, so far as 1 WAVES = 10<sup>8</sup> WAVELET |
 | *id* | Transaction ID. For the transaction ID calculation method, see the [Cryptographic Practical Details](/en/blockchain/waves-protocol/cryptographic-practical-details#calculating-transaction-id) article |
