@@ -8,16 +8,16 @@
 
 ## fold
 
-Семейство функций свертки. Позволяют реализовать операции над списком значений, такие как суммирование (`sum`), фильтрация (`filter`), преобразование (`map`), агрегация элементов (`zip`), проверка наличия (`exists`) и т.&thinsp;п. Аналогичны функциям свертки `fold` или `reduce` в других языках программирования.
+Семейство функций свертки. Реализуют операции над списком значений, такие как суммирование (`sum`), фильтрация (`filter`), преобразование (`map`), агрегация элементов (`zip`), проверка наличия (`exists`) и т.&thinsp;п. Аналогичны функциям свертки `fold` или `reduce` в других языках программирования.
 
 | Название | Макс. эл-в | Сложность |
 |:---| :--- | :--- |
 | fold_20(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 3 |
-| fold_50(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 7 |
-| fold_100(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 9 |
-| fold_200(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 20 |
-| fold_500(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 56 |
-| fold_1000(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 115 |
+| fold_50(list: List[A], accumulator: B, function: (B, A) => B): B | 50 | 7 |
+| fold_100(list: List[A], accumulator: B, function: (B, A) => B): B | 100 | 9 |
+| fold_200(list: List[A], accumulator: B, function: (B, A) => B): B | 200 | 20 |
+| fold_500(list: List[A], accumulator: B, function: (B, A) => B): B | 500 | 56 |
+| fold_1000(list: List[A], accumulator: B, function: (B, A) => B): B | 1000 | 115 |
 
 Общая сложность вызова `fold_<N>` включает в себя сложность, указанную в таблице, и сложность функции `function`, умноженной на `N`.
 

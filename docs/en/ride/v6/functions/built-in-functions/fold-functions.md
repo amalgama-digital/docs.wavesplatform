@@ -8,23 +8,23 @@
 
 ## fold
 
-Range of fold functions that implement operations on a list of values such as `sum`, `filter`, `map`, `zip`, `exists`, etc. The functions are similar to the `fold` or `reduce` functions in other programming languages.
+Range of fold functions that implement operations on a list of values such as `sum`, `filter`, `map`, `zip`, `exists`, etc. The functions are similar to `fold` or `reduce` functions in other programming languages.
 
 | Name | Max list size | Complexity |
 |:---| :--- | :--- |
 | fold_20(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 3 |
-| fold_50(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 7 |
-| fold_100(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 9 |
-| fold_200(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 20 |
-| fold_500(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 56 |
-| fold_1000(list: List[A], accumulator: B, function: (B, A) => B): B | 20 | 115 |
+| fold_50(list: List[A], accumulator: B, function: (B, A) => B): B | 50 | 7 |
+| fold_100(list: List[A], accumulator: B, function: (B, A) => B): B | 100 | 9 |
+| fold_200(list: List[A], accumulator: B, function: (B, A) => B): B | 200 | 20 |
+| fold_500(list: List[A], accumulator: B, function: (B, A) => B): B | 500 | 56 |
+| fold_1000(list: List[A], accumulator: B, function: (B, A) => B): B | 1000 | 115 |
 
 The total complexity of the `fold_<N>` call includes the complexity specified in the table and the complexity of the `function` multiplied by `N`.
 
 `fold_<N>(list, accumulator, function)` means:
 
 * execute up to `N` iterations;
-* at each iteration: take the result of the previous iteration (at the first iteration take the `accumulator` value) and the next list item `list`, apply the `function` function to this pair;
+* at each iteration: take the result of the previous iteration (at the first iteration take the `accumulator` value) and the next list item `list`, apply the `function` to this pair;
 * return the final result.
 
 If the list contains more than `N` elements, the `fold_<N>` function fails.
@@ -45,7 +45,7 @@ let arr = [1,2,3,4,5]
 fold_20(arr, 0, sum)    # Result: 15
 ```
 
-## Product
+#### Product
 
 ```scala
 func mult(accum: Int, next: Int) = accum * next
@@ -53,7 +53,7 @@ let arr = [1,2,3,4,5]
 fold_20(arr, 1, mult)    # Result: 120
 ```
 
-## Filter
+#### Filter
 
 The following code composes an array consisting only of even elements of the original array.
 
@@ -64,7 +64,7 @@ let arr = [1,2,3,4,5]
 fold_20(arr, [], filterEven)    # Result: [2, 4]
 ```
 
-## Map
+#### Map
 
 The following code inverts the array, reducing each element by 1:
 
