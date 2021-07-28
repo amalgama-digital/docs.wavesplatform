@@ -1,8 +1,25 @@
 # Documentation Updates
 
-## June
+## July
 
+### Blockchain
+
+* [Transaction Validation](/en/blockchain/transaction/transaction-validation) — <span style="color:green">updated</span>
+
+### Building Apps
+
+* [Waves Smart Contracts Overview](/en/building-apps/smart-contracts/waves-smart-contracts-overview) — <span style="color:green">updated</span>
+* [What is Smart Asset](/en/building-apps/smart-contracts/what-is-smart-asset) — <span style="color:green">updated</span>
+
+### Node
+
+* [Slow requests](/en/waves-node/node-api/slow-requests)
 * [Node Configuration](/en/waves-node/node-configuration): added the `minimum-peers` parameter.
+
+## May
+
+* [Change Asset Name and Description](/en/building-apps/how-to/assets/issue#change-asset-name-and-description)
+* [Blockchain Updates: Upgrading from Previous Versions](/en/waves-node/extensions/blockchain-updates#upgrading-from-previous-versions)
 
 ## March
 
@@ -26,7 +43,6 @@
 ### Ride
 
 * [Standard Library Version 5](/en/ride/v5/) ![stagenet](./_assets/stagenet.svg)
-* [Continued Computations](/en/ride/advanced/continuation) ![stagenet](./_assets/stagenet.svg)
 * [dApp-to-dApp Invocation](/en/ride/advanced/dapp-to-dapp) ![stagenet](./_assets/stagenet.svg)
 
 ## November

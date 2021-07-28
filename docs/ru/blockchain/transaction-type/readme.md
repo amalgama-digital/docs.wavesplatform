@@ -14,7 +14,7 @@
 | 15 | [Транзакция установки скрипта ассета](/ru/blockchain/transaction-type/set-asset-script-transaction) | Изменяет скрипт ассета |
 | 17 | [Транзакция обновления информации ассета](/ru/blockchain/transaction-type/update-asset-info-transaction) | Изменяет название и описание токена |
 
-> Транзакция обновления информации ассета добавлена в версии ноды 1.2.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;15 “Ride V4, VRF, Protobuf, Failed transactions”.
+> Транзакция обновления информации ассета появилась с момента активации фичи №&nbsp;15 “Ride V4, VRF, Protobuf, Failed transactions”.
 
 ## Использование
 
