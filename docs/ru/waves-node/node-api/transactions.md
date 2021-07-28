@@ -603,7 +603,7 @@ curl -X POST "https://nodes-testnet.wavesnodes.com/debug/validate"\
 </code></pre>
 </details>
 
-## Шаг 4. Отправка транзакции
+## <a id="broadcast"></a>Шаг 4. Отправка транзакции
 
 Чтобы отправить транзакцию на блокчейн, используйте публичный метод [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signedBroadcast_1). В тело запроса вставьте подписанную транзакцию в формате JSON — например, тело ответа из шага 2.
 
@@ -639,7 +639,14 @@ HTTP-коды ответа:
 
 В случае успешной отправки метод возвращает JSON-представление транзакции со всеми параметрами, включая необязательные (фактически, тело ответа может совпадать с телом запроса).
 
-> Чтобы нода могла принимать транзакции методом `POST /transactions/broadcast`, должно быть установлено соединение не менее чем с количеством peer-нод, указанным в параметре `waves.rest-api.minimum-peers` (по умолчанию 3), см. раздел [Настройки REST API](/ru/waves-node/node-configuration#настройки-rest-api).
+> Чтобы нода могла принимать транзакции методом `POST /transactions/broadcast`, должно быть установлено соединение не менее чем с количеством peer-нод, указанным в параметре `waves.rest-api.minimum-peers` (по умолчанию 3), см. раздел [Настройки REST API](/ru/waves-node/node-configuration#настройки-rest-api). Иначе метод возвращает ошибку c HTTP-кодом 400:
+
+```json
+{
+   "error": 199,
+   "message": "There are not enough connections with peers ... to accept transaction"
+}
+```
 
 ## Шаг 5. Проверка статуса транзакции
 

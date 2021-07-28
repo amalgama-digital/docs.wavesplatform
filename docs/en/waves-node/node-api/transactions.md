@@ -602,7 +602,7 @@ curl -X POST "https://nodes-testnet.wavesnodes.com/debug/validate"\
 </code></pre>
 </details>
 
-## Step 4. Broadcast Transaction
+## <a id="broadcast"></a>Step 4. Broadcast Transaction
 
 To send a transaction to the blockchain, use the public operation [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signedBroadcast_1). In the request body, paste the signed transaction in JSON, for example, the response body from step 2.
 
@@ -637,7 +637,14 @@ In the last case, check the transaction status (see the next step) or broadcast 
 
 In case of success, the broadcast operation returns a JSON representation of the transaction with all parameters, including optional ones (in fact, the response body can match the request body).
 
-> For the node to accept transactions using the `POST /transactions/broadcast` operation, the node must be connected to at least the number of peers specified in the `waves.rest-api.minimum-peers` parameter (3 by default), see the [REST API Settings](/en/waves-node/node-configuration#rest-api-settings) section.
+> For the node to accept transactions using the `POST /transactions/broadcast` operation, the node must be connected to at least the number of peers specified in the `waves.rest-api.minimum-peers` parameter (3 by default), see the [REST API Settings](/en/waves-node/node-configuration#rest-api-settings) section. Otherwise the method returns an error with HTTP code 400:
+
+```json
+{
+   "error": 199,
+   "message": "There are not enough connections with peers ... to accept transaction"
+}
+```
 
 ## Step 5. Check Transaction Status
 
