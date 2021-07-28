@@ -990,6 +990,16 @@ module.exports = {
       ],
     },
     {
+      title: 'Версия 6 (Stagenet)',
+      path: rideV6Path,
+      children: [
+        {
+          title: 'Функции свертки',
+          path: rideV6Path + 'functions/built-in-functions/fold-functions',
+        },
+      ],
+    },
+    {
       title: 'Предыдущие версии: 4 и 3',
       path: rideV4Path,
       children: [

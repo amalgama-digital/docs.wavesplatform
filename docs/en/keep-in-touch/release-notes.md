@@ -1,5 +1,11 @@
 # Release Notes
 
+## Version 1.4 (Stagenet)
+
+### Ride
+
+* Added the [fold](/en/ride/v6/functions/built-in-functions/fold-functions) range of functions, designed to implement operations on a list of values. The functions replace the `FOLD<N>` macro used in previous versions of the Standard Library.
+
 ## Version 1.3 Jumeirah
 
 The improvements listed below are enabled by feature #16 “Ride V5, dApp-to-dApp invocations”.
