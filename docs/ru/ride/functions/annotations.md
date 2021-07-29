@@ -10,7 +10,7 @@
 
 Аннотация [вызываемой функции](/ru/ride/functions/callable-function).
 
-Переменная `i` содержит структуру [Invocation](/ru/ride/structures/common-structures/invocation)) с информацией о вызове.
+Переменная `i` содержит структуру [Invocation](/ru/ride/structures/common-structures/invocation) с информацией о вызове.
 
 ## @Verifier(tx)
 

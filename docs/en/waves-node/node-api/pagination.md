@@ -4,7 +4,7 @@ Some operations return a limited number of objects. To get a complete list of ob
 
 ## Example 1: Asset Distribution
 
-The [GET /assets/{assetId}/distribution/{height}/limit/{limit}](https://nodes.wavesnodes.com/api-docs/index.html#/assets/balanceDistributionAtHeight_1) operation returns the distribution of the specified asset by addresses on the blockchain.
+The [GET /assets/{assetId}/distribution/{height}/limit/{limit}](https://nodes.wavesnodes.com/api-docs/index.html#/assets/getAssetDistribution) operation returns the distribution of the specified asset by addresses on the blockchain.
 
 1. Obtain the first page:
 
@@ -51,7 +51,7 @@ The [GET /assets/{assetId}/distribution/{height}/limit/{limit}](https://nodes.wa
 
 ## Example 2: List of Transactions by Address
 
-The [GET /transactions/address/{address}/limit/{limit}](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/addressLimit_1) operation returns a list of transactions where the specified address is involved.
+The [GET /transactions/address/{address}/limit/{limit}](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/getTxsByAddress) operation returns a list of transactions where the specified address is involved.
 
 1. Obtain the first page:
 

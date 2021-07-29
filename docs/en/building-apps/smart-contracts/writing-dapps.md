@@ -211,7 +211,7 @@ await signer.invoke({<br>
 
 4. Attach dApp script to the account as described in [Step 3](#step-3-assign-script-to-account).
 
-dApp on Mainnet will have a different address  — remember to change the address in your web app. In addition, replace the node address to ` https://nodes.wavesnodes.com`.
+dApp on Mainnet will have a different address  — remember to change the address in your web app. In addition, replace the node address to `https://nodes.wavesnodes.com`.
 
 > :bulb: You can [enable sponsorship](/en/blockchain/waves-protocol/sponsored-fee) to make the application free for users and pay the script invocations fees yourself.
 

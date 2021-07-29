@@ -120,7 +120,7 @@ Set `waves.wallet` parameters. Use `Seed` (`Seed text` in base58) value generate
 
 In `waves.network` section set `port`, `known-peers` (list the [nodes of your custom network](#add-nodes-to-your-network)), `node-name` and `declared-address` parameters.
 
-To enable REST API for your node set `enable`, `port` and `api-key-hash` (can be created [here](https://nodes.wavesnodes.com/api-docs/index.html#/utils/hashSecure_1)) parameters in `waves.rest-api` section.
+To enable REST API for your node set `enable`, `port` and `api-key-hash` (can be created [here](https://nodes.wavesnodes.com/api-docs/index.html#/utils/hashSecure)) parameters in `waves.rest-api` section.
 
 The `waves.blockchain.custom.functionality` section allows to set the activation height for blockchain features. You can enable/disable features on your node by modifying the `pre-activated-features` parameter. The supported features are listed in [Features](/en/waves-node/features/) article. You can add features that do not exist in the standard node configuration.
 
