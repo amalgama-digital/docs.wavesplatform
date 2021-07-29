@@ -80,26 +80,26 @@ func bar(arg: List[List[Int]]) = {
 bar([[1],[],[5,7]])
 ```
 
-Вызываемая функция также может принимать список в качестве аргумента, но в этом случае вложенные списки не допускаются:
+Вызываемая функция также может принимать список в качестве аргумента (вложенные списки не допускаются):
 
 ```scala
 @Callable(i)
-func join(strings: List(String|Int)) = {
-   let a = match (l[0]) {
-      case t:Int => toString(t) 
+func join(strings: List[String|Int]) = {
+   let a = match strings[0] {
+      case n:Int => toString(n)
+      case s:String => s
+   }
+   let b = match strings[1] {
+      case n:Int => toString(n)
+      case s:String => s
+   }
+   let c = match strings[2] {
+      case n:Int => toString(n)
       case t:String => t
    }
-   let b = match (l[1]) {
-      case t:Int => toString(t) 
-      case t:String => t
-   }
-   let c = match (l[2]) {
-      case t:Int => toString(t) 
-      case t:String => t
-   }
-
+ 
    [
-      StringEntry(toBase58String(i.caller.bytes), a+b+c)
+      StringEntry(toBase58String(i.caller.bytes), a + "_" + b + "_" + c)
    ]
 }
 ```
@@ -114,37 +114,24 @@ func join(strings: List(String|Int)) = {
       "function": "join",
       "args": [
          {
-           "type": "list",
-           "value": [
-              {
-                 "type": "string",
-                 "value": "alpha"
-              },
-              {
-                 "type": "string",
-                 "value": "beta"
-              },
-              {
-                 "type": "integer",
-                 "value": 42
-              }
-           ]
+            "type": "list",
+            "value": [
+               {
+                  "type": "string",
+                  "value": "Ride"
+               },
+               {
+                  "type": "integer",
+                  "value": 5
+               },
+               {
+                  "type": "string",
+                  "value": "Waves"
+               }
+            ]
          }
+      ]
    },
    ...
-}
-```
-
-## Список в match-case
-
-Оператор сопоставления с шаблоном [match-case](/ru/ride/operators/match-case) поддерживает списки:
-
-```scala
-func checkListType(values: List[Int|Unit]) =
-{
-   match values {
-      case integers: List[Int] => max(integers)
-      case _ => -1
-   }
 }
 ```
