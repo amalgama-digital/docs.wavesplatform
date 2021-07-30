@@ -215,14 +215,16 @@ Generate your client code from the [blockchain_updates.proto](https://github.com
 
 API Blockchain Updates provides the following functions:
 * `GetBlockUpdate` returns updates performed by the block at the given height.
-* [GetBlockUpdatesRange](#getblockupdatesrange) returns updates performed by the blocks at the given range of height.
-* [Subscribe](#subscribe) returns stream of messages, first historical data (i.e. updates up to the current blockchain height), then current events in real time. Optionally, you can specify the start and/or end height.
+* [GetBlockUpdatesRange](#getblockupdatesrange) returns updates at the given range of height.
+* [Subscribe](#subscribe) returns stream of updates as they appear. Optionally, you can specify the start and/or end height.
 
 See the format of requests and responses in the [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/grpc/blockchain_updates.proto) file.
 
 ### Subscribe
 
-The `Subscribe` function returns all the events in real time: block append, microblock append, block rollback, microblock rollback (see the [Waves-NG](/en/blockchain/waves-protocol/waves-ng-protocol) protocol description).
+The `Subscribe` function returns events as they appear:
+* below the current blockchain height: historical data, that is, block append messages,
+* then current events in real time: block append, microblock append, block rollback, microblock rollback messages (see the [Waves-NG](/en/blockchain/waves-protocol/waves-ng-protocol) protocol description).
 
 If the connection was interrupted, roll back the last block on the client and restart receiving events from the previous block.
 
@@ -233,7 +235,7 @@ Parameters:
 | from_height | int32 | Start height. Optional, 1 by default |
 | to_height | int32 | End height. Optional, by default the height is not limited |
 
-The function returns a stream of `SubscribeEvent` messages.
+The function returns a stream of `SubscribeEvent` objects containing one `BlockchainUpdated` message each.
 
 Message fields:
 
@@ -246,7 +248,7 @@ Message fields:
 
 ### GetBlockUpdatesRange
 
-The `GetBlockUpdatesRange` function returns only historical data of blocks that are already applied. Use it for analytical tasks, where real-time events are not needed, for example, it is enough to update the data once an hour or once a day. We recommend to indicate the end height of the range a few blocks less than the current blockchain height to avoid issues with rollbacks.
+The `GetBlockUpdatesRange` function returns updates at the given range of height. Use it for analytical tasks, where real-time events are not needed, for example, it is enough to update the data once an hour or once a day. We recommend to indicate the end height of the range a few blocks less than the current blockchain height to avoid issues with rollbacks.
 
 Parameters:
 
@@ -255,7 +257,7 @@ Parameters:
 | from_height | int32 | Start height. Required |
 | to_height | int32 | End height. Required |
 
-The function returns an array of `SubscribeEvent` messages. The message format is the same as for the `Subscribe` function, but contains only messages of a block append.
+The function returns a `GetBlockUpdatesRangeResponse` array containing `BlockchainUpdated` messages. If the specified end height is greater than the current blockchain height, the function returns a response only when the blockchain height reaches the specified end height. Below the current height, block append messages are provided; at the current height, any event messages may appear.
 
 ## Event Format
 
@@ -1315,6 +1317,8 @@ Unlike in transactions, account addresses in `TransactionMetadata` are given in 
 | arguments | repeated Argument | Arguments for the callable function |
 | payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Payments attached to the invocation |
 | result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Script actions performed by the callable function |
+
+:warning: If the callable function performs [dApp-to-dApp invocation](/en/ride/advanced/dapp-to-dapp), the `InvokeScriptResult` message contains an `Invocation` message with additional information about the nested invocation. The `Invocation`, in turn, also contains an `InvokeScriptResult` message. Thus, if you want to extract additional information about each script action performed by each of the functions called in a transaction, you should parse all the `InvokeScriptResult` messages recursively.
 
 #### For Transfer Transaction
 
