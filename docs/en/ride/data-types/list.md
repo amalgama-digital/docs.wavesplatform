@@ -53,13 +53,13 @@ nested
 
 Result: [[1, 2], 1, 2, "3", "4"]
 
-## List functions
+## List Functions
 
 The built-in list functions are presented in the [List Functions](/en/ride/functions/built-in-functions/list-functions) article.
 
 Operations on a list can be implemented via the [FOLD<N>](/ru/ride/fold-macro) macro. The size of the list must be known in advance.
 
-## List as function argument
+## List As Function Argument
 
 A list, including nested one, can be a function argument:
 
@@ -104,7 +104,7 @@ func join(strings: List[String|Int]) = {
 }
 ```
 
-Invocation example:
+Invoke Script transaction example:
 
 ```json
 {
