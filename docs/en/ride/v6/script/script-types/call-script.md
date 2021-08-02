@@ -48,11 +48,11 @@ func doSomething () = {
 
 ### Executable Expression
 
-Expression result is an array of [script actions](/en/ride/structures/script-actions/) to be performed on the blockchain: adding/deleting/modifying entries in the account data storages, token issue/reissue/burning/transfers, and others.
+Expression result is an array of [script actions](/en/ride/structures/script-actions/) to be performed on the blockchain: adding/deleting/modifying entries in the account data storage, token issue/reissue/burning/transfers, and others.
 
-## ## Data Accessible to Call Script
+## Data Accessible to Call Script
 
-* Particular fields of the Invoke Script transaction that executes the script: fee, sender address, public key, and others. The built-in variable `i` of type [Invocation](/en/ride/structures/common-structures/invocation) contains this data. Proofs are not available.
+* Particular fields of the Invoke Expression transaction that executes the script: fee, sender address, public key, and others. The built-in variable `i` of type [Invocation](/en/ride/structures/common-structures/invocation) contains this data. Proofs are not available.
 * [Blockchain data](/en/ride/#blockchain-operation): current height, account balances, entries in account data storages, parameters of tokens, etc.
 
 ## Example
@@ -75,6 +75,6 @@ let tid = calculateAssetId(t)
    ScriptTransfer(address1, 500000, tid),
    ScriptTransfer(address2, 500000, tid),
    IntegerEntry("3Myqjf1D44wR8Vko4Tr5CwSzRNo2Vg9S7u7", 500000),
-   IntegerEntry("3MsNbupKQ1Zf5yVo952AkFiKu2rh4oevWeC", 500000),
+   IntegerEntry("3MsNbupKQ1Zf5yVo952AkFiKu2rh4oevWeC", 500000)
 ]
 ```

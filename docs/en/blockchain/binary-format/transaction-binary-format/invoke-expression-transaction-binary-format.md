@@ -16,4 +16,4 @@ message InvokeExpressionTransactionData {
 
 | Field | Size | Description |
 | :--- | :--- | :--- |
-| expression | Up to 32,767 bytes | Compiled [call script](/en/ride/v6/script/script-types/call-script) |
+| expression | Up to 32,768 bytes | Compiled [call script](/en/ride/v6/script/script-types/call-script) |

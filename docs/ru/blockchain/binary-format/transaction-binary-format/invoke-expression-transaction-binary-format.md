@@ -16,4 +16,4 @@ message InvokeExpressionTransactionData {
 
 | Поле | Размер | Описание |
 | :--- | :--- | :--- |
-| expression | До 32&nbsp;767 байт | Скомпилированный [скрипт вызова](/ru/ride/v6/script/script-types/call-script) |
+| expression | До 32&nbsp;768 байт | Скомпилированный [скрипт вызова](/ru/ride/v6/script/script-types/call-script) |

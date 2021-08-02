@@ -65,7 +65,7 @@ The total complexity of the attached script, all the callable functions and asse
 | Field | Description |
 | :--- | :--- |
 | chainId | [Chain ID](/en/blockchain/blockchain-network/#chain-id) |
-| expression | Compiled call script, base64 encoded, up to 32,767 bytes |
+| expression | Compiled call script, base64 encoded, up to 32,768 bytes |
 
 The `stateChanges` structure does not need to be filled when sending a transaction, and it is not stored on the blockchain. The node returns this structure when providing transaction data via the REST API.
 

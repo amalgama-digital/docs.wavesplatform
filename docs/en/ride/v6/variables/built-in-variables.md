@@ -80,12 +80,10 @@ A **built-in variable** is a [variable](/en/ride/variables/) of the [Standard li
     <td>• For a <a href="/en/ride/script/script-types/dapp-script">dApp script</a>, <a href="/en/ride/script/script-types/account-script">account script</a>, or <a href="/en/ride/v6/script/script-types/call-script">call script</a>: the <a href="/en/ride/structures/common-structures/address">Address</a> structure<br/>• For an <a href="/en/ride/script/script-types/asset-script">asset script</a>: the <a href="/en/ride/structures/common-structures/asset">Asset</a> structure</td>
   </tr>
   <tr>
-    <td>9</td>
     <td>tx</td>
     <td><a href="/en/blockchain/transaction">Transaction</a> or <a href="/en/blockchain/order">order</a></td>
   </tr>
   <tr>
-    <td>10</td>
     <td>unit</td>
     <td>Variable that contains an object of <a href="/en/ride/data-types/unit">Unit</a> type.<br><b>Example 1</b><br> the <code>deposit</code> function transfers 5 <a href="/en/blockchain/token/waves">WAVELETs</a> to the account, that <a href="/en/ride/functions/callable-function">called</a> this function.
 

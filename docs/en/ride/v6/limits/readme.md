@@ -12,7 +12,7 @@
 | Complexity of an asset script | 4000 |
 | Total complexity for all callable functions, a call script and asset scripts involved in a single transaction<sup>(1)</sup>. The sender's account script complexity is not included in this limit | 26,000 |
 | Total number of [dApp-to-dApp invocations](/en/ride/advanced/dapp-to-dapp) within a single transaction<sup>(1)</sup> | 100 |
-| Complexity threshold for saving failed transactions: if the callable function failed with an error or throwing an exception before the threshold exceeded, the transaction<sup>(1)</sup> is rejected and the fee is not charged | 1000 |
+| Complexity threshold for saving failed transactions: if a callable function or a call script failed with an error or throwing an exception before the threshold exceeded, the transaction<sup>(1)</sup> is rejected and the fee is not charged | 1000 |
 | Complexity of the verifier function of a dApp script | 2000 |
 | Sender complexity threshold: if the complexity of an account script or the verifier function of a dApp script exceeds this limit, the minimum fee for a transaction sent from the account is increased by 0.004 WAVES | 200 |
 | Function name or variable name | 255 bytes |

@@ -2,7 +2,7 @@
 
 :warning: This is the documentation for the Standard Library version 6, which is currently available for [Stagenet](/en/blockchain/blockchain-network/) only. [Go to Mainnet version](/en/ride/structures/common-structures/invocation)
 
-Structure that contains the fields of the script invocation that the [callable function](/en/ride/functions/callable-function) can use.
+Structure that contains fields of a script invocation that can be used by the [callable function](/en/ride/functions/callable-function) or the [call script](/en/ride/v6/script/script-types/call-script).
 
 ## Constructor
 
@@ -14,7 +14,7 @@ Invocation(caller: Address, callerPublicKey: ByteVector, originCaller: Address, 
 
 The field values depend on how the callable function is invoked.
 
-If the script is invoked by an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) or [Invoke Ex transaction](/en/blockchain/transaction-type/invoke-script-transaction):
+If the script is invoked by an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) or [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-script-transaction):
 
 |   #   | Name | Data type | Description |
 | :--- | :--- | :--- | :--- |
@@ -47,7 +47,7 @@ If the callable function is invoked by the `invoke` or `reentrantInvoke` functio
 The following function checks that the first payment in the Invoke Script transaction is at least 1 WAVES or 5 in the specified asset.
 
 ```scala
-{-# STDLIB_VERSION 5 #-}
+{-# STDLIB_VERSION 6 #-}
 {-# CONTENT_TYPE DAPP #-}
 {-# SCRIPT_TYPE ACCOUNT #-}
 

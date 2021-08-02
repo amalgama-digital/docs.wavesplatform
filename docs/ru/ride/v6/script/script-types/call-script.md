@@ -76,6 +76,6 @@ let tid = calculateAssetId(t)
    ScriptTransfer(address1, 500000, tid),
    ScriptTransfer(address2, 500000, tid),
    IntegerEntry("3Myqjf1D44wR8Vko4Tr5CwSzRNo2Vg9S7u7", 500000),
-   IntegerEntry("3MsNbupKQ1Zf5yVo952AkFiKu2rh4oevWeC", 500000),
+   IntegerEntry("3MsNbupKQ1Zf5yVo952AkFiKu2rh4oevWeC", 500000)
 ]
 ```
