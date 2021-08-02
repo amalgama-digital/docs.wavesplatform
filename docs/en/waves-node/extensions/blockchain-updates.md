@@ -209,20 +209,22 @@ Clone the repository containing protobuf schemes:
 git clone https://github.com/wavesplatform/protobuf-schemas/
 ```
 
-Generate your client code from the [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/events/grpc/blockchain_updates.proto) scheme. Use the gRPC tools for your programming language, find the instructions on the [Supported languages and platforms](https://www.grpc.io/docs/languages/) page of gRPC documentation.
+Generate your client code from the [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/grpc/blockchain_updates.proto) scheme. Use the gRPC tools for your programming language, find the instructions on the [Supported languages and platforms](https://www.grpc.io/docs/languages/) page of gRPC documentation.
 
 ## Usage
 
 API Blockchain Updates provides the following functions:
 * `GetBlockUpdate` returns updates performed by the block at the given height.
-* [GetBlockUpdatesRange](#getblockupdatesrange) returns updates performed by the blocks at the given range of height.
-* [Subscribe](#subscribe) returns stream of messages, first historical data (i.e. updates up to the current blockchain height), then current events in real time. Optionally, you can specify the start and/or end height.
+* [GetBlockUpdatesRange](#getblockupdatesrange) returns updates at the given range of height.
+* [Subscribe](#subscribe) returns stream of updates as they appear. Optionally, you can specify the start and/or end height.
 
-See the format of requests and responses in the [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/events/grpc/blockchain_updates.proto) file.
+See the format of requests and responses in the [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/grpc/blockchain_updates.proto) file.
 
 ### Subscribe
 
-The `Subscribe` function returns all the events in real time: block append, microblock append, block rollback, microblock rollback (see the [Waves-NG](/en/blockchain/waves-protocol/waves-ng-protocol) protocol description).
+The `Subscribe` function returns events as they appear:
+* below the current blockchain height: historical data, that is, block append messages,
+* then current events in real time: block append, microblock append, block rollback, microblock rollback messages (see the [Waves-NG](/en/blockchain/waves-protocol/waves-ng-protocol) protocol description).
 
 If the connection was interrupted, roll back the last block on the client and restart receiving events from the previous block.
 
@@ -233,7 +235,7 @@ Parameters:
 | from_height | int32 | Start height. Optional, 1 by default |
 | to_height | int32 | End height. Optional, by default the height is not limited |
 
-The function returns a stream of `SubscribeEvent` messages.
+The function returns a stream of `SubscribeEvent` objects containing one `BlockchainUpdated` message each.
 
 Message fields:
 
@@ -246,7 +248,7 @@ Message fields:
 
 ### GetBlockUpdatesRange
 
-The `GetBlockUpdatesRange` function returns only historical data of blocks that are already applied. Use it for analytical tasks, where real-time events are not needed, for example, it is enough to update the data once an hour or once a day. We recommend to indicate the end height of the range a few blocks less than the current blockchain height to avoid issues with rollbacks.
+The `GetBlockUpdatesRange` function returns updates at the given range of height. Use it for analytical tasks, where real-time events are not needed, for example, it is enough to update the data once an hour or once a day. We recommend to indicate the end height of the range a few blocks less than the current blockchain height to avoid issues with rollbacks.
 
 Parameters:
 
@@ -255,11 +257,11 @@ Parameters:
 | from_height | int32 | Start height. Required |
 | to_height | int32 | End height. Required |
 
-The function returns an array of `SubscribeEvent` messages. The message format is the same as for the `Subscribe` function, but contains only messages of a block append.
+The function returns a `GetBlockUpdatesRangeResponse` array that contains `BlockchainUpdated` messages. If the specified end height is greater than the current blockchain height, the function returns a response only when the blockchain height reaches the specified end height. Below the current height, block append messages are provided; at the current height, any event messages may appear.
 
 ## Event Format
 
-See the event format in the [events.proto](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/events/events.proto) file.
+See the event format in the [events.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/events.proto) file.
 
 Some updates on the blockchain are not associated with any transaction, they are performed at the block level. For example, updates of the block generator balance: 40% of transaction fee that the generator of the current block receives is related to the transaction, and the 60% that the generator of the next block receives is related to the block. The block reward is also related to the block only.
 
@@ -273,7 +275,7 @@ Message fields:
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| block | [Block](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/block.proto) | Block data: headers and transactions. See also the [Block Binary Format](/en/blockchain/binary-format/block-binary-format) article |
+| block | [Block](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/block.proto) | Block data: headers and transactions. See also the [Block Binary Format](/en/blockchain/binary-format/block-binary-format) article |
 | updated_waves_amount | int64 | Total number of WAVES including the block reward |
 | transaction_ids | repeated bytes | IDs of block's transactions |
 | transactions_metadata | repeated TransactionMetadata | Additional info about transactions. See [TransactionMetadata](#transactionmetadata) below |
@@ -603,7 +605,7 @@ Message fields:
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| micro_block | [SignedMicroBlock](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/block.proto) | Microblock data |
+| micro_block | [SignedMicroBlock](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/block.proto) | Microblock data |
 | updated_transactions_root | int64 | [Transactions Root Hash](/en/blockchain/block/merkle-root) of all transactions of the current block |
 | transaction_ids | repeated bytes | IDs of microblock's transactions |
 | transactions_metadata | repeated TransactionMetadata | Additional info about transactions. See [TransactionMetadata](#transactionmetadata) below |
@@ -928,7 +930,7 @@ Message fields:
 | :--- | :--- | :--- |
 | type | RollbackType | Message type: BLOCK — block rollback, MICROBLOCK — microblock rollback |
 | removed_transaction_ids | repeated bytes | IDs of transactions deleted as a result of the rollback |
-| removed_blocks | repeated [Block](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/block.proto) | Blocks deleted as a result of the rollback. Empty for microblock rollback |
+| removed_blocks | repeated [Block](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/block.proto) | Blocks deleted as a result of the rollback. Empty for microblock rollback |
 | rollback_state_update | StateUpdate | Blockchain state updates generated by the rollback (the reverse of changes related to transactions and blocks/microblocks that are rolled back). See [StateUpdate](#stateupdate) below |
 
 **Examples:**
@@ -1235,7 +1237,7 @@ Unlike in transactions, account addresses in `StateUpdate` are given in full, in
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | balances.address | bytes | Address |
-| balances.amount_after | [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/amount.proto) | New balance |
+| balances.amount_after | [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | New balance |
 | balances.amount_before | int64 | Previous balance |
 
 #### Changes in Account Lease Balances
@@ -1253,8 +1255,8 @@ Unlike in transactions, account addresses in `StateUpdate` are given in full, in
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | data_entries.address | bytes | Address |
-| data_entries.data_entry | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/transaction.proto#L67) | Entry with the new value |
-| data_entries.data_entry_before | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/transaction.proto#L67) | Entry with the previous value |
+| data_entries.data_entry | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/transaction.proto#L67) | Entry with the new value |
+| data_entries.data_entry_before | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/transaction.proto#L67) | Entry with the previous value |
 
 #### Changes in Leases
 
@@ -1313,8 +1315,10 @@ Unlike in transactions, account addresses in `TransactionMetadata` are given in 
 | d_app_address | bytes | dApp address |
 | function_name | string | Callable function name. |
 | arguments | repeated Argument | Arguments for the callable function |
-| payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/amount.proto) | Payments attached to the invocation |
-| result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/invoke_script_result.proto) | Script actions performed by the callable function |
+| payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Payments attached to the invocation |
+| result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Script actions performed by the callable function |
+
+:warning: If the callable function performs a [dApp-to-dApp invocation](/en/ride/advanced/dapp-to-dapp), the `InvokeScriptResult` message contains an `Invocation` message with additional information about the nested invocation. The `Invocation`, in turn, also contains an `InvokeScriptResult` message. Thus, if you want to extract additional information about each script action performed by each of the functions invoked in the transaction, parse all the `InvokeScriptResult` messages recursively.
 
 #### For Transfer Transaction
 
