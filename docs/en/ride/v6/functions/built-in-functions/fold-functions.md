@@ -24,7 +24,7 @@ The total complexity of the `fold_<N>` call includes the complexity specified in
 `fold_<N>(list, accumulator, function)` means:
 
 * execute up to `N` iterations;
-* at each iteration: take the result of the previous iteration (at the first iteration take the `accumulator` value) and the next list item `list`, apply the `function` to this pair;
+* at each iteration: take the result of the previous iteration (at the first iteration take the `accumulator` value) and the next item of `list`, apply the `function` to this pair;
 * return the final result.
 
 If the list contains more than `N` elements, the `fold_<N>` function fails.
