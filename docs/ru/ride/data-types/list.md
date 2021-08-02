@@ -16,7 +16,7 @@
 | Добавление элемента в конец списка (слева список, справа элемент) | :+ | 1 |
 | Добавление элемента в начало списка (слева элемент, справа список) | :: | 2 |
 
-### Примеры
+#### Примеры
 
 ```ride
 nil :+ 1 :+ 2 :+ 3
@@ -56,3 +56,82 @@ nested
 ## Функции списка
 
 Встроенные функции работы со списками представлены в разделе [Функции списка](/ru/ride/functions/built-in-functions/list-functions).
+
+Операции над списком удобно выполнять с помощью макроса [FOLD<N>](/ru/ride/fold-macro). Размер списка должен быть известен заранее.
+
+## Список как аргумент функции
+
+Список, в том числе вложенный, может быть аргументом функции:
+
+```scala
+
+func foo(arg: List[String|Unit]) = {
+...
+}
+
+foo(["Ride","Waves",unit])
+```
+
+```scala
+func bar(arg: List[List[Int]]) = {
+...
+}
+
+bar([[1],[],[5,7]])
+```
+
+Вызываемая функция может принимать список в качестве аргумента, однако вложенные списки не допускаются:
+
+```scala
+@Callable(i)
+func join(strings: List[String|Int]) = {
+   let a = match strings[0] {
+      case n:Int => toString(n)
+      case s:String => s
+   }
+   let b = match strings[1] {
+      case n:Int => toString(n)
+      case s:String => s
+   }
+   let c = match strings[2] {
+      case n:Int => toString(n)
+      case t:String => t
+   }
+ 
+   [
+      StringEntry(toBase58String(i.caller.bytes), a + "_" + b + "_" + c)
+   ]
+}
+```
+
+Пример транзакции вызова скрипта:
+
+```json
+{
+   "type": 16,
+   ...
+   "call": {
+      "function": "join",
+      "args": [
+         {
+            "type": "list",
+            "value": [
+               {
+                  "type": "string",
+                  "value": "Ride"
+               },
+               {
+                  "type": "integer",
+                  "value": 5
+               },
+               {
+                  "type": "string",
+                  "value": "Waves"
+               }
+            ]
+         }
+      ]
+   },
+   ...
+}
+```
