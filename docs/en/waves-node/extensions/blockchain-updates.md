@@ -257,7 +257,7 @@ Parameters:
 | from_height | int32 | Start height. Required |
 | to_height | int32 | End height. Required |
 
-The function returns a `GetBlockUpdatesRangeResponse` array containing `BlockchainUpdated` messages. If the specified end height is greater than the current blockchain height, the function returns a response only when the blockchain height reaches the specified end height. Below the current height, block append messages are provided; at the current height, any event messages may appear.
+The function returns a `GetBlockUpdatesRangeResponse` array that contains `BlockchainUpdated` messages. If the specified end height is greater than the current blockchain height, the function returns a response only when the blockchain height reaches the specified end height. Below the current height, block append messages are provided; at the current height, any event messages may appear.
 
 ## Event Format
 
@@ -1318,7 +1318,7 @@ Unlike in transactions, account addresses in `TransactionMetadata` are given in 
 | payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Payments attached to the invocation |
 | result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Script actions performed by the callable function |
 
-:warning: If the callable function performs [dApp-to-dApp invocation](/en/ride/advanced/dapp-to-dapp), the `InvokeScriptResult` message contains an `Invocation` message with additional information about the nested invocation. The `Invocation`, in turn, also contains an `InvokeScriptResult` message. Thus, if you want to extract additional information about each script action performed by each of the functions called in a transaction, you should parse all the `InvokeScriptResult` messages recursively.
+:warning: If the callable function performs a [dApp-to-dApp invocation](/en/ride/advanced/dapp-to-dapp), the `InvokeScriptResult` message contains an `Invocation` message with additional information about the nested invocation. The `Invocation`, in turn, also contains an `InvokeScriptResult` message. Thus, if you want to extract additional information about each script action performed by each of the functions invoked in the transaction, parse all the `InvokeScriptResult` messages recursively.
 
 #### For Transfer Transaction
 
