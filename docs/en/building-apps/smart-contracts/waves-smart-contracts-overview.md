@@ -33,7 +33,7 @@ Smart contracts can use blockchain data: the current height, account balances, a
 ## Examples of Apps Based on Waves Smart Contracts
 
 * [Neutrino](http://neutrino.at/) is an algorithmic price-stable assetization protocol acting as an accessible DeFi toolkit. It enables the creation of stablecoins pegged to specific real-world assets, such as national currencies or commodities. The Neutrino protocol is represented by a set of interacting smart contracts deployed to the Waves blockchain. Neutrino TVL (Total Value Locked) surpassed $1 billion.
-* [Swop.fi](https://swop/fi) is an instant crypto exchange based on AMM (Automated Market Maker) model. Swop.fi also generates passive income from cryptocurrency investments. TVL exceeds $100 million.
+* [Swop.fi](https://swop.fi) is an instant crypto exchange based on AMM (Automated Market Maker) model. Swop.fi also generates passive income from cryptocurrency investments. TVL exceeds $100 million.
 * [Waves Ducks](https://wavesducks.com/) is a game focused on collectible digital duck images of celebrities and memes in the NFT format. The game motivates the community to promote the Waves ecosystem.
 * [SIGN Art](https://sign-art.app/) is a web gallery of Blockchain-Certified Digital Art and a marketplace for NFTs. Artists can create a portfolio of digital creations, tokenize and sell NFTs. Collectors can buy NFTs and display NFT-collection.
 * [Waves DAO](https://dao.wavesassociation.org/) (decentralized autonomous organization) is the Waves Association’s decision-making framework for supporting initiatives and projects based on the Waves protocol.

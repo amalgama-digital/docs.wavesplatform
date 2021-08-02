@@ -48,7 +48,7 @@ The Waves protocol maintains three types of smart contracts:
 
 * [dApp](/en/building-apps/smart-contracts/what-is-a-dapp) comprises functions that can be called using an Invoke Script transaction. The called functions can accept payments to the dApp and perform various actions on the blockchain. In addition, the dApp can comprise a verifier function that allows or denies transactions and orders sent on behalf of the account depending on whether they meet the specified conditions.
 * [Smart account](/en/building-apps/smart-contracts/what-is-smart-account) allows or rejects transactions or orders sent on behalf of the account.
-* [Smart asset](/en/building-apps/smart-contracts/smart-assets) allows or rejects transactions involving the asset.
+* [Smart asset](/en/building-apps/smart-contracts//what-is-smart-asset) allows or rejects transactions involving the asset.
 
 For smart development creation, Waves provides its native language called Ride. Ride is a functional, expression-based programming language specifically designed for execution within a blockchain environment, straightforward and concise. [More about Ride](/en/ride/) in the “Ride” chapter.
 

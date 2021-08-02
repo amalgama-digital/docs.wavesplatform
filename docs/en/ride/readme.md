@@ -4,7 +4,7 @@
 
 ## Script Types
 
-Waves smart contracts are scripts written in Ride. Scripts can be assigned to accounts or tokens (assets). An account with a script assigned to it becomes a [dApp](/en/building-apps/smart-contracts/what-is-a-dapp) or [smart account](/en/building-apps/smart-contracts/what-is-smart-account). An asset with a script assigned to it becomes a [smart asset](/en/building-apps/smart-contracts/smart-assets).
+Waves smart contracts are scripts written in Ride. Scripts can be assigned to accounts or tokens (assets). An account with a script assigned to it becomes a [dApp](/en/building-apps/smart-contracts/what-is-a-dapp) or [smart account](/en/building-apps/smart-contracts/what-is-smart-account). An asset with a script assigned to it becomes a [smart asset](/en/building-apps/smart-contracts/what-is-smart-asset).
 
 Script functionality depends on its [type](/en/ride/script):
 
