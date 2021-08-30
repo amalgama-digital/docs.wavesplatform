@@ -6,6 +6,8 @@ The version of the Standard library in the script is set by the `STDLIB_VERSION`
 
 We recommend to use version 5 of the Standard Library when developing applications. Key features of version 5 are described in the [Standard Library Version 5](/en/ride/v5/) article.
 
+Standard library version 6 is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only. Key features of version 6 are described in the [Standard Library Version 6](/en/ride/v6/) article.
+
 The table below shows the version differences.
 
 | # | Version 3 | Version 4 | Version 5 |

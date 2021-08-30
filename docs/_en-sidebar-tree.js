@@ -8,6 +8,7 @@ const sdkPath = buildingAppsPath + 'waves-api-and-sdk/';
 const ridePath = localePath + 'ride/';
 const rideV4Path = localePath + 'ride/v4/';
 const rideV5Path = localePath + 'ride/v5/';
+const rideV6Path = localePath + 'ride/v6/';
 const ecosystemPath = localePath + 'ecosystem/';
 const keepInTouchPath = localePath + 'keep-in-touch/';
 
@@ -118,6 +119,10 @@ module.exports = {
             {
               title: 'Genesis Transaction',
               path: blockchainPath + 'transaction-type/genesis-transaction',
+            },
+            {
+              title: 'Invoke Expression Transaction',
+              path: blockchainPath + 'transaction-type/invoke-expression-transaction',
             },
             {
               title: 'Invoke Script Transaction',
@@ -366,6 +371,10 @@ module.exports = {
                 {
                   title: 'Genesis Transaction Binary Format',
                   path: blockchainPath + 'binary-format/transaction-binary-format/genesis-transaction-binary-format',
+                },
+                {
+                  title: 'Invoke Expression Transaction Binary Format',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/invoke-script-transaction-binary-format',
                 },
                 {
                   title: 'Invoke Script Transaction Binary Format',
@@ -986,6 +995,38 @@ module.exports = {
         {
           title: 'Data Weight',
           path: ridePath + 'limits/weight',
+        },
+      ],
+    },
+    {
+      title: 'Version 6 (Stagenet)',
+      path: rideV6Path,
+      children: [
+        {
+          title: 'Call script',
+          path: rideV6Path + 'script/script-types/call-script',
+        },
+        {
+          title: 'Structures',
+          path: rideV6Path + 'structures',
+          children: [
+            {
+              title: 'Invocation',
+              path: rideV6Path + 'structures/common-structures/invocation',
+            },
+            {
+              title: 'InvokeExpressionTransaction',
+              path: rideV6Path + 'structures/transaction-structures/invoke-expression-transaction',
+            },
+          ],
+        },
+        {
+          title: 'Built-in Variables',
+          path: rideV6Path + 'variables/built-in-variables',
+        },
+        {
+          title: 'Limitations',
+          path: rideV6Path + 'limits',
         },
       ],
     },

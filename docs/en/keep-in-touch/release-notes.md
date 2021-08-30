@@ -1,5 +1,24 @@
 # Release Notes
 
+## Version 1.4 (Stagenet)
+
+### Protocol Enhancements
+
+* Implemented a new transaction type: [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) that executes the script attached to it.
+
+### Ride
+
+* Issued [version 6](/en/ride/v6/) of the Ride Standard library.
+* Added a new script type: [call script](/en/ride/v6/script/call-script) designed to be executed once by an Invoke Expression transaction.
+* Added a built-in variable: [i](/en/ride/v6/variables/built-in-variables#i) that is available in a call script and contains the [Invocation](/en/ride/v6/structures/common-structures/invocation) structure.
+* Added the [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/invoke-expression-transaction) structure that is used to verify an Invoke Expression transaction by smart contracts.
+
+### Node REST API
+
+#### Breaking Changes
+
+* Added the new transaction type: Invoke Expression.
+
 ## Version 1.3 Jumeirah
 
 The improvements listed below are enabled by feature #16 “Ride V5, dApp-to-dApp invocations”.
@@ -299,7 +318,7 @@ The improvements listed below are enabled by feature #15 "Ride V4, VRF, Protobuf
 
 * Improved the mechanism for [generating blocks](/en/blockchain/block/block-generation/) using [VRF](https://en.wikipedia.org/wiki/Verifiable_random_function) (Verifiable random function). This improvement allows withstanding stake grinding attacks, which are used by the attackers to try to increase the probability of generating a block for themselves.
 * Implemented saving failed transactions. Invoke script transactions and exchange transactions are saved on the blockchain and a fee is charged for them even if the dApp script or the asset script failed, provided that the sender's signature or account script verification passed and the complexity of computations performed during script invocation exceeded the threshold for saving failed transactions. [More details](/en/keep-in-touch/april)
-* Implemented the feature of changing the asset name and description. For this means, the [update asset info transaction](/en/blockchain/transaction-type/update-asset-info-transaction) is used. Change is possible after 10 or more blocks on Stagenet and after 100,000 or more blocks on Mainnet and Testnet.
+* Implemented the feature of changing the asset name and description. For this means, the [Update Asset Info transaction](/en/blockchain/transaction-type/update-asset-info-transaction) is used. Change is possible after 10 or more blocks on Stagenet and after 100,000 or more blocks on Mainnet and Testnet.
 * Implemented the feature of deletion of entries from the account data storage. This action can be performed by the [data transaction](/en/blockchain/transaction-type/data-transaction) or [DeleteEntry](/en/ride/structures/script-actions/delete-entry) structure of the Ride language.
 * Reduced the [minimum fee](/en/blockchain/transaction/transaction-fee) from 1 to 0.001 WAVES for the reissue transaction and sponsor fee transaction.
 * Implemented transaction binary formats based on [protobuf](https://developers.google.com/protocol-buffers/docs/overview).

@@ -74,6 +74,7 @@ message Transaction {
         SetAssetScriptTransactionData set_asset_script = 115;
         InvokeScriptTransactionData invoke_script = 116;
         UpdateAssetInfoTransactionData update_asset_info = 117;
+        InvokeExpressionTransactionData invoke_expression = 118;
     };
 };
 
@@ -88,7 +89,7 @@ message Amount {
 | chain_id | 1 byte | [Chain ID](/en/blockchain/blockchain-network/#chain-id) |
 | sender_public_key | 32 bytes | Public key of the transaction sender |
 | fee.amount | 8 bytes | [Transaction fee ](/en/blockchain/transaction/transaction-fee) in the minimum fraction (“cent”) of the fee asset |
-| fee.asset_id | • 32 bytes for the fee in a sponsored asset<br> • 0 for the fee in WAVES | ID of the token of the fee.<br>The fee in a sponsored asset is only available for invoke script transactions and transfer transactions. See the [Sponsored Fee](/en/blockchain/waves-protocol/sponsored-fee) article |
+| fee.asset_id | • 32 bytes for the fee in a sponsored asset<br> • 0 for the fee in WAVES | ID of the token of the fee.<br>The fee in a sponsored asset is only available for Invoke Script transactions, Invoke Expression transactions and Transfer transactions. See the [Sponsored Fee](/en/blockchain/waves-protocol/sponsored-fee) article |
 | timestamp | 8 bytes | Transaction timestamp: Unix time in milliseconds. The transaction won't be added to the blockchain if the timestamp value is more than 2 hours back or 1.5 hours forward of the current block timestamp |
 | version | 1 byte | Transaction version |
 | proofs | Each proof up to 64 bytes,<br>up to 8 proofs | [Transaction proofs](/en/blockchain/transaction/transaction-proof) that are used to check the validity of the transaction. The array can contain several transaction signatures (but not limited to signatures only) |
@@ -96,19 +97,23 @@ message Amount {
 The fields that depend on the type of transaction are described in the following articles:
 
 * [Burn transaction binary format](/en/blockchain/binary-format/transaction-binary-format/burn-transaction-binary-format)
-* [Create alias transaction binary format](/en/blockchain/binary-format/transaction-binary-format/create-alias-transaction-binary-format)
+* [Create Alias transaction binary format](/en/blockchain/binary-format/transaction-binary-format/create-alias-transaction-binary-format)
 * [Data transaction binary format](/en/blockchain/binary-format/transaction-binary-format/data-transaction-binary-format)
 * [Exchange transaction binary format](/en/blockchain/binary-format/transaction-binary-format/exchange-transaction-binary-format)
 * [Genesis transaction binary format](/en/blockchain/binary-format/transaction-binary-format/genesis-transaction-binary-format)
-* [Invoke script transaction binary format](/en/blockchain/binary-format/transaction-binary-format/invoke-script-transaction-binary-format)
+* [Invoke Script transaction binary format](/en/blockchain/binary-format/transaction-binary-format/invoke-script-transaction-binary-format)
 * [Issue transaction binary format](/en/blockchain/binary-format/transaction-binary-format/issue-transaction-binary-format)
-* [Lease cancel transaction binary format](/en/blockchain/binary-format/transaction-binary-format/lease-cancel-transaction-binary-format)
+* [Lease Cancel transaction binary format](/en/blockchain/binary-format/transaction-binary-format/lease-cancel-transaction-binary-format)
 * [Lease transaction binary format](/en/blockchain/binary-format/transaction-binary-format/lease-transaction-binary-format)
-* [Mass transfer transaction binary format](/en/blockchain/binary-format/transaction-binary-format/mass-transfer-transaction-binary-format)
+* [Mass Transfer transaction binary format](/en/blockchain/binary-format/transaction-binary-format/mass-transfer-transaction-binary-format)
 * [Reissue transaction binary format](/en/blockchain/binary-format/transaction-binary-format/reissue-transaction-binary-format)
-* [Set asset script transaction binary format](/en/blockchain/binary-format/transaction-binary-format/set-asset-script-transaction-binary-format)
-* [Set script transaction binary format](/en/blockchain/binary-format/transaction-binary-format/set-script-transaction-binary-format)
-* [Sponsor fee transaction binary format](/en/blockchain/binary-format/transaction-binary-format/sponsor-fee-transaction-binary-format)
+* [Set Asset Script transaction binary format](/en/blockchain/binary-format/transaction-binary-format/set-asset-script-transaction-binary-format)
+* [Set Script transaction binary format](/en/blockchain/binary-format/transaction-binary-format/set-script-transaction-binary-format)
+* [Sponsor Fee transaction binary format](/en/blockchain/binary-format/transaction-binary-format/sponsor-fee-transaction-binary-format)
 * [Transfer transaction binary format](/en/blockchain/binary-format/transaction-binary-format/transfer-transaction-binary-format)
-* [Update asset info transaction binary format](/en/blockchain/binary-format/transaction-binary-format/update-asset-info-transaction-binary-format)
+* [Update Asset Info transaction binary format](/en/blockchain/binary-format/transaction-binary-format/update-asset-info-transaction-binary-format)
+* [Invoke Expression transaction binary format](/en/blockchain/binary-format/transaction-binary-format/invoke-expression-transaction-binary-format).
+
+The Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
+
 <!--* [Continuation transaction](/en/blockchain/binary-format/transaction-binary-format/continuation-transaction-binary-format) -->

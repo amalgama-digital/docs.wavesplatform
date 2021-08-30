@@ -4,7 +4,7 @@
 
 A transaction sender can specify any amount of fee but not less than a minimum amount. The larger the fee is, the quicker the transaction will be added to the new [block](/en/blockchain/block/).
 
-For Invoke Script transaction and Transfer transaction, a sender can specify a transaction fee nominated in a sponsored asset instead of WAVES, see the section [Fee in Sponsored Asset](#fee-in-sponsored-asset) below.
+For an Invoke Script transaction, Invoke Expression transactions, and Transfer transaction, a sender can specify a transaction fee nominated in a sponsored asset instead of WAVES, see the section [Fee in Sponsored Asset](#fee-in-sponsored-asset) below.
 
 ## Minimum Fee
 
@@ -54,7 +54,8 @@ The minimum fee for an Invoke Script transaction:
 | [Create Alias transaction](/en/blockchain/transaction-type/create-alias-transaction) | 10 | 0.001 |
 | [Data transaction](/en/blockchain/transaction-type/data-transaction) | 12 | 0.001 per kilobyte<br>The size is rounded up to an integer number of kilobytes. [Details](/en/blockchain/transaction-type/data-transaction) |
 | [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction) | 7 | 0.003 |
-| [Invoke script transaction](/en/blockchain/transaction-type/invoke-script-transaction) | 16 | 0.005 + `K`<br>`K` is the number of assets issued as a result of dApp script invocation that are not [non-fungible tokens](/en/blockchain/token/non-fungible-token).<br>Assets can be issued by a dApp script from activation of feature #15 “Ride V4, VRF, Protobuf, Failed transactions”.<br>See [example 2](#example2) above |
+| [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) | 18 | 0.01 + `K`<br>`K` is the number of assets issued as a result of dApp script invocation that are not [non-fungible tokens](/en/blockchain/token/non-fungible-token).<br>Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only |
+| [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) | 16 | 0.005 + `K`<br>`K` is the number of assets issued as a result of script execution that are not [non-fungible tokens](/en/blockchain/token/non-fungible-token).<br>Assets can be issued by a dApp script from activation of feature #15 “Ride V4, VRF, Protobuf, Failed transactions”.<br>See [example 2](#example2) above |
 | [Issue transaction](/en/blockchain/transaction-type/issue-transaction) | 3 | • 1 for reqular token <br>• 0.001 for [non-fungible token](/en/blockchain/token/non-fungible-token) |
 | [Lease Cancel transaction](/en/blockchain/transaction-type/lease-cancel-transaction) | 9 | 0.001 |
 | [Lease transaction](/en/blockchain/transaction-type/lease-transaction) | 8 | 0.001 |
@@ -68,12 +69,12 @@ The minimum fee for an Invoke Script transaction:
 
 ## Fee in Sponsored Asset
 
-An issuer of an asset can set up sponsorship — so that any user can specify a transaction fee in this asset for Invoke Script transactions and Transfer transactions.
+An issuer of an asset can set up sponsorship — so that any user can specify a transaction fee in this asset for Invoke Script transactions, Invoke Expressions transactions, and Transfer transactions.
 
 To activate sponsorship, the issuer puts a Sponsor Fee transaction that specifies an amount of asset that is equivalent to the minimum fee of 0.001 WAVES. For example, if `minSponsoredAssetFee: 5`, then the fee in this asset for an Invoke Script transaction equals 5 × 0.005 / 0.001 = 25. See the [Sponsored Fee](/en/blockchain/waves-protocol/sponsored-fee) article for details.
 
 ## Fee for Failed Transactions
 
-Invoke Script transactions and Exchange transactions can be saved on the blockchain even if the result of a dApp script or asset script execution failed. In this case, the sender is charged a fee. For an Exchange transaction, the matcher is charged the transaction fee but the order senders are not charged the [matcher fee](/en/blockchain/transaction-type/exchange-transaction#matcher-fee). For more information, see the [Transaction Validation](/en/blockchain/transaction/transaction-validation) article. 
+Invoke Script transactions, Invoke Expressions transactions, and Exchange transactions can be saved on the blockchain even if the result of a dApp script or asset script execution failed. In this case, the sender is charged a fee. For an Exchange transaction, the matcher is charged the transaction fee but the order senders are not charged the [matcher fee](/en/blockchain/transaction-type/exchange-transaction#matcher-fee). For more information, see the [Transaction Validation](/en/blockchain/transaction/transaction-validation) article. 
 
 Saving failed transactions and charging fees for them is enabled by feature #15 “Ride V4, VRF, Protobuf, Failed transactions”.
