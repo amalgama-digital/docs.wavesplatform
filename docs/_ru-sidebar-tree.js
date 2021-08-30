@@ -139,7 +139,7 @@ module.exports = {
               title: 'Перевод',
               path: blockchainPath + 'transaction-type/transfer-transaction',
             },
-/*            {
+            /*            {
               title: 'Продолжение',
               path: blockchainPath + 'transaction-type/continuation-transaction',
             }, */
@@ -1591,6 +1591,10 @@ module.exports = {
     {
       title: 'Release notes (Node Go)',
       path: keepInTouchPath + 'release-notes-go',
+    },
+    {
+      title: 'Metamask',
+      path: keepInTouchPath + 'metamask',
     },
     {
       title: 'Сохранение транзакций с неудачным результатом выполнения скрипта',
