@@ -8,7 +8,6 @@ const sdkPath = buildingAppsPath + 'waves-api-and-sdk/';
 const ridePath = localePath + 'ride/';
 const rideV4Path = localePath + 'ride/v4/';
 const rideV5Path = localePath + 'ride/v5/';
-const rideV6Path = localePath + 'ride/v6/';
 const ecosystemPath = localePath + 'ecosystem/';
 const keepInTouchPath = localePath + 'keep-in-touch/';
 
@@ -140,11 +139,7 @@ module.exports = {
               title: 'Перевод',
               path: blockchainPath + 'transaction-type/transfer-transaction',
             },
-            {
-              title: 'Применение выражения',
-              path: blockchainPath + 'transaction-type/invoke-expression-transaction',
-            },
-/*            {
+            /*            {
               title: 'Продолжение',
               path: blockchainPath + 'transaction-type/continuation-transaction',
             }, */
@@ -404,10 +399,6 @@ module.exports = {
                   title: 'Перевод',
                   path: blockchainPath + 'binary-format/transaction-binary-format/transfer-transaction-binary-format',
                 },
-                {
-                  title: 'Применение выражения',
-                  path: blockchainPath + 'binary-format/transaction-binary-format/invoke-expression-transaction-binary-format',
-                },
 /*                {
                   title: 'Продолжение',
                   path: blockchainPath + 'binary-format/transaction-binary-format/continuation-transaction-binary-format',
@@ -419,6 +410,10 @@ module.exports = {
                 {
                   title: 'Установка скрипта ассета',
                   path: blockchainPath + 'binary-format/transaction-binary-format/set-asset-script-transaction-binary-format',
+                },
+                {
+                  title: 'Ethereum',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/ethereum-transaction-binary-format',
                 },
               ],
             },
@@ -995,38 +990,6 @@ module.exports = {
         {
           title: 'Вес данных',
           path: ridePath + 'limits/weight',
-        },
-      ],
-    },
-    {
-      title: 'Версия 6 (Stagenet)',
-      path: rideV6Path,
-      children: [
-        {
-          title: 'Скрипт вызова',
-          path: rideV6Path + 'script/script-types/call-script',
-        },
-        {
-          title: 'Структуры',
-          path: rideV6Path + 'structures',
-          children: [
-            {
-              title: 'Invocation',
-              path: rideV6Path + 'structures/common-structures/invocation',
-            },
-            {
-              title: 'InvokeExpressionTransaction',
-              path: rideV6Path + 'structures/transaction-structures/invoke-expression-transaction',
-            },
-          ],
-        },
-        {
-          title: 'Встроенные переменные',
-          path: rideV6Path + 'variables/built-in-variables',
-        },
-        {
-          title: 'Ограничения',
-          path: rideV6Path + 'limits',
         },
       ],
     },
@@ -1634,7 +1597,7 @@ module.exports = {
       path: keepInTouchPath + 'release-notes-go',
     },
     {
-      title: 'Metamask',
+      title: 'MetaMask',
       path: keepInTouchPath + 'metamask',
     },
     {

@@ -420,6 +420,10 @@ module.exports = {
                   title: 'Update Asset Info Transaction Binary Format',
                   path: blockchainPath + 'binary-format/transaction-binary-format/update-asset-info-transaction-binary-format',
                 },
+                {
+                  title: 'Ethereum Transaction Binary Format',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/ethereum-transaction-binary-format',
+                },
               ],
             },
             {
@@ -1664,7 +1668,7 @@ module.exports = {
       path: keepInTouchPath + 'release-notes-go',
     },
     {
-      title: 'Metamask',
+      title: 'MetaMask',
       path: keepInTouchPath + 'metamask',
     },
     {
