@@ -1,6 +1,6 @@
 # Reissue Transaction
 
-Reissue transaction increases the amount of the [token](/en/blockchain/token/) on the blockchain and/or prohibits its reissue. Only the token issuer can send a Reissue transaction. The `reissuable` field of token determines whether the token can be reissued.
+Reissue transaction increases the amount of the [token](/en/blockchain/token/) on the blockchain and/or prohibits its reissue. Only the token issuer can send a Reissue transaction. The additional amount of token increases the balance of the transaction sender. The `reissuable` field of token determines whether the token can be reissued.
 
 ## Fee
 
