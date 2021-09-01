@@ -30,7 +30,7 @@ compile group: 'com.wavesplatform', name: 'wavesj', version: '0.2'
 libraryDependencies += "com.wavesplatform" % "wavesj" % "0.2"
 ```
 
-[This library's page at Maven Central](https://mvnrepository.com/artifact/com.wavesplatform/wavesj)
+[This library's page at Maven Central](https://search.maven.org/artifact/com.wavesplatform/wavesj)
 
 ## Basic Usage
 

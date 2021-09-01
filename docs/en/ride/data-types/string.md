@@ -6,7 +6,7 @@ Strings are [UTF-8](https://en.wikipedia.org/wiki/UTF-8) encoded.
 
 ## Limitations
 
-The maximum size of a `String` variable is 32,767 (1 character can take up to 4 bytes).
+The maximum size of a `String` variable is 32,767 bytes (1 character can take up to 4 bytes).
 
 ## String Functions
 
