@@ -1,5 +1,14 @@
 # Release Notes
 
+## Version 1.4 (Stagenet)
+
+### Ride
+
+* Added the following built-in functions:
+   * [sqrt(Int,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrt)
+   * [sqrt(BigInt,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)
+* For the built-in string functions [makeString](/en/ride/v6/functions/built-in-functions/string-functions#makestring-list-string-string-string) and [split](/en/ride/v6/functions/built-in-functions/string-functions#split-string-string-list-string) added the range of similar functions with different complexity depending on the data size limit. When data size is known in advance, the “cheaper” function can be used.
+
 ## Version 1.3 Jumeirah
 
 The improvements listed below are enabled by feature #16 “Ride V5, dApp-to-dApp invocations”.

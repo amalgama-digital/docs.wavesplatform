@@ -990,6 +990,30 @@ module.exports = {
       ],
     },
     {
+      title: 'Version 6 (Stagenet)',
+      path: rideV6Path,
+      children: [
+        {
+          title: 'Built-in Functions',
+          path: rideV6Path + 'functions/built-in-functions',
+          children: [
+            {
+              title: 'Converting Functions',
+              path: rideV6Path + 'functions/built-in-functions/converting-functions',
+            },
+            {
+              title: 'Math Functions',
+              path: rideV6Path + 'functions/built-in-functions/math-functions',
+            },
+            {
+              title: 'String Functions',
+              path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: 'Previous Versions: 4 and 3',
       path: rideV4Path,
       children: [
