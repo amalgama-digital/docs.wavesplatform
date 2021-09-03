@@ -100,9 +100,9 @@
 | toInt(ByteVector): Int | Конвертирует массив байтов в целое число | 1 |
 | toInt(ByteVector, Int): Int | Конвертирует массив байтов, начиная с указанного индекса, в целое число | 1 |
 | toString(Address): String | Конвертирует массив байтов [адреса](/ru/blockchain/account/address) в строку | 1 |
+| toString(BigInt): String | Конвертирует большое целое число в строку | 2 |
 | toString(Boolean): String | Конвертирует логическое значение в строку | 1 |
 | toString(Int): String | Конвертирует целое число в строку | 1 |
-| toString(BigInt): String | Конвертирует большое целое число в строку | 2 |
 | toUtf8String(ByteVector): String | Конвертирует массив байтов в строку в [UTF-8](https://ru.wikipedia.org/wiki/UTF-8) | 7 |
 | transferTransactionFromProto(ByteVector): TransferTransaction&#124;Unit | Десериализует транзакцию перевода | 5 |
 

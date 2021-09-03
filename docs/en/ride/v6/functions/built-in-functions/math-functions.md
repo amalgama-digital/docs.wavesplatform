@@ -260,7 +260,7 @@ Calculates `a`<sup>`b`</sup> with high accuracy.
 pow(base: BigInt, bp: Int, exponent: BigInt, ep: Int, rp: Int, round: DOWN|CEILING|FLOOR|HALFUP|HALFEVEN): BigInt
 ```
 
-In Ride, there is no [data type](/en/ride/data-types/) with the floating point. That is why, for example, when you need to calculate, 16.25<sup>2.7</sup>, then the number `base` = 1625, `bp` = 2, and the `exponent` = 27, `ep` = 1.
+In Ride, there is no [data type](/en/ride/data-types/) with the floating point. That is why, for example, when you need to calculate 16.25<sup>2.7</sup>, then the number `base` = 1625, `bp` = 2, and the `exponent` = 27, `ep` = 1.
 
 If the `pow` function returns, for example, 1859105716849757217692, and the parameter `rp` = 18, then the result is 1859.105716849757217692; in the number 1859105716849757217692 the last 18 digits is a fractional part.
 
@@ -283,7 +283,7 @@ Calculates the square root of a number: `√a`.
 sqrt(base: Int, bp: Int, rp: Int, round: DOWN|CEILING|FLOOR|HALFUP|HALFEVEN): Int
 ```
 
-In Ride, there is no [data type](/en/ride/data-types/) with the floating point. That is why, for example, when you need to calculate √16,25, specify `base` = 1625 and `bp` = 2.
+In Ride, there is no [data type](/en/ride/data-types/) with the floating point. That is why, for example, when you need to calculate √16.25, specify `base` = 1625 and `bp` = 2.
 
 If the `sqrt` function returns, for example, 40311, and the parameter `rp` = 4, then the result is 4.0311; in the number 40311 the last 4 digits is a fractional part.
 
@@ -313,7 +313,7 @@ Calculates the square root of a number with high accuracy.
 sqrt(base: BigInt, bp: Int, rp: Int, round: DOWN|CEILING|FLOOR|HALFUP|HALFEVEN): BigInt
 ```
 
-In Ride, there is no [data type](/en/ride/data-types/) with the floating point. That is why, for example, when you need to calculate √16,25, specify `base` = 1625 and `bp` = 2.
+In Ride, there is no [data type](/en/ride/data-types/) with the floating point. That is why, for example, when you need to calculate √16.25, specify `base` = 1625 and `bp` = 2.
 
 If the `sqrt` function returns, for example, 4031128874149274826, and the parameter `rp` = 18, then the result is 4.031128874149274826; in the number 4031128874149274826 the last 18 digits is a fractional part.
 
@@ -323,7 +323,7 @@ If the `sqrt` function returns, for example, 4031128874149274826, and the para
 | :--- | :--- |
 | `base`: [BigInt](/en/ride/data-types/bigint) | Number `a` without decimal point |
 | `bp`: [Int](/en/ride/data-types/int) | Number of decimals of `a` |
-| `rp`: [Int](/en/ride/data-types/int) | Number of decimals in the resulting value, from 0 to 8 inclusive. Specifies the accuracy of the calculated result |
+| `rp`: [Int](/en/ride/data-types/int) | Number of decimals in the resulting value, from 0 to 18 inclusive. Specifies the accuracy of the calculated result |
 | `round`: DOWN&#124;CEILING&#124;FLOOR&#124;HALFUP&#124;HALFEVEN | One of the [rounding variables](#rounding-variables) |
 
 ## Rounding Variables

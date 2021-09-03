@@ -71,9 +71,9 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | toInt(ByteVector): Int | Converts an array of bytes to an integer | 1 |
 | toInt(ByteVector, Int): Int | Converts an array of bytes to an integer starting from a certain index | 1 |
 | toString(Address): String | Converts an [address](/en/blockchain/account/address) to a string | 1 |
+| toString(BigInt): String | Converts a big integer to a string | 2 |
 | toString(Boolean): String | Converts a boolean to a string | 1 |
 | toString(Int): String | Converts an integer to a string | 1 |
-| toString(BigInt): String | Converts a big integer to a string | 2 |
 | toUtf8String(ByteVector): String | Converts an array of bytes to a UTF-8 string | 7 |
 | transferTransactionFromProto(ByteVector): TransferTransaction&#124;Unit | Deserializes transfer transaction | 5 |
 

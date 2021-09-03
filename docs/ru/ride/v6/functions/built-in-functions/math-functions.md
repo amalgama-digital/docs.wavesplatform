@@ -13,6 +13,7 @@
 | [median(List[Int]): Int](#median) | Возвращает медиану списка целых чисел | 20 |
 | [median(List[BigInt]): BigInt](#medianbigint) | Возвращает медиану списка больших целых чисел | 160 |
 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Возводит число в степень | 28 |
+| [pow(BigInt, Int, BigInt, Int, Int, Union): BigInt](#powbigint) | Возводит число в степень с высокой точностью | 270 |
 | [sqrt(Int, Int, Int, Union): Int](#sqrt) | Извлекает квадратный корень из числа | 2 |
 | [sqrt(BigInt, Int, Int, Union): BigInt](#sqrtbigint) | Извлекает квадратный корень из числа с высокой точностью | 6 |
 
