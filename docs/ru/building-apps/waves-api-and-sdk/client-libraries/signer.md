@@ -25,7 +25,7 @@ Signer предоставляет приложению удобный прото
 * [ProviderSeed](https://github.com/wavesplatform/provider-seed), разработанный командой Waves, создает аккаунт пользователя из секретной фразы. ProviderSeed можно использовать на этапе разработки и отладки приложения.
 * [ProviderWeb](https://github.com/waves-exchange/provider-web), разработанный командой Waves.Exchange, использует аккаунт, созданный или импортированный в веб-приложение Waves.Exchange через секретную фразу или приватный ключ.
 * [ProviderCloud](https://github.com/waves-exchange/provider-cloud), разработанный командой Waves.Exchange, использует аккаунт Waves.Exchange на основе Email.
-* [ProviderLedger](https://www.npmjs.com/package/@waves/provider-ledger), разработанный командой Waves, использует устройство Ledger Nano X or Ledger Nano S.
+* [ProviderLedger](https://www.npmjs.com/package/@waves/provider-ledger), разработанный командой Waves, использует устройство Ledger Nano X или Ledger Nano S.
 
 Вы также можете разработать собственный Провайдер, см. подраздел [Интерфейс Провайдера](#интерфейс-провайдера).
 
