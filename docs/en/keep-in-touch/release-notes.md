@@ -4,6 +4,8 @@
 
 ### Protocol Enhancements
 
+* Added support for Ethereum transactions that perform token transfers or dApp script invocations. Thanks to this, MetaMask users can sign transactions and send them to the Waves blockchain. [More details](/en/keep-in-touch/metamask)
+* Added support for orders with ECDSA signature in Exchange transactions. Thanks to this, users can sign orders with MetaMask. [More details](/en/keep-in-touch/metamask)
 * Implemented a new transaction type: [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) that executes the script attached to it.
 
 ### Ride
@@ -16,6 +18,136 @@
 ### Node REST API
 
 #### Breaking Changes
+
+* Added support for Ethereum transactions that perform token transfers or dApp script invocations. JSON representation of a transaction depends on its content:
+
+   <details>
+   <summary>Example transfer by Ethereum transaction</summary>
+
+   ```json
+   {
+      "type": 4,
+      "id": "D79kL1Jr5xyL2Rmw2FnafQHugJGvuBhNEbLnhMuwMkDC",
+      "sender": "0xB5488a98AC525EAa346C5c1634D04C7bCB7Ed83f",
+      "senderPublicKey": "Cs4DShy4nTx6WyxjKRoDtoYsGhvT663pYLysPCLeVZHE",
+      "fee": 100000,
+      "feeAssetId": null,
+      "timestamp": 1628179276987,
+      "proofs": [
+         "5EaYqFx2xFJmdvwZ1gT3yLecKr88z3jByCj5GE1MjE1ossvehExZKoT7uhGatiYCGM9Co8iUR8Q5ce52XDmno3rn"
+      ],
+      "recipient": "3PFmoN5YLoPNsL4cmNGkRxbUKrUVntwyAhf",
+      "recipientEth": "0x78E4de1892946Ccd46B9B651d7cb8Da630d5428A",
+      "assetId": "7uncmN7dZfV3fYVvNdYTngrrbamPYMgwpDnYG1bGy6nA",
+      "amount": 15540,
+      "attachment": "3vrgtyozxuY88J9RqMBBAci2UzAq9DBMFTpMWLPzMygGeSWnD7k",
+      "applicationStatus": "succeeded",
+      "height": 2809952
+   }
+   ```
+   </details>
+
+   <details>
+   <summary>Example script invocation by Ethereum transaction</summary>
+   
+   ```json
+   {
+      "type": 16,
+      "id": "DN9Ny8mph4tLjn58e9CqhckPymH9zwPqBSZtcv2bBi3u",
+      "sender": "3Mw48B85LvkBUhhDDmUvLhF9koAzfsPekDb",
+      "senderPublicKey": "BvJEWY79uQEFetuyiZAF5U4yjPioMj9J6ZrF9uTNfe3E",
+      "fee": 500000,
+      "feeAssetId": null,
+      "timestamp": 1628179276987,
+      "proofs": [
+         "2536V2349X3cuVEK1rSxQf3HneJwLimjCmCfoG1QyMLLq1CNp6dpPKUG3Lb4pu76XqLe3nWyo3HAEwGoALgBhxkF"
+      ],
+      "dApp": "3N28o4ZDhPK77QFFKoKBnN3uNeoaNSNXzXm",
+      "payment": [],
+      "call": {
+         "function": "foo",
+         "args": [
+            {
+               "type": "list",
+               "value": [
+                  {
+                     "type": "string",
+                     "value": "alpha"
+                  },
+                  {
+                     "type": "string",
+                     "value": "beta"
+                  },
+                  {
+                     "type": "string",
+                     "value": "gamma"
+                  }
+               ]
+            }
+         ]
+      },
+      "height": 1203100,
+      "applicationStatus": "succeeded",
+      "stateChanges": {
+         "data": [
+            {
+               "key": "3Mw48B85LvkBUhhDDmUvLhF9koAzfsPekDb",
+                "type": "string",
+                "value": "alphabetagamma"
+            }
+         ],
+         "transfers": [],
+         "issues": [],
+         "reissues": [],
+         "burns": [],
+         "sponsorFees": [],
+         "leases": [],
+         "leaseCancels": [],
+         "invokes": []
+      }
+   }
+   ```
+   </details>
+
+   The transaction contains:
+
+   * `sender` in Waves format, base58 encoded,
+   * `senderPublicKey` of 64 bytes, HEX encoded,
+   * `proofs` array with a single element: ECDSA signature (in what format??).
+
+* JSON representation of an order signed by a MetaMask user as a part of an Exchange transaction contains:
+   * `sender` in Waves format, base58 encoded,
+   * `senderPublicKey` of 64 bytes, HEX encoded,
+   * `ethSignature` with ECDSA signature (in what format??),
+   * empty array `proofs`.
+
+   <details>
+   <summary>Example order with ECDSA signature</summary>.
+
+   ```json
+   "order1": {
+      "version": 4,
+      "id": "Lf2yuTvM2kmrne1gZZiY8S1nKvpDzn3ojvkH6BodPb8",
+      "sender": "3P8CU1RvjGdRWtjsvSD79r6FkP8j9jkEknW",
+      "senderPublicKey": null,
+      "matcherPublicKey": "9cpfKN9suPNvfeUNphzxXMjcnn974eme8ZhWUjaktzU5",
+      "assetPair": {
+         "amountAsset": "4LHHvYGNKJUg5hj65aGD5vgScvCBmLpdRFtjokvCjSL8",
+         "priceAsset": null
+      },
+      "orderType": "buy",
+      "amount": 4000000000,
+      "price": 2805541,
+      "timestamp": 1628755187901,
+      "expiration": 1631260787901,
+      "matcherFee": 300000,
+      "signature": null,
+      "ethSignature": "0xae952a5b0d63de15727d39ee689e9336cde9889a7a56dc72e48ff897059283102af4a65e266b50bee209330e231065aea3fd88f024e96d86f07ec56746cc93351b"
+      "proofs": [],
+      "matcherFeeAssetId": null
+  }
+   ```
+   </details>
 
 * Added the new transaction type: Invoke Expression.
 
