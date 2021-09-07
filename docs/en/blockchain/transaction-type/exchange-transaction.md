@@ -18,6 +18,8 @@ The minimum fee for an Exchange transaction is 0.003 WAVES. In case of exchange 
 
 If the transaction sender is a [dApp or smart account](/en/blockchain/account/dapp), and the complexity of the account script or dApp script verifier function exceeds the [sender complexity threshold](/en/ride/limits/), the minimum fee is increased by 0.004 WAVES. (Before activation of feature #16 “Ride V5, dApp-to-dApp invocations”, the extra fee of 0.004 WAVES was required regardless of the complexity of the account script or the presence and complexity of the dApp script verifier function.)
 
+:warning: The minimum fee is **not increased** if the order is sent from a smart account or dApp, or the matcher fee is specified in a smart asset.
+
 ## Matcher Fee
 
 The matcher receives a fee for order execution from each order senders. The minimum matcher fee is set by the matcher. The order sender specifies the fee not less than the minimum amount.
