@@ -1,5 +1,9 @@
 # Обновления в документации
 
+## Сентябрь
+
+* [Signer](/ru/building-apps/waves-api-and-sdk/client-libraries/signer): добавлена информация о ProviderLedger.
+
 ## Июль
 
 ### Блокчейн

@@ -24,7 +24,8 @@ Signer предоставляет приложению удобный прото
 
 * [ProviderSeed](https://github.com/wavesplatform/provider-seed), разработанный командой Waves, создает аккаунт пользователя из секретной фразы. ProviderSeed можно использовать на этапе разработки и отладки приложения.
 * [ProviderWeb](https://github.com/waves-exchange/provider-web), разработанный командой Waves.Exchange, использует аккаунт, созданный или импортированный в веб-приложение Waves.Exchange через секретную фразу или приватный ключ.
-* [ProviderCloud](https://github.com/waves-exchange/provider-cloud), разработанный командой Waves.Exchange, использует аккаунт Waves.Exchange на основе email.
+* [ProviderCloud](https://github.com/waves-exchange/provider-cloud), разработанный командой Waves.Exchange, использует аккаунт Waves.Exchange на основе Email.
+* [ProviderLedger](https://www.npmjs.com/package/@waves/provider-ledger), разработанный командой Waves, использует устройство Ledger Nano X или Ledger Nano S.
 
 Вы также можете разработать собственный Провайдер, см. подраздел [Интерфейс Провайдера](#интерфейс-провайдера).
 
@@ -50,7 +51,7 @@ Signer поддерживает все браузеры, кроме Brave.
    npm i @waves/signer
    ```
 
-* Чтобы установить ProviderSeed от Waves, используйте команду
+* Чтобы установить ProviderSeed, используйте команду
 
    ```bash
    npm i @waves/provider-seed @waves/waves-transactions
@@ -77,6 +78,13 @@ Signer поддерживает все браузеры, кроме Brave.
    ```bash
    npm i '@waves.exchange/provider-cloud'
    ```
+
+* Чтобы установить ProviderLedger, используйте команду
+
+   ```bash
+   npm i @waves/provider-ledger
+   ```
+
 
 ### 2. Подключение библиотек
 
@@ -123,6 +131,22 @@ Signer поддерживает все браузеры, кроме Brave.
    signer.setProvider(new ProviderCloud())
    ```
 
+* Для работы с Testnet и ProviderLedger:
+
+   ```js
+   import { Signer } from '@waves/signer';
+   import { ProviderLedger } from '@waves/provider-ledger';
+   
+   const signer = new Signer({
+     // Specify URL of the node on Testnet
+     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
+   });
+   signer.setProvider(new ProviderLedger({
+     // Specify chain ID of Testnet
+     wavesLedgerConfig: { networkCode: 84, },
+   }));
+   ```
+
 * Для работы с Mainnet и Waves.Exchange ProviderWeb:
 
    ```js
@@ -141,6 +165,17 @@ Signer поддерживает все браузеры, кроме Brave.
    
    const signer = new Signer();
    signer.setProvider(new ProviderCloud());
+   ```
+
+* Для работы с Mainnet и ProviderLedger:
+
+   ```js
+   import { Signer } from '@waves/signer';
+   import { ProviderLedger } from '@waves/provider-ledger';
+
+   const signer = new Signer();
+   const provider = new ProviderLedger();
+   signer.setProvider(provider);
    ```
 
 Теперь ваше приложение может использовать функции Signer.
