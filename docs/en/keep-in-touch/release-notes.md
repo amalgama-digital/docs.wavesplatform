@@ -26,23 +26,19 @@
 
    ```json
    {
-      "type": 4,
-      "id": "D79kL1Jr5xyL2Rmw2FnafQHugJGvuBhNEbLnhMuwMkDC",
-      "sender": "0xB5488a98AC525EAa346C5c1634D04C7bCB7Ed83f",
-      "senderPublicKey": "Cs4DShy4nTx6WyxjKRoDtoYsGhvT663pYLysPCLeVZHE",
+      "type": 19,
+      "id": "6yQk8MThq5dLE3YEU9BZwRbB5ibcihorkuCki3f27dau",
       "fee": 100000,
       "feeAssetId": null,
-      "timestamp": 1628179276987,
-      "proofs": [
-         "5EaYqFx2xFJmdvwZ1gT3yLecKr88z3jByCj5GE1MjE1ossvehExZKoT7uhGatiYCGM9Co8iUR8Q5ce52XDmno3rn"
-      ],
-      "recipient": "3PFmoN5YLoPNsL4cmNGkRxbUKrUVntwyAhf",
-      "recipientEth": "0x78E4de1892946Ccd46B9B651d7cb8Da630d5428A",
-      "assetId": "7uncmN7dZfV3fYVvNdYTngrrbamPYMgwpDnYG1bGy6nA",
-      "amount": 15540,
-      "attachment": "3vrgtyozxuY88J9RqMBBAci2UzAq9DBMFTpMWLPzMygGeSWnD7k",
+      "timestamp": 1631015652752,
+      "bytes": "0xf8ac86017bc01bcd9001830186a0943353cdb2c6454ad0811f29b632208162037fc22d80b844a9059cbb00000000000000000000000088955b80d3796397c447220793f625a8e47a589400000000000000000000000000000000000000000000000000000000000f424081ada07221e88bbaf6c221faf586766d856d64c66350017f94515c675930b5a38bfe45a05a36e1ab1cc27938c7a962c794b39b68d5a228d2dc987c04916b97246796db23",
+      "sender": "3FzoJXUesFqzf4nmMYejpUDYmFJvkwEiQG6",
+      "senderPublicKey": "5BQPcwDXaZexgonPb8ipDrLRXY3RHn1kFLP9fqp1s6M6xiRhC4LvsAq2HueXCMzkpuXsrLnuBA3SdkJyuhNZXMCd",
+      "height": 15,
       "applicationStatus": "succeeded",
-      "height": 2809952
+      "assetId": "4TMuiKSpbBrDUJPWK6VuTDzpJx3eQQJq9X3jRRfdWrNu",
+      "amount": 1000000,
+      "stateChanges": null
    }
    ```
    </details>
@@ -52,51 +48,43 @@
    
    ```json
    {
-      "type": 16,
-      "id": "DN9Ny8mph4tLjn58e9CqhckPymH9zwPqBSZtcv2bBi3u",
-      "sender": "3Mw48B85LvkBUhhDDmUvLhF9koAzfsPekDb",
-      "senderPublicKey": "BvJEWY79uQEFetuyiZAF5U4yjPioMj9J6ZrF9uTNfe3E",
+      "type": 19,
+      "id": "32xLjRVZM3sartaDpP6d5sNArgcYDjbqdErH6Wingjni",
       "fee": 500000,
       "feeAssetId": null,
-      "timestamp": 1628179276987,
-      "proofs": [
-         "2536V2349X3cuVEK1rSxQf3HneJwLimjCmCfoG1QyMLLq1CNp6dpPKUG3Lb4pu76XqLe3nWyo3HAEwGoALgBhxkF"
-      ],
-      "dApp": "3N28o4ZDhPK77QFFKoKBnN3uNeoaNSNXzXm",
-      "payment": [],
+      "timestamp": 1631032811795,
+      "version": 1,
+      "chainId": 69,
+      "bytes": "0xf9014b86017bc121a113018307a12094c811007db5e07a1bd3d91aef1f37bd3010c28d5980b8e4a72afeeb000000000000000000000000000000000000000000000000000000000000007b0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000087100000000000000000000000000000000000000000000000000000000000000001ca0fbe876dcb9939c4812d2ef95bb30cd84740e7db96d7959f043152958a101e177a055356f63ccee0a020cd12bc4350e6a888d2ed7967f5ca0fefe773c4a752950ff",
+      "sender": "3FukV1533yMME1z5sMyamBgvgZyB6y3NRb3",
+      "senderPublicKey": "3xu7QYBo4bAYmkkiefrkqBHfk4o73mWWLznWBuNP39S8WnhWSU2aGQ4o5UkdsJzqS7hci2GNN5WEvUWibdymfUy6",
+      "height": 447,
+      "applicationStatus": "succeeded",
+      "dapp": "3FukV1533yMME1z5sMyamBgvgZyB6y3NRb3",
       "call": {
-         "function": "foo",
+         "function": "deposit",
          "args": [
             {
-               "type": "list",
-               "value": [
-                  {
-                     "type": "string",
-                     "value": "alpha"
-                  },
-                  {
-                     "type": "string",
-                     "value": "beta"
-                  },
-                  {
-                     "type": "string",
-                     "value": "gamma"
-                  }
-               ]
+               "type": "integer",
+               "value": 123
             }
          ]
       },
-      "height": 1203100,
-      "applicationStatus": "succeeded",
+      "payment": [
+         {
+            "amount": 2161,
+            "assetId": null
+         }
+      ],
       "stateChanges": {
-         "data": [
+         "data": [],
+         "transfers": [
             {
-               "key": "3Mw48B85LvkBUhhDDmUvLhF9koAzfsPekDb",
-                "type": "string",
-                "value": "alphabetagamma"
+               "address": "3FukV1533yMME1z5sMyamBgvgZyB6y3NRb3",
+               "asset": null,
+               "amount": 123
             }
          ],
-         "transfers": [],
          "issues": [],
          "reissues": [],
          "burns": [],
@@ -109,17 +97,20 @@
    ```
    </details>
 
-   The transaction contains:
+   Features of the Ethereum transaction JSON representation:
 
-   * `sender` in Waves format, base58 encoded,
-   * `senderPublicKey` of 64 bytes, HEX encoded,
-   * `proofs` array with a single element: ECDSA signature (in what format??).
+   * `sender` contains Waves address base58 encoded,
+   * `senderPublicKey` is 64 bytes base58 encoded,
+   * `bytes` contains the entire Ethereum transaction bytes, including the ECDSA signature, in HEX encoding.
+   * `proofs` array is missing.
 
-* JSON representation of an order signed by a MetaMask user as a part of an Exchange transaction contains:
-   * `sender` in Waves format, base58 encoded,
-   * `senderPublicKey` of 64 bytes, HEX encoded,
-   * `ethSignature` with ECDSA signature (in what format??),
-   * empty array `proofs`.
+* Added support for Exchange transactions containing an order (or both orders) with an ECDSA signature.
+
+   Features JSON representation of an order with ECDSA signature:
+   * `sender` contains Waves address base58 encoded,
+   * `senderPublicKey` is 64 bytes base58 encoded,
+   * `eip712Signature` contains an ECDSA signature in HEX encoding,
+   * `proofs` array is missing.
 
    <details>
    <summary>Example order with ECDSA signature</summary>.
@@ -127,29 +118,50 @@
    ```json
    "order1": {
       "version": 4,
-      "id": "Lf2yuTvM2kmrne1gZZiY8S1nKvpDzn3ojvkH6BodPb8",
-      "sender": "3P8CU1RvjGdRWtjsvSD79r6FkP8j9jkEknW",
-      "senderPublicKey": null,
-      "matcherPublicKey": "9cpfKN9suPNvfeUNphzxXMjcnn974eme8ZhWUjaktzU5",
+      "id": "2Wx5ctbaU9GqQYXtEkqsin6drfu6SuADdwAyvuYnwai9",
+      "sender": "3FzoJXUesFqzf4nmMYejpUDYmFJvkwEiQG6",
+      "senderPublicKey": "5BQPcwDXaZexgonPb8ipDrLRXY3RHn1kFLP9fqp1s6M6xiRhC4LvsAq2HueXCMzkpuXsrLnuBA3SdkJyuhNZXMCd",
+      "matcherPublicKey": "9BUoYQYq7K38mkk61q8aMH9kD9fKSVL1Fib7FbH6nUkQ",
       "assetPair": {
-         "amountAsset": "4LHHvYGNKJUg5hj65aGD5vgScvCBmLpdRFtjokvCjSL8",
+         "amountAsset": "5fQPsn8hoaVddFG26cWQ5QFdqxWtUPNaZ9zH2E6LYzFn",
          "priceAsset": null
       },
       "orderType": "buy",
-      "amount": 4000000000,
-      "price": 2805541,
-      "timestamp": 1628755187901,
-      "expiration": 1631260787901,
-      "matcherFee": 300000,
-      "signature": null,
-      "ethSignature": "0xae952a5b0d63de15727d39ee689e9336cde9889a7a56dc72e48ff897059283102af4a65e266b50bee209330e231065aea3fd88f024e96d86f07ec56746cc93351b"
+      "amount": 1,
+      "price": 100,
+      "timestamp": 1,
+      "expiration": 123,
+      "matcherFee": 100000,
+      "signature": "",
       "proofs": [],
-      "matcherFeeAssetId": null
-  }
+      "matcherFeeAssetId": null,
+      "eip712Signature": "0xe5ff562bfb0296e95b631365599c87f1c5002597bf56a131f289765275d2580f5344c62999404c37cd858ea037328ac91eca16ad1ce69c345ebb52fde70b66251c"
+   }
    ```
    </details>
 
 * Added the new transaction type: Invoke Expression.
+
+#### Improvements
+
+* Added the `/assets/convertingEthToWaves` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset IDs in Waves representation (32 bytes base58 encoded).
+
+   <details>
+   <summary>Example response</summary>
+
+   ```json
+   [
+      {
+         "eth": "0xb5488a98ac525eaa346c5c1634d04c7bcb7ed83f",
+         "waves": "6SaPaDmvuBFKEA6jxxARnFeAJzKKraP831Xorm7ngaMR"
+      },
+      {
+         "eth": "0xb5488a98ac525eaa346c5c1634d04c7bcb7ed83f",
+         "waves": "6SaPaDmvuBFKEA6jxxARnFeAJzKKraP831Xorm7ngaMR"
+      }
+   ]
+   ```
+   </details>
 
 ## Version 1.3 Jumeirah
 
