@@ -4,7 +4,7 @@
 
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
-| [addressFromPublicKey(ByteVector): Address](#address-from-public-key)| Gets the corresponding [address](/en/blockchain/account/address) of the account public key | 63 |
+| [addressFromPublicKey(ByteVector): Address](#address-from-public-key)| Gets the corresponding [address](/en/blockchain/account/address) of the account public key | 1 |
 | [parseBigInt(String): BigInt&#124;Unit](#parse-bigint) | Converts the string representation of a number to its [big integer](/en/ride/data-types/bigint) equivalent | 65 |
 | [parseBigIntValue(String): BigInt](#parse-bigint-value) | Converts the string representation of a number to its big integer equivalent.<br>Fails if the string cannot be parsed | 65 |
 | [parseInt(String): Int&#124;Unit](#parse-int) | Converts the string representation of a number to its integer equivalent | 2 |

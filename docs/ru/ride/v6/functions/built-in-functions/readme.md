@@ -84,7 +84,7 @@
 
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
-| addressFromPublicKey(ByteVector): Address | Получает [адрес](/ru/blockchain/account/address), соответствующий открытому ключу аккаунта | 63 |
+| addressFromPublicKey(ByteVector): Address | Получает [адрес](/ru/blockchain/account/address), соответствующий открытому ключу аккаунта | 1 |
 | parseBigInt(String): BigInt&#124;Unit | Конвертирует строковое представление числа в эквивалентное [большое целое число](/ru/ride/data-types/bigint) | 65 |
 | parseBigIntValue(String): BigInt | Конвертирует строковое представление числа в эквивалентное большое целое число.<br>Завершается ошибкой, если строка не может быть преобразована | 65 |
 | parseInt(String): Int&#124;Unit | Конвертирует строковое представление числа в эквивалентное целое число | 2 |

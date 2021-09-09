@@ -55,7 +55,7 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
-| addressFromPublicKey(ByteVector): Address | Converts account public key to [address](/en/blockchain/account/address) | 63 |
+| addressFromPublicKey(ByteVector): Address | Converts account public key to [address](/en/blockchain/account/address) | 1 |
 | parseBigInt(String): BigInt&#124;Unit | Converts the string representation of a number to its [big integer](/en/ride/data-types/bigint) equivalent | 65 |
 | parseBigIntValue(String): BigInt | Converts the string representation of a number to its big integer equivalent.<br>Fails if the string cannot be parsed | 65 |
 | parseInt(String): Int&#124;Unit | Converts the string representation of a number to its integer equivalent | 2 |
