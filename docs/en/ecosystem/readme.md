@@ -15,10 +15,10 @@ The Waves ecosystem offers variety of projects and products developed by the com
 
 ## DeFi
 
+* [Neutrino](http://neutrino.at/): an algorithmic price-stable assetization protocol acting as an accessible DeFi toolkit. It enables the creation of stablecoins pegged to specific real-world assets, such as national currencies or commodities. Neutrino TVL surpassed $1 billion.
 * [Waves.Exchange](https://waves.exchange/): a platform for staking cryptocurrencies and investing in algorithmic trading.
 * [Swop.fi](https://swop.fi): a service for instant exchange of cryptocurrencies and making money by providing liquidity.
-* [Neutrino](http://neutrino.at/): an algorithmic price-stable assetization protocol acting as an accessible DeFi toolkit. It enables the creation of stablecoins pegged to specific real-world assets, such as national currencies or commodities. Neutrino TVL surpassed $1 billion.
-* [Vires](https://vires.finance/): the liquidity protocol for lending and borrowing assets.
+* [Vires](https://vires.finance/): a liquidity protocol for lending and borrowing assets.
 
 ## Games and Collections
 
@@ -28,16 +28,16 @@ The Waves ecosystem offers variety of projects and products developed by the com
 ## Blockchain Explorers
 
 * [Waves Explorer](https://wavesexplorer.com/): the official explorer of the Waves blockchain and a faucet providing free tokens for Testnet.
-* [dev.pywaves.org](https://dev.pywaves.org/): an explorer explorer featuring view statistics on generating nodes and staking.
+* [dev.pywaves.org](https://dev.pywaves.org/): an explorer featuring view statistics on generating nodes and staking.
 * [WavesCap](https://wavescap.com/): “CoinMarketCap” for Waves-based assets.
 
 ## Development
 
 * [Waves Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer): a TypeScript/JavaScript library that implements the interface for the signature provider library and enables signing and sending transactions on behalf of a user in any browser.
 * [Waves IDE](https://waves-ide.com/): an online environment for developing and testing Ride smart contracts.
-* [Waves Dapp Ui](https://waves-dapp.com/) a visual interface for calling dApp functions.
+* [Waves Dapp Ui](https://waves-dapp.com/): a visual interface for calling dApp functions.
 
-[All APIs and Tools](/en/building-apps/)
+👉 [All APIs and tools](/en/building-apps/)
 
 ## Bridge to Other Ecosystems
 
