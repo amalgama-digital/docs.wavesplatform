@@ -1315,7 +1315,7 @@ API Blockchain Updates предоставляет три функции:
 | :--- | :--- | :--- |
 | d_app_address | bytes | Адрес dApp |
 | function_name | string | Имя вызываемой функции |
-| arguments | repeated Argument | Аргументы функции |
+| arguments | repeated [InvokeScriptResult.Call.Argument](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto#L61) | Аргументы функции |
 | payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Приложенные к транзакции платежи |
 | result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Результаты действий, выполненных вызываемой функцией |
 
