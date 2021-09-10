@@ -18,6 +18,7 @@ The Waves ecosystem offers variety of projects and products developed by the com
 * [Waves Keeper](/en/ecosystem/waves-keeper/): the official browser extension for secure key storage and interaction with third-party web apps.
 * [Waves.Exchange](https://waves.exchange/): a web, desktop & mobile app that provides the full range of digital asset management features.
 * [WavesFX](https://wavesfx.github.io/): an open source and cross-platform desktop wallet.
+* [Enno Wallet](https://www.ennowallet.com/blog): a mobile app with built-in cryptocurrency exchange and DeFi features.
 
 ## DeFi
 
@@ -35,6 +36,7 @@ The Waves ecosystem offers variety of projects and products developed by the com
 
 * [Waves Explorer](https://wavesexplorer.com/): the official explorer of the Waves blockchain and a faucet providing free tokens for Testnet.
 * [dev.pywaves.org](https://dev.pywaves.org/): an explorer featuring view statistics on generating nodes and staking.
+* [w8io.ru](https://w8io.ru/): a fast and techie blockchain explorer with a concise interface.
 * [WavesCap](https://wavescap.com/): “CoinMarketCap” for Waves-based assets.
 
 ## Development
