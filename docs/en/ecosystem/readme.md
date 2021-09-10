@@ -4,13 +4,19 @@ The Waves ecosystem offers variety of projects and products developed by the com
 
 ## Where to buy WAVES
 
-* [Waves.Exchange](https://waves.exchange/): a decentralized exchange where users retain full control over their funds.
-* [Centralized Exchanges](https://coinmarketcap.com/currencies/waves/markets/): over 30 spots.
+* [Waves.Exchange](https://waves.exchange/trading/spot/WAVES_USDN): a decentralized exchange where users retain full control over their funds.
+* Centralized Exchanges:
+   * [Huobi](https://www.huobi.com/ru-ru/exchange/waves_usdt/)
+   * [Binance](https://www.binance.com/en/trade/WAVES_USDT)
+   * [Okex](https://www.okex.com/ru/trade-spot/waves-usdt)
+   * [Kraken](https://trade.kraken.com/ru-ru/charts/KRAKEN:WAVES-USD)
+   * [Bithumb](https://m.bithumb.com/trade/order/WAVES_KRW)
+   * [and more](https://coinmarketcap.com/currencies/waves/markets/)
 
 ## Wallets
 
 * [Waves Keeper](/en/ecosystem/waves-keeper/): the official browser extension for secure key storage and interaction with third-party web apps.
-* [Waves.Exchange](https://waves.exchange/): a web & desktop & mobile app that provides the full range of digital asset management features.
+* [Waves.Exchange](https://waves.exchange/): a web, desktop & mobile app that provides the full range of digital asset management features.
 * [WavesFX](https://wavesfx.github.io/): an open source and cross-platform desktop wallet.
 
 ## DeFi

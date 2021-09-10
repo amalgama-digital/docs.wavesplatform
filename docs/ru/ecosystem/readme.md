@@ -5,7 +5,13 @@
 ## Где купить WAVES
 
 * [Waves.Exchange](https://waves.exchange/) — децентрализованная биржа, где полный контроль над средствами остается у пользователя.
-* [Централизованные биржи](https://coinmarketcap.com/currencies/waves/markets/): более 30 площадок.
+* [Централизованные биржи](https://coinmarketcap.com/currencies/waves/markets/):
+   * [Huobi](https://www.huobi.com/ru-ru/exchange/waves_usdt/)
+   * [Binance](https://www.binance.com/en/trade/WAVES_USDT)
+   * [Okex](https://www.okex.com/ru/trade-spot/waves-usdt)
+   * [Kraken](https://trade.kraken.com/ru-ru/charts/KRAKEN:WAVES-USD)
+   * [Bithumb](https://m.bithumb.com/trade/order/WAVES_KRW)
+   * [и другие](https://coinmarketcap.com/currencies/waves/markets/)
 
 ## Кошельки
 
