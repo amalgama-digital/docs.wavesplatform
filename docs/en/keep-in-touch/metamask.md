@@ -85,7 +85,7 @@ In an [Exchange transaction](/en/blockchain/transaction-type/exchange-transactio
 
 ## Support in Ride
 
-The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both the Waves account public key and the MetaMask account public key.
+The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
 
 If an Ethrereum transaction invokes a dApp script, the [Invocation](/en/ride/structures/common-structures/invocation) structure, available to the callable function, contains:
 - in the `caller` and `originCaller` fields: the sender's address in Waves format (26 bytes),
@@ -94,6 +94,6 @@ If an Ethrereum transaction invokes a dApp script, the [Invocation](/en/ride/str
 If an Ethereum transaction is verified by an asset script, the transaction is interpreted as [TransferTransaction](/en/ride/structures/transaction-structures/transfer-transaction) or [InvokeScriptTransaction](/en/ride/structures/transaction-structures/invoke-script-transaction):
 - the `sender` field contains the sender's address in Waves format (26 bytes),
 - the `senderPublicKey` field contains the public key of MetaMask user (64 bytes).
-- the `bodyBytes` field contains the entire Ethereum transaction bytes, including the ECDSA signature.
+- the `bodyBytes` field is empty.
 
 > Transaction and order signatures are not available in the asset script.
