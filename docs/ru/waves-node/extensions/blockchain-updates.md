@@ -6,7 +6,7 @@ sidebarDepth: 3
 
 **Blockchain Updates** — [расширение ноды](/ru/waves-node/extensions/), которое отправляет по [gRPC](https://en.wikipedia.org/wiki/GRPC) сообщения об изменениях на блокчейне.
 
-> Это документация Blockchain Updates для версии ноды **1.3.7** и выше. Эта версия Blockchain Updates несовместима с предыдущими: приложения, работающие с предыдущими версиями, не смогут использовать эту версию. См. раздел [Переход с предыдущей версии](#upgrading) ниже.
+> Это документация Blockchain Updates для версии ноды **1.2.20** и выше. Эта версия Blockchain Updates несовместима с предыдущими: приложения, работающие с предыдущими версиями, не смогут использовать эту версию. См. раздел [Переход с предыдущей версии](#upgrading) ниже.
 
 Blockchain Updates позволяет отслеживать изменения, которые внесла каждая транзакция и блок:
 
@@ -1315,7 +1315,7 @@ API Blockchain Updates предоставляет три функции:
 | :--- | :--- | :--- |
 | d_app_address | bytes | Адрес dApp |
 | function_name | string | Имя вызываемой функции |
-| arguments | repeated [InvokeScriptResult.Call.Argument](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto#L61) | Аргументы функции |
+| arguments | repeated Argument | Аргументы функции |
 | payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Приложенные к транзакции платежи |
 | result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Результаты действий, выполненных вызываемой функцией |
 
@@ -1341,7 +1341,7 @@ API Blockchain Updates предоставляет три функции:
 
 ## Переход с предыдущей версии<a id="upgrading"></a>
 
-Если вы использовали Blockchain Updates предыдущих версий и хотите перейти на версию 1.3.7 и выше:
+Если вы использовали Blockchain Updates предыдущих версий и хотите перейти на версию 1.2.20 и выше:
 
 1. Заново получите историю изменений:
 
@@ -1353,4 +1353,4 @@ API Blockchain Updates предоставляет три функции:
 
 2. Скачайте обновленные protobuf-схемы и сгенерируйте клиентские заглушки, см. [Генерация клиента](#генерация-клиента) выше. Мигрируйте код своего приложения на новые заглушки.
 
-После перехода на текущую версию вы можете начать использовать поля, которые были добавлены. Описание новых возможностей см. в [Release Notes 1.3.7](https://github.com/wavesplatform/Waves/releases/tag/v1.3.7). Изменения в схемах не затронули большинство полей предыдущей версии.
+После перехода на текущую версию вы можете начать использовать поля, которые были добавлены. Описание новых возможностей см. в [Release Notes 1.2.20](https://github.com/wavesplatform/Waves/releases/tag/v1.2.20). Изменения в схемах не затронули большинство полей предыдущей версии.
