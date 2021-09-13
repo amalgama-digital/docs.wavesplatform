@@ -1521,62 +1521,6 @@ module.exports = {
         },
       ],
     },
-    {
-      title: 'Waves Oracles',
-      path: ecosystemPath + 'waves-oracles/about-waves-oracles',
-      children: [
-        {
-          title: 'Создание карточки оракула при помощи Waves Oracle',
-          path: ecosystemPath + 'waves-oracles/create-an-oracle-card-with-waves-oracle',
-        },
-        {
-          title: 'Создание карточки оракула при помощи транзакции данных',
-          path: ecosystemPath + 'waves-oracles/create-an-oracle-card-with-a-data-transaction',
-        },
-        {
-          title: 'Карточка оракула',
-          path: ecosystemPath + 'waves-oracles/oracle-card',
-        },
-        {
-          title: 'Обновление карточки оракула',
-          path: ecosystemPath + 'waves-oracles/updating-oracle-card',
-        },
-        {
-          title: 'Инструмент отправки транзакций данных',
-          path: ecosystemPath + 'waves-oracles/data-transaction-tool',
-        },
-        {
-          title: 'Как создать оракул',
-          path: ecosystemPath + 'waves-oracles/how-to-create-an-oracle',
-        },
-      ],
-    },
-    {
-      title: 'Token Rating',
-      path: ecosystemPath + 'waves-token-rating/about-waves-token-rating',
-      children: [
-        {
-          title: 'Интерфейс пользователя',
-          path: ecosystemPath + 'waves-token-rating/user-interface',
-        },
-        {
-          title: 'Формула рейтинга',
-          path: ecosystemPath + 'waves-token-rating/rating-formula',
-        },
-        {
-          title: 'Транзакция данных с оценкой пользователя',
-          path: ecosystemPath + 'waves-token-rating/data-transaction-with-user-s-rate',
-        },
-        {
-          title: 'Транзакция данных оракула Token Rating',
-          path: ecosystemPath + 'waves-token-rating/data-transaction-of-the-token-rating-oracle',
-        },
-        {
-          title: 'Управление токеном',
-          path: ecosystemPath + 'waves-token-rating/token-management',
-        },
-      ],
-    },
   ],
 
   [keepInTouchPath]: [
