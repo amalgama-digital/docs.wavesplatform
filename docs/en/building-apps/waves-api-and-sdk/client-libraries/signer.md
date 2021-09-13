@@ -175,7 +175,7 @@ Add library initialization to your app.
    import { ProviderKeeper } from '@waves/provider-keeper';
 
    const signer = new Signer({
-     // Specify URL of the node on MainNet
+     // Specify URL of the node on Mainnet
      NODE_URL: 'https://nodes.wavesnodes.com'
    });
    signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
