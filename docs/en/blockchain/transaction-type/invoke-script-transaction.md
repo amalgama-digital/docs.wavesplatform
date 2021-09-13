@@ -120,6 +120,8 @@ where:
 | payment.assetId | ID of token in payment, base58 encoded. `null` means that the payment is in WAVES |
 | *stateChanges* | Script actions performed by the callable function and [dApp-to-dApp invocation](/en/ride/advanced/dapp-to-dapp) results |
 
+> If the `call` field is not specified, the [default function](/en/ride/functions/callable-function#default-callable-function) of the dApp is invoked.
+
 The `stateChanges` structure does not need to be filled when sending a transaction, and it is not stored on the blockchain. The node returns this structure when providing transaction data via the REST API.
 
 <!--| extraFeePerStep | Extra fee for each stage of computations, see the [Continued Computations](/en/ride/advanced/continuation) article. The extra fee is specified in the same token as the transaction fee, in atomic units. A value other than null or 0 is only valid when the version 5 dApp script is invoked. The field is added in transaction version 3 || сontinuationTransactionIds | List of the Continuation transactions in the computation sequence. The field is added in transaction version 3 |-->

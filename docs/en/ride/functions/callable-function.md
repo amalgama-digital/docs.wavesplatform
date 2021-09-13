@@ -160,3 +160,107 @@ The Invoke Script transaction is saved on the blockchain and a fee is charged fo
 However, if the callable function failed or [threw an exception](/en/ride/exceptions) before the [complexity](/en/ride/base-concepts/complexity) of performed calculations exceeded the [threshold for saving failed transactions](/en/ride/limits/), the transaction is discarded and the fee is not charged.
 
 This rule is applied after activation of feature #15 “Ride V4, VRF, Protobuf, Failed transactions” and doesn't depend on the Standard library version used. Keep it in mind when developing a dApp script. For more information, see the [Transaction Validation](/en/blockchain/transaction/transaction-validation) article.
+
+## <a id="default-callable-function">Default Callable Function
+
+In a dApp script, you can define a default callable function. The default function must be named `default` and have no arguments:
+
+```scala
+@Callable(i)
+func default() = {
+   ...
+}
+```
+
+If no `call` field is specified in an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction), the default function is invoked.
+
+<details><summary>Example transaction</summary>
+
+```json
+[
+  {
+    "type": 16,
+    "id": "FgohhmifAVteaXJo2hdFLY8WZw2mr28ZbGWg4FSTdYCZ",
+    "sender": "3MsX9C2MzzxE4ySF5aYcJoaiPfkyxZMg4cW",
+    "senderPublicKey": "AXbaBkJNocyrVpwqTzD4TpUY8fQ6eeRto9k1m2bNCzXV",
+    "fee": 100500000,
+    "feeAssetId": null,
+    "timestamp": 1631535715165,
+    "proofs": [
+      "2gmg4vQfuxYyfmNz3sdgcSQJapQnW9Dgvtn7ud1GQxoo9jq1KGL5QV3ibCfEJFFvdhVy2iMTrUsBin7U15hbgDKH"
+    ],
+    "version": 2,
+    "chainId": 84,
+    "dApp": "3MsAegXUbgdqWvVLJwukbHHys6m1h2o8XXi",
+    "payment": [
+      {
+        "amount": 1,
+        "assetId": null
+      }
+    ],
+    "height": 1701274,
+    "applicationStatus": "succeeded",
+    "stateChanges": {
+      "data": [
+        {
+          "key": "bin",
+          "type": "binary",
+          "value": "base64:ASmhAx9X"
+        },
+        {
+          "key": "bool",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "key": "int",
+          "type": "integer",
+          "value": 1
+        },
+        {
+          "key": "str",
+          "type": "string",
+          "value": "test"
+        }
+      ],
+      "transfers": [
+        {
+          "address": "3MsX9C2MzzxE4ySF5aYcJoaiPfkyxZMg4cW",
+          "asset": "5yWcsRhLqhhVRfbi7VsuZH4ZC4e4sB9SWAcpNVVgv8Ud",
+          "amount": 1
+        }
+      ],
+      "issues": [
+        {
+          "assetId": "5yWcsRhLqhhVRfbi7VsuZH4ZC4e4sB9SWAcpNVVgv8Ud",
+          "name": "Asset",
+          "description": "",
+          "quantity": 1,
+          "decimals": 0,
+          "isReissuable": true,
+          "compiledScript": null,
+          "nonce": 0
+        }
+      ],
+      "reissues": [
+        {
+          "assetId": "5yWcsRhLqhhVRfbi7VsuZH4ZC4e4sB9SWAcpNVVgv8Ud",
+          "isReissuable": false,
+          "quantity": 1
+        }
+      ],
+      "burns": [
+        {
+          "assetId": "5yWcsRhLqhhVRfbi7VsuZH4ZC4e4sB9SWAcpNVVgv8Ud",
+          "quantity": 1
+        }
+      ],
+      "sponsorFees": [],
+      "leases": [],
+      "leaseCancels": [],
+      "invokes": []
+    }
+  }
+]
+```
+</details>
