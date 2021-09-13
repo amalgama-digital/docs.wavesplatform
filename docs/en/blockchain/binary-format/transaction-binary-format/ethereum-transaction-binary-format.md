@@ -19,9 +19,13 @@ message SignedTransaction {
 }
 ```
 
-The `ethereum_transaction` field contains the entire Ethereum transaction bytes, including the ECDSA signature (values `v`, `r`, `s`). The `proofs` array is empty in case of Ethereum transaction.
+The `ethereum_transaction` field contains the entire Ethereum transaction bytes, including the ECDSA signature (values `v`, `r`, `s`).
+
+The `proofs` array is empty in case of Ethereum transaction.
 
 ## Fields Interpretation
+
+Although the protobuf schema does not separate out fields of an Ethereum transaction, the Waves node parses the structure and interprets the fields as follows when validating and executing the transaction:
 
 * `gasLimit` is treated as a transaction fee. `gasPrice` is ignored. Fee can only be in WAVES.
 * `nonce` is treated as `timestamp`.

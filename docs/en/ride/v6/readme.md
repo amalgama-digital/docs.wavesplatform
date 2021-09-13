@@ -18,3 +18,22 @@ Added support for dApp scripts with complexity over 10,000. The execution of suc
 
 > Continued computations and dApp-to-dApp invocation are mutually exclusive, that is, they cannot be initiated by the same transaction.
 -->
+
+## MetaMask Support
+
+[More about MetaMask support on the Waves blockchain](/en/keep-in-touch/metamask)
+
+The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
+
+If an Ethereum transaction invokes a dApp script, the [Invocation](/en/ride/structures/common-structures/invocation) structure, available to the callable function, contains:
+- in the `caller` and `originCaller` fields: the sender's address in Waves format (26 bytes),
+- in the `callerPublicKey` and `originCallerPublicKey` fields: the public key of MetaMask user (64 bytes).
+
+If an Ethereum transaction is verified by an asset script, the transaction is interpreted as [TransferTransaction](/en/ride/structures/transaction-structures/transfer-transaction) or [InvokeScriptTransaction](/en/ride/structures/transaction-structures/invoke-script-transaction):
+- the `sender` field contains the sender's address in Waves format (26 bytes),
+- the `senderPublicKey` field contains the public key of MetaMask user (64 bytes).
+- the `bodyBytes` field is empty.
+
+> A transaction signature is not available in an asset script.
+
+An Ethereum transaction is never verified by a smart account or a dApp script verifier function, since th Ethereum transaction cannot be sent from a smart account or dApp.

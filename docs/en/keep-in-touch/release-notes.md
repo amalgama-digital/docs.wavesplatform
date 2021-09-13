@@ -106,12 +106,6 @@
 
 * Added support for Exchange transactions containing an order (or both orders) with an ECDSA signature.
 
-   Features JSON representation of an order with ECDSA signature:
-   * `sender` contains Waves address base58 encoded,
-   * `senderPublicKey` is 64 bytes base58 encoded,
-   * `eip712Signature` contains an ECDSA signature in HEX encoding,
-   * `proofs` array is missing.
-
    <details>
    <summary>Example order with ECDSA signature</summary>.
 
@@ -139,6 +133,12 @@
    }
    ```
    </details>
+
+   Features JSON representation of an order with ECDSA signature:
+   * `sender` contains Waves address base58 encoded,
+   * `senderPublicKey` is 64 bytes base58 encoded,
+   * `eip712Signature` contains an ECDSA signature in HEX encoding,
+   * `proofs` array is missing.
 
 * Added the new transaction type: Invoke Expression.
 
