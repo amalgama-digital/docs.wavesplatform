@@ -2,7 +2,7 @@
 
 ## September
 
-* [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer): added information about ProviderLedger.
+* [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer): added information about ProviderKeeper and ProviderLedger.
 
 ## July
 
