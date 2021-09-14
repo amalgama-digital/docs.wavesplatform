@@ -163,7 +163,7 @@ This rule is applied after activation of feature #15 “Ride V4, VRF, Protobuf, 
 
 ## <a id="default-callable-function">Default Callable Function
 
-In a dApp script, you can define a default callable function. The default function must be named `default` and have no arguments:
+The default callable function is a function that is named `default` and has no arguments:
 
 ```scala
 @Callable(i)
@@ -172,7 +172,7 @@ func default() = {
 }
 ```
 
-If no `call` field is specified in an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction), the default function is invoked.
+If the default callable function is defined in a dApp script, and no `call` field is specified in an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction), the default function is invoked.
 
 <details><summary>Example transaction</summary>
 
