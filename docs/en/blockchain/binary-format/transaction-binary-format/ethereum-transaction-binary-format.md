@@ -25,7 +25,7 @@ The `proofs` array is empty in case of Ethereum transaction.
 
 ## Fields Interpretation
 
-Although the protobuf schema does not separate out fields of an Ethereum transaction, the Waves node parses the structure and interprets the fields as follows when validating and executing the transaction:
+Although the protobuf schema does not distinguish fields of an Ethereum transaction, the Waves node parses the structure and interprets the fields as follows when validating and executing the transaction:
 
 * `gasLimit` is treated as a transaction fee. `gasPrice` is ignored. Fee can only be in WAVES.
 * `nonce` is treated as `timestamp`.

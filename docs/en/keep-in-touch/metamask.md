@@ -2,7 +2,7 @@
 
 [Metamask](https://metamask.io/) is a browser extension popular with Ethereum users. MetaMask provides a cryptocurrency wallet and a way to interact with decentralized applications.
 
-To attract MetaMask users to the Waves blockchain, the Waves protocol adds:
+To enable MetaMask users to perform actions on the Waves blockchain, the Waves protocol adds:
 * support for Ethereum transactions,
 * support for ECDSA signed orders in an [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction).
 
@@ -16,6 +16,8 @@ MetaMask support is added in node version 1.4.0 and enabled by feature #17 "Ride
 ## User Address
 
 An address of a MetaMask user consists of 20 bytes. A Waves address also contains 20 significant bytes, with addition of a prefix that is the same for all addresses of the blockchain network and a checksum (see also [Address Binary Format](/en/blockchain/binary-format/address-binary-format)). So, each address in MetaMask corresponds to a single Waves address and vice versa: the same 20 bytes are used as the address in the Ethereum representation and as the basis of the address in the Waves format.
+
+:warning: If you generate a key pair and an address from the MetaMask seed phrase according to Waves rules (see [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), you get **another** account. Its address does not match the address of the MetaMask user converted to the Waves format.
 
 In UIs, the MetaMask user address is represented in HEX encoding, and the Waves address in base58. You can use [Waves Explorer](/en/ecosystem/waves-explorer/) to convert the address from one format to another.
 
