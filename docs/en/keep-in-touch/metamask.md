@@ -17,7 +17,7 @@ MetaMask support is added in node version 1.4.0 and enabled by feature #17 "Ride
 
 An address of a MetaMask user consists of 20 bytes. A Waves address also contains 20 significant bytes, with addition of a prefix that is the same for all addresses of the blockchain network and a checksum (see also [Address Binary Format](/en/blockchain/binary-format/address-binary-format)). So, each address in MetaMask corresponds to a single Waves address and vice versa: the same 20 bytes are used as the address in the Ethereum representation and as the basis of the address in the Waves format.
 
-:warning: If you generate a key pair and an address from the MetaMask seed phrase according to Waves rules (see [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), you get **another** account. Its address does not match the address of the MetaMask user converted to the Waves format.
+:warning: If you generate a key pair and an address from the MetaMask seed phrase according to Waves rules (see [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), you get **another** account; its address does not match the address of the MetaMask user converted to the Waves format. There is no way to get the Waves seed phrase corresponding to the same address from the MetaMask seed phrase.
 
 In UIs, the MetaMask user address is represented in HEX encoding, and the Waves address in base58. You can use [Waves Explorer](/en/ecosystem/waves-explorer/) to convert the address from one format to another.
 
@@ -25,20 +25,22 @@ In UIs, the MetaMask user address is represented in HEX encoding, and the Waves 
 
 A Waves node provides RPC API functions required for using MetaMask.
 
-To connect the Waves network, a user selects “Custom RPC” in the list of networks and specifies the connection parameters:
+Connecting MetaMask to the Waves network can be done manually or programmatically.
+
+To connect manually, a user selects “Custom RPC” in the list of networks and specifies the connection parameters:
 
 * Network Name: for example, Waves Stagenet.
 * New RPC URL: the URL of a Waves node with an open RPC API, for example, the URL of the pool of public nodes `https://nodes-stagenet.wavesnodes.com/`.
 * Chain ID: 83 for Stagenet.
 * Currency Symbol: WAVES.
 
-As a result, MetaMask displays the Waves network as available.
-
-Connection to the Waves network can also be done programmatically. For example, a web app can use the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with ProviderMetaMask:
+To connect programmatically, a web app can use the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with ProviderMetaMask:
 1. The application calls the `login()` function.
 2. Signer calls the corresponding function of ProviderMetaMask, and ProviderMetaMask calls the MetaMask API.
 3. MetaMask opens a window where the user confirms the connection to the network.
 4. After receiving the confirmation, MetaMask adds the connection and returns the address of the user.
+
+As a result, MetaMask displays the Waves network as available.
 
 ## Token Transfer
 
@@ -87,8 +89,6 @@ In an [Exchange transaction](/en/blockchain/transaction-type/exchange-transactio
 
 ## Support in Ride
 
-The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
-
 If an Ethereum transaction invokes a dApp script, the [Invocation](/en/ride/structures/common-structures/invocation) structure, available to the callable function, contains:
 - in the `caller` and `originCaller` fields: the sender's address in Waves format (26 bytes),
 - in the `callerPublicKey` and `originCallerPublicKey` fields: the public key of MetaMask user (64 bytes).
@@ -101,3 +101,8 @@ If an Ethereum transaction is verified by an asset script, the transaction is in
 > A transaction signature is not available in an asset script.
 
 An Ethereum transaction is never verified by a smart account or a dApp script verifier function, since th Ethereum transaction cannot be sent from a smart account or dApp.
+
+In Standart library version 6:
+
+* The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
+* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a transfer transaction.
