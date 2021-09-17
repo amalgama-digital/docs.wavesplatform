@@ -68,7 +68,7 @@ A web app can invoke a dApp script on behalf of a MetaMask user, using the [Sign
 
 Notes:
 - MetaMask does not support signing a transaction without broadcasting it, so the `sign()` method should not be used.
-- Waves node does not support transaction speeding up or cancellation. Speeding up creates a new transaction with a different `timestamp`, so both transactions may be added to the blockchain. Cancellation of the transaction is rejected by the node.
+- Waves node does not support transaction speeding up or cancellation and only processes the original transaction.
 
 ## Ethereum Transaction Features
 
