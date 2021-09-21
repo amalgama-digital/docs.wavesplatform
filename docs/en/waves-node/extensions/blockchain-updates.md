@@ -1314,7 +1314,7 @@ Unlike in transactions, account addresses in `TransactionMetadata` are given in 
 | :--- | :--- | :--- |
 | d_app_address | bytes | dApp address |
 | function_name | string | Callable function name. |
-| arguments | repeated Argument | Arguments for the callable function |
+| arguments | repeated [InvokeScriptResult.Call.Argument](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto#L61) | Arguments for the callable function |
 | payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Payments attached to the invocation |
 | result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Script actions performed by the callable function |
 
