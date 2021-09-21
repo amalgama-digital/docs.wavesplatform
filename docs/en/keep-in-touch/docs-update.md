@@ -1,5 +1,9 @@
 # Documentation Updates
 
+## September
+
+* [Node Configuration](/en/waves-node/node-configuration): added the `minimum-peers` parameter.
+
 ## July
 
 ### Blockchain
@@ -14,7 +18,6 @@
 ### Node
 
 * [Slow requests](/en/waves-node/node-api/slow-requests)
-* [Node Configuration](/en/waves-node/node-configuration): added the `minimum-peers` parameter.
 
 ## May
 

@@ -637,7 +637,7 @@ In the last case, check the transaction status (see the next step) or broadcast 
 
 In case of success, the broadcast operation returns a JSON representation of the transaction with all parameters, including optional ones (in fact, the response body can match the request body).
 
-> To accept transactions by the `POST /transactions/broadcast` operation, the node must be connected to at least the number of peers specified in the `waves.rest-api.minimum-peers` parameter (3 by default), see the [REST API Settings](/en/waves-node/node-configuration#rest-api-settings) section. Otherwise the method returns an error with HTTP code 400:
+> To accept transactions by the `POST /transactions/broadcast` operation, the node must be connected to at least the number of peers specified in the `waves.rest-api.minimum-peers` parameter (1 by default), see the [REST API Settings](/en/waves-node/node-configuration#rest-api-settings) section. Otherwise the method returns an error with HTTP code 400:
 > ```json
 > {
 >   "error": 199,

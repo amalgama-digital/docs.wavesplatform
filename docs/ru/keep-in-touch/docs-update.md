@@ -1,5 +1,9 @@
 # Обновления в документации
 
+## Сентябрь
+
+* [Конфигурация ноды](/ru/waves-node/node-configuration) — добавлен параметр `minimum-peers`.
+
 ## Июль
 
 ### Блокчейн
@@ -14,7 +18,6 @@
 ### Нода
 
 * [Медленные запросы](/ru/waves-node/node-api/slow-requests)
-* [Конфигурация ноды](/ru/waves-node/node-configuration) — добавлен параметр `minimum-peers`.
 
 ## Май
 
