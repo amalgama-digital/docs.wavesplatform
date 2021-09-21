@@ -6,7 +6,7 @@
 
 [Минимальная комиссия](/ru/blockchain/transaction/transaction-fee) за транзакцию зависит от типа транзакции, наличия скрипта на аккаунте отправителя, использования смарт-ассетов, размера данных, выполняемых вызываемым скриптом действий и т. п.
 
-Для расчета минимальной комиссии можно использовать метод [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateFee_1). В теле запроса укажите данные транзакции в JSON, включая `type` и `senderPublicKey`. Если требуется подсчитать комиссию в спонсорском ассете, укажите в теле запроса поле `feeAssetId`. Поля `sender` и `fee` игнорируются.
+Для расчета минимальной комиссии можно использовать метод [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateTxFee). В теле запроса укажите данные транзакции в JSON, включая `type` и `senderPublicKey`. Если требуется подсчитать комиссию в спонсорском ассете, укажите в теле запроса поле `feeAssetId`. Поля `sender` и `fee` игнорируются.
 
 Пример запроса:
 
@@ -49,15 +49,15 @@ curl -X POST "https://nodes-testnet.wavesnodes.com/transactions/calculateFee"\
 
 Для генерации подписи предназначены методы:
 
-* [POST /transactions/sign](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/sign) — подписание транзакции от имени аккаунта из поля `sender` транзакции.
-* [POST /transactions/sign/{signerAddress}](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signWithSigner_1) — подписание транзакции от имени указанного аккаунта.
+* [POST /transactions/sign](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signTx) — подписание транзакции от имени аккаунта из поля `sender` транзакции.
+* [POST /transactions/sign/{signerAddress}](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signTxWithAddress) — подписание транзакции от имени указанного аккаунта.
 
 > Методы не подходят для транзакций обмена и транзакций обновления информации ассета.
 
 Методы являются приватными, для их вызова необходим [API-ключ](/ru/waves-node/node-api/api-key). В теле запроса укажите данные транзакции в JSON, включая `type` и `sender`. Если не указано поле `timestamp`, используется текущее время ноды. Поле `senderPublicKey` игнорируется.
 
 
-Методы возвращают подписанную транзакцию в формате JSON. Тело ответа можно передать в качестве тела запроса в методы [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validate), [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signedBroadcast_1) (см. следующие шаги).
+Методы возвращают подписанную транзакцию в формате JSON. Тело ответа можно передать в качестве тела запроса в методы [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validateTx), [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/broadcastSignedTx) (см. следующие шаги).
 
 Пример запроса:
 
@@ -425,7 +425,7 @@ curl -X POST "http://127.0.0.1:6869/transactions/sign"\
 
 Валидация проверяет, будет ли транзакция выполнена успешно при текущем состоянии блокчейна. К моменту отправки состояние блокчейна может измениться, поэтому предварительная валидация не гарантирует успех.
 
-Для предварительной валидации транзакции используйте публичный метод [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validate). В тело запроса вставьте подписанную транзакцию в формате JSON — например, тело ответа из шага 2.
+Для предварительной валидации транзакции используйте публичный метод [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validateTx). В тело запроса вставьте подписанную транзакцию в формате JSON — например, тело ответа из шага 2.
 
 Результат валидации представлен в ответе в поле `valid`. Если транзакция не прошла валидацию, причина ошибки указана в поле `error`.
 
@@ -605,7 +605,7 @@ curl -X POST "https://nodes-testnet.wavesnodes.com/debug/validate"\
 
 ## <a id="broadcast"></a>Шаг 4. Отправка транзакции
 
-Чтобы отправить транзакцию на блокчейн, используйте публичный метод [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signedBroadcast_1). В тело запроса вставьте подписанную транзакцию в формате JSON — например, тело ответа из шага 2.
+Чтобы отправить транзакцию на блокчейн, используйте публичный метод [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/broadcastSignedTx). В тело запроса вставьте подписанную транзакцию в формате JSON — например, тело ответа из шага 2.
 
 <details><summary>Пример запроса</summary>
  <pre class="language-bash"><code>
@@ -650,8 +650,8 @@ HTTP-коды ответа:
 ## Шаг 5. Проверка статуса транзакции
 
 Чтобы проверить наличие транзакции на блокчейне, используйте один из публичных методов: 
-* [GET /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/status_3) — для проверки статуса одной или нескольких транзакций.
-* [POST /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/status_4) — для большого количества транзакций.
+* [GET /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/getTxStatuses) — для проверки статуса одной или нескольких транзакций.
+* [POST /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/getTxStatusesViaPost) — для большого количества транзакций.
 
 Пример запроса:
 

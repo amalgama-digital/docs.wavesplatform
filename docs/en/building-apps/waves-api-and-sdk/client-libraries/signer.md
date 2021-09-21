@@ -22,9 +22,11 @@ Signer implements developer-friendly protocol for interacting with Provider as w
 
 For now, you can use one of the following Providers:
 
-* [ProviderSeed](https://github.com/wavesplatform/provider-seed) developed by Waves team creates user account from seed. ProviderSeed can be used at the app debugging stage.
+* [ProviderKeeper](https://github.com/wavesplatform/provider-keeper) uses [Waves Keeper](/en/ecosystem/waves-keeper/) browser extension.
+* [ProviderCloud](https://github.com/waves-exchange/provider-cloud) developed by Waves.Exchange team uses an Email-based Waves.Exchange account.
 * [ProviderWeb](https://github.com/waves-exchange/provider-web) developed by Waves.Exchange team uses an account created or imported into the Waves.Exchange web app via user's private key or seed phrase.
-* [ProviderCloud](https://github.com/waves-exchange/provider-cloud) developed by Waves.Exchange team uses an email-based Waves.Exchange.
+* [ProviderLedger](https://www.npmjs.com/package/@waves/provider-ledger) uses Ledger Nano X or Ledger Nano S device.
+* [ProviderSeed](https://github.com/wavesplatform/provider-seed) creates user account from seed. ProviderSeed can be used at the app debugging stage.
 
 You can also develop your own Provider, see the [Provider Interface](#provider-interface) section below.
 
@@ -50,22 +52,10 @@ Signer supports all browsers except Brave.
    npm i @waves/signer
    ```
 
-* To install ProviderSeed developed by Waves team, use
+* To install ProviderKeeper, use
 
    ```bash
-   npm i @waves/provider-seed @waves/waves-transactions
-   ```
-
-* To install ProviderWeb developed by Waves.Exchange, use
-
-   ```bash
-   npm i @waves.exchange/provider-web
-   ```
-
-   For Windows, use the following format:
-
-   ```bash
-   npm i '@waves.exchange/provider-web'
+   npm i @waves/provider-keeper
    ```
 
 * To install ProviderCloud developed by Waves.Exchange, use
@@ -80,9 +70,88 @@ Signer supports all browsers except Brave.
    npm i '@waves.exchange/provider-cloud'
    ```
 
+* To install ProviderWeb developed by Waves.Exchange, use
+
+   ```bash
+   npm i @waves.exchange/provider-web
+   ```
+
+   For Windows, use the following format:
+
+   ```bash
+   npm i '@waves.exchange/provider-web'
+   ```
+
+* To install ProviderLedger, use
+
+   ```bash
+   npm i @waves/provider-ledger
+   ```
+
+* To install ProviderSeed, use
+
+   ```bash
+   npm i @waves/provider-seed @waves/waves-transactions
+   ```
+
 ### 2. Library initialization
 
 Add library initialization to your app.
+
+* For Testnet & ProviderKeeper:
+
+   ```js
+   import { Signer } from '@waves/signer';
+   import { ProviderKeeper } from '@waves/provider-keeper';
+
+   const signer = new Signer({
+   // Specify URL of the node on Testnet
+     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
+   });
+   signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
+   ```
+
+* For Testnet & Waves.Exchange ProviderCloud:
+
+   ```js
+   import { Signer } from '@waves/signer';
+   import { ProviderCloud } from '@waves.exchange/provider-cloud';
+   
+   const signer = new Signer({
+     // Specify URL of the node on Testnet
+     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
+   });
+   signer.setProvider(new ProviderCloud())
+   ```
+
+* For Testnet & Waves.Exchange ProviderWeb:
+
+   ```js
+   import { Signer } from '@waves/signer';
+   import { ProviderWeb } from '@waves.exchange/provider-web';
+   
+   const signer = new Signer({
+     // Specify URL of the node on Testnet
+     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
+   });
+   signer.setProvider(new ProviderWeb('https://testnet.waves.exchange/signer/'))
+   ```
+
+* For Testnet & ProviderLedger:
+
+   ```js
+   import { Signer } from '@waves/signer';
+   import { ProviderLedger } from '@waves/provider-ledger';
+   
+   const signer = new Signer({
+     // Specify URL of the node on Testnet
+     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
+   });
+   signer.setProvider(new ProviderLedger({
+     // Specify chain ID of Testnet
+     wavesLedgerConfig: { networkCode: 84, },
+   }));
+   ```
 
 * For Testnet & ProviderSeed:
 
@@ -99,30 +168,27 @@ Add library initialization to your app.
    signer.setProvider(new ProviderSeed(seed));
    ```
 
-* For Testnet & Waves.Exchange ProviderWeb:
+* For Mainnet & ProviderKeeper:
 
    ```js
    import { Signer } from '@waves/signer';
-   import { ProviderWeb } from '@waves.exchange/provider-web';
-   
+   import { ProviderKeeper } from '@waves/provider-keeper';
+
    const signer = new Signer({
-     // Specify URL of the node on Testnet
-     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
+     // Specify URL of the node on Mainnet
+     NODE_URL: 'https://nodes.wavesnodes.com'
    });
-   signer.setProvider(new ProviderWeb('https://testnet.waves.exchange/signer/'))
+   signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
    ```
 
-* For Testnet & Waves.Exchange ProviderCloud:
+* For Mainnet & Waves.Exchange ProviderCloud:
 
    ```js
    import { Signer } from '@waves/signer';
-   import { ProviderCloud } from '@waves.exchange/provider-cloud';
+   import { ProviderCloud} from '@waves.exchange/provider-cloud';
    
-   const signer = new Signer({
-     // Specify URL of the node on Testnet
-     NODE_URL: 'https://nodes-testnet.wavesnodes.com'
-   });
-   signer.setProvider(new ProviderCloud())
+   const signer = new Signer();
+   signer.setProvider(new ProviderCloud());
    ```
 
 * For Mainnet & Waves.Exchange ProviderWeb:
@@ -135,14 +201,15 @@ Add library initialization to your app.
    signer.setProvider(new ProviderWeb());
    ```
 
-* For Mainnet & Waves.Exchange ProviderCloud:
+* For Mainnet & ProviderLedger:
 
    ```js
    import { Signer } from '@waves/signer';
-   import { ProviderCloud} from '@waves.exchange/provider-cloud';
-   
+   import { ProviderLedger } from '@waves/provider-ledger';
+
    const signer = new Signer();
-   signer.setProvider(new ProviderCloud());
+   const provider = new ProviderLedger();
+   signer.setProvider(provider);
    ```
 
 After that you will be able to use Signer features in the app.

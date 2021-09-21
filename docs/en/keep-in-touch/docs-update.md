@@ -2,6 +2,7 @@
 
 ## September
 
+* [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer): added information about ProviderKeeper and ProviderLedger.
 * [Node Configuration](/en/waves-node/node-configuration): added the `minimum-peers` parameter.
 
 ## July

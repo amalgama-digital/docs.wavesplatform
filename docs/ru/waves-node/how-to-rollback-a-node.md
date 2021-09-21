@@ -2,7 +2,7 @@
 
 Откат блоков после заданной высоты позволяет быстро восстановить работу ноды в случае обнаружения форка, не загружая базу данных блокчейна целиком.
 
-В случае настроек по умолчанию можно откатить **не более 2000 блоков**. Используйте метод Node REST API `POST /debug/rollback` с **API-ключом**  (см. [Waves Full Node API Swagger UI](https://nodes.wavesnodes.com/api-docs/index.html#/debug/rollback_1)). Например:
+В случае настроек по умолчанию можно откатить **не более 2000 блоков**. Используйте метод Node REST API `POST /debug/rollback` с **API-ключом**  (см. [Waves Full Node API Swagger UI](https://nodes.wavesnodes.com/api-docs/index.html#/debug/rollbackToHeight)). Например:
 
 ```js
 {

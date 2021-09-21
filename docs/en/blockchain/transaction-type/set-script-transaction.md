@@ -32,7 +32,7 @@ If the sender's account already has a script assigned, and the complexity of the
 | Field | Description |
 | :--- | :--- |
 | chainId | [Chain ID](/en/blockchain/blockchain-network/#chain-id) |
-| script | Compiled script, base64 encoded. Account script up to 8192 bytes, dApp script up to 32,767 bytes.<br>`null` – delete script |
+| script | Compiled script, base64 encoded. Account script up to 8192 bytes, dApp script up to 32,768 bytes.<br>`null` – delete script |
 
 The fields that are common to all types of transactions are described in the [Transaction](/en/blockchain/transaction/#json-representation) article.
 

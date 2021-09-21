@@ -6,7 +6,7 @@
 
 The [minimum transaction fee](/en/blockchain/transaction/transaction-fee) depends on the transaction type, whether the script is assigned to the sender's account, smart assets involved, data size, actions performed by the script being invoked, etc.
 
-You can use the [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateFee_1) operation to calculate the minimum fee. In the request body, specify the transaction data in JSON, including `type` and `senderPublicKey`. If you want to calculate the fee in the sponsored asset, specify the `feeAssetId` field in the request body. The `sender` and `fee` fields are ignored.
+You can use the [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateTxFee) operation to calculate the minimum fee. In the request body, specify the transaction data in JSON, including `type` and `senderPublicKey`. If you want to calculate the fee in the sponsored asset, specify the `feeAssetId` field in the request body. The `sender` and `fee` fields are ignored.
 
 Request example:
 
@@ -49,14 +49,14 @@ Response body:
 
 The following operations are used to generate a signature:
 
-* [POST /transactions/sign](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/sign) signs a transaction on behalf of the account whose address is specified in the `sender` field.
-* [POST /transactions/sign/{signerAddress}](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signWithSigner_1) signs a transaction on behalf of the specified account.
+* [POST /transactions/sign](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signTx) signs a transaction on behalf of the account whose address is specified in the `sender` field.
+* [POST /transactions/sign/{signerAddress}](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signTxWithAddress) signs a transaction on behalf of the specified account.
 
 > The operations are not applicable for Exchange transactions and Update Asset Info transactions.
 
 The endpoints are private, so you should specify your [API key](/en/waves-node/node-api/api-key) in the request header. In the request body, paste the transaction data in JSON, including `type` and ` sender`. If `timestamp` is omitted, current node's time is used. `senderPublicKey` is ignored.
 
-The operations return the signed transaction in JSON format. The response body can be passed as a request body to the [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validate) and [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signedBroadcast_1) operations (see the next steps).
+The operations return the signed transaction in JSON format. The response body can be passed as a request body to the [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validateTx) and [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/broadcastSignedTx) operations (see the next steps).
 
 Request example:
 
@@ -424,7 +424,7 @@ For such transactions, pre-validation can help to reduce unnecessary costs. You 
 
 Pre-validation is the check whether the transaction is successful under the current state of the blockchain. By the time of broadcast the state may change, so the transaction may fail even if pre-validation is passed.
 
-To pre-validate the transaction, use the public operation [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validate). In the request body, paste the signed transaction in JSON, for example, the response body from step 2.
+To pre-validate the transaction, use the public operation [POST /debug/validate](https://nodes.wavesnodes.com/api-docs/index.html#/debug/validateTx). In the request body, paste the signed transaction in JSON, for example, the response body from step 2.
 
 The `valid` field of the response contains the result of transaction validation. If the validation failed, the `error` field indicates the reason.
 
@@ -604,7 +604,7 @@ curl -X POST "https://nodes-testnet.wavesnodes.com/debug/validate"\
 
 ## <a id="broadcast"></a>Step 4. Broadcast Transaction
 
-To send a transaction to the blockchain, use the public operation [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/signedBroadcast_1). In the request body, paste the signed transaction in JSON, for example, the response body from step 2.
+To send a transaction to the blockchain, use the public operation [POST /transactions/broadcast](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/broadcastSignedTx). In the request body, paste the signed transaction in JSON, for example, the response body from step 2.
 
 <details><summary>Request example</summary>
  <pre class="language-bash"><code>
@@ -648,8 +648,8 @@ In case of success, the broadcast operation returns a JSON representation of the
 ## Step 5. Check Transaction Status
 
 To check if a transaction is added to the blockchain, use one of the public operations:
-* [GET /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/status_3) for check the status of one or more transactions.
-* [POST /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/status_4) for a large number of transactions.
+* [GET /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/getTxStatuses) for check the status of one or more transactions.
+* [POST /transaction/status](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/getTxStatusesViaPost) for a large number of transactions.
 
 Request example:
 

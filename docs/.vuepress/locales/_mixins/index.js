@@ -127,14 +127,6 @@ module.exports = {
                         text: 'Waves Keeper',
                         link: '/en/ecosystem/waves-keeper/',
                     },
-                    oracles: {
-                        text: 'Oracles',
-                        link: '/en/ecosystem/waves-oracles/about-waves-oracles',
-                    },
-                    torenRating: {
-                        text: 'Token Rating',
-                        link: '/en/ecosystem/waves-token-rating/about-waves-token-rating',
-                    },
                 },
             },
             miscellaneous: {

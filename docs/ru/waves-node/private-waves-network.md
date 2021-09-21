@@ -120,7 +120,7 @@ waves {
 
 В секции `waves.network` задайте значения параметров `port`, `known-peers` (список [нод вашего блокчейна](#добавление-нод-в-свою-сеть)), `node-name` и `declared-address`.
 
-Чтобы включить REST API вашей ноды, задайте параметры `enable`, `port` и `api-key-hash` (можно создать [тут](https://nodes.wavesnodes.com/api-docs/index.html#/utils/hashSecure_1)) в секции `waves.rest-api`.
+Чтобы включить REST API вашей ноды, задайте параметры `enable`, `port` и `api-key-hash` (можно создать [тут](https://nodes.wavesnodes.com/api-docs/index.html#/utils/hashSecure)) в секции `waves.rest-api`.
 
 Секция `waves.blockchain.custom.functionality` позволяет настроить высоту активации различных фич блокчейна. Вы можете включать/выключать фичи ноды с помощью параметра `pre-activated-features`. Поддерживаемые фичи описаны в статье [Фичи](/ru/waves-node/features/). Вы можете добавлять новые фичи, которых нет в конфигурации стандартных нод.
 
