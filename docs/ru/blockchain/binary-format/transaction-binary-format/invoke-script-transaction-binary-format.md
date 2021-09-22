@@ -50,7 +50,7 @@ message Amount {
 | **4** | [Байт сети](/ru/blockchain/blockchain-network/#байт-сети) |  | [Byte](/ru/blockchain/blockchain/blockchain-data-types) | 1 | 87 — для Mainnet<br>84 — для Testnet<br>83 — для Stagenet |
 | **5** | Открытый ключ аккаунта отправителя транзакции | senderPublicKey | Array[[Byte](/ru/blockchain/blockchain/blockchain-data-types)] | 32 |  |
 | **6** | [Адрес](/ru/blockchain/account/address) или [псевдоним](/ru/blockchain/account/alias) | dApp | См. [Бинарный формат адреса](/ru/blockchain/binary-format/address-binary-format), [Бинарный формат псевдонима](/ru/blockchain/binary-format/alias-binary-format) | `S` | Если первым байтом поля является 1, то за ним следует адрес. В этом случае `S` = 26.<br>Если первым байтом поля является 2, то за ним следует псевдоним. В этом случае 8&nbsp;<=&nbsp;`S`&nbsp;<=&nbsp;34 |
-| **7.1** | Флаг наличия функции |  | [Byte](/ru/blockchain/blockchain/blockchain-data-types) | 1 | 0 — в dApp должна быть вызвана функция по умолчанию.<br>1 — в dApp должна быть вызвана функция из текущей транзакции |
+| **7.1** | Флаг наличия функции |  | [Byte](/ru/blockchain/blockchain/blockchain-data-types) | 1 | 0 — в dApp вызывается [функция по умолчанию](/ru/ride/functions/callable-function#default-callable-function).<br>1 — в dApp должна быть вызвана функция из текущей транзакции |
 | **7.2** | Идентификатор вызова функции |  | [Byte](/ru/blockchain/blockchain/blockchain-data-types) | 1 | Константа. Значение должно быть равно 9 |
 | **7.3** | Идентификатор типа функции |  | [Byte](/ru/blockchain/blockchain/blockchain-data-types) | 1 | Константа. Значение должно быть равно 1 |
 | **7.4** | Длина имени функции | | [Int](/ru/blockchain/blockchain/blockchain-data-types) | 4 |  |
