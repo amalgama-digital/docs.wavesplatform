@@ -96,13 +96,14 @@ If an Ethereum transaction invokes a dApp script, the [Invocation](/en/ride/stru
 If an Ethereum transaction is verified by an asset script, the transaction is interpreted as [TransferTransaction](/en/ride/structures/transaction-structures/transfer-transaction) or [InvokeScriptTransaction](/en/ride/structures/transaction-structures/invoke-script-transaction):
 - the `sender` field contains the sender's address in Waves format (26 bytes),
 - the `senderPublicKey` field contains the public key of MetaMask user (64 bytes).
-- the `bodyBytes` field is empty.
+- the `bodyBytes` field is empty,
+- the `version` field is 0.
 
 > A transaction signature is not available in an asset script.
 
-An Ethereum transaction is never verified by a smart account or a dApp script verifier function, since th Ethereum transaction cannot be sent from a smart account or dApp.
+An Ethereum transaction is never verified by a smart account or a dApp script verifier function, since the Ethereum transaction cannot be sent from a smart account or dApp.
 
-In Standart library version 6:
+In Standard library version 6:
 
 * The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
-* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a transfer transaction.
+* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a transfer transaction. The `proofs` array contains 8 empty values.

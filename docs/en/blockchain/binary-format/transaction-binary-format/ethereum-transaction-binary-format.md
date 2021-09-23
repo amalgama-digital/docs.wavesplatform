@@ -27,7 +27,8 @@ The `proofs` array is empty in case of Ethereum transaction.
 
 Although the protobuf schema does not distinguish fields of an Ethereum transaction, the Waves node parses the structure and interprets the fields as follows when validating and executing the transaction:
 
-* `gasLimit` is treated as a transaction fee. `gasPrice` is ignored. Fee can only be in WAVES.
+* `gasLimit` is treated as a transaction fee. Fee can only be in WAVES.
+* `gasPrice` must be 10, otherwise the transaction is rejected.
 * `nonce` is treated as `timestamp`.
 * If the `value` field is non-empty, the transaction is interpreted as a WAVES transfer. In this case the `data` field must be empty.
 * If the `data` field contains an invocations of the `transfer` method of the ERC20 smart contract and the `to` field contains the first 20 bytes of a custom token ID, the transaction is interpreted as a transfer of that token.
