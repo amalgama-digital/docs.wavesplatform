@@ -13,7 +13,7 @@ Ride — расширение Visual Studio Code для работы с Ride и 
 ## Установка и настройка
 
 1. Скачайте и установите Visual Studio Code: <https://code.visualstudio.com/>.
-2. Перейдите в раздел **Extensions** (Ctrl&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X или Cmd&nbsp;⌘&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X), найдите и установите расширение Ride.
+2. Перейдите в раздел **Extensions** (Ctrl&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X или Cmd&nbsp;⌘&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X), найдите и установите расширение Ride **версии 1.3.x**.
 
 ![](./_assets/vscode.png)
 
