@@ -169,66 +169,44 @@ module.exports = {
         copyright: '© 2019—2021 Waves Technologies',
         email: '',
         resourcesCategories: {
-            about: {
-                title: 'About',
-                links: {
-                    wavesBlockchain: {
-                        title: 'Waves Tech',
-                        link: 'https://waves.tech',
-                    },
-                    blog: {
-                        title: 'Blog',
-                        link: 'https://medium.com/wavesprotocol',
-                    },
-                    forum: {
-                        title: 'Forum',
-                        link: 'https://forum.waves.tech',
-                    },
-                    social: {
-                        title: 'Socials',
-                        link: 'https://docs.waves.tech/en/keep-in-touch/',
-                    },
-
-                },
-            }, 
-            forDevelopers: {
-                title: 'Develop',
-                links: {
-                    web3Course: {
-                        title: 'Web3 Course',
-                        link: 'https://www.coursera.org/learn/mastering-web3-waves',
-                    },
-                    gitHub: {
-                        title: 'GitHub',
-                        link: 'https://github.com/wavesplatform',
-                    },
-                    chat: {
-                        title: 'Developer chat',
-                        link: 'https://t.me/waves_ride_dapps_dev'
-                    },
-                },
-            },
             productsAndTools: {
-                title: 'Tools',
+                title: 'Products & tools',
                 links: {
-                    wavesExplorer: {
-                        title: 'Waves Explorer',
-                        link: 'https://wavesexplorer.com/',
+                    wavesKeeper: {
+                        title: 'Waves Keeper',
+                        link: 'https://docs.waves.tech/en/ecosystem/waves-keeper/',
+                    },
+                    wavesBlockchain: {
+                        title: 'Waves Blockchain',
+                        link: 'https://waves.tech/waves-protocol',
                     },
                     WavesIde: {
                         title: 'Waves IDE',
                         link: 'https://waves-ide.com/',
                     },
-                    wavesKeeper: {
-                        title: 'Waves Keeper',
-                        link: 'https://docs.waves.tech/en/ecosystem/waves-keeper/',
-                    },
-                    wavesSigner: {
-                        title: 'Waves Signer',
-                        link: 'https://docs.waves.tech/en/building-apps/waves-api-and-sdk/client-libraries/signer',
+                    wavesExplorer: {
+                        title: 'Waves Explorer',
+                        link: 'https://wavesexplorer.com/',
                     },
                 },
             }, 
+            forDevelopers: {
+                title: 'For developers',
+                links: {
+                    gitHub: {
+                        title: 'GitHub',
+                        link: 'https://github.com/wavesplatform',
+                    },
+                    stackOverflow: {
+                        title: 'Stack Overflow',
+                        link: 'https://stackoverflow.com/questions/tagged/wavesplatform',
+                    },
+                    web3Course: {
+                        title: 'Web3 Course',
+                        link: 'https://www.coursera.org/learn/mastering-web3-waves',
+                    },
+                },
+            },
             // legal: {
             //     title: 'Legal',
             //     links: {
@@ -250,6 +228,27 @@ module.exports = {
             //         },
             //     },
             // },
+            social: {
+                title: 'Social',
+                links: {
+                    blog: {
+                        title: 'Blog',
+                        link: 'https://medium.com/wavesprotocol',
+                    },
+                    twitter: {
+                        title: 'Twitter',
+                        link: 'https://twitter.com/wavesprotocol',
+                    },
+                    telegram: {
+                        title: 'Telegram',
+                        link: 'https://t.me/wavesnews',
+                    },
+                    forum: {
+                        title: 'Forum',
+                        link: 'https://forum.waves.tech',
+                    },
+                },
+            },
         },
     },
 }
