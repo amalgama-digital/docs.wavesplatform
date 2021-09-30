@@ -1,5 +1,9 @@
 # Documentation Updates
 
+## October
+
+* [Any](/eb/ride/data-types/any): added information about `as` и `exactAs` macros.
+
 ## September
 
 * [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer): added information about ProviderKeeper and ProviderLedger.
