@@ -33,7 +33,7 @@ Examples:
    f3(88)                                  # Fails
    ```
 
-In the following example, the `second` function returns the value used by the `first` function (see [dApp-to-dApp Invocation](/en/ride/advanced/dapp-to-dapp)):
+In the following example, the `second` function returns the value used by the `first` function (see the [dApp-to-dApp Invocation](/en/ride/advanced/dapp-to-dapp) article):
 
 ```scala
 {-# STDLIB_VERSION 5 #-}
@@ -54,7 +54,7 @@ func second() = {
 }
 ```
 
-If the particular type of the `Any` is not known in advance, you can spot it using the [match-case](/en/ride/operators/match-case) operator.
+If the particular type of the `Any` value is not known in advance, you can spot it using the [match-case](/en/ride/operators/match-case) operator.
 
 Example:
 
