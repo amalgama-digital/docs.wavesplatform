@@ -69,5 +69,5 @@ func findString(a: Any) = {
       }
     case _ => throw("Data is not a string")
   }
-}****
+}
 ```
