@@ -2,6 +2,8 @@
 
 `Any` is an arbitrary data type. It is a common supertype of all types: an `Any` type value can be a string, a number, `unit`, a structure, a list, a tuple, etc.
 
+## as, exactAs
+
 If the particular type is known in advance, you can cast the value to that type using macros:
 
 * `as[T]`: returns a value of type `T`; if the value does not match the type, returns `unit`.
@@ -53,6 +55,8 @@ func second() = {
   ( [], 42 )
 }
 ```
+
+## match ... case
 
 If the particular type of the `Any` value is not known in advance, you can spot it using the [match-case](/en/ride/operators/match-case) operator.
 
