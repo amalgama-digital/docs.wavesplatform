@@ -37,7 +37,7 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | scriptHash(Address&#124;Alias): ByteVector&#124;Unit | Returns [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29) hash of the script assigned to a given account | 200 |
 | transactionHeightById(ByteVector):  Int&#124;Unit | Gets the [block height](/en/blockchain/block/block-height) of a transaction | 20 |
 | transferTransactionById(ByteVector): TransferTransaction&#124;Unit | Gets the data of a [transfer transaction](/en/blockchain/transaction-type/transfer-transaction) | 60 |
-| wavesBalance(Address&#124;Alias): Int | Gets account balance in [WAVES](/en/blockchain/token/waves) | 10 |
+| wavesBalance(Address&#124;Alias): BalanceDetails | Gets account balance in [WAVES](/en/blockchain/token/waves) | 10 |
 
 ## [Byte array functions](/en/ride/functions/built-in-functions/byte-array-functions)
 

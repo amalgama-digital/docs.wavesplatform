@@ -30,7 +30,7 @@
 | scriptHash(Address&#124;Alias): ByteVector&#124;Unit | Возвращает [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29)-хеш скрипта, установленного на аккаунте | 200 |
 | transactionHeightById(ByteVector):  Int&#124;Unit | Получает [высоту блока](/ru/blockchain/block/block-height) транзакции | 20 |
 | transferTransactionById(ByteVector): TransferTransaction&#124;Unit | Получает данные [транзакции перевода](/ru/blockchain/transaction-type/transfer-transaction) | 60 |
-| wavesBalance(Address&#124;Alias): Int | Получает баланс аккаунта в [WAVES](/ru/blockchain/token/waves) | 10 |
+| wavesBalance(Address&#124;Alias): BalanceDetails | Получает баланс аккаунта в [WAVES](/ru/blockchain/token/waves) | 10 |
 
 ## [Функции верификации](/ru/ride/functions/built-in-functions/verification-functions)
 
