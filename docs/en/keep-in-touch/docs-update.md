@@ -2,7 +2,7 @@
 
 ## October
 
-* [Any](/eb/ride/data-types/any): added information about `as` и `exactAs` macros.
+* [Any](/eb/ride/data-types/any): added information about `as` and `exactAs` macros.
 
 ## September
 

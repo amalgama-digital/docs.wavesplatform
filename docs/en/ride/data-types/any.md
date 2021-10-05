@@ -16,7 +16,7 @@ Examples:
    ```scala
    func f1(a: Any) = a.as[Int]
    f1(10).value() + 1                      # Returns 11
-   f1("Waves").isDefined()                 # Возвращает false
+   f1("Waves").isDefined()                 # Returns false
    ```
 
 * The value is a tuple:
