@@ -1,4 +1,4 @@
-# Monetary Fields Format
+# Numeric Fields Format
 
 Monetary values and some other numbers in API responses can take up to 64 bit. That can cause issues with programming languages that represent integers with fewer than 64 bit, such as JavaScript. To work around these issues, you can obtain such values as strings by specifying the following HTTP header in the request:
 
