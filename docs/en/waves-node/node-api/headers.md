@@ -1,6 +1,6 @@
 # Monetary Fields Format
 
-By default, monetary values are represented in API responses as numbers. These numbers can take up to 64 bit that can cause issues with programming languages that represent integers with fewer than 64 bit, such as JavaScript. To work around these issues, you can obtain monetary values as strings by specifying the following HTTP header in the request:
+Monetary values and some other numbers in API responses can take up to 64 bit. That can cause issues with programming languages that represent integers with fewer than 64 bit, such as JavaScript. To work around these issues, you can obtain such values as strings by specifying the following HTTP header in the request:
 
 ```
 Accept: application/json; large-significand-format=string
@@ -16,61 +16,41 @@ Below is the list of endpoints accepting this header:
 
 * `GET /addresses/balance/{address}/{confirmations}`
 
+   `GET /addresses/effectiveBalance/{address}/{confirmations}`
+
+   `GET /addresses/effectiveBalance/{address}`
+
+   `GET /addresses/balance/{address}`
+
    Field: `balance`.
 
 * `GET /addresses/balance/details/{address}`
 
    Fields: `regular`, `generating`, `available`, `effective`.
 
-* `GET /addresses/effectiveBalance/{address}/{confirmations}`
-
-   Field: `balance`.
-
-* `GET /addresses/effectiveBalance/{address}`
-
-   Field: `balance`.
-
-* `GET /addresses/balance/{address}`
-
-   Field: `balance`.
-
 * `GET /blocks/headers/last`
 
-   Fields: `reward`, `totalFee`.
+   `GET /blocks/headers/at/{height}`
 
-* `GET /blocks/headers/at/{height}`
+   `GET /blocks/headers/seq/{from}/{to}`
 
-   Fields: `reward`, `totalFee`.
-
-* `GET /blocks/headers/seq/{from}/{to}`
-
-   Fields: `reward`, `totalFee`.
+   Fields: `reward`, `desiredReward`, `totalFee`.
 
 * `GET /blocks/at/{height}`
 
-   Fields: `reward`, `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`, `totalFee`.
+   `GET /blocks/signature/{signature}`
 
-* `GET /blocks/signature/{signature}`
+   `GET /blocks/address/{address}/{from}/{to}`
 
-   Fields: `reward`, `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`, `totalFee`.
+   `GET /blocks/last`
 
-* `GET /blocks/address/{address}/{from}/{to}`
+   `GET /blocks/seq/{from}/{to}`
 
-   Fields: `reward`, `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`, `totalFee`.
-
-* `GET /blocks/last`
-
-   Fields: `reward`, `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`, `totalFee`.
-
-* `GET /blocks/seq/{from}/{to}`
-
-   Fields: `reward`, `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`, `totalFee`.
+   Fields: `reward`, `desiredReward`, `fee`, `totalFee`, transaction fields: `fee`, `amount`, `totalAmount`, `quantity`, `price`, `matcherFee`, `buyMatcherFee`, `sellMatcherFee`, `minSponsoredAssetFee`, `value`.
 
 * `GET /blockchain/rewards/{height}`
 
-   Fields: `totalWavesAmount`, `currentReward`, `minIncrement`.
-
-* `GET /blockchain/rewards`
+   `GET /blockchain/rewards`
 
    Fields: `totalWavesAmount`, `currentReward`, `minIncrement`.
 
@@ -78,61 +58,39 @@ Below is the list of endpoints accepting this header:
 
    Field: `feeAmount`.
 
-* `GET /transactions/info/{id}`
-
-   Fields: `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`.
-
-* `GET /transactions/unconfirmed/info/{id}`
-
-   Fields: `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`.
-
 * `GET /transactions/address/{address}/limit/{limit}`
 
-   Fields: `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`.
+   `POST /transactions/broadcast`
 
-* `POST /transactions/broadcast`
+   `GET /transactions/info`
 
-   Fields: `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`.
+   `GET /transactions/info/{id}`
 
-* `GET /transactions/unconfirmed`
+   `GET /transactions/unconfirmed`
 
-   Fields: `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`.
+   `GET /transactions/unconfirmed/info/{id}`
+
+   Fields: `fee`, `amount`, `totalAmount`, `quantity`, `price`, `matcherFee`, `buyMatcherFee`, `sellMatcherFee`, `minSponsoredAssetFee`, `value`.
 
 * `GET /assets/balance/{address}`
 
    Fields: `balance`, `minSponsoredAssetFee`, `sponsorBalance`, `quantity`, `fee`
 
-* `GET /assets/nft/{address}/limit/{limit}`
-
-   Fields: `balance`, `minSponsoredAssetFee`, `sponsorBalance`, `quantity`, `fee`
-
 * `GET /assets/{assetId}/distribution/{height}/limit/{limit}`
 
-   Field: `asset ID`.
+   Field: account balance in asset.
 
 * `GET /assets/details/{assetId}`
 
-   Field: `quantity`.
+   `GET /assets/nft/{address}/limit/{limit}`
+
+   Fields: `quantity`, `minSponsoredAssetFee`.
 
 * `GET /assets/balance/{address}/{assetId}`
 
-   Field: `balance`.
-
-* `GET /consensus/generatingbalance/{address}`
+   `GET /debug/balances/history/{address}`
 
    Field: `balance`.
-
-* `GET /debug/balances/history/{address}`
-
-   Field: `balance`.
-
-* `GET /debug/stateChanges/info/{id}`
-
-   Field: `fee`.
-
-* `GET /debug/stateChanges/address/{address}/limit/{limit}`
-
-   Fields: `fee`, `amount`, `sellMatcherFee`, `price`, `matcherFee`, `buyMatcherFee`, `totalAmount`.
 
 * `GET /debug/portfolios/{address}`
 
