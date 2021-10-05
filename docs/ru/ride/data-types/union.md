@@ -1,51 +1,45 @@
 # Union
 
-**Тип объединения** — тип данных, который содержит два или более типа данных.
+**Тип объединения** — тип данных, объединяющий два или более типа данных.
 
 Примеры: 
 
-* 
+* Аргумент функции `wavesBalance(Address|Alias): BalanceDetails` — объединение типов `Address` и `Alias`. Вызвать функцию можно с аргументом любого из этих типов.
 
+   ```scala
+   wavesBalance(Address(base58'3Mz9N7YPfZPWGd4yYaX6H53Gcgrq6ifYiH7'))
+   wavesBalance(Alias("merry"))   # Результат одинаковый
+   ```
 
-```scala
-let valueFromBlockchain = getString("3PHHD7dsVqBFnZfUuDPLwbayJiQudQJ9Ngf", "someKey") # Union(String | Unit)
-```
+* Функция `getInteger(Address|Alias, String): Int|Unit` возвращает целое число по ключу из хранилища данных указанного, а если запись с таким ключом отсутствует или значение имеет другой тип, возвращает [unit](/ru/ride/data-types/unit).
 
-Union-типы — это удобный способ работы с абстракциями. `Union(String | Unit)` означает, что результат представляет собой пресечение этих типов.
+   ```scala
+   let addr = Address(base58'3N4iKL6ikwxiL7yNvWQmw7rg3wGna8uL6LU')
+   getInteger(addr,"integerVal")  # Возвращает 1
+   getInteger(addr,"nokey")       # Возвращает unit
+   ```
 
-Простой пример (пожалуйста, имейте в виду, что определение пользовательских типов будет поддержано в следующих версиях Ride):
+* Список `List[Int|String]` может содержать как строки, так и числа.
 
-```scala
-type Human : { firstName: String, lastName: String, age: Int}
-type Cat : {name: String, age: Int }
-```
+   ```scala
+   let intList  = [1, 2]              # List[Int]
+   let strList  = ["3", "4"]          # List[String]
+   let joined   = intList ++ strList  # List[Int|String]
+   ```
 
-`Union(Human | Cat)` — объект с одним полем `age`:
+## Функции объединения
 
-```scala
-Human | Cat => { age: Int }
-```
+Встроенные функции работы со объединениями представлены в разделе [Функции объединения](/ru/ride/functions/built-in-functions/list-functions).
 
-Сравнение типов:
+## match-case
 
-```scala
-  let t = ...               # Cat | Human
-  t.age                     # OK
-  t.name                    # Ошибка компиляции
-  let name = match t {      # OK
-    case h: Human => h.firstName
-    case c: Cat   => c.name
-  }
-```
-
-Механизм сравнения типов используется для работы с транзакциями:
+Определить конкретный тип значения из `Union` можно с помощью оператора [match-case](/ru/ride/operators/match-case).
 
 ```scala
-let amount = match tx {              # tx — исходящая транзакция
-  case t: TransferTransaction => t.amount
-  case m: MassTransferTransaction => m.totalAmount
-  case _ => 0
+func getAssetName(assetId: ByteVector|Unit) = {
+   match assetId {
+     case id: ByteVector => assetInfo(id).value().name
+     case waves: Unit => "WAVES"
+   }
 }
 ```
-
-В Waves есть несколько типов транзакций, и в зависимости от типа количество переводимых токенов может быть указано в разных полях. Для транзакций перевода и массового перевода используется значение соответствующего поля, а в остальных случаях — 0.
