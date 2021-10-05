@@ -88,7 +88,9 @@ curl -X GET --header 'Accept: application/json;large-significand-format=string' 
 
 * `GET /assets/balance/{address}/{assetId}`
 
-   `GET /debug/balances/history/{address}`
+   Поле: `balance`.
+
+* `GET /debug/balances/history/{address}`
 
    Поле: `balance`.
 

@@ -88,7 +88,9 @@ Below is the list of endpoints accepting this header:
 
 * `GET /assets/balance/{address}/{assetId}`
 
-   `GET /debug/balances/history/{address}`
+   Field: `balance`.
+
+* `GET /debug/balances/history/{address}`
 
    Field: `balance`.
 
