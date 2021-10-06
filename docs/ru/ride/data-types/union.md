@@ -8,32 +8,47 @@
 
    ```scala
    wavesBalance(Address(base58'3Mz9N7YPfZPWGd4yYaX6H53Gcgrq6ifYiH7'))
-   wavesBalance(Alias("merry"))   # Результат одинаковый
+   wavesBalance(Alias("merry"))          # Результат одинаковый
    ```
 
-* Функция `getInteger(Address|Alias, String): Int|Unit` возвращает целое число по ключу из хранилища данных указанного, а если запись с таким ключом отсутствует или значение имеет другой тип, возвращает [unit](/ru/ride/data-types/unit).
+* Функция `getInteger(Address|Alias, String): Int|Unit` возвращает целое число по ключу из хранилища данных указанного аккаунта, а если запись с таким ключом отсутствует или значение имеет другой тип, возвращает [unit](/ru/ride/data-types/unit).
 
    ```scala
    let addr = Address(base58'3N4iKL6ikwxiL7yNvWQmw7rg3wGna8uL6LU')
-   getInteger(addr,"integerVal")  # Возвращает 1
-   getInteger(addr,"nokey")       # Возвращает unit
+   getInteger(addr,"integerVal")         # Возвращает 1
+   getInteger(addr,"nokey")              # Возвращает unit
    ```
 
-* Список `List[Int|String]` может содержать как строки, так и числа.
+* Тип элементов списка — это объединение типов всех элементов. Например, элемент списка `List[Int|String]` — это строка или число.
 
    ```scala
-   let intList  = [1, 2]              # List[Int]
-   let strList  = ["3", "4"]          # List[String]
-   let joined   = intList ++ strList  # List[Int|String]
+   let aList   = [1, 2, "Waves"]         # List[Int|String]
+   let bList   = [true, true, false]     # List[Boolean]
+   let joined  = aList ++ bList          # List[Boolean|Int|String]
    ```
 
-## Функции объединения
+* Объединение может содержать как простые типы, так и списки, кортежи, структуры.
 
-Встроенные функции работы со объединениями представлены в разделе [Функции объединения](/ru/ride/functions/built-in-functions/list-functions).
+   ```scala
+   let cList = [true,(1,"Ride"),AttachedPayment(unit,1)]    # List[(Int, String)|AttachedPayment|Boolean]
+   ```
 
-## match-case
+## Функции и операторы
 
-Определить конкретный тип значения из `Union` можно с помощью оператора [match-case](/ru/ride/operators/match-case).
+Значение с типом объединения нельзя использовать в качестве аргумента функции или оператора, если требуется конкретный тип. Например, выражение 
+
+```scala
+getString("key") + "_test"
+```
+
+приведет к ошибке компиляции, поскольку тип возвращаемого значения функции `getString` — объединение `String|Unit`. Получить значение с типом `String` можно с помощью функции `getStringValue`.
+
+Чтобы извлечь значение конкретного типа из объединения, можно использовать:
+
+* [Функции объединения](/ru/ride/functions/built-in-functions/list-functions)
+* Оператор [match-case](/ru/ride/operators/match-case)
+
+Пример:
 
 ```scala
 func getAssetName(assetId: ByteVector|Unit) = {
