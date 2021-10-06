@@ -32,13 +32,10 @@ The callable function can have arguments of the following types:
 * [ByteVector](/en/ride/data-types/byte-vector),
 * [Int](/en/ride/data-types/int),
 * [String](/en/ride/data-types/string),
-* [Union](/en/ride/data-types/union) with elements having types listed above.
-* [List](/en/ride/data-types/list) having elements of the following types:
-  * [Boolean](/en/ride/data-types/boolean),
-  * [ByteVector](/en/ride/data-types/byte-vector),
-  * [Int](/en/ride/data-types/int),
-  * [String](/en/ride/data-types/string),
-  * [Union](/en/ride/data-types/union).
+* [Union](/en/ride/data-types/union) which combines primitive types listed above, for example, `Int|String`.
+* [List](/en/ride/data-types/list) which contains elements of the types listed above, for example, `List[ByteVector]` or `List[Boolean|Int]`.
+
+   :warning: Nested lists are not allowed as arguments to a callable function (unlike function without annotation).
 
 ## Invocation Result
 
