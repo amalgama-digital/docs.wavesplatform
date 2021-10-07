@@ -190,4 +190,4 @@ _**Total transaction bytes with signature:**_
 
 ## Calculating Transaction Id
 
-Transaction Id is not stored in the transaction bytes and for most of transactions \(except Payment\) it can be easily calculated from the special bytes for signing using`blake2b256(bytes_for_signing)`. For Payment transaction Id is just the signature of this transaction.
+Transaction Id is not stored in the transaction bytes and for most of transactions \(except Payment\) it can be easily calculated from the special bytes for signing using `blake2b256(bytes_for_signing)`. For Payment transaction Id is just the signature of this transaction.

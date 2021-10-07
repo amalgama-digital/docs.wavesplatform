@@ -55,8 +55,8 @@ const signerDataTX = DataTX(params,'YOU ORACLE SEED HERE');
 ```
 
 Отправим подписанную транзакцию данных в блокчейн:
-* На Testnet — [nodes-testnet.wavesnodes.com](https://nodes-testnet.wavesnodes.com/api-docs/index.html).
-* На Mainnet — [nodes.wavesnodes.com](https://nodes.wavesnodes.com/api-docs/index.html).
+* На Testnet — [nodes-testnet.wavesnodes.com](https://nodes-testnet.wavesnodes.com/).
+* На Mainnet — [nodes.wavesnodes.com](https://nodes.wavesnodes.com/).
 
 ``` typescript
 const result = await broadcast(signerDataTX, 'https://nodes.wavesnodes.com');

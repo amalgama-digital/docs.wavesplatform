@@ -10,11 +10,13 @@ For Invoke Script transaction and Transfer transaction, a sender can specify a t
 
 The minimum fees in WAVES for each type of transaction are listed in the table below.
 
-* If the transaction sender is a [dApp or smart account](/en/blockchain/account/dapp), and the complexity of the account script or dApp script verifier function exceeds the [sender complexity threshold](/en/ride/limits/), the minimum fee is increased by 0.004 WAVES. 
-* The minimum fee for any transaction, except Invoke Script transactions, is increased by 0.004 
-WAVES for each smart asset involved.
+* If the transaction sender is a [dApp or smart account](/en/blockchain/account/dapp), and the complexity of the account script or dApp script verifier function exceeds the [sender complexity threshold](/en/ride/limits/), the minimum fee is increased by 0.004 WAVES.
 
-The fee is not increased by 0,004 WAVES for [Exchange transactions](/en/blockchain/transaction-type/exchange-transaction) if the order is sent from a smart account or if the matcher fee is a smart asset.
+   If the order sender in [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction) is a dApp or smart account, this does nor affect the minimum fee.
+
+* The minimum fee is increased by 0.004 WAVES for each smart asset involved, except for:
+   * [Invoke Script transactions](/en/blockchain/transaction-type/invoke-script-transaction),
+   * smart assets used as matcher fee in [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction).
 
 <br/>
 <details>

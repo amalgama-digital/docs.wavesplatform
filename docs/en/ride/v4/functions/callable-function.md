@@ -41,7 +41,7 @@ Callable function can have arguments of the following types:
   * [ByteVector](/en/ride/v4/data-types/byte-vector),
   * [Int](/en/ride/v4/data-types/int),
   * [String](/en/ride/v4/data-types/string),
-  * [List](/en/ride/v4/data-types/list).
+  * [Union](/en/ride/v4/data-types/union).
 
 ### Invocation result
 

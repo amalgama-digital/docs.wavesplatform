@@ -178,7 +178,9 @@ The script cannot be removed, so it is impossible to turn a smart asset into a r
 
 ## Smart Asset Fees
 
-The minimum fee for any transaction, except Invoke Script transactions, is increased by 0.004 WAVES for each smart asset involved.
+The [minimum fee](/en/blockchain/transaction/transaction-fee) for transaction is increased by 0.004 WAVES for each smart asset involved, except for:
+   * [Invoke Script transactions](/en/blockchain/transaction-type/invoke-script-transaction),
+   * smart assets used as matcher fee in [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction).
 
 Examples:
 * The minimum fee for a Transfer transaction is 0.001 WAVES; in case of transferring a smart asset, 0.005 WAVES.

@@ -50,7 +50,7 @@ for i in range(blockchain_height - depth, blockchain_height):
         if transaction['senderPublicKey'] not in sender_public_keys:
             sender_public_keys.append(transaction['senderPublicKey'])
 
-    # time.sleep(1) # На https://nodes.wavesnodes.com можно Only 1 block per second if you use public Mainnet nodes
+    # time.sleep(1) # Only 1 block per second if you use public Mainnet nodes
 
 # Convert public keys to address
 for public_key in sender_public_keys:

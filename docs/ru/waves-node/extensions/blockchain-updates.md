@@ -209,20 +209,22 @@ BlockchainUpdates extension started gRPC API on port <...>
 git clone https://github.com/wavesplatform/protobuf-schemas/
 ```
 
-На основе схемы [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/events/grpc/blockchain_updates.proto) сгенерируйте клиентский код для вашего языка программирования. Подробные инструкции приведены в разделе [Supported languages and platforms](https://www.grpc.io/docs/languages/) документации gRPC.
+На основе схемы [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/grpc/blockchain_updates.proto) сгенерируйте клиентский код для вашего языка программирования. Подробные инструкции приведены в разделе [Supported languages and platforms](https://www.grpc.io/docs/languages/) документации gRPC.
 
-## Использование
+## <a id="usage"></a>Использование
 
 API Blockchain Updates предоставляет три функции:
 * `GetBlockUpdate` — возвращает изменения, порожденные блоком на указанной высоте.
-* [GetBlockUpdatesRange](#getblockupdatesrange) — возвращает массив изменений, порожденных блоками в указанном диапазоне высоты.
-* [Subscribe](#subscribe) — возвращает поток сообщений об изменениях, вначале исторические данные (то есть изменения до текущей высоты блокчейна), затем текущие события в реальном времени. Опционально можно указать начальную и/или конечную высоту.
+* [GetBlockUpdatesRange](#getblockupdatesrange) — возвращает массив изменений в указанном диапазоне высоты.
+* [Subscribe](#subscribe) — возвращает поток сообщений об изменениях по мере появления. Опционально можно указать начальную и/или конечную высоту.
 
-Структуру запросов и ответов можно посмотреть в файле [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/events/grpc/blockchain_updates.proto).
+Структуру запросов и ответов можно посмотреть в файле [blockchain_updates.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/grpc/blockchain_updates.proto).
 
 ### Subscribe
 
-Функция `Subscribe` возвращает все события в реальном времени: добавление блока, добавление микроблока, откат блока, откат микроблока (см. описание протокола [Waves-NG](/en/blockchain/waves-protocol/waves-ng-protocol)).
+Функция `Subscribe` возвращает события по мере появления:
+* до текущей высоты блокчейна — исторические данные, то есть сообщения о добавлении блока,
+* затем текущие события в реальном времени: добавление блока, добавление микроблока, откат блока, откат микроблока (см. описание протокола [Waves-NG](/en/blockchain/waves-protocol/waves-ng-protocol)).
 
 В случае разрыва соединения рекомендуем откатить последний блок на клиенте и возобновить получение событий с предыдущего блока.
 
@@ -233,7 +235,7 @@ API Blockchain Updates предоставляет три функции:
 | from_height | int32 | Начальная высота. Необязательный параметр, по умолчанию 1 |
 | to_height | int32 | Конечная высота. Необязательный параметр, по умолчанию высота не ограничена |
 
-Функция возвращает поток сообщений об изменениях `SubscribeEvent`.
+Функция возвращает поток (стрим) объектов `SubscribeEvent`, содержащих по одному сообщению об изменениях `BlockchainUpdated`.
 
 Поля сообщения:
 
@@ -246,7 +248,7 @@ API Blockchain Updates предоставляет три функции:
 
 ### GetBlockUpdatesRange
 
-Функция `GetBlockUpdatesRange` возвращает только исторические данные об уже примененных блоках. Рекомендуем использовать ее для аналитических задач, для которых достаточно обновления, например, раз в час или раз в сутки. Конечную высоту диапазона лучше указывать на несколько блоков меньше текущей, чтобы избежать проблем в случае отката высоты.
+Функция `GetBlockUpdatesRange` возвращает изменения в указанном диапазоне высоты. Рекомендуем использовать ее для аналитических задач, для которых достаточно обновления, например, раз в час или раз в сутки. Конечную высоту диапазона лучше указывать на несколько блоков меньше текущей высоты блокчейна, чтобы избежать проблем в случае отката высоты.
 
 Параметры:
 
@@ -255,11 +257,11 @@ API Blockchain Updates предоставляет три функции:
 | from_height | int32 | Начальная высота. Обязательный параметр |
 | to_height | int32 | Конечная высота. Обязательный параметр |
 
-Функция возвращает массив сообщений об изменениях. Формат сообщения такой же, как для функции `Subscribe`, но содержит только сообщения о добавлении блока.
+Функция возвращает массив `GetBlockUpdatesRangeResponse`, содержащий сообщения об изменениях `BlockchainUpdated`. Если указана конечная высота больше текущей высоты блокчейна, функция вернет ответ только в момент, когда высота блокчейна достигнет указанной конечной высоты. До текущей высоты возвращаются сообщения о добавлении блока, на текущей высоте могут появиться сообщения о любых событиях.
 
 ## Формат событий
 
-Структуру событий можно посмотреть в файле [events.proto](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/events/events.proto).
+Структуру событий можно посмотреть в файле [events.proto](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/events/events.proto).
 
 Некоторые изменения на блокчейне не привязаны ни к одной транзакции, а происходят на уровне блока. В частности, изменение баланса генератора блока: 40% комиссии за транзакцию, которые получает генератор текущего блока, привязаны к транзакции, а 60%, которые получает генератор следующего блока, ассоциированы только с этим блоком. Вознаграждение за создание блока также ассоциировано только с блоком.
 
@@ -267,13 +269,13 @@ API Blockchain Updates предоставляет три функции:
 
 ### Append: добавление блока
 
-При получении событий в реальном времени сообщение о добавлении блока может содержать транзакции и порожденные ими изменения (создан ключевой блок + микроблок) либо транзакции могут отсутствовать (создан только ключевой блок).
+Сообщение о добавлении блока может содержать транзакции и порожденные ими изменения (создан ключевой блок + микроблок) либо транзакции могут отсутствовать (создан только ключевой блок).
 
 Поля сообщения:
 
 | Имя поля | Тип | Описание |
 | :--- | :--- | :--- |
-| block | [Block](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/block.proto) | Данные блока: заголовки и транзакции. См. также раздел [Бинарный формат блока](/ru/blockchain/binary-format/block-binary-format) |
+| block | [Block](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/block.proto) | Данные блока: заголовки и транзакции. См. также раздел [Бинарный формат блока](/ru/blockchain/binary-format/block-binary-format) |
 | updated_waves_amount | int64 | Общее количество WAVES с учетом вознаграждения за создание блока |
 | transaction_ids | repeated bytes | Идентификаторы транзакций в блоке |
 | transactions_metadata | repeated TransactionMetadata | Дополнительная информация о транзакциях. См. [TransactionMetadata](#transactionmetadata) ниже |
@@ -604,7 +606,7 @@ API Blockchain Updates предоставляет три функции:
 
 | Имя поля | Тип | Описание |
 | :--- | :--- | :--- |
-| micro_block | [SignedMicroBlock](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/block.proto) | Данные микроблока |
+| micro_block | [SignedMicroBlock](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/block.proto) | Данные микроблока |
 | updated_transactions_root | int64 | [Корневой хеш](/ru/blockchain/block/merkle-root) всех транзакций текущего блока |
 | transaction_ids | repeated bytes | Идентификаторы транзакций в микроблоке |
 | transactions_metadata | repeated TransactionMetadata | Дополнительная информация о транзакциях. См. [TransactionMetadata](#transactionmetadata) ниже |
@@ -929,7 +931,7 @@ API Blockchain Updates предоставляет три функции:
 | :--- | :--- | :--- |
 | type | RollbackType | Тип сообщения: BLOCK — откат блока, MICROBLOCK — откат микроблока |
 | removed_transaction_ids | repeated bytes | ID транзакций, которые были удалены в результате отката |
-| removed_blocks | repeated [Block](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/block.proto) | Блоки, которые были удалены в результате отката. В случае отката микроблока — пустой массив |
+| removed_blocks | repeated [Block](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/block.proto) | Блоки, которые были удалены в результате отката. В случае отката микроблока — пустой массив |
 | rollback_state_update | StateUpdate | Изменения состояния блокчейна, которые произошли в результате отката (обратные изменениям, порожденным транзакциями и блоками/микроблоками). См. [StateUpdate](#stateupdate) ниже |
 
 **Примеры:**
@@ -1236,7 +1238,7 @@ API Blockchain Updates предоставляет три функции:
 | Имя поля | Тип | Описание |
 | :--- | :--- | :--- |
 | balances.address | bytes | Адрес |
-| balances.amount_after | [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/amount.proto) | Новый баланс |
+| balances.amount_after | [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Новый баланс |
 | balances.amount_before | int64 | Прежний баланс |
 
 #### Изменения лизинговых балансов аккаунта
@@ -1254,8 +1256,8 @@ API Blockchain Updates предоставляет три функции:
 | Имя поля | Тип | Описание |
 | :--- | :--- | :--- |
 | data_entries.address | bytes | Адрес |
-| data_entries.data_entry | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/transaction.proto#L67) | Запись с новым значением |
-| data_entries.data_entry_before | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/transaction.proto#L67) | Запись с прежним значением |
+| data_entries.data_entry | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/transaction.proto#L67) | Запись с новым значением |
+| data_entries.data_entry_before | [DataTransactionData.DataEntry](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/transaction.proto#L67) | Запись с прежним значением |
 
 #### Изменения лизингов
 
@@ -1313,9 +1315,11 @@ API Blockchain Updates предоставляет три функции:
 | :--- | :--- | :--- |
 | d_app_address | bytes | Адрес dApp |
 | function_name | string | Имя вызываемой функции |
-| arguments | repeated Argument | Аргументы функции |
-| payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/amount.proto) | Приложенные к транзакции платежи |
-| result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/master/proto/waves/invoke_script_result.proto) | Результаты действий, выполненных вызываемой функцией |
+| arguments | repeated [InvokeScriptResult.Call.Argument](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto#L61) | Аргументы функции |
+| payments | repeated [Amount](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/amount.proto) | Приложенные к транзакции платежи |
+| result | [InvokeScriptResult](https://github.com/wavesplatform/protobuf-schemas/blob/HEAD/proto/waves/invoke_script_result.proto) | Результаты действий, выполненных вызываемой функцией |
+
+:warning: Если вызываемая функция выполняет [вызов dApp из dApp](/ru/ride/advanced/dapp-to-dapp), `InvokeScriptResult` содержит сообщение `Invocation` с дополнительной информацией о вложенном вызове. `Invocation`, в свою очередь, также содержит `InvokeScriptResult`. Таким образом, если требуется извлечь дополнительную информацию о каждом действии, выполненном каждой из функций, вызываемых в транзакции, необходимо проанализировать все `InvokeScriptResult` рекурсивно.
 
 #### Для транзакции перевода
 

@@ -25,7 +25,7 @@ Download the latest version of [jar node](https://github.com/wavesplatform/Waves
 
 ### Step 3
 
-Create `genesis.example.conf` file with genesis block parameters in the `.jar` file location directory.
+Create `genesis.example.conf` file with genesis block parameters in the JAR file location directory.
 
 **Example**:
 
@@ -104,7 +104,7 @@ The `Addresses` section lists the accounts to which the assets are distributed i
 
 ### Step 5
 
-In the `.jar` file location directory create `*.conf` file with any name (for example `waves-custom-network.conf`) and edit it with a text editor. Use [example configuration file](https://github.com/wavesplatform/private-node-docker-image/blob/stagenet/waves.custom.conf) for reference.
+In the JAR file location directory create `*.conf` file with any name (for example `waves-custom-network.conf`) and edit it with a text editor. Use [example configuration file](https://github.com/wavesplatform/private-node-docker-image/blob/stagenet/waves.custom.conf) for reference.
 
 See [Node Configuration](/en/waves-node/node-configuration) article for more information about Waves configuration file.
 
@@ -120,7 +120,7 @@ Set `waves.wallet` parameters. Use `Seed` (`Seed text` in base58) value generate
 
 In `waves.network` section set `port`, `known-peers` (list the [nodes of your custom network](#add-nodes-to-your-network)), `node-name` and `declared-address` parameters.
 
-To enable REST API for your node set `enable`, `port` and `api-key-hash` (can be created [here](https://nodes.wavesnodes.com/api-docs/index.html#/utils/hashSecure_1)) parameters in `waves.rest-api` section.
+To enable REST API for your node set `enable`, `port` and `api-key-hash` (can be created [here](https://nodes.wavesnodes.com/api-docs/index.html#/utils/hashSecure)) parameters in `waves.rest-api` section.
 
 The `waves.blockchain.custom.functionality` section allows to set the activation height for blockchain features. You can enable/disable features on your node by modifying the `pre-activated-features` parameter. The supported features are listed in [Features](/en/waves-node/features/) article. You can add features that do not exist in the standard node configuration.
 

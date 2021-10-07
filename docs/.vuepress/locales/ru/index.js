@@ -110,7 +110,7 @@ module.exports = deepmerge(mixin, {
                 buttonSet: {
                     launch: {
                         text: 'Запуск ноды',
-                        link: '/ru/waves-node/running-waves-node-in-yandex-cloud',
+                        link: '/ru/waves-node/how-to-install-a-node/how-to-install-a-node',
                     },
                     grpc: {
                         text: 'gRPC server',
@@ -138,14 +138,6 @@ module.exports = deepmerge(mixin, {
                     keeper: {
                         text: 'Waves Keeper',
                         link: '/ru/ecosystem/waves-keeper/',
-                    },
-                    oracles: {
-                        text: 'Oracles',
-                        link: '/ru/ecosystem/waves-oracles/about-waves-oracles',
-                    },
-                    torenRating: {
-                        text: 'Token Rating',
-                        link: '/ru/ecosystem/waves-token-rating/about-waves-token-rating',
                     },
                 },
             },

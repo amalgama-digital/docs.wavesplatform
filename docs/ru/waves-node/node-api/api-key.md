@@ -15,7 +15,7 @@
 
 2. Перейдите в [веб-интерфейс Swagger](/ru/waves-node/node-api#веб-интерфейс-swagger).
 
-3. Откройте API метод [/utils/hash/secure](https://nodes.wavesnodes.com/api-docs/index.html#!/utils/hashSecure_1) и введите вашу уникальную строку в поле `message`.
+3. Откройте API метод [/utils/hash/secure](https://nodes.wavesnodes.com/api-docs/index.html#!/utils/hashSecure) и введите вашу уникальную строку в поле `message`.
 
 4. Нажмите **Execute** чтобы получить `хэш API ключа`.
 

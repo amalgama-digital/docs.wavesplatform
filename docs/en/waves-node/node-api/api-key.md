@@ -15,7 +15,7 @@ To set API key, you need to generate API key hash and then use it in your node c
 
 2. Go to [Swagger web interface](/en/waves-node/node-api#swagger-web-interface).
 
-3. Open the [/utils/hash/secure](https://nodes.wavesnodes.com/api-docs/index.html#!/utils/hashSecure_1) API method and input your unique string in the `message` field.
+3. Open the [/utils/hash/secure](https://nodes.wavesnodes.com/api-docs/index.html#!/utils/hashSecure) API method and input your unique string in the `message` field.
 
 4. Click **Execute** to get the `hashed API key`.
 

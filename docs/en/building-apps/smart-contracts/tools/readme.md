@@ -6,7 +6,7 @@ Waves ecosystem provides variety of tools for developing and debugging decentral
 
    [How to create a dApp using Waves IDE](/en/building-apps/smart-contracts/writing-dapps)
 
-* [Visual Studio Code Extension](https://github.com/wavesplatform/ride-vscode) provides the Ride language support and JavaScript console with built-in functions for interaction with the Waves blockchain. [More about the extension](/en/building-apps/smart-contracts/tools/ride-vscode)
+* [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=waves-ride.waves-ride) provides the Ride language support and JavaScript console with built-in functions for interaction with the Waves blockchain. [More about the extension](/en/building-apps/smart-contracts/tools/ride-vscode)
 
 * [Surfboard](https://www.npmjs.com/package/@waves/surfboard) is a professional command-line tool for compiling Ride smart contracts and running tests. [More about Surfboard](/en/building-apps/smart-contracts/tools/surfboard)
 

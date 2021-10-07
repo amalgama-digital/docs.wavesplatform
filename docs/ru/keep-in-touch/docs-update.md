@@ -4,7 +4,14 @@
 
 ### Ride
 
-* [Union](/en/ride/data-types/union) — <span style="color:green">обновлено</span>
+* [Any](/ru/ride/data-types/any) — <span style="color:green">обновлено</span>: добавлена информация о макросах `as` и `exactAs`.
+* [Union](/ru/ride/data-types/union) — <span style="color:green">обновлено</span>
+
+## Сентябрь
+
+* [Signer](/ru/building-apps/waves-api-and-sdk/client-libraries/signer): добавлена информация о ProviderKeeper и ProviderLedger.
+* [Конфигурация ноды](/ru/waves-node/node-configuration) — добавлен параметр `minimum-peers`.
+
 
 ## Июль
 

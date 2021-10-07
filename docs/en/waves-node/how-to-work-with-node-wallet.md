@@ -50,6 +50,8 @@ wallet {
 
 As a result, the wallet.dat will be generated in the selected directory based on the existing seed.
 
+[More about the configuration file](/en/waves-node/node-configuration)
+
 ## Using Existing Wallet <a id="existing-wallet"></a>
 
 If you already have the wallet.dat created before, then just put it in the directory listed in the `wallet` section, and specify a password for it with the `password` parameter. Additional actions are not required.
@@ -74,4 +76,4 @@ If you need to change node's account, first of all, delete the existing wallet.d
 * [create a wallet using existing seed](#existing-seed).
 * [use other wallet](#existing-wallet).
 
-> If the seed in the `wallet.dat` file and in the node's configuration file do not match, the seed from `wallet.dat` is used.
+> If the seed in the `wallet.dat` file and in the node's configuration file do not match, the node will not start.

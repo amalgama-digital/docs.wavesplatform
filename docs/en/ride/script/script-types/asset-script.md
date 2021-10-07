@@ -2,7 +2,7 @@
 
 Asset script verifies transactions within the [asset (token)](/en/blockchain/token), that is, allows or denies the transaction depending on the specified conditions.
 
-Asset with a script assigned to it is called a [smart asset](/en/building-apps/smart-contracts/smart-assets).
+Asset with a script assigned to it is called a [smart asset](/en/building-apps/smart-contracts/what-is-smart-asset).
 
 :warning: Please note: 
 - The asset script can only verify transactions, but not orders.
@@ -86,5 +86,5 @@ The following data can be used for checks:
 ## Examples
 
 Find the asset scripts examples:
-* in the [Smart Asset](/en/building-apps/smart-contracts/smart-assets) article;
+* in the [Smart Asset](/en/building-apps/smart-contracts/what-is-smart-asset) article;
 * in [Waves IDE](/en/building-apps/smart-contracts/tools/waves-ide): **Library → smart-assets**.

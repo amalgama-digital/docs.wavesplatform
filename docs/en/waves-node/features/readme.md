@@ -4,7 +4,7 @@
 
 Features have names and unique IDs and can be enabled by setting `supported` parameter in the `features` section of the node configuration file. For details see [Features Settings](/en/waves-node/node-configuration#features-section) section of the [Node Configuration](/en/waves-node/node-configuration) article.
 
-You can get the list of features and their statuses using the [GET /activation/status](https://nodes.wavesnodes.com/api-docs/index.html#/activation/status) operation of [Node REST API](/en/waves-node/node-api/).
+You can get the list of features and their statuses using the [GET /activation/status](https://nodes.wavesnodes.com/api-docs/index.html#/activation/getFeatureStatuses) operation of [Node REST API](/en/waves-node/node-api/).
 
 Waves Mainnet nodes currently support the following features:
 
@@ -25,7 +25,7 @@ Waves Mainnet nodes currently support the following features:
 | 13         | Reduce NFT fee                                    | If the amount of token in the issuing transaction is 1, the number of decimal places is 0, and the token cannot be reissued, then the commission for such a transaction will be 0.001 WAVES instead of 1 | 1,610,000         | Jul 2019        |
 | 14         | Block Reward and Community Driven Monetary Policy | Introduction of mining reward                                                                                                                                                                            | 1,740,000         | Oct 2019        |
 | 15 | Ride V4, VRF, Protobuf, Failed transactions | • Ride Standard library version 4.<br>• Added update asset info transaction.<br>• Blocks generation using VRF (Verifiable random function).<br>• Signing only the block header by the generating node.<br>• SNARK verifier support.<br>• Transaction binary format based on protobuf.<br>• Saving invoke script transactions and exchange transaction with failed script result.<br>See complete list of changes in the [Release Notes](/en/keep-in-touch/release-notes#version-1-2-malibu) article | 2,230,000 | Sep 2020 |
-| 16 | Ride V5, dApp-to-dApp invocations | <br>• Ride Standard library version 5.<br>• dApp-to-dApp invocation.<br>• `BigInt` data type. <br>See complete list of changes in the [Release Notes](/en/keep-in-touch/release-notes#version-1-3-jumeirah) article | | June 2021 |
+| 16 | Ride V5, dApp-to-dApp invocations | <br>• Ride Standard library version 5.<br>• dApp-to-dApp invocation.<br>• `BigInt` data type. <br>See complete list of changes in the [Release Notes](/en/keep-in-touch/release-notes#version-1-3-jumeirah) article | 2,650,000 | June 2021 |
 
 > \* Mainnet blockchain height where the feature was activated.
 

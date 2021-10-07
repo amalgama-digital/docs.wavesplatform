@@ -210,10 +210,6 @@ A **node** is a [host](https://ru.wikipedia.org/wiki/Хост) that is connected
 
 **Oracle** is a provider of data from the outside world to the [blockchain](#blockchain).
 
-### Oracle card
-
-An **oracle card** is a public description of the [oracle](#oracle) in the [blockchain](#blockchain) according to a [standardized protocol](/en/ecosystem/waves-oracles/create-an-oracle-card-with-a-data-transaction) in the form of a [data transaction](/en/blockchain/transaction-type/data-transaction).
-
 ### Order
 
 **Order** (or exchange order) is an instruction to buy or sell a [token](#token) on the exchange.

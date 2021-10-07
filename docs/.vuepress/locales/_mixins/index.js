@@ -98,7 +98,7 @@ module.exports = {
                 buttonSet: {
                     launch: {
                         text: 'Launch a node',
-                        link: '/en/waves-node/waves-node-in-docker',
+                        link: '/en/waves-node/how-to-install-a-node/how-to-install-a-node',
                     },
                     grpc: {
                         text: 'gRPC server',
@@ -126,14 +126,6 @@ module.exports = {
                     keeper: {
                         text: 'Waves Keeper',
                         link: '/en/ecosystem/waves-keeper/',
-                    },
-                    oracles: {
-                        text: 'Oracles',
-                        link: '/en/ecosystem/waves-oracles/about-waves-oracles',
-                    },
-                    torenRating: {
-                        text: 'Token Rating',
-                        link: '/en/ecosystem/waves-token-rating/about-waves-token-rating',
                     },
                 },
             },
@@ -186,7 +178,7 @@ module.exports = {
                     },
                     wavesBlockchain: {
                         title: 'Waves Blockchain',
-                        link: 'https://waves.tech/waves-protocol',
+                        link: 'https://waves.tech',
                     },
                     WavesIde: {
                         title: 'Waves IDE',

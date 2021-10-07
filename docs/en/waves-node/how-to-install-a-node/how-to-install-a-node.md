@@ -13,9 +13,9 @@ The methods to install Waves node are explained in this article.
 
 The easiest way to run Waves node on `macOS`, `Windows` or `Linux` machine is by means of Waves Docker container. You install the Docker app and then use console commands to run the node or change the node settings. For details, see [Deploy Node in Docker](/en/waves-node/waves-node-in-docker) article.
 
-### Jar or Deb Package
+### JAR or DEB Package
 
-The other way is to [download the latest version](https://github.com/wavesplatform/Waves/releases) of `.jar` or `.deb` package (depending on your OS) and the required `.conf` configuration file to your machine and run the app with console commands.
+The other way is to [download the latest version](https://github.com/wavesplatform/Waves/releases) of JAR or DEB package (depending on your OS) and the required `.conf` configuration file to your machine and run the app with console commands.
 
 More specific steps depend on your operating system:
 
@@ -28,7 +28,3 @@ For details about configuration file, see [Node Configuration](/en/waves-node/no
 ### SBT Package
 
 You can install Waves node from your own DEB or JAR package. Such package can be built from Waves node source files (from Git repository) by means of SBT (Scala Build Tool). For details, see [Install from Source (Building SBT)](/en/waves-node/how-to-build-and-test-a-node) article.
-
-### Clouds
-
-You can use all of the available methods described in this guide to install Waves node on any cloud-based virtual machine that meets the [system requirements](#system-requirements). For details, see [Deploy Node in Cloud](/en/waves-node/how-to-install-a-node/clouds) article.
