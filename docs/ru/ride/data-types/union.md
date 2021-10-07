@@ -1,8 +1,16 @@
 # Union
 
-**Тип объединения** — тип данных, объединяющий два или более типа данных. Объединение может содержать как простые типы, так и [списки](/ru/ride/data-types/list), [кортежи](/ru/ride/data-types/tuple), [структуры](/ru/ride/structures/).
+**Тип объединения** — тип данных, который объединяет два или более типа данных и содержит значение одного из этих типов. Объединение может включать как простые типы, так и [списки](/ru/ride/data-types/list), [кортежи](/ru/ride/data-types/tuple), [структуры](/ru/ride/structures/).
 
 Примеры: 
+
+* Тип элементов списка — это объединение типов всех элементов. Например, каждый элемент списка `List[Int|String]` — это строка или число.
+
+   ```scala
+   let aList   = [1, 2, "Waves"]               # List[Int|String]
+   let bList   = [true,false]                  # List[Boolean]
+   let joined  = aList ++ bList                # List[Boolean|Int|String]
+   ```
 
 * Тип аргумента функции [wavesBalance(Address|Alias): BalanceDetails](/ru/ride/functions/built-in-functions/blockchain-functions#waves-balance) — объединение типов [Address](/ru/ride/structures/common-structures/address) и [Alias](/ru/ride/structures/common-structures/alias). Вызвать функцию можно с аргументом любого из этих типов.
 
@@ -19,14 +27,6 @@
    getInteger(addr,"noKey")              # Возвращает unit
    ```
 
-* Тип элементов списка — это объединение типов всех элементов. Например, каждый элемент списка `List[Int|String]` — это строка или число.
-
-   ```scala
-   let aList   = [1, 2, "Waves"]               # List[Int|String]
-   let bList   = [(true,true),(false,true)]    # List[(Boolean,Boolean)]
-   let joined  = aList ++ bList                # List[(Boolean,Boolean)|Int|String]
-   ```
-
 ## Функции и операторы
 
 Значение с типом объединения нельзя использовать в качестве аргумента функции или оператора, если требуется конкретный тип. Например, выражение 
@@ -37,7 +37,7 @@ size(getString("key"))
 
 приведет к ошибке компиляции, поскольку тип аргумента функции [size](/ru/ride/functions/built-in-functions/string-functions#size-string-int) — `String`, а тип возвращаемого значения функции [getString](/ru/ride/functions/built-in-functions/account-data-storage-functions#getstring-string-string-unit) — объединение `String|Unit`. Получить значение с типом `String` можно с помощью функции [getStringValue](/ru/ride/functions/built-in-functions/account-data-storage-functions#getstringvalue-string-string).
 
-Чтобы извлечь значение конкретного типа из объединения, можно использовать:
+Чтобы получить значение конкретного типа из объединения, можно использовать:
 
 * [Функции объединения](/ru/ride/functions/built-in-functions/list-functions)
 * [Оператор match-case](/ru/ride/operators/match-case)
