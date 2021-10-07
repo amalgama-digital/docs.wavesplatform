@@ -1,5 +1,11 @@
 # Documentation Updates
 
+## October
+
+### Ride
+
+* [Union](/en/ride/data-types/union) — <span style="color:green">updated</span>
+
 ## July
 
 ### Blockchain

@@ -1,5 +1,11 @@
 # Обновления в документации
 
+## Октябрь
+
+### Ride
+
+* [Union](/en/ride/data-types/union) — <span style="color:green">обновлено</span>
+
 ## Июль
 
 ### Блокчейн

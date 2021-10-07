@@ -35,7 +35,11 @@
 size(getString("key"))
 ```
 
-приведет к ошибке компиляции, поскольку тип аргумента функции [size](/ru/ride/functions/built-in-functions/string-functions#size-string-int) — `String`, а тип возвращаемого значения функции [getString](/ru/ride/functions/built-in-functions/account-data-storage-functions#getstring-string-string-unit) — объединение `String|Unit`. Получить значение с типом `String` можно с помощью функции [getStringValue](/ru/ride/functions/built-in-functions/account-data-storage-functions#getstringvalue-string-string).
+приведет к ошибке компиляции, поскольку тип аргумента функции [size](/ru/ride/functions/built-in-functions/string-functions#size-string-int) — `String`, а тип возвращаемого значения функции [getString](/ru/ride/functions/built-in-functions/account-data-storage-functions#getstring-string-string-unit) — объединение `String|Unit`. Получить значение с типом `String` можно с помощью функции [getStringValue](/ru/ride/functions/built-in-functions/account-data-storage-functions#getstringvalue-string-string):
+
+```scala
+size(getStringValue("key"))
+```
 
 Чтобы получить значение конкретного типа из объединения, можно использовать:
 

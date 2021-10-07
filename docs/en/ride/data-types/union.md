@@ -16,28 +16,32 @@ Examples:
 
    ```scala
    wavesBalance(Address(base58'3Mz9N7YPfZPWGd4yYaX6H53Gcgrq6ifYiH7'))
-   wavesBalance(Alias("merry"))          # Результат одинаковый
+   wavesBalance(Alias("merry"))                # The result is the same
    ```
 
-* A return type of the function [getInteger(Address|Alias, String): Int|Unit](/en/ride/functions/built-in-functions/account-data-storage-functions#get-string) is a union of [Int](/en/ride/v4/data-types/int) and [Unit](/en/ride/data-types/unit) types. The function returns an integer value by key from the data storage of a given account, and if there is no entry with such a key or the value has a different type, the function returns `unit`.
+* A return type of the function [getInteger(Address|Alias, String): Int|Unit](/en/ride/functions/built-in-functions/account-data-storage-functions#get-string) is a union of [Int](/en/ride/v4/data-types/int) and [Unit](/en/ride/data-types/unit) types. The function returns an integer value by key from the data storage of a given account, or `unit` if there is no entry with such a key or the value has a different type.
 
    ```scala
    let addr = Address(base58'3N4iKL6ikwxiL7yNvWQmw7rg3wGna8uL6LU')
-   getInteger(addr,"integerVal")         # Возвращает 1
-   getInteger(addr,"noKey")              # Возвращает unit
+   getInteger(addr,"integerVal")               # Returns 1
+   getInteger(addr,"noKey")                    # Returns unit
    ```
 
 ## Functions and operators
 
-A value of a union type cannot be an argument to a function or operator that requires a particular type. For example, the expression 
+A value of a Union type cannot be an argument to a function or operator that requires a particular type. For example, the expression 
 
 ```scala
 size(getString("key"))
 ```
 
-causes a compilation error because the argument type of function [size](/en/ride/functions/built-in-functions/string-functions#size-string-int) is `String` and the return type of function [getString](/en/ride/functions/built-in-functions/account-data-storage-functions#getstring-string-unit) is `String|Unit`. You can get a value of `String` type using the [getStringValue](/en/ride/functions/built-in-functions/account-data-storage-functions#getstringvalue-string-string) function.
+causes a compilation error because the argument type of the [size](/en/ride/functions/built-in-functions/string-functions#size-string-int) function is `String` and the return type of the [getString](/en/ride/functions/built-in-functions/account-data-storage-functions#getstring-string-unit) function is `String|Unit`. You can get a value of `String` type using the [getStringValue](/en/ride/functions/built-in-functions/account-data-storage-functions#getstringvalue-string-string) function.
 
-To get a value of a particular type from a union, you can use:
+```scala
+size(getStringValue("key"))
+```
+
+To get a value of a particular type from a Union, you can use:
 
 * [Union functions](/en/ride/functions/built-in-functions/list-functions)
 * [match-case operator](/en/ride/operators/match-case)
