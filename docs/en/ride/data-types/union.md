@@ -1,6 +1,6 @@
 # Union
 
-**Union** is a data type that combines two or more data types and contains a value of one of those types. Union can combine simple types, [lists](/en/ride/data-types/list), [tuples](/en/ride/data-types/tuple), [structures](/en/ride/structures/).
+**Union** is a data type that combines two or more data types and contains a value of one of those types. Union can combine primitive types, [lists](/en/ride/data-types/list), [tuples](/en/ride/data-types/tuple), [structures](/en/ride/structures/).
 
 Examples: 
 
