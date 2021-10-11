@@ -935,7 +935,7 @@ Message fields:
 
 **Examples:**
 
-<details><summary>Block rollbaсk</summary>
+<details><summary>Block rollback</summary>
 
 ```json
 {
@@ -1136,7 +1136,7 @@ Message fields:
 }
 ```
 </details>
-<details><summary>Microblock rollbaсk</summary>
+<details><summary>Microblock rollback</summary>
 
 ```json
 {

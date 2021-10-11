@@ -43,8 +43,8 @@ contains(haystack: String, needle: String): Boolean
 {-# CONTENT_TYPE DAPP #-}
 {-# SCRIPT_TYPE ACCOUNT #-}
   
-"hello".contains("hell") # Возвращает true
-"hello".contains("world") # Возвращает false
+"hello".contains("hell") # Returns true
+"hello".contains("world") # Returns false
 ```
 
 ## drop(String, Int): String<a id="drop"></a>
@@ -200,8 +200,6 @@ Concatenates list strings adding a separator.
 makeString(arr: List[String], separator: String): String
 ```
 
-### Параметры
-
 ### Parameters
 
 | Parameter | Description |
@@ -209,7 +207,7 @@ makeString(arr: List[String], separator: String): String
 | `arr`: [List](/en/ride/v4/data-types/list)[[String](/en/ride/v4/data-types/string)] | List of strings to concatenate |
 | `separator`: [String](/en/ride/v4/data-types/string) | Separator |
 
-### Пример
+### Example
 
 ```ride
 makeString(["Apple","Orange","Mango"], " & ") # Returns "Apple & Orange & Mango"

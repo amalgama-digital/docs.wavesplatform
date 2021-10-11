@@ -202,7 +202,7 @@ A **mining node** is a [node](#node) that can perform [mining](#mining). Each mi
 
 ### Node
 
-A **node** is a [host](https://ru.wikipedia.org/wiki/Хост) that is connected to the [blockchain network](#blockchain-network) using the [Waves Node](https://github.com/wavesplatform/Waves) application. The node stores [blocks](#block), sends and validates [transactions](#transaction).
+A **node** is a [host](https://en.wikipedia.org/wiki/Host_(network&#41;) that is connected to the [blockchain network](#blockchain-network) using the [Waves Node](https://github.com/wavesplatform/Waves) application. The node stores [blocks](#block), sends and validates [transactions](#transaction).
 
 ## O
 

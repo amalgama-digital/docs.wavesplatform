@@ -26,7 +26,7 @@ Let's review the following code.
 {-# SCRIPT_TYPE ACCOUNT #-}
 
 match (tx) {
-    case t: TransferTransaction|ExchangeTransaction|MassTransferTransaction|Order => false   # запретить любой перевод средств с аккаунта
+    case t: TransferTransaction|ExchangeTransaction|MassTransferTransaction|Order => false   # deny any transfer of funds from the account
     case _ => sigVerify(...)
 }
 ```
@@ -51,8 +51,8 @@ Below is the sample of script which rejects any funds transfer from account, but
 {-# SCRIPT_TYPE ACCOUNT #-}
   
 match tx {
-    case t: TransferTransaction|ExchangeTransaction|MassTransferTransaction|Order => false   # запретить любой перевод средств с аккаунта
-    case _: Transaction => sigVerify(tx.bodyBytes, tx.proofs[0], tx.senderPublicKey) # разрешить все остальные известные типы транзакций, если подпись верна
-    case _ => false  # отклонить все остальные (новые, неизвестные) типы сущностей, т.к. их нет в используемой версии языка
+    case t: TransferTransaction|ExchangeTransaction|MassTransferTransaction|Order => false   # deny any transfer of funds from the account
+    case _: Transaction => sigVerify(tx.bodyBytes, tx.proofs[0], tx.senderPublicKey) # allow all other known transaction types if the signature is correct
+    case _ => false  # deny any other (new, unknown) entity type since they are not supported in the Ride version used
 }
 ```

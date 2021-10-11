@@ -877,7 +877,11 @@ Validate custom data:
            signature: '...',
            publicKey: '...'
        }
-       или
+```
+
+or
+
+```
        {
             version: 2,
             data: [{ type: 'string', key: 'name', value: 'Mr. First' }]

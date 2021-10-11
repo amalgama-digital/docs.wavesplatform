@@ -71,7 +71,7 @@ Designations in the above formula:
 * priceAssetDecimals — the number of decimal places of the price asset
 * amountAssetDecimals — the number of decimal places of the amount asset
 
-### Сalculation Example for Order v1/2/3
+### Calculation Example for Order v1/2/3
 
 Let's review the purchase of 2.13 TDX at the price of 0.35016774 WAVES for one TDX.
 

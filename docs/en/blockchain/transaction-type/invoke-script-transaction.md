@@ -34,7 +34,7 @@ The total [complexity](/en/ride/base-concepts/complexity) is limited by 26,000 f
 
 Version 3 of the Invoke Script transaction is added in node version 1.4.0 and enabled with feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
-`Fee` = (0.005 + `E`) × ⌈`С` / 10,000⌉ × + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I` + 0,004 × `N`,
+`Fee` = (0.005 + `E`) × ⌈`C` / 10,000⌉ × + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I` + 0,004 × `N`,
 `Fee` = 0.005 + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I` + 0,004 × `N`,
 
 
@@ -42,7 +42,7 @@ where:
 
    `E` is the **e**xtra fee specified in the `extraFeePerStep` field,
 
-   `С` is the **c**omplexity of the callable function. `С`/10,000 rounded up to the nearest integer is the number of stages in the computation sequence. For details see the [Continued Computations](/en/ride/advanced/continuation) article. 
+   `C` is the **c**omplexity of the callable function. `C`/10,000 rounded up to the nearest integer is the number of stages in the computation sequence. For details see the [Continued Computations](/en/ride/advanced/continuation) article. 
 
    `N` is the total number of **n**ested invocations via `invoke` function. For details see the [dApp-to-dApp Invocation](/en/ride/advanced/dapp-to-dapp) article.
 
@@ -124,7 +124,7 @@ where:
 
 The `stateChanges` structure does not need to be filled when sending a transaction, and it is not stored on the blockchain. The node returns this structure when providing transaction data via the REST API.
 
-<!--| extraFeePerStep | Extra fee for each stage of computations, see the [Continued Computations](/en/ride/advanced/continuation) article. The extra fee is specified in the same token as the transaction fee, in atomic units. A value other than null or 0 is only valid when the version 5 dApp script is invoked. The field is added in transaction version 3 || сontinuationTransactionIds | List of the Continuation transactions in the computation sequence. The field is added in transaction version 3 |-->
+<!--| extraFeePerStep | Extra fee for each stage of computations, see the [Continued Computations](/en/ride/advanced/continuation) article. The extra fee is specified in the same token as the transaction fee, in atomic units. A value other than null or 0 is only valid when the version 5 dApp script is invoked. The field is added in transaction version 3 || continuationTransactionIds | List of the Continuation transactions in the computation sequence. The field is added in transaction version 3 |-->
 
 The fields that are common to all types of transactions are described in the [Transaction](/en/blockchain/transaction/#json-representation) article.
 

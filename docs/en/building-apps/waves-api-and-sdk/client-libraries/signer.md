@@ -262,7 +262,7 @@ Creates an object that features the following [methods](#methods).
    * [getBalance](#getbalance)
    * [getSponsoredBalances](#getsponsoredbalances)
 
-* [Сreate Transactions](#create-transactions)
+* [Create Transactions](#create-transactions)
 
    * [Common fields](#common-fields)
    * [How to sign and broadcast transactions](#how-to-sign-and-broadcast-transactions)
@@ -1283,7 +1283,7 @@ interface Provider {
 }
 ```
 
-## Error Сodes
+## Error Codes
 
 | Error's class                  | Code | Type           | Example |
 |:------------------------------|:-----|:---------------|:--------|
