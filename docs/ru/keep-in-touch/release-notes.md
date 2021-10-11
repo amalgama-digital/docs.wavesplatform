@@ -127,24 +127,7 @@
 
 #### Улучшения
 
-* Новый метод `/assets/convertingEthToWaves` принимает на вход идентификаторы ассетов в Ethereum-представлении (первые 20 байт ID ассета в кодировке HEX) и возвращает идентификаторы в Waves-представлении (32 байта в кодировке base58).
-
-   <details>
-   <summary>Пример ответа</summary>
-
-   ```json
-   [
-      {
-         "eth": "0xb5488a98ac525eaa346c5c1634d04c7bcb7ed83f",
-         "waves": "6SaPaDmvuBFKEA6jxxARnFeAJzKKraP831Xorm7ngaMR"
-      },
-      {
-         "eth": "0xb5488a98ac525eaa346c5c1634d04c7bcb7ed83f",
-         "waves": "6SaPaDmvuBFKEA6jxxARnFeAJzKKraP831Xorm7ngaMR"
-      }
-   ]
-   ```
-   </details>
+* Новый метод `/eth/assets` принимает на вход идентификаторы ассетов в Ethereum-представлении (первые 20 байт ID ассета в кодировке HEX) и возвращает параметры ассетов, включая идентификатор в формате Waves (32 байта в кодировке base58). Ассеты в ответе следуют в том же порядке, что в запросе.
 
 ### Ride
 

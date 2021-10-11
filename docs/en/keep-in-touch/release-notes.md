@@ -134,24 +134,7 @@
 
 #### Improvements
 
-* Added the `/assets/convertingEthToWaves` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset IDs in Waves representation (32 bytes base58 encoded).
-
-   <details>
-   <summary>Example response</summary>
-
-   ```json
-   [
-      {
-         "eth": "0xb5488a98ac525eaa346c5c1634d04c7bcb7ed83f",
-         "waves": "6SaPaDmvuBFKEA6jxxARnFeAJzKKraP831Xorm7ngaMR"
-      },
-      {
-         "eth": "0xb5488a98ac525eaa346c5c1634d04c7bcb7ed83f",
-         "waves": "6SaPaDmvuBFKEA6jxxARnFeAJzKKraP831Xorm7ngaMR"
-      }
-   ]
-   ```
-   </details>
+* Added the `/eth/assets` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset details including asset ID in Waves format (32 bytes base58 encoded). The asset details in the response are in the same order as IDs in the request.
 
 ## Version 1.3 Jumeirah
 

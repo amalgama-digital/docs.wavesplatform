@@ -2,11 +2,7 @@
 
 > Ethereum transaction support is added in node version 1.4.0 and enabled by feature #17 "Ride V6". Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
-Waves node supports Ethereum transactions and interpretes  perform token transfers or dApp script invocations. Thanks to this, MetaMask users can sign transactions and send them to the Waves blockchain. [More details](/en/keep-in-touch/metamask)
-
-The Waves node supports transactions in the Ethereum format and interprets them as a dApp script invocation or token transfer, depending on the transaction content. [More about Ethereum transaction support](/en/keep-in-touch/metamask)
-
-Ethereum transactions are not classified as WAVES typed transactions.
+Waves node supports Ethereum transactions (only Legacy) and interprets them as a dApp script invocation or token transfer, depending on transaction content. [More about Ethereum transaction support](/en/keep-in-touch/metamask)
 
 ```protobuf
 message SignedTransaction {
