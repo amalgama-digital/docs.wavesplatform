@@ -10,7 +10,7 @@
 
    [Создание dApp с помощью Waves IDE](/ru/building-apps/smart-contracts/writing-dapps)
 
-* [Расширение для Visual Studio Code](https://github.com/wavesplatform/ride-vscode)
+* [Расширение для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=wavesplatform.waves-ride)
 
    Расширение для популярного редактора, предоставляющее поддержку Ride и интерактивную консоль JavaScript со встроенными функциями для взаимодействия с блокчейном.
 
