@@ -13,7 +13,7 @@ Key features:
 ## Installation and Configuration
 
 1. Download and install Visual Studio Code: <https://code.visualstudio.com/>.
-2. Go to **Extensions** (Ctrl&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X or Cmd&nbsp;⌘&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X), find and install the Ride extension **version 1.3.x**.
+2. Go to **Extensions** (Ctrl&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X or Cmd&nbsp;⌘&nbsp;+&nbsp;Shift&nbsp;+&nbsp;X), find and install the Ride extension.
 
 ![](./_assets/vscode.png)
 
