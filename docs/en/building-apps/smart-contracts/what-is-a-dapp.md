@@ -2,7 +2,7 @@
 
 dApp is Waves account assigned with dApp script.
 
-dApp script is a Ride script that contains сallable functions that can be called externally by the [invoke script transaction](/en/blockchain/transaction-type/invoke-script-transaction).
+dApp script is a Ride script that contains callable functions that can be called externally by the [invoke script transaction](/en/blockchain/transaction-type/invoke-script-transaction).
 
 An invoke script transaction contains:
 

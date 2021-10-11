@@ -6,7 +6,7 @@ Waves is an open blockchain protocol and development toolset for Web 3.0 applica
 
 Issuing your own token on the Waves blockchain is a piece of cake. The token is available for transfers and trading immediately: that's perfect for crowdfunding and ICO. [More about token issue](/en/building-apps/how-to/assets/issue)
 
-## Smart Сontracts
+## Smart Contracts
 
 Waves offers a unique approach to decentralized application development: by avoiding gas and non-Turing-complete language we keep the system secure and predictable. For smart contract creation, Waves provides its native language called Ride. Its straightforward and developer-friendly syntax makes blockchain development easy and intuitive. [More about Ride](/en/ride/getting-started)
 

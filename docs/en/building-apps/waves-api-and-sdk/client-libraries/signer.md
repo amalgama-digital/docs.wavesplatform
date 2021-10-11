@@ -262,7 +262,7 @@ Creates an object that features the following [methods](#methods).
    * [getBalance](#getbalance)
    * [getSponsoredBalances](#getsponsoredbalances)
 
-* [Сreate Transactions](#create-transactions)
+* [Create Transactions](#create-transactions)
 
    * [Common fields](#common-fields)
    * [How to sign and broadcast transactions](#how-to-sign-and-broadcast-transactions)
@@ -381,10 +381,10 @@ const balances = await signer.getBalance();
 | assetId | Base58 encoded ID of the asset |
 | assetName | Name of the asset |
 | decimals | Number of decimal places in the asset amount |
-| amount | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| amount | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 | isMyAsset | `true` if current user is an asset issuer |
 | tokens | Amount of asset to display in app interface |
-| sponsorship | Amount of sponsored asset to be charged to users (per 0.001 WAVES) multiplied by 10^`decimals`<br>`null` if the asset is not sponsored |
+| sponsorship | Amount of sponsored asset to be charged to users (per 0.001 WAVES) multiplied by 10<sup>decimals</sup><br>`null` if the asset is not sponsored |
 | isSmart | `true` for [smart assets](/en/building-apps/smart-contracts/what-is-smart-asset) |
 
 #### getSponsoredBalances
@@ -532,7 +532,7 @@ burn(data: {
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
 | assetId* | | Base58 encoded ID of the asset to burn |
-| quantity* | | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| quantity* | | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 
 \* Required parameter.
 
@@ -695,7 +695,7 @@ invoke(data: {
 | fee | | We recommend to specify fee depending on number of action performed by called function (see [Transaction Fee](/en/blockchain/transaction/transaction-fee)) |
 | payment | | Payments attached to the transaction. Maximum of two payments |
 | payment.assetId* | | Base58 encoded ID of the asset to pay. `WAVES` or `null` means WAVES |
-| payment.amount* | | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| payment.amount* | | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 | call | Default function should be invoked in the dApp | Parameters for called function |
 | call.function* | | Name of the function that is called |
 | call.args* | | Arguments for the function  that is called |
@@ -752,7 +752,7 @@ issue(data: {
 | :--- | :--- | :--- |
 | name* | | Asset name |
 | decimals* | | Number of digits in decimal part |
-| quantity* | | Amount of asset multiplied by 10^`decimals` |
+| quantity* | | Amount of asset multiplied by 10<sup>decimals</sup> |
 | reissuable* | | `true` – asset reissue is possible.<br>`false` — asset reissue is not possible |
 | description* | | Asset description |
 | script | | Base64 encoded script (with `base64:` prefix) to be attached to to asset |
@@ -792,7 +792,7 @@ lease(data: {
 
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
-| amount* | | Amount of WAVES multiplied by 10^8. For example, `{ "WAVES": 677728840 }` means 6.77728840 |
+| amount* | | Amount of WAVES multiplied by 10<sup>8</sup>. For example, `{ "WAVES": 677728840 }` means 6.77728840 |
 | recipient* | | Base58 encoded [address](/en/blockchain/account/address) or alias (with `alias:T:` prefix) of the recipient |
 
 \* Required parameter.
@@ -833,7 +833,7 @@ massTransfer(data: {
 | :--- | :--- | :--- |
 | assetId | WAVES | Base58 encoded ID of the asset to transfer |
 | transfers* | | List of transfers |
-| transfers.amount* | | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| transfers.amount* | | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 | transfers.recipient* | | Base58 encoded [address](/en/blockchain/account/address) or alias (with `alias:T:` prefix) of the recipient |
 | attachment | | Optional binary data base58 encoded. This field is often used to attach a comment to the transaction. The maximum data size is 140 bytes |
 
@@ -881,7 +881,7 @@ reissue(data: {
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
 | assetId* | | Base58 encoded ID of the asset to reissue |
-| quantity* | | Amount of asset multiplied by 10^`decimals` to reissue |
+| quantity* | | Amount of asset multiplied by 10<sup>decimals</sup> to reissue |
 | reissuable* | | `true` – asset reissue is possible.<br>`false` — asset reissue is not possible |
 
 \* Required parameter.
@@ -983,7 +983,7 @@ sponsorship(data: {
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
 | assetId* | | Base58 encoded ID of the asset |
-| minSponsoredAssetFee | | Required amount of sponsored token to be charged to users (per 0.001 WAVES) multiplied by 10^`decimals` |
+| minSponsoredAssetFee | | Required amount of sponsored token to be charged to users (per 0.001 WAVES) multiplied by 10<sup>decimals</sup> |
 
 \* Required parameter.
 
@@ -1021,7 +1021,7 @@ transfer(data: {
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
 | recipient* | | Base58 encoded [address](/en/blockchain/account/address) or alias (with `alias:T:` prefix) of the recipient |
-| amount* | | Amount of asset multiplied by 10^`decimals`. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10^8. `{ "WAVES": 677728840 }` means 6.77728840 |
+| amount* | | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 | assetId | WAVES | Base58 encoded ID of the asset to transfer. `null` or omitted field means WAVES |
 | attachment | | Optional binary data base58 encoded. This field is often used to attach a comment to the transaction. The maximum data size is 140 bytes |
 | feeAssetId | WAVES | Base58 encoded ID of the sponsored asset to pay the fee. See the [Sponsored Fee](/en/blockchain/waves-protocol/sponsored-fee) article for more information. `null` or omitted field means WAVES |
@@ -1283,7 +1283,7 @@ interface Provider {
 }
 ```
 
-## Error Сodes
+## Error Codes
 
 | Error's class                  | Code | Type           | Example |
 |:------------------------------|:-----|:---------------|:--------|

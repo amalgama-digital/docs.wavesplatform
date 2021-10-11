@@ -8,7 +8,7 @@ Waves smart contracts are scripts written in Ride. Scripts can be assigned to ac
 
 Script functionality depends on its [type](/en/ride/script):
 
-* [dApp script](/en/ride/script/script-types/dapp-script) enables you to define сallable functions that can perform various actions on the blockchain and a verifier function that allows or denies transactions and orders that are sent on behalf of the dApp account.
+* [dApp script](/en/ride/script/script-types/dapp-script) enables you to define callable functions that can perform various actions on the blockchain and a verifier function that allows or denies transactions and orders that are sent on behalf of the dApp account.
 * [Account script](/en/ride/script/script-types/account-script) allows or denies transactions and orders that are sent on behalf of the account.
 * [Asset script](/en/ride/script/script-types/asset-script) allows or denies transactions involving the asset.
 

@@ -69,13 +69,13 @@ The sender should specify a fee taking into account the maximum possible number 
 
 The minimum fee in WAVES for an Invoke Script transaction is calculated as follows:
 
-`Fee` = (0.005 + `E`) × ⌈`С` / 10,000⌉ + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I`,
+`Fee` = (0.005 + `E`) × ⌈`C` / 10,000⌉ + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I`,
 
 Where:
 
    `E` is the **e**xtra fee specified in the `extraFeePerStep` field. `extraFeePerStep` can be 0. The transaction sender can specify `extraFeePerStep` > 0 in order to raise the processing priority of transactions of the computation sequence.
 
-   `С` is the **c**omplexity of the callable function. `С`/10,000 rounded up to the nearest integer is the number of stages in the computation sequence.
+   `C` is the **c**omplexity of the callable function. `C`/10,000 rounded up to the nearest integer is the number of stages in the computation sequence.
 
    `S` = 0.004 if the transaction **s**ender is a [dApp or smart account](/en/blockchain/account/dapp), otherwise 0.
 

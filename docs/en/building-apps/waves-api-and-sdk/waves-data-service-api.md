@@ -43,7 +43,7 @@ If the endpoint returns `null` or `Not found` for the selected pair `{amountAsse
 
       ![](./_assets/asset-pair.png)
 
-   • You can also use the `GET /matcher/settings` endpoint of the Мatcher API ([for Mainnet](https://matcher.waves.exchange), [Testnet](https://matcher-testnet.waves.exchange), or [Stagenet](https://matcher-stagenet.waves.exchange)) that returns the `priceAssets` list:
+   • You can also use the `GET /matcher/settings` endpoint of the Matcher API ([for Mainnet](https://matcher.waves.exchange), [Testnet](https://matcher-testnet.waves.exchange), or [Stagenet](https://matcher-stagenet.waves.exchange)) that returns the `priceAssets` list:
 
    &nbsp;&nbsp;&nbsp;• If both assets are in the `priceAssets` list, the price asset is the one that comes first.
 

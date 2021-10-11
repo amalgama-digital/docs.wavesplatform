@@ -2,11 +2,15 @@
 
 ## October
 
-* [Any](/eb/ride/data-types/any): added information about `as` and `exactAs` macros.
+### Ride
+
+* [Any](/en/ride/data-types/any) — <span style="color:green">updated</span>: added information about `as` and `exactAs` macros.
+* [Union](/en/ride/data-types/union) — <span style="color:green">updated</span>
 
 ## September
 
 * [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer): added information about ProviderKeeper and ProviderLedger.
+* [Node Configuration](/en/waves-node/node-configuration): added the `minimum-peers` parameter.
 
 ## July
 

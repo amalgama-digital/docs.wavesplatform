@@ -37,6 +37,7 @@ The Waves ecosystem offers variety of projects and products developed by the com
 * [Waves Explorer](https://wavesexplorer.com): the official explorer of the Waves blockchain and a faucet providing free tokens for Testnet.
 * [dev.pywaves.org](https://dev.pywaves.org): an explorer featuring view statistics on generating nodes and staking.
 * [w8io](https://w8io.ru): a fast and techie blockchain explorer with a concise interface.
+* [wscan.io](https://wscan.io/): an explorer providing additional info about exchanges, nodes and dApps.
 * [WavesCap](https://wavescap.com): “CoinMarketCap” for Waves-based assets.
 
 ## Development

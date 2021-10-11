@@ -178,7 +178,7 @@ module.exports = {
                     },
                     wavesBlockchain: {
                         title: 'Waves Blockchain',
-                        link: 'https://waves.tech/waves-protocol',
+                        link: 'https://waves.tech',
                     },
                     WavesIde: {
                         title: 'Waves IDE',

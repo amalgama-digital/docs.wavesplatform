@@ -261,13 +261,13 @@ Example:
 
 In case of a success, an alias (another name) is created.
 
-## Mass Transfer Transaction (Тype 11)
+## Mass Transfer Transaction (Type 11)
 
 - `totalAmount`: MoneyLike – total to be sent // instead of calculating the amount you may insert { `assetId`: "ID of the asset to be sent", `coin`s: 0}`.
 - `transfers`: an array of objects:
    { `recipient`: string – address/alias, `amount`: number/string/MoneyLike }.
 - `*fee`: MoneyLike – fee.
-- `attachment`: [,140 bytes в base58] string – additional info.
+- `attachment`: [,140 bytes in base58] string – additional info.
 - `*senderPublicKey`: string – sender's public key in base58.
 - `*timestamp`: number/string – time in ms.
 

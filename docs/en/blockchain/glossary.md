@@ -202,17 +202,13 @@ A **mining node** is a [node](#node) that can perform [mining](#mining). Each mi
 
 ### Node
 
-A **node** is a [host](https://ru.wikipedia.org/wiki/Хост) that is connected to the [blockchain network](#blockchain-network) using the [Waves Node](https://github.com/wavesplatform/Waves) application. The node stores [blocks](#block), sends and validates [transactions](#transaction).
+A **node** is a [host](https://en.wikipedia.org/wiki/Host_(network&#41;) that is connected to the [blockchain network](#blockchain-network) using the [Waves Node](https://github.com/wavesplatform/Waves) application. The node stores [blocks](#block), sends and validates [transactions](#transaction).
 
 ## O
 
 ### Oracle
 
 **Oracle** is a provider of data from the outside world to the [blockchain](#blockchain).
-
-### Oracle card
-
-An **oracle card** is a public description of the [oracle](#oracle) in the [blockchain](#blockchain) according to a [standardized protocol](/en/ecosystem/waves-oracles/create-an-oracle-card-with-a-data-transaction) in the form of a [data transaction](/en/blockchain/transaction-type/data-transaction).
 
 ### Order
 

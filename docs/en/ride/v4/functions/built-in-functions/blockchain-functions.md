@@ -5,8 +5,8 @@
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
 | [addressFromRecipient(Address&#124;Alias): Address](#address-from-recipient) | Gets the corresponding [address](/en/blockchain/account/address) of the [alias](/en/blockchain/account/alias) | 100 for Standard Library **version 3**<br>5 for Standard Library **version 4** |
-| [assetBalancе(Address&#124;Alias, ByteVector): Int](#asset-balance) | Gets account balance by token ID | 100 for [Standard Library](/en/ride/script/standard-library) **version 3**<br>10 for Standard Library **version 4** |
-| [assetInfo(ByteVector): Аsset&#124;Unit](#assetinfo) | Gets the information about a [token](/en/blockchain/token/) | 100 for [Standard Library](/en/ride/script/standard-library) **version 3**<br>15 for Standard Library **version 4** |
+| [assetBalance(Address&#124;Alias, ByteVector): Int](#asset-balance) | Gets account balance by token ID | 100 for [Standard Library](/en/ride/script/standard-library) **version 3**<br>10 for Standard Library **version 4** |
+| [assetInfo(ByteVector): Asset&#124;Unit](#assetinfo) | Gets the information about a [token](/en/blockchain/token/) | 100 for [Standard Library](/en/ride/script/standard-library) **version 3**<br>15 for Standard Library **version 4** |
 | [blockInfoByHeight(Int): BlockInfo&#124;Unit](#blockinfobyheight) | Gets the information about a [block](/en/blockchain/block/) by the [block height](/en/blockchain/block/block-height) | 100 for Standard Library **version 3**<br>5 for Standard Library **version 4** |
 | [calculateAssetId(Issue): ByteVector](#calculateassetid) | Calculates the ID of the asset, created by [Issue](/en/ride/v4/structures/script-actions/issue) structure during [invoke script transaction](/en/blockchain/transaction-type/invoke-script-transaction) execution | 10 |
 | [transactionHeightById(ByteVector): Int&#124;Unit](#transactionheightbyid) | Gets the [block height](/en/blockchain/block/block-height) of a transaction | 100 for Standard Library **version 3**<br>20 for Standard Library **version 4** |
@@ -57,7 +57,7 @@ assetBalance(addressOrAlias: Address|Alias, assetId: ByteVector): Int
 Gets the information about a [token](/en/blockchain/token/).
 
 ```
-assetInfo(id: ByteVector): Аsset|Unit
+assetInfo(id: ByteVector): Asset|Unit
 ```
 
 For a description of the return value, see the [Asset](/en/ride/v4/structures/common-structures/asset) article.

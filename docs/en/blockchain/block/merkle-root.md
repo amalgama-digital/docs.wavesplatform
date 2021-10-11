@@ -9,7 +9,7 @@ The transactions root hash in the block header has the following purposes:
 
 > :warning: `transactionsRoot` is enabled by feature #15 “Ride V4, VRF, Protobuf, Failed transactions”.
 
-## transactionsRoot Сalculation
+## transactionsRoot Calculation
 
 ![](./_assets/merkle1.png)
 
@@ -53,7 +53,7 @@ To prove that the block contains a given transaction, side 1 provides the follow
 
 For example, for the T<sub>D</sub> transaction:
 
-* `merkleProofs` = [ H<sub>С</sub>, H<sub>AB</sub>, H<sub>EFGH</sub> ]
+* `merkleProofs` = [ H<sub>C</sub>, H<sub>AB</sub>, H<sub>EFGH</sub> ]
 * `index` = 3
 
 Side 2 checks the proof:
@@ -71,7 +71,7 @@ Side 2 checks the proof:
 
    For example, `index` = 3<sub>10</sub> = 11<sub>2</sub> , thus:
    
-   • `merkleProofs`[0] = H<sub>С</sub> is on the left,
+   • `merkleProofs`[0] = H<sub>C</sub> is on the left,
    • `merkleProofs`[1] = H<sub>AB</sub> is on the left,
    • `merkleProofs`[2] = H<sub>EFGH</sub> is on the right.
 

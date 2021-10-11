@@ -35,8 +35,8 @@ message Block {
 | :--- | :--- |
 | chain_id | [Chain ID](/en/blockchain/blockchain-network/#chain-id) |
 | reference | • For the first block of version 5, that is, at the height of activation of feature #15 “Ride V4, VRF, Protobuf, Failed transactions”: `signature` of the previous block.<br>• For the next blocks: BLAKE2b-256 hash of the previous block header |
-| base_target | [Base target](/en/blockchain/block/block-generation/base-target): а variable that is used in the block generation algorithm |
-| generation_signature | [Generation signature](/en/blockchain/block/block-generation/): а variable that is used in the block generation algorithm (32 bytes) |
+| base_target | [Base target](/en/blockchain/block/block-generation/base-target): a variable that is used in the block generation algorithm |
+| generation_signature | [Generation signature](/en/blockchain/block/block-generation/): a variable that is used in the block generation algorithm (32 bytes) |
 | feature_votes | List of features for which the block generator votes. See the [Features](/en/waves-node/features/) |
 | timestamp | [Block timestamp](/en/blockchain/block/block-timestamp): Unix time in milliseconds |
 | version | Block version: 5 |

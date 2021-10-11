@@ -250,7 +250,7 @@ pow(1625, 2, 27, 1, 5, HALFUP) # function returns 185910572, so, the result is: 
 
 ## pow(BigInt, Int, BigInt, Int, Int, Union): BigInt<a id="powbigint"></a>
 
-Вычисляет `a`<sup>`b`</sup> с высокой точностью.
+Calculates  `a`<sup>`b`</sup> with high accuracy.
 
 ``` ride
 pow(base: BigInt, bp: Int, exponent: BigInt, ep: Int, rp: Int, round: DOWN|CEILING|FLOOR|HALFUP|HALFEVEN): BigInt

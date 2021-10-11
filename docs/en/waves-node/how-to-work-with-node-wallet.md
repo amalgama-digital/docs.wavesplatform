@@ -76,4 +76,4 @@ If you need to change node's account, first of all, delete the existing wallet.d
 * [create a wallet using existing seed](#existing-seed).
 * [use other wallet](#existing-wallet).
 
-> If the seed in the `wallet.dat` file and in the node's configuration file do not match, the seed from `wallet.dat` is used.
+> If the seed in the `wallet.dat` file and in the node's configuration file do not match, the node will not start.

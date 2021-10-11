@@ -12,7 +12,7 @@ In the tables below regular expressions are used to define paths, for example, <
 
 ## Limitations on [Mainnet Pool](https://nodes.wavesnodes.com/)
 
-| Path | Connections | Request rate | Сaching time |
+| Path | Connections | Request rate | Caching time |
 | --- | :---: | :---: | :---: |
 | / | 15 | 20 r/s (burst 50) | 1 s |
 | /blocks/seq/\d+/\d+ | 1 | 1 r/s | 5 s |
@@ -26,7 +26,7 @@ In the tables below regular expressions are used to define paths, for example, <
 
 ## Limitations on [Testnet Pool](https://nodes-testnet.wavesnodes.com/)
 
-| Path | Connections | Request rate | Сaching time |
+| Path | Connections | Request rate | Caching time |
 | --- | :---: | :---: | :---: |
 | / | 15 | 20 r/s (burst 50) | 1 s |
 | /blocks/seq/\d+/\d+ | 1 | 1 r/s | 5 s |
