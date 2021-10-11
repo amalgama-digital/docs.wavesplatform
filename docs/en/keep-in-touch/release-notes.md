@@ -27,18 +27,22 @@
    ```json
    {
       "type": 19,
-      "id": "6yQk8MThq5dLE3YEU9BZwRbB5ibcihorkuCki3f27dau",
+      "id": "AAU7gnVCc4G6LrSndTy3qbgnsDT9FTHkhRCRQNDVo52k",
       "fee": 100000,
       "feeAssetId": null,
-      "timestamp": 1631015652752,
+      "timestamp": 1632300900966,
+      "version": 1,
+      "chainId": 67,
       "bytes": "0xf8ac86017bc01bcd9001830186a0943353cdb2c6454ad0811f29b632208162037fc22d80b844a9059cbb00000000000000000000000088955b80d3796397c447220793f625a8e47a589400000000000000000000000000000000000000000000000000000000000f424081ada07221e88bbaf6c221faf586766d856d64c66350017f94515c675930b5a38bfe45a05a36e1ab1cc27938c7a962c794b39b68d5a228d2dc987c04916b97246796db23",
-      "sender": "3FzoJXUesFqzf4nmMYejpUDYmFJvkwEiQG6",
-      "senderPublicKey": "5BQPcwDXaZexgonPb8ipDrLRXY3RHn1kFLP9fqp1s6M6xiRhC4LvsAq2HueXCMzkpuXsrLnuBA3SdkJyuhNZXMCd",
-      "height": 15,
+      "sender": "3F11ucZTFLBGrY3TpSmWH3tH4iaYRgLVvZV",
+      "senderPublicKey": "4NzCXwRd3wKsmrrYrGVBsmuiUu6sVhZNKdvxPqzreCMRftvpXD7jJ19XFdXZqSC63nS59CtjCXXrBfwMspvf8nfs",
       "applicationStatus": "succeeded",
-      "assetId": "4TMuiKSpbBrDUJPWK6VuTDzpJx3eQQJq9X3jRRfdWrNu",
-      "amount": 1000000,
-      "stateChanges": null
+      "payload": {
+         "type": "transfer",
+         "assetId": null,
+         "amount": 100000000,
+         "recipient": "3FDztq6huchm3TEbJXNcZE9HeDH3b4qpEoK"
+      }
    }
    ```
    </details>
@@ -49,49 +53,35 @@
    ```json
    {
       "type": 19,
-      "id": "32xLjRVZM3sartaDpP6d5sNArgcYDjbqdErH6Wingjni",
+      "id": "AAU7gnVCc4G6LrSndTy3qbgnsDT9FTHkhRCRQNDVo52k",
       "fee": 500000,
       "feeAssetId": null,
-      "timestamp": 1631032811795,
+      "timestamp": 1632300900966,
       "version": 1,
-      "chainId": 69,
+      "chainId": 67,
       "bytes": "0xf9014b86017bc121a113018307a12094c811007db5e07a1bd3d91aef1f37bd3010c28d5980b8e4a72afeeb000000000000000000000000000000000000000000000000000000000000007b0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000087100000000000000000000000000000000000000000000000000000000000000001ca0fbe876dcb9939c4812d2ef95bb30cd84740e7db96d7959f043152958a101e177a055356f63ccee0a020cd12bc4350e6a888d2ed7967f5ca0fefe773c4a752950ff",
-      "sender": "3FukV1533yMME1z5sMyamBgvgZyB6y3NRb3",
-      "senderPublicKey": "3xu7QYBo4bAYmkkiefrkqBHfk4o73mWWLznWBuNP39S8WnhWSU2aGQ4o5UkdsJzqS7hci2GNN5WEvUWibdymfUy6",
-      "height": 447,
+      "sender": "3F11ucZTFLBGrY3TpSmWH3tH4iaYRgLVvZV",
+      "senderPublicKey": "4NzCXwRd3wKsmrrYrGVBsmuiUu6sVhZNKdvxPqzreCMRftvpXD7jJ19XFdXZqSC63nS59CtjCXXrBfwMspvf8nfs",
       "applicationStatus": "succeeded",
-      "dapp": "3FukV1533yMME1z5sMyamBgvgZyB6y3NRb3",
-      "call": {
-         "function": "deposit",
-         "args": [
-            {
-               "type": "integer",
-               "value": 123
-            }
-         ]
-      },
-      "payment": [
-         {
-            "amount": 2161,
-            "assetId": null
+      "payload": {
+         "type": "invocation",
+         "dApp": "3FEVXxz656kaC24vh3r25eXNY64QSqX9ZFg",
+         "payment": [],
+         "call": {
+            "function": "depositRef",
+            "args": []
+         },
+         "stateChanges": {
+            "data": [],
+            "transfers": [],
+            "issues": [],
+            "reissues": [],
+            "burns": [],
+            "sponsorFees": [],
+            "leases": [],
+            "leaseCancels": [],
+            "invokes": []
          }
-      ],
-      "stateChanges": {
-         "data": [],
-         "transfers": [
-            {
-               "address": "3FukV1533yMME1z5sMyamBgvgZyB6y3NRb3",
-               "asset": null,
-               "amount": 123
-            }
-         ],
-         "issues": [],
-         "reissues": [],
-         "burns": [],
-         "sponsorFees": [],
-         "leases": [],
-         "leaseCancels": [],
-         "invokes": []
       }
    }
    ```
