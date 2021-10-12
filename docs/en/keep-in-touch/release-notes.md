@@ -91,7 +91,7 @@
 
    * `sender` contains Waves address base58 encoded,
    * `senderPublicKey` is 64 bytes base58 encoded,
-   * `bytes` contains the entire Ethereum transaction bytes, including the ECDSA signature, in HEX encoding.
+   * `bytes` contains the entire Ethereum transaction bytes, including the ECDSA signature, HEX encoded.
    * `proofs` array is missing.
 
 * Added support for Exchange transactions containing an order (or both orders) with an ECDSA signature.
@@ -127,14 +127,18 @@
    Features JSON representation of an order with ECDSA signature:
    * `sender` contains Waves address base58 encoded,
    * `senderPublicKey` is 64 bytes base58 encoded,
-   * `eip712Signature` contains an ECDSA signature in HEX encoding,
+   * `eip712Signature` contains an ECDSA signature HEX encoded,
    * `proofs` array is missing.
 
 * Added the new transaction type: Invoke Expression.
 
 #### Improvements
 
-* Added the `/eth/assets` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset details including asset ID in Waves format (32 bytes base58 encoded). The asset details in the response are in the same order as IDs in the request.
+* Added the `/eth/assets` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset details including asset ID in Waves format (32 bytes, base58 encoded). The asset details in the response are in the same order as IDs in the request.
+
+### Activation
+
+To activate the improvements listed above, vote for feature #17 “Ride V6”.
 
 ## Version 1.3 Jumeirah
 

@@ -22,6 +22,6 @@ Added support for dApp scripts with complexity over 10,000. The execution of suc
 ## MetaMask Support
 
 * The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
-* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a transfer transaction. The `proofs` array contains 8 empty values.
+* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a Transfer transaction. The `proofs` array contains 8 empty values.
 
 [More about MetaMask support on the Waves blockchain](/en/keep-in-touch/metamask)

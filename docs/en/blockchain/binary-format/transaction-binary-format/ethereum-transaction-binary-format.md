@@ -1,6 +1,6 @@
 # Ethereum Transaction Binary Format
 
-> Ethereum transaction support is added in node version 1.4.0 and enabled by feature #17 "Ride V6". Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
+> Ethereum transaction support is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 Waves node supports Ethereum transactions (only Legacy) and interprets them as a dApp script invocation or token transfer, depending on transaction content. [More about Ethereum transaction support](/en/keep-in-touch/metamask)
 
@@ -29,6 +29,6 @@ Although the protobuf schema does not distinguish fields of an Ethereum transact
 * If the `value` field is non-empty, the transaction is interpreted as a WAVES transfer. In this case the `data` field must be empty.
 * If the `data` field contains an invocations of the `transfer` method of the ERC20 smart contract and the `to` field contains the first 20 bytes of a custom token ID, the transaction is interpreted as a transfer of that token.
 
-   The first 20 bytes of the token ID uniquely define the token, since there are no tokens on the blockchain whose first 20 bytes if ID are the same.
+   The first 20 bytes of the token ID uniquely define the token, since there are no tokens on the blockchain whose first 20 bytes of ID are the same.
 
 * In other cases, the transaction is interpreted as an invocations of dApp script. The last argument of the callable function must be an array; it is treated as a list of payments attached to the call.
