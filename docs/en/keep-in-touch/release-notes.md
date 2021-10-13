@@ -150,7 +150,7 @@ The improvements listed below are enabled by feature #16 “Ride V5, dApp-to-dAp
 * Amended [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction):
    * Canceled the extra fee of 0.004 WAVES for smart assets in payments and script actions.
    * Transaction can contain up to 10 attached payments.
-   * The total complexity for all callable functions and asset scripts involved is limited by 26,000 (the sender's account script complexity is not included in this limit). 
+   * The total complexity for all callable functions and asset scripts involved is limited to 26,000 (the sender's account script complexity is not included in this limit). 
    * The maximum complexity of a callable function of a dApp script is changed to 10,000.
 * For all types of transactions, canceled the extra fee of 0.004 WAVES for sending a transaction from a smart account or dApp unless the complexity of sender's account script or dApp script verifier function exceeds 200.
 
@@ -437,7 +437,7 @@ The improvements listed below are enabled by feature #15 "Ride V4, VRF, Protobuf
 
 ### Protocol Enhancements
 
-* Improved the mechanism for [generating blocks](/en/blockchain/block/block-generation/) using [VRF](https://en.wikipedia.org/wiki/Verifiable_random_function) (Verifiable random function). This improvement allows withstanding stake grinding attacks, which are used by the attackers to try to increase the probability of generating a block for themselves.
+* Improved the mechanism for [generating blocks](/en/blockchain/block/block-generation/) using [VRF](https://en.wikipedia.org/wiki/Verifiable_random_function) (Verifiable random function). This improvement allows withstanding stake grinding attacks, which are used by the attackers to try to increase the probability of generating a block.
 * Implemented saving failed transactions. Invoke script transactions and exchange transactions are saved on the blockchain and a fee is charged for them even if the dApp script or the asset script failed, provided that the sender's signature or account script verification passed and the complexity of computations performed during script invocation exceeded the threshold for saving failed transactions. [More details](/en/keep-in-touch/april)
 * Implemented the feature of changing the asset name and description. For this means, the [Update Asset Info transaction](/en/blockchain/transaction-type/update-asset-info-transaction) is used. Change is possible after 10 or more blocks on Stagenet and after 100,000 or more blocks on Mainnet and Testnet.
 * Implemented the feature of deletion of entries from the account data storage. This action can be performed by the [data transaction](/en/blockchain/transaction-type/data-transaction) or [DeleteEntry](/en/ride/structures/script-actions/delete-entry) structure of the Ride language.

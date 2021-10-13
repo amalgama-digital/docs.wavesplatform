@@ -25,7 +25,7 @@ In UIs, the MetaMask user address is represented in HEX encoding, and the Waves 
 
 A Waves node provides RPC API functions required for using MetaMask.
 
-Connecting MetaMask to the Waves network can be done manually or programmatically.
+MetaMask can be connected to the Waves network manually or programmatically.
 
 To connect manually, a user selects “Custom RPC” in the list of networks and specifies the connection parameters:
 
@@ -54,7 +54,7 @@ To transfer a token from MetaMask wallet, a user should:
 
 MetaMask creates the transaction in Ethereum format, signs it with the user's private key, and sends the transaction to the Waves node.
 
-> Users of Waves wallets such as Waves.Exchange, WavesFX and others (applications developed by third-party teams from the community) can transfer tokens to a MetaMask user. Some wallets only support Waves addresses, so you should first convert the recipient address from Ethereum representation to Waves. As a result a regular [Transfer transaction](/en/blockchain/transaction-type/transfer-transaction) is created, and the recipient will see the received tokens in MetaMask (for custom token, the recipient should add a balance display first).
+> Users of Waves wallets such as Waves.Exchange, WavesFX and others (applications developed by third-party teams from the community) can transfer tokens to a MetaMask user. Some wallets only support Waves addresses, so you should first convert the recipient address from Ethereum representation to Waves. As a result, a regular [Transfer transaction](/en/blockchain/transaction-type/transfer-transaction) is created, and the recipient will see the received tokens in MetaMask (for custom token, the recipient should add a balance display first).
 
 ## Script Invocation
 
