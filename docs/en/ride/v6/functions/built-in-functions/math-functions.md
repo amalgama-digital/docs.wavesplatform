@@ -6,8 +6,8 @@
 | :--- | :--- | :--- |
 | [fraction(Int, Int, Int): Int](#fraction) | Multiplies and divides [integers](/en/ride/data-types/int) to avoid overflow | 1 |
 | [fraction(Int, Int, Int, Union): Int](#fractionintround) | Multiplies and divides integers to avoid overflow, applying the specified rounding method | 4 |
-| [fraction(BigInt, BigInt, BigInt): BigInt](#fractionbigint) | Multiplies and divides [bid integers](/en/ride/data-types/bigint) to avoid overflow | 3 |
-| [fraction(BigInt, BigInt, BigInt, Union): BigInt](#fractionbigintround) | Multiplies and divides bid integers to avoid overflow, applying the specified rounding method | 4 |
+| [fraction(BigInt, BigInt, BigInt): BigInt](#fractionbigint) | Multiplies and divides [bid integers](/en/ride/data-types/bigint) to avoid overflow | 1 |
+| [fraction(BigInt, BigInt, BigInt, Union): BigInt](#fractionbigintround) | Multiplies and divides bid integers to avoid overflow, applying the specified rounding method | 1 |
 | [log(Int, Int, Int, Int, Int, Union): Int](#log)| Calculates logarithm of a number to a given base | 100 |
 | [log(BigInt, Int, BigInt, Int, Int, Union): BigInt](#logbigint) | Calculates logarithm of a number to a given base with high accuracy | 200 |
 | [median(List[Int]): Int](#median)| Returns the median of a list of integers | 20 |
@@ -15,7 +15,7 @@
 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Raises a number to a given power | 28 |
 | [pow(BigInt, Int, BigInt, Int, Int, Union): BigInt](#powbigint) | Raises a number to a given power with high accuracy | 270 |
 | [sqrt(Int, Int, Int, Union): Int](#sqrt) | Returns the square root of a number | 2 |
-| [sqrt(BigInt, Int, Int, Union): BigInt](#sqrtbigint) | Returns the square root of a number with high accuracy | 6 |
+| [sqrt(BigInt, Int, Int, Union): BigInt](#sqrtbigint) | Returns the square root of a number with high accuracy | 5 |
 
 ## fraction(Int, Int, Int): Int<a id="fraction"></a>
 

@@ -22,7 +22,7 @@
 | [toString(Address): String](#to-string-address) | Converts an array of bytes of an [address](/en/blockchain/account/address) to a string | 1 |
 | [toString(Boolean): String](#tostring-bool) | Converts a boolean value to a string | 1 |
 | [toString(Int): String](#tostring-int) | Converts an integer to a string | 1 |
-| [toString(BigInt): String](#to-string-bigint) | Converts a big integer to a string | 2 |
+| [toString(BigInt): String](#to-string-bigint) | Converts a big integer to a string | 1 |
 | [toUtf8String(ByteVector): String](#to-utf8-string) | Converts an array of bytes to a [UTF-8](https://en.wikipedia.org/wiki/UTF-8) string | 7 |
 | [transferTransactionFromProto(ByteVector): TransferTransaction&#124;Unit](#transfertransactionfromproto) | Deserializes transfer transaction | 5 |
 

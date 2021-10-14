@@ -71,7 +71,7 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | toInt(ByteVector): Int | Converts an array of bytes to an integer | 1 |
 | toInt(ByteVector, Int): Int | Converts an array of bytes to an integer starting from a certain index | 1 |
 | toString(Address): String | Converts an [address](/en/blockchain/account/address) to a string | 1 |
-| toString(BigInt): String | Converts a big integer to a string | 2 |
+| toString(BigInt): String | Converts a big integer to a string | 1 |
 | toString(Boolean): String | Converts a boolean to a string | 1 |
 | toString(Int): String | Converts an integer to a string | 1 |
 | toUtf8String(ByteVector): String | Converts an array of bytes to a UTF-8 string | 7 |
@@ -162,8 +162,8 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | :--- | :--- | :--- |
 | fraction(Int, Int, Int): Int | Multiplies and divides integers to avoid overflow | 1 |
 | fraction(Int, Int, Int, Union): Int | Multiplies and divides integers to avoid overflow, applying the specified rounding method | 4 |
-| fraction(BigInt, BigInt, BigInt): BigInt | Multiplies and divides [bid integers](/en/ride/data-types/bigint) to avoid overflow | 3 |
-| fraction(BigInt, BigInt, BigInt, Union): BigInt | Multiplies and divides bid integers to avoid overflow, applying the specified rounding method | 4 |
+| fraction(BigInt, BigInt, BigInt): BigInt | Multiplies and divides [bid integers](/en/ride/data-types/bigint) to avoid overflow | 1 |
+| fraction(BigInt, BigInt, BigInt, Union): BigInt | Multiplies and divides bid integers to avoid overflow, applying the specified rounding method | 1 |
 | log(Int, Int, Int, Int, Int, Union): Int | Calculates logarithm of a number with a base | 100 |
 | log(BigInt, Int, BigInt, Int, Int, Union): BigInt | Calculates logarithm of a number to a given base with high accuracy | 200 |
 | median(List[Int]): Int | Returns the median of a list of integers | 20 |
@@ -171,7 +171,7 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | pow(Int, Int, Int, Int, Int, Union): Int | Raises a number to a given power | 28 |
 | pow(BigInt, Int, BigInt, Int, Int, Union): BigInt | Raises a number to a given power with high accuracy | 270 |
 | sqrt(Int, Int, Int, Union): Int | Returns the square root of a number | 2 |
-| sqrt(BigInt, Int, Int, Union): BigInt | Returns the square root of a number with high accuracy | 6 |
+| sqrt(BigInt, Int, Int, Union): BigInt | Returns the square root of a number with high accuracy | 5 |
 
 ## [String functions](/en/ride/v6/functions/built-in-functions/string-functions)
 

@@ -10,8 +10,8 @@
 | :--- | :--- | :--- |
 | fraction(Int, Int, Int): Int | Умножает два целых числа и делит на третье без переполнения | 1 |
 | fraction(Int, Int, Int, Union): Int | Умножает два целых числа и делит на третье без переполнения, применяя указанный метод округления | 4 |
-| fraction(BigInt, BigInt, BigInt): BigInt | Умножает два [больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения | 3 |
-| fraction(BigInt, BigInt, BigInt, Union): BigInt | Умножает два больших целых числа и делит на третье без переполнения, применяя указанный метод округления | 4 |
+| fraction(BigInt, BigInt, BigInt): BigInt | Умножает два [больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения | 1 |
+| fraction(BigInt, BigInt, BigInt, Union): BigInt | Умножает два больших целых числа и делит на третье без переполнения, применяя указанный метод округления | 1 |
 | log(Int, Int, Int, Int, Int, Union): Int | Вычисляет логарифм числа по заданному основанию| 100 |
 | log(BigInt, Int, BigInt, Int, Int, Union): BigInt | Вычисляет логарифм числа по заданному основанию с высокой точностью | 200 |
 | median(List[Int]): Int | Возвращает медиану списка целых чисел | 20 |
@@ -19,7 +19,7 @@
 | pow(Int, Int, Int, Int, Int, Union): Int | Возводит число в степень | 28 |
 | pow(BigInt, Int, BigInt, Int, Int, Union): BigInt | Возводит число в степень с высокой точностью | 270 |
 | sqrt(Int, Int, Int, Union): Int | Извлекает квадратный корень из числа | 2 |
-| sqrt(BigInt, Int, Int, Union): BigInt | Извлекает квадратный корень из числа с высокой точностью | 6 |
+| sqrt(BigInt, Int, Int, Union): BigInt | Извлекает квадратный корень из числа с высокой точностью | 5 |
 
 
 ## [Функции блокчейна](/ru/ride/functions/built-in-functions/blockchain-functions)
@@ -100,7 +100,7 @@
 | toInt(ByteVector): Int | Конвертирует массив байтов в целое число | 1 |
 | toInt(ByteVector, Int): Int | Конвертирует массив байтов, начиная с указанного индекса, в целое число | 1 |
 | toString(Address): String | Конвертирует массив байтов [адреса](/ru/blockchain/account/address) в строку | 1 |
-| toString(BigInt): String | Конвертирует большое целое число в строку | 2 |
+| toString(BigInt): String | Конвертирует большое целое число в строку | 1 |
 | toString(Boolean): String | Конвертирует логическое значение в строку | 1 |
 | toString(Int): String | Конвертирует целое число в строку | 1 |
 | toUtf8String(ByteVector): String | Конвертирует массив байтов в строку в [UTF-8](https://ru.wikipedia.org/wiki/UTF-8) | 7 |

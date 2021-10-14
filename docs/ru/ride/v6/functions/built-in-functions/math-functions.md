@@ -6,8 +6,8 @@
 | :--- | :--- | :--- |
 | [fraction(Int, Int, Int): Int](#fraction) | Умножает два целых числа и делит на третье без переполнения | 1 |
 | [fraction(Int, Int, Int, Union): Int](#fractionintround) | Умножает два целых числа и делит на третье без переполнения, применяя указанный метод округления | 4 |
-| [fraction(BigInt, BigInt, BigInt): BigInt](#fractionbigint) | Умножает два [больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения | 3 |
-| [fraction(BigInt, BigInt, BigInt, Union): BigInt](#fractionbigintround) | Умножает два больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения, применяя указанный метод округления | 4 |
+| [fraction(BigInt, BigInt, BigInt): BigInt](#fractionbigint) | Умножает два [больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения | 1 |
+| [fraction(BigInt, BigInt, BigInt, Union): BigInt](#fractionbigintround) | Умножает два больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения, применяя указанный метод округления | 1 |
 | [log(Int, Int, Int, Int, Int, Union): Int](#log) | Вычисляет логарифм числа по заданному основанию | 100 |
 | [log(BigInt, Int, BigInt, Int, Int, Union): BigInt](#logbigint) | Вычисляет логарифм числа по заданному основанию с высокой точностью | 200 |
 | [median(List[Int]): Int](#median) | Возвращает медиану списка целых чисел | 20 |
@@ -15,7 +15,7 @@
 | [pow(Int, Int, Int, Int, Int, Union): Int](#pow) | Возводит число в степень | 28 |
 | [pow(BigInt, Int, BigInt, Int, Int, Union): BigInt](#powbigint) | Возводит число в степень с высокой точностью | 270 |
 | [sqrt(Int, Int, Int, Union): Int](#sqrt) | Извлекает квадратный корень из числа | 2 |
-| [sqrt(BigInt, Int, Int, Union): BigInt](#sqrtbigint) | Извлекает квадратный корень из числа с высокой точностью | 6 |
+| [sqrt(BigInt, Int, Int, Union): BigInt](#sqrtbigint) | Извлекает квадратный корень из числа с высокой точностью | 5 |
 
 ## fraction(Int, Int, Int): Int<a id="fraction"></a>
 
