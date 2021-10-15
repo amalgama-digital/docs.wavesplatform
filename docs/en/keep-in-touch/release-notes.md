@@ -1,6 +1,6 @@
 # Release Notes
 
-## Version 1.4 (Stagenet)
+## Version 1.4 Zegema (Stagenet)
 
 ### Protocol Enhancements
 
@@ -14,6 +14,10 @@
 * Added a new script type: [call script](/en/ride/v6/script/call-script) designed to be executed once by an Invoke Expression transaction.
 * Added a built-in variable: [i](/en/ride/v6/variables/built-in-variables#i) that is available in a call script and contains the [Invocation](/en/ride/v6/structures/common-structures/invocation) structure.
 * Added the [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/invoke-expression-transaction) structure that is used to verify an Invoke Expression transaction by smart contracts.
+* Added the following built-in functions:
+   * [sqrt(Int,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrt)
+   * [sqrt(BigInt,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)
+* For the built-in string functions [makeString](/en/ride/v6/functions/built-in-functions/string-functions#makestring-list-string-string-string) and [split](/en/ride/v6/functions/built-in-functions/string-functions#split-string-string-list-string) added the range of similar functions with different complexity depending on the data size limit. When data size is known in advance, the “cheaper” function can be used.
 
 ### Node REST API
 

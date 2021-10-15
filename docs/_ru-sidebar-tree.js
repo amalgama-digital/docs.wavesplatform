@@ -1029,6 +1029,24 @@ module.exports = {
           path: rideV6Path + 'variables/built-in-variables',
         },
         {
+          title: 'Встроенные функции',
+          path: rideV6Path + 'functions/built-in-functions',
+          children: [
+            {
+              title: 'Математические функции',
+              path: rideV6Path + 'functions/built-in-functions/math-functions',
+            },
+            {
+              title: 'Функции конвертации',
+              path: rideV6Path + 'functions/built-in-functions/converting-functions',
+            },
+            {
+              title: 'Функции строки',
+              path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+          ],
+        },
+        {
           title: 'Ограничения',
           path: rideV6Path + 'limits',
         },

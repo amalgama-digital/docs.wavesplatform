@@ -1029,6 +1029,24 @@ module.exports = {
           path: rideV6Path + 'variables/built-in-variables',
         },
         {
+          title: 'Built-in Functions',
+          path: rideV6Path + 'functions/built-in-functions',
+          children: [
+            {
+              title: 'Converting Functions',
+              path: rideV6Path + 'functions/built-in-functions/converting-functions',
+            },
+            {
+              title: 'Math Functions',
+              path: rideV6Path + 'functions/built-in-functions/math-functions',
+            },
+            {
+              title: 'String Functions',
+              path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+          ],
+        },
+        {
           title: 'Limitations',
           path: rideV6Path + 'limits',
         },

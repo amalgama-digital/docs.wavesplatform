@@ -1,8 +1,10 @@
 # [Ride v6] Converting functions
 
+:warning: This is the documentation for the Standard Library version 6, which is currently available for [Stagenet](/en/blockchain/blockchain-network/) only. [Go to Mainnet version](/en/ride/functions/built-in-functions/converting-functions)
+
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
-| [addressFromPublicKey(ByteVector): Address](#address-from-public-key)| Gets the corresponding [address](/en/blockchain/account/address) of the account public key | 63 |
+| [addressFromPublicKey(ByteVector): Address](#address-from-public-key)| Gets the corresponding [address](/en/blockchain/account/address) of the account public key | 1 |
 | [parseBigInt(String): BigInt&#124;Unit](#parse-bigint) | Converts the string representation of a number to its [big integer](/en/ride/data-types/bigint) equivalent | 65 |
 | [parseBigIntValue(String): BigInt](#parse-bigint-value) | Converts the string representation of a number to its big integer equivalent.<br>Fails if the string cannot be parsed | 65 |
 | [parseInt(String): Int&#124;Unit](#parse-int) | Converts the string representation of a number to its integer equivalent | 2 |
@@ -17,10 +19,10 @@
 | [toInt(BigInt): Int](#to-int-bigint) | Converts a big integer to an integer.<br>Fails if the number cannot be converted | 1 |
 | [toInt(ByteVector): Int](#toint-bytes) | Converts an array of bytes to an integer | 1 |
 | [toInt(ByteVector, Int): Int](#toint-bytes-int) | Converts an array of bytes to an integer starting from a certain index | 1 |
-| [toString(Address): String](#to-string-address) | Converts an array of bytes of an [address](/en/blockchain/account/address) to a string | 10 |
+| [toString(Address): String](#to-string-address) | Converts an array of bytes of an [address](/en/blockchain/account/address) to a string | 1 |
 | [toString(Boolean): String](#tostring-bool) | Converts a boolean value to a string | 1 |
 | [toString(Int): String](#tostring-int) | Converts an integer to a string | 1 |
-| [toString(BigInt): String](#to-string-bigint) | Converts a big integer to a string | 65 |
+| [toString(BigInt): String](#to-string-bigint) | Converts a big integer to a string | 1 |
 | [toUtf8String(ByteVector): String](#to-utf8-string) | Converts an array of bytes to a [UTF-8](https://en.wikipedia.org/wiki/UTF-8) string | 7 |
 | [transferTransactionFromProto(ByteVector): TransferTransaction&#124;Unit](#transfertransactionfromproto) | Deserializes transfer transaction | 5 |
 
