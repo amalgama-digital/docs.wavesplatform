@@ -114,6 +114,6 @@ The fields that depend on the type of transaction are described in the following
 * [Update Asset Info transaction binary format](/en/blockchain/binary-format/transaction-binary-format/update-asset-info-transaction-binary-format)
 * [Invoke Expression transaction binary format](/en/blockchain/binary-format/transaction-binary-format/invoke-expression-transaction-binary-format).
 
-The Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
+The Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 <!--* [Continuation transaction](/en/blockchain/binary-format/transaction-binary-format/continuation-transaction-binary-format) -->

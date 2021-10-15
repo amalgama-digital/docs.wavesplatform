@@ -143,7 +143,7 @@
 
 ### Activation
 
-To activate the improvements listed above, vote for feature #17 “Ride V6”.
+To activate the improvements listed above, vote for feature #17 “Ride V6, MetaMask support, Invoke Expression”.
 
 ## Version 1.3 Jumeirah
 

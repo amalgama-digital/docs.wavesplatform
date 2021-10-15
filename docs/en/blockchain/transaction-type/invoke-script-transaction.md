@@ -32,7 +32,7 @@ The total [complexity](/en/ride/base-concepts/complexity) is limited by 26,000 f
 
 <!-- ### Version 3
 
-Version 3 of the Invoke Script transaction is added in node version 1.4.0 and enabled with feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
+Version 3 of the Invoke Script transaction is added in node version 1.4.0 and enabled with feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 `Fee` = (0.005 + `E`) × ⌈`C` / 10,000⌉ × + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I` + 0,004 × `N`,
 `Fee` = 0.005 + `S` + 0.004 × `P` + 0.004 × `A` + 1 × `I` + 0,004 × `N`,
