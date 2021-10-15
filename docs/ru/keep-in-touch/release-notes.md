@@ -14,6 +14,7 @@
 * Добавлен новый тип скрипта — [скрипт вызова](/ru/ride/v6/script/call-script), предназначенный для однократного выполнения с помощью транзакции применения выражения.
 * Добавлена структура [InvokeExpressionTransaction](/ru/ride/v6/structures/transaction-structures/invoke-expression-transaction), предназначенная для верификации транзакции применения выражения в смарт-контрактах.
 * Добавлена встроенная переменная [i](/ru/ride/v6/variables/built-in-variables#i), доступная в скрипте вызова и содержащая структуру [Invocation](/ru/ride/v6/structures/common-structures/invocation).
+* Добавлено семейство встроенных функций свертки [fold](/ru/ride/v6/functions/built-in-functions/fold-functions), предназначенных для выполнения операций над списком значений. Семейство функций заменяет макрос `FOLD<N>`, использовавшийся в предыдущих версиях Стандартной библиотеки.
 * Добавлены встроенные функции:
    * [sqrt(Int,Int,Int,Union)](/ru/ride/v6/functions/built-in-functions/math-functions#sqrt)
    * [sqrt(BigInt,Int,Int,Union)](/ru/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)

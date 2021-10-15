@@ -21,6 +21,7 @@ The [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/
 
 ## Built-in functions
 
+* Added the [fold](/en/ride/v6/functions/built-in-functions/fold-functions) range of functions, designed to implement operations on a list of values. The functions replace the `FOLD<N>` macro used in previous versions of the Standard Library.
 * Added the following built-in functions:
    * [sqrt(Int,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrt)
    * [sqrt(BigInt,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)

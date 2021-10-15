@@ -21,6 +21,7 @@
 
 ## Изменения в функциях
 
+* Добавлено семейство встроенных функций свертки [fold](/ru/ride/v6/functions/built-in-functions/fold-functions), предназначенных для выполнения операций над списком значений. Семейство функций заменяет макрос `FOLD<N>`, использовавшийся в предыдущих версиях Стандартной библиотеки.
 * Добавлены встроенные функции:
    * [sqrt(Int,Int,Int,Union)](/ru/ride/v6/functions/built-in-functions/math-functions#sqrt)
    * [sqrt(BigInt,Int,Int,Union)](/ru/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)

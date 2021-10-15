@@ -1041,6 +1041,10 @@ module.exports = {
               path: rideV6Path + 'functions/built-in-functions/converting-functions',
             },
             {
+              title: 'Функции свертки',
+              path: rideV6Path + 'functions/built-in-functions/fold-functions',
+            },
+            {
               title: 'Функции строки',
               path: rideV6Path + 'functions/built-in-functions/string-functions',
             },

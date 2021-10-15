@@ -14,6 +14,7 @@
 * Added a new script type: [call script](/en/ride/v6/script/call-script) designed to be executed once by an Invoke Expression transaction.
 * Added a built-in variable: [i](/en/ride/v6/variables/built-in-variables#i) that is available in a call script and contains the [Invocation](/en/ride/v6/structures/common-structures/invocation) structure.
 * Added the [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/invoke-expression-transaction) structure that is used to verify an Invoke Expression transaction by smart contracts.
+* Added the [fold](/en/ride/v6/functions/built-in-functions/fold-functions) range of functions, designed to implement operations on a list of values. The functions replace the `FOLD<N>` macro used in previous versions of the Standard Library.
 * Added the following built-in functions:
    * [sqrt(Int,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrt)
    * [sqrt(BigInt,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)
