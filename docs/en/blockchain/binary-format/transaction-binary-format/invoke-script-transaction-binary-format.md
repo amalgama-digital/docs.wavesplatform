@@ -85,6 +85,3 @@ The maximum number of payments is 10. (Before activation of feature #16 “Ride 
 
 The maximum size of transaction including proofs is 5120 bytes.
 
-## JSON Representation of Transaction
-
-See the [example](https://nodes.wavesnodes.com/transactions/info/7CVjf5KGRRYj6UyTC2Etuu4cUxx9qQnCJox8vw9Gy9yq) in Node API.

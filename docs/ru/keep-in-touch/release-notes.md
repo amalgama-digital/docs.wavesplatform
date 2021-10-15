@@ -1,5 +1,145 @@
 # Release Notes
 
+## Версия 1.4 (Stagenet)
+
+### Развитие протокола
+
+* Добавлена поддержка транзакций в формате Ethereum, выполняющих перевод токена или вызов dApp-скрипта. Благодаря этому пользователи MetaMask могут подписывать транзакции и отправлять их на блокчейн Waves. [Подробнее](/ru/keep-in-touch/metamask)
+* Добавлена поддержка ордеров с подписью ECDSA в транзакции обмена. Благодаря этому пользователи могут подписывать ордера с помощью MetaMask. [Подробнее](/ru/keep-in-touch/metamask)
+* Добавлен новый тип транзакции — [транзакция применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction), которая позволяет выполнить приложенный к ней скрипт.
+
+### Node REST API
+
+#### Ломающие изменения
+
+* Добавлена поддержка транзакций в формате Ethereum, выполняющих перевод токена или вызов dApp-скрипта. JSON-представление транзакции зависит от ее содержания:
+
+   <details>
+   <summary>Пример перевода в формате Ethereum</summary>
+   
+   ```json
+   {
+      "type": 19,
+      "id": "AAU7gnVCc4G6LrSndTy3qbgnsDT9FTHkhRCRQNDVo52k",
+      "fee": 100000,
+      "feeAssetId": null,
+      "timestamp": 1632300900966,
+      "version": 1,
+      "chainId": 67,
+      "bytes": "0xf8ac86017bc01bcd9001830186a0943353cdb2c6454ad0811f29b632208162037fc22d80b844a9059cbb00000000000000000000000088955b80d3796397c447220793f625a8e47a589400000000000000000000000000000000000000000000000000000000000f424081ada07221e88bbaf6c221faf586766d856d64c66350017f94515c675930b5a38bfe45a05a36e1ab1cc27938c7a962c794b39b68d5a228d2dc987c04916b97246796db23",
+      "sender": "3F11ucZTFLBGrY3TpSmWH3tH4iaYRgLVvZV",
+      "senderPublicKey": "4NzCXwRd3wKsmrrYrGVBsmuiUu6sVhZNKdvxPqzreCMRftvpXD7jJ19XFdXZqSC63nS59CtjCXXrBfwMspvf8nfs",
+      "applicationStatus": "succeeded",
+      "payload": {
+         "type": "transfer",
+         "assetId": null,
+         "amount": 100000000,
+         "recipient": "3FDztq6huchm3TEbJXNcZE9HeDH3b4qpEoK"
+      }
+   }
+   ```
+   </details>
+
+   <details>
+   <summary>Пример вызова скрипта в формате Ethereum</summary>
+   
+   ```json
+   {
+      "type": 19,
+      "id": "AAU7gnVCc4G6LrSndTy3qbgnsDT9FTHkhRCRQNDVo52k",
+      "fee": 500000,
+      "feeAssetId": null,
+      "timestamp": 1632300900966,
+      "version": 1,
+      "chainId": 67,
+      "bytes": "0xf9014b86017bc121a113018307a12094c811007db5e07a1bd3d91aef1f37bd3010c28d5980b8e4a72afeeb000000000000000000000000000000000000000000000000000000000000007b0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000087100000000000000000000000000000000000000000000000000000000000000001ca0fbe876dcb9939c4812d2ef95bb30cd84740e7db96d7959f043152958a101e177a055356f63ccee0a020cd12bc4350e6a888d2ed7967f5ca0fefe773c4a752950ff",
+      "sender": "3F11ucZTFLBGrY3TpSmWH3tH4iaYRgLVvZV",
+      "senderPublicKey": "4NzCXwRd3wKsmrrYrGVBsmuiUu6sVhZNKdvxPqzreCMRftvpXD7jJ19XFdXZqSC63nS59CtjCXXrBfwMspvf8nfs",
+      "applicationStatus": "succeeded",
+      "payload": {
+         "type": "invocation",
+         "dApp": "3FEVXxz656kaC24vh3r25eXNY64QSqX9ZFg",
+         "payment": [],
+         "call": {
+            "function": "depositRef",
+            "args": []
+         },
+         "stateChanges": {
+            "data": [],
+            "transfers": [],
+            "issues": [],
+            "reissues": [],
+            "burns": [],
+            "sponsorFees": [],
+            "leases": [],
+            "leaseCancels": [],
+            "invokes": []
+         }
+      }
+   }
+   ```
+   </details>
+
+   Особенности JSON-представления транзакции в формате Ethereum:
+
+   * поле `sender` содержит адрес в представлении Waves в кодировке base58,
+   * поле `senderPublicKey` размером 64 байта в кодировке base58,
+   * поле `bytes` содержит байты Ethereum-транзакции целиком, включая подпись ECDSA, в кодировке HEX.
+   * массив `proofs` отсутствует.
+
+* Добавлена поддержка транзакций обмена, содержащих ордер (или оба ордера) с подписью ECDSA.
+
+   <details>
+   <summary>Пример ордера с подписью ECDSA</summary>
+   
+   ```json
+   "order1": {
+      "version": 4,
+      "id": "2Wx5ctbaU9GqQYXtEkqsin6drfu6SuADdwAyvuYnwai9",
+      "sender": "3FzoJXUesFqzf4nmMYejpUDYmFJvkwEiQG6",
+      "senderPublicKey": "5BQPcwDXaZexgonPb8ipDrLRXY3RHn1kFLP9fqp1s6M6xiRhC4LvsAq2HueXCMzkpuXsrLnuBA3SdkJyuhNZXMCd",
+      "matcherPublicKey": "9BUoYQYq7K38mkk61q8aMH9kD9fKSVL1Fib7FbH6nUkQ",
+      "assetPair": {
+         "amountAsset": "5fQPsn8hoaVddFG26cWQ5QFdqxWtUPNaZ9zH2E6LYzFn",
+         "priceAsset": null
+      },
+      "orderType": "buy",
+      "amount": 1,
+      "price": 100,
+      "timestamp": 1,
+      "expiration": 123,
+      "matcherFee": 100000,
+      "signature": "",
+      "proofs": [],
+      "matcherFeeAssetId": null,
+      "eip712Signature": "0xe5ff562bfb0296e95b631365599c87f1c5002597bf56a131f289765275d2580f5344c62999404c37cd858ea037328ac91eca16ad1ce69c345ebb52fde70b66251c"
+   }
+   ```
+   </details>
+
+   Особенности JSON-представления ордера с подписью ECDSA:
+   * поле `sender` содержит адрес в представлении Waves в кодировке base58,
+   * поле `senderPublicKey` размером 64 байта в кодировке base58,
+   * поле `eip712Signature` содержит подпись ECDSA в кодировке HEX,
+   * массив `proofs` отсутствует.
+
+* Добавлен новый тип транзакции: транзакция применения выражения.
+
+#### Улучшения
+
+* Новый метод `/eth/assets` принимает на вход идентификаторы ассетов в Ethereum-представлении (первые 20 байт ID ассета в кодировке HEX) и возвращает параметры ассетов, включая идентификатор в формате Waves (32 байта в кодировке base58). Ассеты в ответе следуют в том же порядке, что в запросе.
+
+### Ride
+
+* Выпущена [версия 6](/ru/ride/v6/) Стандартной библиотеки.
+* Добавлен новый тип скрипта — [скрипт вызова](/ru/ride/v6/script/call-script), предназначенный для однократного выполнения с помощью транзакции применения выражения.
+* Добавлена структура [InvokeExpressionTransaction](/ru/ride/v6/structures/transaction-structures/invoke-expression-transaction), предназначенная для верификации транзакции применения выражения в смарт-контрактах.
+* Добавлена встроенная переменная [i](/ru/ride/v6/variables/built-in-variables#i), доступная в скрипте вызова и содержащая структуру [Invocation](/ru/ride/v6/structures/common-structures/invocation).
+
+### Активация
+
+Чтобы активировать перечисленные выше улучшения, голосуйте за фичу №&nbsp;17 “Ride V6”.
+
 ## Версия 1.3 Jumeirah
 
 Изменения, перечисленные ниже, вступили в силу с активацией фичи №&nbsp;16 “Ride V5, dApp-to-dApp invocations”.

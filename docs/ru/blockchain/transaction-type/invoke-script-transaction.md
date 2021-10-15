@@ -129,7 +129,7 @@
 
 ## Бинарный формат
 
-См. раздел [Бинарный формат вызова скрипта](/ru/blockchain/binary-format/transaction-binary-format/invoke-script-transaction-binary-format).
+См. раздел [Бинарный формат транзакции вызова скрипта](/ru/blockchain/binary-format/transaction-binary-format/invoke-script-transaction-binary-format).
 
 ## Структура Ride
 
