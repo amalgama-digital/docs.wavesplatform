@@ -64,7 +64,6 @@ The addresses of the pool of public nodes are as follows:
 | :--- | :--- |
 | Mainnet | <https://waves.exchange/> |
 | Testnet | <https://testnet.waves.exchange/> |
-| Stagenet | <https://stagenet.waves.exchange/> |
 
 ### API of Waves.Exchange Matcher
 

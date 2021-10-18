@@ -30,7 +30,7 @@ If the transaction sender is a [dApp or smart account](/en/blockchain/account/da
 
 | Field | Description |
 | :--- | :--- |
-| alias | Alias. From 4 to 30 bytes (1 character can take up to 4 bytes) |
+| alias | Alias. See [Alias Requirements](/en/blockchain/account/alias#alias-requirements) |
 
 The fields that are common to all types of transactions are described in the [Transaction](/en/blockchain/transaction/#json-representation) article.
 

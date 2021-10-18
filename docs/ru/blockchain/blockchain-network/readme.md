@@ -64,7 +64,6 @@
 | :--- | :--- |
 | Mainnet | <https://waves.exchange/> |
 | Testnet | <https://testnet.waves.exchange/> |
-| Stagenet | <https://stagenet.waves.exchange/> |
 
 ### API матчера Waves.Exchange
 
