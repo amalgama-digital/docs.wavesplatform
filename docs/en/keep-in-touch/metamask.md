@@ -72,7 +72,7 @@ To convert the token ID from one format to another, use:
 
 A web app can invoke a dApp script on behalf of a MetaMask user, using the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with [ProviderMetamask](https://github.com/wavesplatform/provider-metamask):
 
-1. The app builds an Invoke Script transaction using the `invoke()` function and calls the `signAndBroadcast()` function.
+1. The app builds and sends an Invoke Script transaction using the `invoke({...}).broadcast()` function.
 2. Signer calls the corresponding ProviderMetamask function, and ProviderMetamask calls the MetaMask API.
 3. MetaMask opens a window where the user can view the details of the transaction, confirm it or reject.
 4. Having received the user's confirmation, MetaMask generates an Ethereum transaction with ECDSA signature and sends the transaction to a Waves node via the RPC API.
