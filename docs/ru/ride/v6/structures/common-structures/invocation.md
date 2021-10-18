@@ -2,7 +2,7 @@
 
 :warning: Это документация Стандартной библиотеки версии 6, которая в настоящее время доступна только на [Stagenet](/ru/blockchain/blockchain-network/).
 
-Структура содержит поля вызова, которые может использовать [вызываемая функция](/ru/ride/functions/callable-function) или [скрипт вызова](/ru/ride/v6/script/call-script).
+Структура содержит поля вызова, которые может использовать [вызываемая функция](/ru/ride/functions/callable-function) или [скрипт вызова](/ru/ride/v6/script/script-types/call-script).
 
 ## Конструктор
 

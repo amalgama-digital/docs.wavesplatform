@@ -130,6 +130,12 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | throw() | Raises an exception | 1 |
 | throw(String) | Raises an exception with a message | 1 |
 
+## [Fold functions](/en/ride/functions/built-in-functions/fold-functions)
+
+| Name | Description | Complexity |
+| :--- | :--- | :--- |
+| fold | Range of functions.<br>Implement operations on a list of values | 3–115 |
+
 ## [Hashing functions](/en/ride/functions/built-in-functions/hashing-functions)
 
 | Name | Description | Complexity |

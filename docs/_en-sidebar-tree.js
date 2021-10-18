@@ -1037,7 +1037,7 @@ module.exports = {
               path: rideV6Path + 'functions/built-in-functions/converting-functions',
             },
             {
-              title: 'Fold functions',
+              title: 'Fold Functions',
               path: rideV6Path + 'functions/built-in-functions/fold-functions',
             },
             {

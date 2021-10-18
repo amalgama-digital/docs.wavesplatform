@@ -14,7 +14,7 @@ Invocation(caller: Address, callerPublicKey: ByteVector, originCaller: Address, 
 
 The field values depend on how the callable function is invoked.
 
-If the script is invoked by an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) or [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-script-transaction):
+If the script is invoked by an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) or [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction):
 
 |   #   | Name | Data type | Description |
 | :--- | :--- | :--- | :--- |
