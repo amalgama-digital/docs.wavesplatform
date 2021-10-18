@@ -7,7 +7,7 @@ To enable MetaMask users to perform actions on the Waves blockchain, the Waves p
 * support for ECDSA signed orders in an [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction).
 
 As a result, MetaMask users are now able to:
-* transfer tokens:  both native WAVES token and custom tokens;
+* transfer tokens: both native WAVES token and custom tokens;
 * invoke a dApp script;
 * sign an exchange order.
 
@@ -44,11 +44,9 @@ To connect programmatically, a web app can use the [Signer](/en/building-apps/wa
 3. MetaMask opens a window where the user confirms the connection to the network.
 4. After receiving the confirmation, MetaMask creates the connection and returns the address of the user.
 
-As a result, MetaMask displays the Waves network as available, and the `login` function returns the user address in Waves format.
+As a result, MetaMask displays the Waves network as available, and the `login()` function returns the user address in Waves format.
 
-You can see how it works in the [Waves Dapp Ui](https://dev-dapps.wavesplatform.com). After logging in via MetaMask, the app displays the user address in Waves format by default, but the ![](./_assets/waves-addr-button.png) and ![](./_assets/eth-addr-button.png) buttons switch the address format.
-
-See [ProviderMetamask documentation](https://github.com/wavesplatform/provider-metamask/blob/master/README.md) for a code example.
+For a programmatic connection example, see the [MetaMask Usage Examples](#examples) below.
 
 ## Token Transfer
 
@@ -82,9 +80,7 @@ Notes:
 - MetaMask does not support signing a transaction without broadcasting it, so the `sign()` function of Signer should not be used.
 - Waves node does not support transaction speeding up or cancellation and only processes the original transaction.
 
-You can see how it works in the [Waves Dapp Ui](https://dev-dapps.wavesplatform.com).
-
-See [ProviderMetamask documentation](https://github.com/wavesplatform/provider-metamask/blob/master/README.md) for a code example.
+For an example of invoking the script, see the [MetaMask Usage Examples](#examples) below.
 
 ## Ethereum Transaction Features
 
@@ -97,11 +93,16 @@ See also [Ethereum Transaction Binary Format](/en/blockchain/binary-format/trans
 
 In an [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction) one of the orders (or both) may have an ECDSA signature. ECDSA signatures are only supported on version 4 orders.
 
-1. An exchange UI passes an order to MetaMask as a data structure according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
-2. MetaMask opens a window where the user can see order details, confirm it or reject.
-3. MetaMask returns the ECDSA signature for this data structure.
-4. The exchange UI passes the signed order to the matcher.
-5. The matcher executes orders and creates Exchange transactions.
+1. The app calls the `signOrder()` function of ProviderMetamask passing order parameters.
+
+    * Asset IDs should be specified in Waves format: 32 bytes in base58; for WAVES, asset ID should be `WAVES`.
+    * `senderPublicKey` must be omitted.
+
+2. ProviderMetamask passes an order to MetaMask as a data structure according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
+3. MetaMask opens a window where the user can see order details, confirm it or reject.
+4. MetaMask returns the ECDSA signature for this data structure.
+5. The app passes the signed order to the matcher.
+6. The matcher executes orders and creates Exchange transactions.
 
 ## Support in Ride
 
@@ -123,5 +124,24 @@ The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-f
 
 The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a Transfer transaction. The `proofs` array contains 8 empty values.
 
-## Examples <a id="examples">of using MetaMask
+## MetaMask <a id="examples">Usage Examples
 
+### Invoke Script
+
+You can see an example of connecting to the Waves network and signing an Invoke Script transaction in the [Waves Dapp Ui](https://dev-dapps.wavesplatform.com).
+
+Click **Sign In** and select **Sign in with Metamask**. In MetaMask, confirm the connection to the network. Waves Dapp Ui by default displays the user address in Waves format, and the ![](./_assets/waves-addr-button.png) and ![](./_assets/eth-addr-button.png) buttons switch the address format.
+
+Paste the address of any smart contract on Stagenet, such as [3MRuzZVauiiX2D2DGwNyP8Tv7idDGUy1VG5bJ](https://waves-dapp.com/3MRuzZVauiiX2DGwNyP8Tv7idDGUy1VG5bJ). Specify the callable function arguments and payments (if necessary). Confirm the transaction in MetaMask. The transaction status is displayed in MetaMask on the **Activity** tab with a slight delay.
+
+The transaction link displayed by MetaMask opens the transaction page in Waves Explorer.
+
+Example code is given in [ProviderMetamask documentation](https://github.com/wavesplatform/provider-metamask/blob/master/README.md). Install ProviderMetamask and the latest version of Signer for your app.
+
+### Sign Order
+
+You can see an example of order signing on the [Dapp test](https://metamask.wvservices.com/metamask/) page.
+
+In the **Order** field fill in the order parameters and click **Sign order**. In MetaMask, allow access to your public key, then confirm the data signing. The order signature will appear on the Dapp test page in the **result** field.
+
+Example code is given in [ProviderMetamask documentation](https://github.com/wavesplatform/provider-metamask/blob/master/README.md).
