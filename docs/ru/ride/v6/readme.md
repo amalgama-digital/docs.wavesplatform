@@ -12,13 +12,6 @@
 
 Для верификации транзакции применения выражения в смарт-контрактах используется структура [InvokeExpressionTransaction](/ru/ride/v6/structures/transaction-structures/invoke-expression-transaction).
 
-## Поддержка MetaMask
-
-* Функция [addressFromPublicKey](/ru/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) принимает на вход как публичный ключ аккаунта Waves (32 байта), так и публичный ключ аккаунта MetaMask (64 байта) и возвращает адрес в формате Waves (26 байт).
-* Функция [transferTransactionById](/ru/ride/functions/built-in-functions/blockchain-functions#transfertransactionbyid) возвращает Ethereum-транзакцию по ее идентификатору, если эта транзакция была интерпретирована как транзакция перевода. Массив `proofs` при этом содержит 8 пустых значений.
-
-[Подробнее о поддержке MetaMask на блокчейне Waves](/ru/keep-in-touch/metamask)
-
 ## Изменения в функциях
 
 * Добавлено семейство встроенных функций свертки [fold](/ru/ride/v6/functions/built-in-functions/fold-functions), предназначенных для выполнения операций над списком значений. Семейство функций заменяет макрос `FOLD<N>`, использовавшийся в предыдущих версиях Стандартной библиотеки.
