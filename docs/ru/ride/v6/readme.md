@@ -2,6 +2,8 @@
 
 Версия 6 [Стандартной библиотеки](/ru/ride/script/standard-library) добавлена в версии ноды 1.4.0 и включается с активацией фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/).
 
+> О поддержке MetaMask в Ride читайте в разделе [Подписание транзакций и ордеров в MetaMask](/ru/keep-in-touch/metamask).
+
 ## Скрипт вызова
 
 Добавлен новый тип скрипта: скрипт вызова.

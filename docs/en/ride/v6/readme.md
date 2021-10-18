@@ -2,6 +2,8 @@
 
 Standard library version 6 is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
+> MetaMask support in Ride is described in the [Sign transactions and orders in MetaMask](/en/keep-in-touch/metamask) article.
+
 ## Call Script
 
 Added a new type of script: call script.
