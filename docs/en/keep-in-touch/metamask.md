@@ -11,6 +11,8 @@ As a result, MetaMask users are now able to:
 * invoke a dApp script;
 * sign an exchange order.
 
+Application developers can use [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library together with [ProviderMetamask](https://github.com/wavesplatform/provider-metamask) to sign and send transactions on behalf of the MetaMask user.
+
 MetaMask support is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 ## User Address
@@ -19,7 +21,9 @@ An address of a MetaMask user consists of 20 bytes. A Waves address also contain
 
 :warning: If you generate a key pair and an address from the MetaMask seed phrase according to Waves rules (see [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), you get **another** account; its address does not match the address of the MetaMask user converted to the Waves format. There is no way to get the Waves seed phrase from the MetaMask seed phrase so that they generate the same address.
 
-In UIs, the MetaMask user address is represented in HEX encoding, and the Waves address in base58. You can use [Waves Explorer](/en/ecosystem/waves-explorer/) to convert the address from one format to another.
+In UIs, the MetaMask user address is represented in HEX encoding, and the Waves address in base58. To convert the address from one format to another, use:
+* [Waves Explorer](https://stagenet.wavesexplorer.com/converters),
+* `wavesAddress2eth` and `ethAddress2waves` functions of [node-api-js](https://github.com/wavesplatform/node-api-js) library.
 
 ## Connect to Waves Network
 
@@ -34,13 +38,17 @@ To connect manually, a user selects “Custom RPC” in the list of networks and
 * Chain ID: 83 for Stagenet.
 * Currency Symbol: WAVES.
 
-To connect programmatically, a web app can use the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with ProviderMetaMask:
-1. The application calls the `login()` function.
-2. Signer calls the corresponding function of ProviderMetaMask, and ProviderMetaMask calls the MetaMask API.
+To connect programmatically, a web app can use the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with [ProviderMetamask](https://github.com/wavesplatform/provider-metamask):
+1. The app calls the `login()` function.
+2. Signer calls the corresponding function of ProviderMetamask, and ProviderMetamask calls the MetaMask API.
 3. MetaMask opens a window where the user confirms the connection to the network.
 4. After receiving the confirmation, MetaMask creates the connection and returns the address of the user.
 
-As a result, MetaMask displays the Waves network as available.
+As a result, MetaMask displays the Waves network as available, and the `login` function returns the user address in Waves format.
+
+You can see how it works in the [Waves Dapp Ui](https://dev-dapps.wavesplatform.com). After logging in via MetaMask, the app displays the user address in Waves format by default, but the ![](./_assets/waves-addr-button.png) and ![](./_assets/eth-addr-button.png) buttons switch the address format.
+
+See [ProviderMetamask documentation](https://github.com/wavesplatform/provider-metamask/blob/master/README.md) for a code example.
 
 ## Token Transfer
 
@@ -56,12 +64,16 @@ MetaMask creates the transaction in Ethereum format, signs it with the user's pr
 
 > Users of Waves wallets such as Waves.Exchange, WavesFX and others (applications developed by third-party teams from the community) can transfer tokens to a MetaMask user. Some wallets only support Waves addresses, so you should first convert the recipient address from Ethereum representation to Waves. As a result, a regular [Transfer transaction](/en/blockchain/transaction-type/transfer-transaction) is created, and the recipient will see the received tokens in MetaMask (for custom token, the recipient should add a balance display first).
 
+To convert the token ID from one format to another, use:
+* [Waves Explorer](https://stagenet.wavesexplorer.com/converters)
+* `/eth/assets` endpoint of Node REST API that returns token parameters by ID in Ethereum representation.
+
 ## Script Invocation
 
-A web app can invoke a dApp script on behalf of a MetaMask user, using the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with ProviderMetaMask:
+A web app can invoke a dApp script on behalf of a MetaMask user, using the [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library with [ProviderMetamask](https://github.com/wavesplatform/provider-metamask):
 
 1. The app builds an Invoke Script transaction using the `invoke()` function and calls the `signAndBroadcast()` function.
-2. Signer calls the corresponding ProviderMetaMask method, and ProviderMetaMask calls the MetaMask API.
+2. Signer calls the corresponding ProviderMetamask function, and ProviderMetamask calls the MetaMask API.
 3. MetaMask opens a window where the user can view the details of the transaction, confirm it or reject.
 4. Having received the user's confirmation, MetaMask generates an Ethereum transaction with ECDSA signature and sends the transaction to a Waves node via the RPC API.
 5. MetaMask displays the transaction status.
@@ -69,6 +81,10 @@ A web app can invoke a dApp script on behalf of a MetaMask user, using the [Sign
 Notes:
 - MetaMask does not support signing a transaction without broadcasting it, so the `sign()` function of Signer should not be used.
 - Waves node does not support transaction speeding up or cancellation and only processes the original transaction.
+
+You can see how it works in the [Waves Dapp Ui](https://dev-dapps.wavesplatform.com).
+
+See [ProviderMetamask documentation](https://github.com/wavesplatform/provider-metamask/blob/master/README.md) for a code example.
 
 ## Ethereum Transaction Features
 
