@@ -38,6 +38,7 @@ message Order {
     Amount matcher_fee = 10;
     int32 version = 11;
     repeated bytes proofs = 12;
+    bytes eth_signature = 13;
 };
 
 message Amount {
@@ -49,7 +50,7 @@ message Amount {
 | Поле | Размер | Описание |
 | :--- | :--- | :--- |
 | chain_id | 1 байт | [Байт сети](/ru/blockchain/blockchain-network/#байт-сети) |
-| sender_public_key | 32 байта | Открытый ключ аккаунта отправителя ордера |
+| sender_public_key | 32 или 64 байта | Открытый ключ аккаунта отправителя ордера |
 | matcher_public_key | 32 байта | Открытый ключ матчера |
 | asset_pair.amount_asset_id | • 32 байта для ассета<br>• 0 для WAVES | ID amount-ассета |
 | asset_pair.price_asset_id | • 32 байта для ассета<br>• 0 для WAVES | ID price-ассета |
@@ -62,6 +63,7 @@ message Amount {
 | matcher_fee.amount | 8 байт | [Комиссия матчера](/ru/blockchain/transaction-type/exchange-transaction#комиссия-матчера) |
 | version | 1 байт | Версия ордера: 4 |
 | proofs | Размер каждого подтверждения — до 64 байт,<br>до 8 подтверждений | Подтверждения ордера, используемые для проверки валидности |
+| bytes eth_signature | Подпись ECDSA пользователя MetaMask. Подробне в разделе [Подписание транзакций и ордеров в MetaMask](/ru/keep-in-touch/metamask). Поле добавлено в версии ноды 1.4.0 включается с активацией фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/) |
 
 ## Версия 3 <a id="v3"></a>
 
