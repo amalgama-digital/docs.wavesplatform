@@ -132,6 +132,8 @@ You can see an example of connecting to the Waves network and signing an Invoke 
 
 Click **Sign In** and select **Sign in with Metamask**. In MetaMask, confirm the connection to the network. Waves Dapp Ui by default displays the user address in Waves format, and the ![](./_assets/waves-addr-button.png) and ![](./_assets/eth-addr-button.png) buttons switch the address format.
 
+> To get WAVES to pay transaction fees, copy the address in Waves format and use [Stagenet Faucet](https://stagenet.wavesexplorer.com/faucet).
+
 Paste the address of any smart contract on Stagenet, such as [3MRuzZVauiiX2D2DGwNyP8Tv7idDGUy1VG5bJ](https://waves-dapp.com/3MRuzZVauiiX2DGwNyP8Tv7idDGUy1VG5bJ). Specify the callable function arguments and payments (if necessary). Confirm the transaction in MetaMask. The transaction status is displayed in MetaMask on the **Activity** tab with a slight delay.
 
 The transaction link displayed by MetaMask opens the transaction page in Waves Explorer.
