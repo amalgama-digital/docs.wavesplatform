@@ -13,7 +13,7 @@
 
 Разработчики приложений могут использовать библиотеку [Signer](/ru/building-apps/waves-api-and-sdk/client-libraries/signer) совместно с [ProviderMetamask](https://github.com/wavesplatform/provider-metamask) для подписания и отправки транзакций от имени пользователя MetaMask.
 
-Поддержка MetaMask добавлена в версии ноды 1.4.0 и включается с активацией фичи №&nbsp;17 “Ride V6”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/).
+Поддержка MetaMask добавлена в версии ноды 1.4.0 и включается с активацией фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/).
 
 ## Адрес пользователя
 

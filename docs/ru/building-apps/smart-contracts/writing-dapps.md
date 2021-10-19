@@ -208,10 +208,7 @@ await signer.invoke({<br>
 
 1. В Waves IDE нажмите ![](./_assets/ide-settings.png) и переключитесь на Mainnet.
 2. Создайте аккаунт dApp на Mainnet — аналогично шагу 1.
-3. Пополните баланс аккаунта, чтобы оплатить комиссию за установку скрипта.
-
-   Например, купите WAVES с помощью приложения [Waves.Exchange](https://waves.exchange/), разработанного сторонней командой из сообщества, см. раздел [Купить криптовалюту с помощью банковской карты](https://docs.waves.exchange/ru/waves-exchange/waves-exchange-online-desktop/online-desktop-trs-gtw/online-desktop-trs-fiat).
-
+3. Пополните баланс аккаунта, чтобы оплатить комиссию за установку скрипта. См. раздел [Как получить WAVES](/ru/blockchain/token/waves#how-to-get-waves).
 4. Установите dApp-скрипт на аккаунт — аналогично шагу 3.
 
 dApp на Mainnet получит другой адрес — не забудьте поменять его в веб-приложении. Кроме того, адрес ноды для отправки транзакции вызова скрипта нужно заменить на ` https://nodes.wavesnodes.com`.

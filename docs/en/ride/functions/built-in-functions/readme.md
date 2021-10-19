@@ -29,15 +29,15 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
 | addressFromRecipient(Address&#124;Alias): Address | Gets the corresponding [address](/en/blockchain/account/address) of the [alias](/en/blockchain/account/alias) | 5 |
-| assetBalancе(Address&#124;Alias, ByteVector): Int | Gets account balance by token ID | 10 |
-| assetInfo(ByteVector): Аsset&#124;Unit | Gets the information about a [token](/en/blockchain/token/) | 15 |
+| assetBalance(Address&#124;Alias, ByteVector): Int | Gets account balance by token ID | 10 |
+| assetInfo(ByteVector): Asset&#124;Unit | Gets the information about a [token](/en/blockchain/token/) | 15 |
 | blockInfoByHeight(Int): BlockInfo &#124;Unit | Gets the information about a [block](/en/blockchain/block/) by the [block height](/en/blockchain/block/block-height) | 5 |
 | calculateAssetId(Issue): ByteVector | Calculates ID of the token formed by the [Issue](/en/ride/structures/script-actions/issue) structure when executing the [callable function](/en/ride/functions/callable-function) | 10 |
 | calculateLeaseId(Lease): ByteVector | Calculates ID of the lease formed by the [Lease](/en/ride/structures/script-actions/lease) structure when executing the callable function | 1 |
 | scriptHash(Address&#124;Alias): ByteVector&#124;Unit | Returns [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29) hash of the script assigned to a given account | 200 |
 | transactionHeightById(ByteVector):  Int&#124;Unit | Gets the [block height](/en/blockchain/block/block-height) of a transaction | 20 |
 | transferTransactionById(ByteVector): TransferTransaction&#124;Unit | Gets the data of a [transfer transaction](/en/blockchain/transaction-type/transfer-transaction) | 60 |
-| wavesBalance(Address&#124;Alias): Int | Gets account balance in [WAVES](/en/blockchain/token/waves) | 10 |
+| wavesBalance(Address&#124;Alias): BalanceDetails | Gets account balance in [WAVES](/en/blockchain/token/waves) | 10 |
 
 ## [Byte array functions](/en/ride/functions/built-in-functions/byte-array-functions)
 

@@ -12,12 +12,13 @@ In the tables below regular expressions are used to define paths, for example, <
 
 ## Limitations on [Mainnet Pool](https://nodes.wavesnodes.com/)
 
-| Path | Connections | Request rate | Сaching time |
+| Path | Connections | Request rate | Caching time |
 | --- | :---: | :---: | :---: |
 | / | 15 | 20 r/s (burst 50) | 1 s |
 | /blocks/seq/\d+/\d+ | 1 | 1 r/s | 5 s |
 | /blocks/at/.+ | 1 | 1 r/s | 30 s |
-|/blocks/last<br/>/consensus/algo<br/>/consensus/basetarget<br/>/transactions/address/.+/limit/.+<br/>/addresses/validate/.+<br/>/blocks/delay/.+/.+<br/>/consensus/generatingbalance/.+<br/>/peers/connected<br/>/peers/all<br/>/node/version<br/>/node/status<br/>/addresses/effectiveBalance/.+<br/>/alias/.+ | 100| 20 r/s (burst 50) | 1 s |
+|/blocks/last<br/>/transactions/address/.+/limit/.+<br/>/addresses/validate/.+<br/>/blocks/delay/.+/.+<br/>/peers/connected<br/>/peers/all<br/>/node/version<br/>/node/status<br/>/addresses/effectiveBalance/.+<br/>/alias/.+ | 100| 20 r/s (burst 50) | 1 s |
+| /transactions/broadcast/.+ | – | 2 r/s (burst 2) | – |
 | /transactions/info/.+ | 15 | 20 r/s (burst 50) | 1 m |
 | /blocks/height<br/>/transactions/unconfirmed | 15 | 20 r/s (burst 50) | 15 s |
 | /addresses/balance/.+<br/>/assets/balance/.+ | 15 | 100 r/s (burst 100) | 3 s |
@@ -26,7 +27,7 @@ In the tables below regular expressions are used to define paths, for example, <
 
 ## Limitations on [Testnet Pool](https://nodes-testnet.wavesnodes.com/)
 
-| Path | Connections | Request rate | Сaching time |
+| Path | Connections | Request rate | Caching time |
 | --- | :---: | :---: | :---: |
 | / | 15 | 20 r/s (burst 50) | 1 s |
 | /blocks/seq/\d+/\d+ | 1 | 1 r/s | 5 s |

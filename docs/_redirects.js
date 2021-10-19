@@ -1295,19 +1295,35 @@ module.exports = [
   },
   {
     from: '/en/waves-oracles()',
-    to: '/en/ecosystem/waves-oracles$1',
+    to: '/en/ecosystem/',
   },
   {
     from: '/ru/waves-oracles()',
-    to: '/ru/ecosystem/waves-oracles$1',
+    to: '/ru/ecosystem/',
+  },
+  {
+    from: '/en/ecosystem/waves-oracles()',
+    to: '/en/ecosystem/',
+  },
+  {
+    from: '/ru/ecosystem/waves-oracles()',
+    to: '/ru/ecosystem/',
   },
   {
     from: '/en/waves-token-rating()',
-    to: '/en/ecosystem/waves-token-rating$1',
+    to: '/en/ecosystem/',
   },
   {
     from: '/ru/waves-token-rating()',
-    to: '/ru/ecosystem/waves-token-rating$1',
+    to: '/ru/ecosystem/',
+  },
+  {
+    from: '/en/ecosystem/waves-token-rating()',
+    to: '/en/ecosystem/',
+  },
+  {
+    from: '/ru/ecosystem/waves-token-rating()',
+    to: '/ru/ecosystem/',
   },
   {
     from: '/en/recources()',
@@ -1379,12 +1395,12 @@ module.exports = [
   },
   {
     /*===============================  Oracles  =====================================*/
-    to: '/en/ecosystem/waves-oracles/about-waves-oracles',
+    to: '/en/ecosystem/',
     from: '/en/oracels-developments/what-is-a-data-oracle.html',
   },
   { /* link found on medium */
     from: '/en/oracels-developments/oracle-protocols.html',
-    to: '/en/ecosystem/waves-oracles/about-waves-oracles',
+    to: '/en/ecosystem/',
   },
   {
     /*===============================  Resources  ===================================*/

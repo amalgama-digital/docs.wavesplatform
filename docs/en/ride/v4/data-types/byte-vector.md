@@ -31,4 +31,4 @@ The maximum size of a `ByteVector` variable is:
 * For [Standard library](/en/ride/script/standard-library) version 3 — 65,536 bytes.
 * For Standard library version 4 — 32,767 bytes.
 
-   Exception: the `bodyBytes` field of [transaction structure](/en/ride/v4/structures/transaction-structures/). You can pass this value as an argument to the `rsaVerify` и `sigVerify` [verification functions](/en/ride/v4/functions/built-in-functions/verification-functions) (but cannot concatenate with other byte arrays in case the limit is exceeded).
+   Exception: the `bodyBytes` field of [transaction structure](/en/ride/v4/structures/transaction-structures/). You can pass this value as an argument to the `rsaVerify` and `sigVerify` [verification functions](/en/ride/v4/functions/built-in-functions/verification-functions) (but cannot concatenate with other byte arrays in case the limit is exceeded).

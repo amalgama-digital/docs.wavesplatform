@@ -1029,6 +1029,28 @@ module.exports = {
           path: rideV6Path + 'variables/built-in-variables',
         },
         {
+          title: 'Built-in Functions',
+          path: rideV6Path + 'functions/built-in-functions',
+          children: [
+            {
+              title: 'Converting Functions',
+              path: rideV6Path + 'functions/built-in-functions/converting-functions',
+            },
+            {
+              title: 'Fold Functions',
+              path: rideV6Path + 'functions/built-in-functions/fold-functions',
+            },
+            {
+              title: 'Math Functions',
+              path: rideV6Path + 'functions/built-in-functions/math-functions',
+            },
+            {
+              title: 'String Functions',
+              path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+          ],
+        },
+        {
           title: 'Limitations',
           path: rideV6Path + 'limits',
         },
@@ -1593,62 +1615,6 @@ module.exports = {
               path: ecosystemPath + 'waves-keeper/transaction',
             },
           ],
-        },
-      ],
-    },
-    {
-      title: 'Oracles',
-      path: ecosystemPath + 'waves-oracles/about-waves-oracles',
-      children: [
-        {
-          title: 'Create an oracle card with Waves Oracle',
-          path: ecosystemPath + 'waves-oracles/create-an-oracle-card-with-waves-oracle',
-        },
-        {
-          title: 'Create an oracle card with a data transaction',
-          path: ecosystemPath + 'waves-oracles/create-an-oracle-card-with-a-data-transaction',
-        },
-        {
-          title: 'Oracle card',
-          path: ecosystemPath + 'waves-oracles/oracle-card',
-        },
-        {
-          title: 'Updating oracle card',
-          path: ecosystemPath + 'waves-oracles/updating-oracle-card',
-        },
-        {
-          title: 'Data transaction tool',
-          path: ecosystemPath + 'waves-oracles/data-transaction-tool',
-        },
-        {
-          title: 'How to create an oracle',
-          path: ecosystemPath + 'waves-oracles/how-to-create-an-oracle',
-        },
-      ],
-    },
-    {
-      title: 'Token Rating',
-      path: ecosystemPath + 'waves-token-rating/about-waves-token-rating',
-      children: [
-        {
-          title: 'User interface',
-          path: ecosystemPath + 'waves-token-rating/user-interface',
-        },
-        {
-          title: 'Rating formula',
-          path: ecosystemPath + 'waves-token-rating/rating-formula',
-        },
-        {
-          title: 'Data transaction with user\'s rate',
-          path: ecosystemPath + 'waves-token-rating/data-transaction-with-user-s-rate',
-        },
-        {
-          title: 'Data transaction of the Token Rating oracle',
-          path: ecosystemPath + 'waves-token-rating/data-transaction-of-the-token-rating-oracle',
-        },
-        {
-          title: 'Token management',
-          path: ecosystemPath + 'waves-token-rating/token-management',
         },
       ],
     },

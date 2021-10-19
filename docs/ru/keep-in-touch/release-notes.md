@@ -1,12 +1,25 @@
 # Release Notes
 
-## Версия 1.4 (Stagenet)
+## Версия 1.4 Zegema (Stagenet)
 
 ### Развитие протокола
 
 * Добавлена поддержка транзакций в формате Ethereum, выполняющих перевод токена или вызов dApp-скрипта. Благодаря этому пользователи MetaMask могут подписывать транзакции и отправлять их на блокчейн Waves. [Подробнее](/ru/keep-in-touch/metamask)
 * Добавлена поддержка ордеров с подписью ECDSA в транзакции обмена. Благодаря этому пользователи могут подписывать ордера с помощью MetaMask. [Подробнее](/ru/keep-in-touch/metamask)
 * Добавлен новый тип транзакции — [транзакция применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction), которая позволяет выполнить приложенный к ней скрипт.
+
+### Ride
+
+* Выпущена [версия 6](/ru/ride/v6/) Стандартной библиотеки.
+* Добавлен новый тип скрипта — [скрипт вызова](/ru/ride/v6/script/script-types/call-script), предназначенный для однократного выполнения с помощью транзакции применения выражения.
+* Добавлена структура [InvokeExpressionTransaction](/ru/ride/v6/structures/transaction-structures/invoke-expression-transaction), предназначенная для верификации транзакции применения выражения в смарт-контрактах.
+* Добавлена встроенная переменная [i](/ru/ride/v6/variables/built-in-variables#i), доступная в скрипте вызова и содержащая структуру [Invocation](/ru/ride/v6/structures/common-structures/invocation).
+* Добавлено семейство встроенных функций свертки [fold](/ru/ride/v6/functions/built-in-functions/fold-functions), предназначенных для выполнения операций над списком значений. Семейство функций заменяет макрос `FOLD<N>`, использовавшийся в предыдущих версиях Стандартной библиотеки.
+* Добавлены встроенные функции:
+   * [sqrt(Int,Int,Int,Union)](/ru/ride/v6/functions/built-in-functions/math-functions#sqrt)
+   * [sqrt(BigInt,Int,Int,Union)](/ru/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)
+* Для встроенных функций строки [makeString](/ru/ride/v6/functions/built-in-functions/string-functions#makestring-list-string-string-string) и [split](/ru/ride/v6/functions/built-in-functions/string-functions#split-string-string-list-string) добавлены семейства аналогичных функций с различной сложностью в зависимости от размера данных. Если размер данных известен заранее, можно использовать более «дешевую» функцию.
+* Изменена сложность некоторых встроенных функций. Сложность всех функций представлена в разделе [[Ride v6] Встроенные функции](/ru/ride/v6/functions/built-in-functions/).
 
 ### Node REST API
 
@@ -129,16 +142,9 @@
 
 * Новый метод `/eth/assets` принимает на вход идентификаторы ассетов в Ethereum-представлении (первые 20 байт ID ассета в кодировке HEX) и возвращает параметры ассетов, включая идентификатор в формате Waves (32 байта в кодировке base58). Ассеты в ответе следуют в том же порядке, что в запросе.
 
-### Ride
-
-* Выпущена [версия 6](/ru/ride/v6/) Стандартной библиотеки.
-* Добавлен новый тип скрипта — [скрипт вызова](/ru/ride/v6/script/call-script), предназначенный для однократного выполнения с помощью транзакции применения выражения.
-* Добавлена структура [InvokeExpressionTransaction](/ru/ride/v6/structures/transaction-structures/invoke-expression-transaction), предназначенная для верификации транзакции применения выражения в смарт-контрактах.
-* Добавлена встроенная переменная [i](/ru/ride/v6/variables/built-in-variables#i), доступная в скрипте вызова и содержащая структуру [Invocation](/ru/ride/v6/structures/common-structures/invocation).
-
 ### Активация
 
-Чтобы активировать перечисленные выше улучшения, голосуйте за фичу №&nbsp;17 “Ride V6”.
+Чтобы активировать перечисленные выше улучшения, голосуйте за фичу №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”.
 
 ## Версия 1.3 Jumeirah
 

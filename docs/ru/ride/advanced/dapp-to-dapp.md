@@ -46,7 +46,7 @@ reentrantInvoke(dApp: Address|Alias, function: String, arguments: List[Any], pay
 | Параметр | Описание |
 | :--- | :--- |
 | dApp: [Address](/ru/ride/structures/common-structures/address)&#124;[Alias](/ru/ride/structures/common-structures/alias) | [Адрес](/ru/blockchain/account/address) или [псевдоним](/ru/blockchain/account/alias) dApp, функция которого вызывается |
-| function: [String](/ru/ride/data-types/string)&#124;[Unit](/ru/ride/data-types/unit) | Имя вызываемой функции. `unit` — вызов функции по умолчанию |
+| function: [String](/ru/ride/data-types/string)&#124;[Unit](/ru/ride/data-types/unit) | Имя вызываемой функции. `unit` — вызов [функции по умолчанию](/ru/ride/functions/callable-function#default-callable-function) |
 | arguments: [List](/ru/ride/data-types/list)[[Any](/ru/ride/data-types/any)] | Параметры вызываемой функции |
 | payments: [List](/ru/ride/data-types/list)[[AttachedPayment](/ru/ride/structures/common-structures/attached-payment)] | Платежи в пользу вызываемого dApp, не более 10 |
 
@@ -55,6 +55,8 @@ reentrantInvoke(dApp: Address|Alias, function: String, arguments: List[Any], pay
 ```
 strict z = invoke(dapp,foo,args,[AttachedPayment(unit,100000000)])
 ```
+
+Возвращаемое значение имеет тип `Any`, что означает любой допустимый тип. Извлечь из него конкретный тип можно с помощью макросов `as[T]` и `exactAs[T]` или оператора `match ... case`, см. раздел [Any](/ru/ride/data-types/any).
 
 Функции `invoke` и `reentrantInvoke` отличаются только ограничением [повторного вызова](/ru/ride/functions/built-in-functions/dapp-to-dapp#reentrancy) исходного dApp другими dApp в стеке вызова.
 

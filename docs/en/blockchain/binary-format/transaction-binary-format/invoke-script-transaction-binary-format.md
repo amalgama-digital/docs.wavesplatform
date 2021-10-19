@@ -50,7 +50,7 @@ The maximum size of `d_app` + `function_call` + `payments` is 5120 bytes.
 | **4** | [Chain ID](/en/blockchain/blockchain-network/#chain-id) |  | [Byte](/en/blockchain/blockchain/blockchain-data-types) | 1 | 87 — for Mainnet<br>84 — for Testnet<br>83 — for Stagenet |
 | **5** | Public key of the transaction sender | senderPublicKey | Array[[Byte](/en/blockchain/blockchain/blockchain-data-types)] | 32 |  |
 | **6** | [Address](/en/blockchain/account/address) or [alias](/en/blockchain/account/alias) | dApp | See [Address Binary Format](/en/blockchain/binary-format/address-binary-format), [Alias Binary Format](/en/blockchain/binary-format/alias-binary-format) | `S` | If the first byte of the field is 1, then it is followed by address. `S` in this case equals 26<br>If the first byte of the field is 2, then it is followed by alias. In this case 8&nbsp;<=&nbsp;`S`&nbsp;<=&nbsp;34 |
-| **7.1** | Function presence flag |  | [Byte](/en/blockchain/blockchain/blockchain-data-types) | 1 | 0 — default function should be invoked in the dApp.<br>1 — function from the current transaction should be invoked in the dApp |
+| **7.1** | Function presence flag |  | [Byte](/en/blockchain/blockchain/blockchain-data-types) | 1 | 0 — the [default function](/en/ride/functions/callable-function#default-callable-function) of the dApp is invoked.<br>1 — function from the current transaction should be invoked in the dApp |
 | **7.2** | Function call ID |  | [Byte](/en/blockchain/blockchain/blockchain-data-types) | 1 | Constant. The value must be 9 |
 | **7.3** | Function type ID |  | [Byte](/en/blockchain/blockchain/blockchain-data-types) | 1 | Constant. The value must be 1 |
 | **7.4** | Function name length | | [Int](/en/blockchain/blockchain/blockchain-data-types) | 4 |  |

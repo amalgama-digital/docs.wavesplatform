@@ -139,14 +139,6 @@ module.exports = deepmerge(mixin, {
                         text: 'Waves Keeper',
                         link: '/ru/ecosystem/waves-keeper/',
                     },
-                    oracles: {
-                        text: 'Oracles',
-                        link: '/ru/ecosystem/waves-oracles/about-waves-oracles',
-                    },
-                    torenRating: {
-                        text: 'Token Rating',
-                        link: '/ru/ecosystem/waves-token-rating/about-waves-token-rating',
-                    },
                 },
             },
             miscellaneous: {

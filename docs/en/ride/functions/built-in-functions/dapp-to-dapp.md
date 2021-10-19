@@ -17,7 +17,7 @@ Invokes a dApp [callable function](/en/ride/functions/callable-function), with r
 invoke(dApp: Address|Alias, function: String, arguments: List[Any], payments: List[AttachedPayments]): Any
 ```
 
-`Any` means any valid type.
+`Any` means any valid type. You can extract a particular type from it using `as[T]` and `exactAs[T]` macros or the `match ... case` operator, see the [Any](/en/ride/data-types/any) article.
 
 The `invoke` function can be used by a callable function of a [dApp script](/en/ride/script/script-types/dapp-script), but not by a [verifier function](/en/ride/functions/verifier-function), [account script](/en/ride/script/script-types/account-script) or [asset script](/en/ride/script/script-types/asset-script).
 
@@ -82,7 +82,7 @@ The following invocation stacks are **valid**:
 | Parameter | Description |
 | :--- | :--- |
 | dApp: [Address](/en/ride/structures/common-structures/address)&#124;[Alias](/en/ride/structures/common-structures/alias) | [Address](/en/blockchain/account/address) or [alias](/en/blockchain/account/alias) of a dApp to invoke |
-| function: [String](/en/ride/data-types/string)&#124;[Unit](/en/ride/data-types/unit) | Name of a callable function. `unit` for a default function invocation |
+| function: [String](/en/ride/data-types/string)&#124;[Unit](/en/ride/data-types/unit) | Name of a callable function. `unit` for a [default function](/en/ride/functions/callable-function#default-callable-function) invocation |
 | arguments: [List](/en/ride/data-types/list)[[Any](/en/ride/data-types/any)] | Parameters of a callable function |
 | payments: [List](/en/ride/data-types/list)[[AttachedPayment](/en/ride/structures/common-structures/attached-payment)] | Payments to transfer from the parent dApp to the invoked dApp, up to 10 |
 

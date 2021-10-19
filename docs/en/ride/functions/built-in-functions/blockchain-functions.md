@@ -3,8 +3,8 @@
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
 | [addressFromRecipient(Address&#124;Alias): Address](#address-from-recipient) | Gets the corresponding [address](/en/blockchain/account/address) of the [alias](/en/blockchain/account/alias) | 5 |
-| [assetBalancе(Address&#124;Alias, ByteVector): Int](#assetbalance) | Gets account balance by token ID | 10 |
-| [assetInfo(ByteVector): Аsset&#124;Unit](#assetinfo) | Gets the information about a [token](/en/blockchain/token/) | 15 |
+| [assetBalance(Address&#124;Alias, ByteVector): Int](#assetbalance) | Gets account balance by token ID | 10 |
+| [assetInfo(ByteVector): Asset&#124;Unit](#assetinfo) | Gets the information about a [token](/en/blockchain/token/) | 15 |
 | [blockInfoByHeight(Int): BlockInfo&#124;Unit](#blockinfobyheight) | Gets the information about a [block](/en/blockchain/block/) by the [block height](/en/blockchain/block/block-height) | 5 |
 | [calculateAssetId(Issue): ByteVector](#calculateassetid) | Calculates ID of the token formed by the [Issue](/en/ride/structures/script-actions/issue) structure when executing the [callable function](/en/ride/functions/callable-function) | 10 |
 | [calculateLeaseId(Lease): ByteVector](#calculateleaseid) | Calculates ID of the lease formed by the [Lease](/en/ride/structures/script-actions/lease) structure when executing the callable function | 1 |
@@ -57,7 +57,7 @@ assetBalance(addressOrAlias: Address|Alias, assetId: ByteVector): Int
 Gets the information about a [token](/en/blockchain/token/).
 
 ```
-assetInfo(id: ByteVector): Аsset|Unit
+assetInfo(id: ByteVector): Asset|Unit
 ```
 
 For a description of the return value, see the [Asset](/en/ride/structures/common-structures/asset) article.

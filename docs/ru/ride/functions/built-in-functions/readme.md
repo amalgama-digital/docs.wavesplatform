@@ -30,7 +30,7 @@
 | scriptHash(Address&#124;Alias): ByteVector&#124;Unit | Возвращает [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29)-хеш скрипта, установленного на аккаунте | 200 |
 | transactionHeightById(ByteVector):  Int&#124;Unit | Получает [высоту блока](/ru/blockchain/block/block-height) транзакции | 20 |
 | transferTransactionById(ByteVector): TransferTransaction&#124;Unit | Получает данные [транзакции перевода](/ru/blockchain/transaction-type/transfer-transaction) | 60 |
-| wavesBalance(Address&#124;Alias): Int | Получает баланс аккаунта в [WAVES](/ru/blockchain/token/waves) | 10 |
+| wavesBalance(Address&#124;Alias): BalanceDetails | Получает баланс аккаунта в [WAVES](/ru/blockchain/token/waves) | 10 |
 
 ## [Функции верификации](/ru/ride/functions/built-in-functions/verification-functions)
 
@@ -85,7 +85,7 @@
 | parseInt(String): Int&#124;Unit | Конвертирует строковое представление числа в эквивалентное целое число | 2 |
 | parseIntValue(String): Int | Конвертирует строковое представление числа в эквивалентное целое число. <br>Завершается ошибкой, если строка не может быть преобразована | 2 |
 | toBigInt(ByteVector): BigInt | Конвертирует массив байтов в большое целое число | 65 |
-| toBigInt(ByteVector, Int, Int | Конвертирует массив байтов начиная с указанного индекса в большое целое число | 65 |
+| toBigInt(ByteVector, Int, Int): BigInt | Конвертирует массив байтов начиная с указанного индекса в большое целое число | 65 |
 | toBigInt(Int): BigInt | Конвертирует целое число в большое целое | 1 |
 | toBytes(Boolean): ByteVector | Конвертирует логическое значение в массив байтов | 1 |
 | toBytes(Int): ByteVector | Конвертирует целое число в массив байтов | 1 |

@@ -13,7 +13,7 @@ As a result, MetaMask users are now able to:
 
 Application developers can use [Signer](/en/building-apps/waves-api-and-sdk/client-libraries/signer) library together with [ProviderMetamask](https://github.com/wavesplatform/provider-metamask) to sign and send transactions on behalf of the MetaMask user.
 
-MetaMask support is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
+MetaMask support is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 ## User Address
 

@@ -14,7 +14,7 @@ InvokeExpressionTransaction(expression: ByteVector, feeAssetId: ByteVector|Unit,
 
 | # | Название | Тип данных | Описание |
 | :--- | :--- | :--- | :--- |
-| 1 | expression | [ByteVector](/ru/ride/data-types/byte-vector) | Скомпилированный [скрипт вызова](/ru/ride/v6/script/call-script) |
+| 1 | expression | [ByteVector](/ru/ride/data-types/byte-vector) | Скомпилированный [скрипт вызова](/ru/ride/v6/script/script-types/call-script) |
 | 2 | feeAssetId | [ByteVector](/ru/ride/data-types/byte-vector)&#124;[Unit](/ru/ride/data-types/unit) | [Токен](/ru/blockchain/token/) комиссии |
 | 3 | id | [ByteVector](/ru/ride/data-types/byte-vector) | ID транзакции |
 | 4 | fee | [Int](/ru/ride/data-types/int) | [Комиссия за транзакцию](/ru/blockchain/transaction/transaction-fee) |

@@ -11,9 +11,12 @@
 Минимальная комиссия в WAVES для каждого типа транзакции представлена в таблице.
 
 * Если отправитель транзакции — [dApp или смарт-аккаунт](/ru/blockchain/account/dapp), а сложность скрипта аккаунта или функции-верификатора dApp-скрипта превышает [порог сложности отправителя](/ru/ride/limits/), минимальная комиссия за транзакцию увеличивается на 0,004 WAVES.
-* Минимальная комиссия за любую транзакцию, кроме транзакций вызова скрипта, увеличивается на 0,004 WAVES за каждый участвующий смарт-ассет.
 
-Комиссия не увеличивается на 0,004 WAVES для [транзакций обмена](/ru/blockchain/transaction-type/exchange-transaction) за отправку ордера со смарт-аккаунта или за то, что комиссия матчера задана в смарт-ассетах.
+   Если отправитель ордера в [транзакции обмена](/ru/blockchain/transaction-type/exchange-transaction) — dApp или смарт-аккаунт, это не влияет на минимальную комиссию.
+
+* Минимальная комиссия за транзакцию увеличивается на 0,004 WAVES за каждый участвующий смарт-ассет, за исключением:
+   * [транзакций вызова скрипта](/ru/blockchain/transaction-type/invoke-script-transaction),
+   * смарт-ассетов, используемых в качестве комиссии матчера в [транзакции обмена](/ru/blockchain/transaction-type/exchange-transaction).
 
 <br/>
 <details>
@@ -58,7 +61,7 @@
 | [Транзакция массового перевода](/ru/blockchain/transaction-type/mass-transfer-transaction) | 11 | 0,001 + 0,0005 × `N`<br>`N` — количество переводов внутри транзакции.<br>Значение округляется вверх до тысячных |
 | [Транзакция обмена](/ru/blockchain/transaction-type/exchange-transaction) | 7 | 0,003 |
 | [Транзакция перевода](/ru/blockchain/transaction-type/transfer-transaction) | 4 | 0,001 |
-| [Транзакция применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction) | 18 | 0,01 + `K`<br>`K` — количество обычных ассетов (не являющихся [NFT](/ru/blockchain/token/non-fungible-token)), выпущенных в результате вызова dApp-скрипта.<br>Транзакция обновления информации ассета добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6”. Версии 1.4.x в настоящее время доступны только на [Stagenet](/ru/blockchain/blockchain-network/stage-network) |
+| [Транзакция применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction) | 18 | 0,01 + `K`<br>`K` — количество обычных ассетов (не являющихся [NFT](/ru/blockchain/token/non-fungible-token)), выпущенных в результате вызова dApp-скрипта.<br>Транзакция обновления информации ассета добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только на [Stagenet](/ru/blockchain/blockchain-network/stage-network) |
 | [Транзакция сжигания токена](/ru/blockchain/transaction-type/burn-transaction) | 6 | 0,001 |
 | [Транзакция создания псевдонима](/ru/blockchain/transaction-type/create-alias-transaction) | 10 | 0,001 |
 | Транзакция спонсирования | 14 | 0,001<br>(До активации фичи №&nbsp;15 “Ride V4, VRF, Protobuf, Failed transactions” — 1) |

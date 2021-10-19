@@ -10,11 +10,13 @@ For an Invoke Script transaction, Invoke Expression transactions, and Transfer t
 
 The minimum fees in WAVES for each type of transaction are listed in the table below.
 
-* If the transaction sender is a [dApp or smart account](/en/blockchain/account/dapp), and the complexity of the account script or dApp script verifier function exceeds the [sender complexity threshold](/en/ride/limits/), the minimum fee is increased by 0.004 WAVES. 
-* The minimum fee for any transaction, except Invoke Script transactions, is increased by 0.004 
-WAVES for each smart asset involved.
+* If the transaction sender is a [dApp or smart account](/en/blockchain/account/dapp), and the complexity of the account script or dApp script verifier function exceeds the [sender complexity threshold](/en/ride/limits/), the minimum fee is increased by 0.004 WAVES.
 
-The fee is not increased by 0,004 WAVES for [Exchange transactions](/en/blockchain/transaction-type/exchange-transaction) if the order is sent from a smart account or if the matcher fee is a smart asset.
+   If the order sender in [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction) is a dApp or smart account, this does nor affect the minimum fee.
+
+* The minimum fee is increased by 0.004 WAVES for each smart asset involved, except for:
+   * [Invoke Script transactions](/en/blockchain/transaction-type/invoke-script-transaction),
+   * smart assets used as matcher fee in [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction).
 
 <br/>
 <details>
@@ -54,7 +56,7 @@ The minimum fee for an Invoke Script transaction:
 | [Create Alias transaction](/en/blockchain/transaction-type/create-alias-transaction) | 10 | 0.001 |
 | [Data transaction](/en/blockchain/transaction-type/data-transaction) | 12 | 0.001 per kilobyte<br>The size is rounded up to an integer number of kilobytes. [Details](/en/blockchain/transaction-type/data-transaction) |
 | [Exchange transaction](/en/blockchain/transaction-type/exchange-transaction) | 7 | 0.003 |
-| [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) | 18 | 0.01 + `K`<br>`K` is the number of assets issued as a result of dApp script invocation that are not [non-fungible tokens](/en/blockchain/token/non-fungible-token).<br>Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only |
+| [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) | 18 | 0.01 + `K`<br>`K` is the number of assets issued as a result of dApp script invocation that are not [non-fungible tokens](/en/blockchain/token/non-fungible-token).<br>Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only |
 | [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) | 16 | 0.005 + `K`<br>`K` is the number of assets issued as a result of script execution that are not [non-fungible tokens](/en/blockchain/token/non-fungible-token).<br>Assets can be issued by a dApp script from activation of feature #15 “Ride V4, VRF, Protobuf, Failed transactions”.<br>See [example 2](#example2) above |
 | [Issue transaction](/en/blockchain/transaction-type/issue-transaction) | 3 | • 1 for reqular token <br>• 0.001 for [non-fungible token](/en/blockchain/token/non-fungible-token) |
 | [Lease Cancel transaction](/en/blockchain/transaction-type/lease-cancel-transaction) | 9 | 0.001 |

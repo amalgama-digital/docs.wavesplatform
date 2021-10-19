@@ -48,13 +48,15 @@ Parameters:
 | Parameter | Description |
 | :--- | :--- |
 | dApp: [Address](/en/ride/structures/common-structures/address)&#124;[Alias](/en/ride/structures/common-structures/alias) | [Address](/en/blockchain/account/address) or [alias](/en/blockchain/account/alias) of a dApp to invoke |
-| function: [String](/en/ride/data-types/string)&#124;[Unit](/en/ride/data-types/unit) | Name of a callable function. `unit` for a default function invocation |
+| function: [String](/en/ride/data-types/string)&#124;[Unit](/en/ride/data-types/unit) | Name of a callable function. `unit` for a [default function](/en/ride/functions/callable-function#default-callable-function) invocation |
 | arguments: [List](/en/ride/data-types/list)[[Any](/en/ride/data-types/any)] | Parameters of a callable function |
 | payments: [List](/en/ride/data-types/list)[[AttachedPayment](/en/ride/structures/common-structures/attached-payment)] | Payments to transfer from the parent dApp to the invoked dApp, up to 10 |
 
 ```
 strict z = invoke(dapp,foo,args,[AttachedPayment(unit,100000000)])
 ```
+
+The return value is of type `Any`, which means any valid type. You can extract a particular type from it using `as[T]` and `exactAs[T]` macros or the `match ... case` operator, see the [Any](/en/ride/data-types/any) article.
 
 The `invoke` and `reentrantInvoke` functions differ only in the [reentrancy restriction](/en/ride/functions/built-in-functions/dapp-to-dapp#reentrancy).
 

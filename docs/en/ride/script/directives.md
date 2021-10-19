@@ -12,7 +12,7 @@ Directive format is as follows:
 
 | Directive name | Directive function | Possible values |
 | :--- | :--- | :--- |
-| STDLIB_VERSION | Version of the [Standard Library](/en/ride/script/standard-library) | `6`: enabled by feature #17 “Ride V6” (currently on Stagenet only)<br> `5`: enabled by feature #16 “Ride V5, dApp-to-dApp invocations”<br>`4`: enabled by feature #15 “Ride V4, VRF, Protobuf, Failed transactions”<br>`3`<br>`2`<br>`1` |
+| STDLIB_VERSION | Version of the [Standard Library](/en/ride/script/standard-library) | `6`: enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression” (currently on Stagenet only)<br> `5`: enabled by feature #16 “Ride V5, dApp-to-dApp invocations”<br>`4`: enabled by feature #15 “Ride V4, VRF, Protobuf, Failed transactions”<br>`3`<br>`2`<br>`1` |
 | CONTENT_TYPE | Script content type | `DAPP`: the script is a set of definitions and contains functions that can be invoked from another account.<br>`EXPRESSION`: the script is a boolean expression used for transaction verification |
 | SCRIPT_TYPE | Entity that the script is attached to | `ACCOUNT`<br>`ASSET` |
 

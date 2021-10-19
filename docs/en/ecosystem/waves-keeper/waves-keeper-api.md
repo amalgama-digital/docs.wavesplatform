@@ -333,7 +333,7 @@ authValidate(data, { host: data.host, data: '123' }); // true
 import { verifyAuthData, libs } from '@waves/waves-transactions';
 
 
-const authValidate = (data, signature, publicKey, chainId) => {    
+const authValidate = (signature, data, publicKey, chainId) => { 
    const chain = typeof chainId === 'string' ? chainId : String.fromCharCode(chainId);
    const address = libs.crypto.address({ publicKey }, chain);
    return verifyAuthData({ publicKey, address, signature }, data);
@@ -877,7 +877,11 @@ Validate custom data:
            signature: '...',
            publicKey: '...'
        }
-       или
+```
+
+or
+
+```
        {
             version: 2,
             data: [{ type: 'string', key: 'name', value: 'Mr. First' }]

@@ -1,6 +1,6 @@
 # Ethereum Transaction Binary Format
 
-> Ethereum transaction support is added in node version 1.4.0 and enabled by feature #17 “Ride V6”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
+> Ethereum transaction support is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 Waves node supports Ethereum transactions (only Legacy) and interprets them as a dApp script invocation or token transfer, depending on the transaction content. [More about Ethereum transaction support](/en/keep-in-touch/metamask)
 

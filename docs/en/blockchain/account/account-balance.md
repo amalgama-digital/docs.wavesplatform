@@ -15,7 +15,7 @@ There are four types of balances in WAVES:
 
 The **regular balance** is the amount of WAVES that belongs directly to the account.
 
-Thе other types of balances are determined counting [leased WAVES](/en/blockchain/leasing).
+The other types of balances are determined counting [leased WAVES](/en/blockchain/leasing).
 
 Let us introduce the following notation:
 
