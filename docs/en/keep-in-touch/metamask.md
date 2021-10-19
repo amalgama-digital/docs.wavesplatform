@@ -95,8 +95,9 @@ In an [Exchange transaction](/en/blockchain/transaction-type/exchange-transactio
 
 1. The app calls the `signOrder()` function of ProviderMetamask passing order parameters.
 
-    * Asset IDs should be specified in Waves format: 32 bytes in base58; for WAVES, asset ID should be `WAVES`.
-    * `senderPublicKey` must be omitted.
+   • Asset IDs should be specified in Waves format: 32 bytes in base58; for WAVES, asset ID should be `WAVES`.
+
+   • `senderPublicKey` must be omitted.
 
 2. ProviderMetamask passes an order to MetaMask as a data structure according to [EIP-712](https://eips.ethereum.org/EIPS/eip-712).
 3. MetaMask opens a window where the user can see order details, confirm it or reject.
@@ -134,7 +135,7 @@ Click **Sign In** and select **Sign in with Metamask**. In MetaMask, confirm the
 
 > To get WAVES to pay transaction fees, copy the address in Waves format and use [Stagenet Faucet](https://stagenet.wavesexplorer.com/faucet).
 
-Paste the address of any smart contract on Stagenet, such as [3MRuzZVauiiX2D2DGwNyP8Tv7idDGUy1VG5bJ](https://waves-dapp.com/3MRuzZVauiiX2DGwNyP8Tv7idDGUy1VG5bJ). Specify the callable function arguments and payments (if necessary). Confirm the transaction in MetaMask. The transaction status is displayed in MetaMask on the **Activity** tab with a slight delay.
+Paste the address of any smart contract on Stagenet, such as [3MRuzZVauiiX2D2DGwNyP8Tv7idDGUy1VG5bJ](https://dev-dapps.wavesplatform.com/3MRuzZVauiiX2DGwNyP8Tv7idDGUy1VG5bJ). Specify the callable function arguments and payments (if necessary). Confirm the transaction in MetaMask. The transaction status is displayed in MetaMask on the **Activity** tab with a slight delay.
 
 The transaction link displayed by MetaMask opens the transaction page in Waves Explorer.
 
