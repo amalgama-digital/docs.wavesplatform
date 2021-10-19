@@ -38,6 +38,7 @@ message Order {
     Amount matcher_fee = 10;
     int32 version = 11;
     repeated bytes proofs = 12;
+    bytes eth_signature = 13;
 };
 
 message Amount {
@@ -49,7 +50,7 @@ message Amount {
 | Field | Size | Description |
 | :--- | :--- | :--- |
 | chain_id | 1 byte | [Chain ID](/en/blockchain/blockchain-network/#chain-id) |
-| sender_public_key | 32 bytes | Public key of the order sender |
+| sender_public_key | 32 or 64 bytes | Public key of the order sender |
 | matcher_public_key | 32 bytes | Public key of matcher |
 | asset_pair.amount_asset_id | • 32 bytes for asset<br>• 0 for WAVES | ID of the amount asset |
 | asset_pair.price_asset_id | • 32 bytes for asset<br>• 0 for WAVES | ID of the price asset |
@@ -62,6 +63,7 @@ message Amount {
 | matcher_fee.amount | 8 bytes | [Matcher fee](/en/blockchain/glossary#m) |
 | version | 1 byte | Order version: 4 |
 | proofs | Each proof up to 64 bytes,<br>up to 8 proofs | Order proofs that are used to check the validity of the order |
+| bytes eth_signature | ECDSA signature of a MetaMask user. See [Sign transactions and orders in MetaMask](/en/keep-in-touch/metamask) for details. The field is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only |
 
 ## Version 3 <a id="v3"></a>
 
