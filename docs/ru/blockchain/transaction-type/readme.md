@@ -27,6 +27,9 @@
 | 12 | [Транзакция данных](/ru/blockchain/transaction-type/data-transaction) | Добавляет, изменяет или удаляет запись в хранилище данных аккаунта отправителя |
 | 13 | [Транзакция установки скрипта](/ru/blockchain/transaction-type/set-script-transaction) | Устанавливает dApp-скрипт или скрипт аккаунта |
 | 16 | [Транзакция вызова скрипта](/ru/blockchain/transaction-type/invoke-script-transaction) | Вызывает функцию скрипта dApp |
+| 18 | [Транзакция применения выражения](/ru/blockchain/transaction-type/invoke-expression-transaction) | Выполняет приложенный скрипт |
+
+> Транзакция применения выражения добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/).
 
 <!-- | 18 | [Транзакция продолжения](/ru/blockchain/transaction-type/continuation-transaction) | Создается автоматически для продолжения выполнения скрипта dApp | -->
 

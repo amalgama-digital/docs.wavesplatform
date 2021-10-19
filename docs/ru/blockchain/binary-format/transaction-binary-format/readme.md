@@ -74,6 +74,7 @@ message Transaction {
         SetAssetScriptTransactionData set_asset_script = 115;
         InvokeScriptTransactionData invoke_script = 116;
         UpdateAssetInfoTransactionData update_asset_info = 117;
+        InvokeExpressionTransactionData invoke_expression = 118;
     };
 };
 
@@ -88,7 +89,7 @@ message Amount {
 | chain_id | 1 байт | [Байт сети](/ru/blockchain/blockchain-network/#байт-сети) |
 | sender_public_key | 32 байта | Открытый ключ аккаунта отправителя транзакции |
 | fee.amount | 8 байт | [Комиссия за транзакцию](/ru/blockchain/transaction/transaction-fee) в минимальных единицах («копейках») ассета |
-| fee.asset_id | • 32 байта, если комиссия в спонсорском ассете<br> • 0, если комиссия в WAVES | ID токена комиссии.<br>Комиссия в спонсорском ассете доступна только для транзакций вызова скрипта и транзакций перевода. См. раздел [Спонсирование комиссии](/ru/blockchain/waves-protocol/sponsored-fee) |
+| fee.asset_id | • 32 байта, если комиссия в спонсорском ассете<br> • 0, если комиссия в WAVES | ID токена комиссии.<br>Комиссия в спонсорском ассете доступна только для транзакций вызова скрипта, транзакций применения выражения и транзакций перевода. См. раздел [Спонсирование комиссии](/ru/blockchain/waves-protocol/sponsored-fee) |
 | timestamp | 8 байт | Временная метка транзакции: Unix-время в миллисекундах. Транзакция не будет добавлена в блокчейн, если значение временной метки транзакции отличается от временной метки текущего блока более чем на 2 часа назад или 1,5 часа вперед. |
 | version | 1 байт | Версия транзакции |
 | proofs | Размер каждого подтверждения — до 64 байт,<br>до 8 подтверждений | [Подтверждения транзакции](/ru/blockchain/transaction/transaction-proof), используемые для проверки валидности. Массив может содержать подписи транзакции (но не ограничивается только подписями) |
@@ -111,4 +112,8 @@ message Amount {
 * [Транзакция спонсирования](/ru/blockchain/binary-format/transaction-binary-format/sponsor-fee-transaction-binary-format)
 * [Транзакция установки скрипта](/ru/blockchain/binary-format/transaction-binary-format/set-script-transaction-binary-format)
 * [Транзакция установки скрипта ассета](/ru/blockchain/binary-format/transaction-binary-format/set-asset-script-transaction-binary-format)
+* [Транзакция применения выражения](/ru/blockchain/binary-format/transaction-binary-format/invoke-expression-transaction-binary-format)
+
+> Транзакция применения выражения добавлена в версии ноды 1.4.0. Возможность использовать эту транзакцию включается после активации фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только для [Stagenet](/ru/blockchain/blockchain-network/).
+
 <!-- * [Транзакция продолжения](/ru/blockchain/binary-format/transaction-binary-format/continuation-transaction-binary-format) -->

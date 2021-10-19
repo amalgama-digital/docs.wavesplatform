@@ -1,5 +1,151 @@
 # Release Notes
 
+## Version 1.4 Zegema (Stagenet)
+
+### Protocol Enhancements
+
+* Added support for Ethereum transactions that perform token transfers or dApp script invocations. Thanks to this, MetaMask users can sign transactions and send them to the Waves blockchain. [More details](/en/keep-in-touch/metamask)
+* Added support for orders with ECDSA signature in Exchange transactions. Thanks to this, users can sign orders with MetaMask. [More details](/en/keep-in-touch/metamask)
+* Implemented a new transaction type: [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) that executes the script attached to it.
+
+### Ride
+
+* Issued [version 6](/en/ride/v6/) of the Ride Standard library.
+* Added a new script type: [call script](/en/ride/v6/script/script-types/call-script) designed to be executed once by an Invoke Expression transaction.
+* Added a built-in variable: [i](/en/ride/v6/variables/built-in-variables#i) that is available in a call script and contains the [Invocation](/en/ride/v6/structures/common-structures/invocation) structure.
+* Added the [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/invoke-expression-transaction) structure that is used to verify an Invoke Expression transaction by smart contracts.
+* Added the [fold](/en/ride/v6/functions/built-in-functions/fold-functions) range of functions, designed to implement operations on a list of values. The functions replace the `FOLD<N>` macro used in previous versions of the Standard Library.
+* Added the following built-in functions:
+   * [sqrt(Int,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrt)
+   * [sqrt(BigInt,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)
+* For the built-in string functions [makeString](/en/ride/v6/functions/built-in-functions/string-functions#makestring-list-string-string-string) and [split](/en/ride/v6/functions/built-in-functions/string-functions#split-string-string-list-string) added the range of similar functions with different complexity depending on the data size limit. When data size is known in advance, the “cheaper” function can be used.
+* Changed the complexity of certain built-in functions. The complexity is given in the [[Ride v6] Built-in functions](/en/ride/v6/functions/built-in-functions/) article.
+
+### Node REST API
+
+#### Breaking Changes
+
+* Added support for Ethereum transactions that perform token transfers or dApp script invocations. JSON representation of a transaction depends on its content:
+
+   <details>
+   <summary>Example transfer by Ethereum transaction</summary>
+
+   ```json
+   {
+      "type": 19,
+      "id": "AAU7gnVCc4G6LrSndTy3qbgnsDT9FTHkhRCRQNDVo52k",
+      "fee": 100000,
+      "feeAssetId": null,
+      "timestamp": 1632300900966,
+      "version": 1,
+      "chainId": 67,
+      "bytes": "0xf8ac86017bc01bcd9001830186a0943353cdb2c6454ad0811f29b632208162037fc22d80b844a9059cbb00000000000000000000000088955b80d3796397c447220793f625a8e47a589400000000000000000000000000000000000000000000000000000000000f424081ada07221e88bbaf6c221faf586766d856d64c66350017f94515c675930b5a38bfe45a05a36e1ab1cc27938c7a962c794b39b68d5a228d2dc987c04916b97246796db23",
+      "sender": "3F11ucZTFLBGrY3TpSmWH3tH4iaYRgLVvZV",
+      "senderPublicKey": "4NzCXwRd3wKsmrrYrGVBsmuiUu6sVhZNKdvxPqzreCMRftvpXD7jJ19XFdXZqSC63nS59CtjCXXrBfwMspvf8nfs",
+      "applicationStatus": "succeeded",
+      "payload": {
+         "type": "transfer",
+         "assetId": null,
+         "amount": 100000000,
+         "recipient": "3FDztq6huchm3TEbJXNcZE9HeDH3b4qpEoK"
+      }
+   }
+   ```
+   </details>
+
+   <details>
+   <summary>Example script invocation by Ethereum transaction</summary>
+   
+   ```json
+   {
+      "type": 19,
+      "id": "AAU7gnVCc4G6LrSndTy3qbgnsDT9FTHkhRCRQNDVo52k",
+      "fee": 500000,
+      "feeAssetId": null,
+      "timestamp": 1632300900966,
+      "version": 1,
+      "chainId": 67,
+      "bytes": "0xf9014b86017bc121a113018307a12094c811007db5e07a1bd3d91aef1f37bd3010c28d5980b8e4a72afeeb000000000000000000000000000000000000000000000000000000000000007b0000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000087100000000000000000000000000000000000000000000000000000000000000001ca0fbe876dcb9939c4812d2ef95bb30cd84740e7db96d7959f043152958a101e177a055356f63ccee0a020cd12bc4350e6a888d2ed7967f5ca0fefe773c4a752950ff",
+      "sender": "3F11ucZTFLBGrY3TpSmWH3tH4iaYRgLVvZV",
+      "senderPublicKey": "4NzCXwRd3wKsmrrYrGVBsmuiUu6sVhZNKdvxPqzreCMRftvpXD7jJ19XFdXZqSC63nS59CtjCXXrBfwMspvf8nfs",
+      "applicationStatus": "succeeded",
+      "payload": {
+         "type": "invocation",
+         "dApp": "3FEVXxz656kaC24vh3r25eXNY64QSqX9ZFg",
+         "payment": [],
+         "call": {
+            "function": "depositRef",
+            "args": []
+         },
+         "stateChanges": {
+            "data": [],
+            "transfers": [],
+            "issues": [],
+            "reissues": [],
+            "burns": [],
+            "sponsorFees": [],
+            "leases": [],
+            "leaseCancels": [],
+            "invokes": []
+         }
+      }
+   }
+   ```
+   </details>
+
+   Features of the Ethereum transaction JSON representation:
+
+   * `sender` contains Waves address base58 encoded,
+   * `senderPublicKey` is 64 bytes base58 encoded,
+   * `bytes` contains the entire Ethereum transaction bytes, including the ECDSA signature, HEX encoded.
+   * `proofs` array is missing.
+
+* Added support for Exchange transactions containing an order (or both orders) with an ECDSA signature.
+
+   <details>
+   <summary>Example order with ECDSA signature</summary>.
+
+   ```json
+   "order1": {
+      "version": 4,
+      "id": "2Wx5ctbaU9GqQYXtEkqsin6drfu6SuADdwAyvuYnwai9",
+      "sender": "3FzoJXUesFqzf4nmMYejpUDYmFJvkwEiQG6",
+      "senderPublicKey": "5BQPcwDXaZexgonPb8ipDrLRXY3RHn1kFLP9fqp1s6M6xiRhC4LvsAq2HueXCMzkpuXsrLnuBA3SdkJyuhNZXMCd",
+      "matcherPublicKey": "9BUoYQYq7K38mkk61q8aMH9kD9fKSVL1Fib7FbH6nUkQ",
+      "assetPair": {
+         "amountAsset": "5fQPsn8hoaVddFG26cWQ5QFdqxWtUPNaZ9zH2E6LYzFn",
+         "priceAsset": null
+      },
+      "orderType": "buy",
+      "amount": 1,
+      "price": 100,
+      "timestamp": 1,
+      "expiration": 123,
+      "matcherFee": 100000,
+      "signature": "",
+      "proofs": [],
+      "matcherFeeAssetId": null,
+      "eip712Signature": "0xe5ff562bfb0296e95b631365599c87f1c5002597bf56a131f289765275d2580f5344c62999404c37cd858ea037328ac91eca16ad1ce69c345ebb52fde70b66251c"
+   }
+   ```
+   </details>
+
+   Features JSON representation of an order with ECDSA signature:
+   * `sender` contains Waves address base58 encoded,
+   * `senderPublicKey` is 64 bytes base58 encoded,
+   * `eip712Signature` contains an ECDSA signature HEX encoded,
+   * `proofs` array is missing.
+
+* Added the new transaction type: Invoke Expression.
+
+#### Improvements
+
+* Added the `/eth/assets` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset details including asset ID in Waves format (32 bytes, base58 encoded). The asset details in the response are in the same order as IDs in the request.
+
+### Activation
+
+To activate the improvements listed above, vote for feature #17 “Ride V6, MetaMask support, Invoke Expression”.
+
 ## Version 1.3 Jumeirah
 
 The improvements listed below are enabled by feature #16 “Ride V5, dApp-to-dApp invocations”.
@@ -10,7 +156,7 @@ The improvements listed below are enabled by feature #16 “Ride V5, dApp-to-dAp
 * Amended [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction):
    * Canceled the extra fee of 0.004 WAVES for smart assets in payments and script actions.
    * Transaction can contain up to 10 attached payments.
-   * The total complexity for all callable functions and asset scripts involved is limited by 26,000 (the sender's account script complexity is not included in this limit). 
+   * The total complexity for all callable functions and asset scripts involved is limited to 26,000 (the sender's account script complexity is not included in this limit). 
    * The maximum complexity of a callable function of a dApp script is changed to 10,000.
 * For all types of transactions, canceled the extra fee of 0.004 WAVES for sending a transaction from a smart account or dApp unless the complexity of sender's account script or dApp script verifier function exceeds 200.
 
@@ -297,9 +443,9 @@ The improvements listed below are enabled by feature #15 "Ride V4, VRF, Protobuf
 
 ### Protocol Enhancements
 
-* Improved the mechanism for [generating blocks](/en/blockchain/block/block-generation/) using [VRF](https://en.wikipedia.org/wiki/Verifiable_random_function) (Verifiable random function). This improvement allows withstanding stake grinding attacks, which are used by the attackers to try to increase the probability of generating a block for themselves.
+* Improved the mechanism for [generating blocks](/en/blockchain/block/block-generation/) using [VRF](https://en.wikipedia.org/wiki/Verifiable_random_function) (Verifiable random function). This improvement allows withstanding stake grinding attacks, which are used by the attackers to try to increase the probability of generating a block.
 * Implemented saving failed transactions. Invoke script transactions and exchange transactions are saved on the blockchain and a fee is charged for them even if the dApp script or the asset script failed, provided that the sender's signature or account script verification passed and the complexity of computations performed during script invocation exceeded the threshold for saving failed transactions. [More details](/en/keep-in-touch/april)
-* Implemented the feature of changing the asset name and description. For this means, the [update asset info transaction](/en/blockchain/transaction-type/update-asset-info-transaction) is used. Change is possible after 10 or more blocks on Stagenet and after 100,000 or more blocks on Mainnet and Testnet.
+* Implemented the feature of changing the asset name and description. For this means, the [Update Asset Info transaction](/en/blockchain/transaction-type/update-asset-info-transaction) is used. Change is possible after 10 or more blocks on Stagenet and after 100,000 or more blocks on Mainnet and Testnet.
 * Implemented the feature of deletion of entries from the account data storage. This action can be performed by the [data transaction](/en/blockchain/transaction-type/data-transaction) or [DeleteEntry](/en/ride/structures/script-actions/delete-entry) structure of the Ride language.
 * Reduced the [minimum fee](/en/blockchain/transaction/transaction-fee) from 1 to 0.001 WAVES for the reissue transaction and sponsor fee transaction.
 * Implemented transaction binary formats based on [protobuf](https://developers.google.com/protocol-buffers/docs/overview).

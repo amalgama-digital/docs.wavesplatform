@@ -27,9 +27,9 @@ Full transaction validation includes the following checks:
    Depending on the type of transaction, the sender should have enough asset for transfer or for payments attached to the Invoke Script transaction. Order senders in the Exchange transaction should have enough funds to exchange.
 
 3. The sender's signature verification for ordinary account (without script), or account script execution if the sender is [smart account](/en/blockchain/account/dapp), or the [verifier function](/en/ride/functions/verifier-function) execution if the sender is [dApp](/en/blockchain/account/dapp). A similar check is performed for orders in an Exchange transaction.
-4. For the Invoke Script transaction:
+4. For the Invoke Script transaction and Invoke Expression Transaction:
 
-   4.1. Calculation of the result of dApp callable function.
+   4.1. Calculation of the result of dApp callable function or call script execution.
 
    4.2. dApp balance check: dApp account should have enough funds for [dApp script actions](/en/ride/structures/script-actions/).
 
@@ -37,7 +37,7 @@ Full transaction validation includes the following checks:
 
 5. Execution of asset scripts if the transaction uses [smart assets](/en/blockchain/token/smart-asset), including scripts of assets used in dApp script actions.
 
-> When receiving the transaction via the `broadcast` endpoint, or adding transaction to a block, or receiving a block over the network, the node performs full validation of the transaction. When receiving an Invoke Script transaction over the network, the node performs calculations of the callable function (check 4.1) up to the [threshold for saving unsuccessful transactions](/en/ride/limits/).
+> When receiving the transaction via the `broadcast` endpoint, or adding transaction to a block, or receiving a block over the network, the node performs full validation of the transaction. When receiving an Invoke Script transaction or Invoke Expression transaction over the network, the node performs calculations of the callable function (check 4.1) up to the [threshold for saving unsuccessful transactions](/en/ride/limits/).
 
 ### Validation Result
 
@@ -47,10 +47,10 @@ When the transaction is received via `broadcast` or over the network:
 
 When adding the transaction to the block, the result of validation depends on the transaction type.
 
-For the Invoke Script transaction:
+For the Invoke Script transaction and Invoke Expression transaction:
 * If one of the checks 1–3 failed, the transaction is **discarded**.
-* If checks 1–3 passed, and the calculation of the result of the dApp callable function (check 4.1) failed with an error or [throwing an exception](/en/ride/exceptions) before the [complexity](/en/ride/base-concepts/complexity) of performed calculations exceeded the [threshold for saving failed transactions](/en/ride/limits/), the transaction is also **discarded**.
-* If checks 1–3 passed but checks 4–5 failed and besides the result of the callable function is calculated successfully or the complexity exceeded the threshold, the transaction is **saved on the blockchain but marked as failed**: `"applicationStatus": "script_execution_failed"`. The sender is charged the transaction fee. The transaction doesn't entail any other changes to the state of the blockchain.
+* If checks 1–3 passed, and the calculation of the result (check 4.1) failed with an error or [throwing an exception](/en/ride/exceptions) before the [complexity](/en/ride/base-concepts/complexity) of performed calculations exceeded the [threshold for saving failed transactions](/en/ride/limits/), the transaction is also **discarded**.
+* If checks 1–3 passed but checks 4–5 failed and besides the result of dApp callable function or call script execution is calculated successfully or the complexity exceeded the threshold, the transaction is **saved on the blockchain but marked as failed**: `"applicationStatus": "script_execution_failed"`. The sender is charged the transaction fee. The transaction doesn't entail any other changes to the state of the blockchain.
 * If all checks passed, the transaction is saved on the blockchain as **successful**: `"applicationStatus": "succeeded"` and the sender is charged the fee.
 
 For the Exchange transaction:

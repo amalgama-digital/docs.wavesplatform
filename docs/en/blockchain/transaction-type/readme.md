@@ -27,6 +27,9 @@ There are various types of transactions implemented on the Waves blockchain. Typ
 | 12 | [Data transaction](/en/blockchain/transaction-type/data-transaction) | Adds, modifies and deletes data entries in the sender's account data storage |
 | 13 | [Set Script transaction](/en/blockchain/transaction-type/set-script-transaction) | Assigns the dApp script or account script to the sender's account |
 | 16 | [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) | Invokes a callable function of a dApp |
+| 18 | [Invoke Expression transaction](/en/blockchain/transaction-type/invoke-expression-transaction) | Executes the call script attached |
+
+> The Invoke Expression transaction type is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
 <!-- | 18 | [Continuation transaction](/en/blockchain/transaction-type/continuation-transaction) | Created automatically for continuation of a dApp script execution | -->
 

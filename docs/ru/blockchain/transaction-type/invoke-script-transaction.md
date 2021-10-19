@@ -32,7 +32,7 @@
 
 <!-- ### Версия 3
 
-Версия 3 транзакции вызова скрипта добавлена в версии ноды 1.4.0 и включается с активацией фичи №&nbsp;17 “Ride V6”. Версии 1.4.x в настоящее время доступны только на [Stagenet](/ru/blockchain/blockchain-network/).
+Версия 3 транзакции вызова скрипта добавлена в версии ноды 1.4.0 и включается с активацией фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression”. Версии 1.4.x в настоящее время доступны только на [Stagenet](/ru/blockchain/blockchain-network/).
 
 <!-- `Fee` = (0,005 + `E`) × ⌈`С` / 10&nbsp;000⌉ + `S` + 0,004 × `P` + 0,004 × `A` + 1 × `I` + 0,004 × `N`,
 `Fee` = 0,005 + `S` + 0,004 × `P` + 0,004 × `A` + 1 × `I` + 0,004 × `N`,
@@ -129,7 +129,7 @@
 
 ## Бинарный формат
 
-См. раздел [Бинарный формат вызова скрипта](/ru/blockchain/binary-format/transaction-binary-format/invoke-script-transaction-binary-format).
+См. раздел [Бинарный формат транзакции вызова скрипта](/ru/blockchain/binary-format/transaction-binary-format/invoke-script-transaction-binary-format).
 
 ## Структура Ride
 

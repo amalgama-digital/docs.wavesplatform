@@ -8,6 +8,7 @@ const sdkPath = buildingAppsPath + 'waves-api-and-sdk/';
 const ridePath = localePath + 'ride/';
 const rideV4Path = localePath + 'ride/v4/';
 const rideV5Path = localePath + 'ride/v5/';
+const rideV6Path = localePath + 'ride/v6/';
 const ecosystemPath = localePath + 'ecosystem/';
 const keepInTouchPath = localePath + 'keep-in-touch/';
 
@@ -118,6 +119,10 @@ module.exports = {
             {
               title: 'Genesis Transaction',
               path: blockchainPath + 'transaction-type/genesis-transaction',
+            },
+            {
+              title: 'Invoke Expression Transaction',
+              path: blockchainPath + 'transaction-type/invoke-expression-transaction',
             },
             {
               title: 'Invoke Script Transaction',
@@ -368,6 +373,10 @@ module.exports = {
                   path: blockchainPath + 'binary-format/transaction-binary-format/genesis-transaction-binary-format',
                 },
                 {
+                  title: 'Invoke Expression Transaction Binary Format',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/invoke-script-transaction-binary-format',
+                },
+                {
                   title: 'Invoke Script Transaction Binary Format',
                   path: blockchainPath + 'binary-format/transaction-binary-format/invoke-script-transaction-binary-format',
                 },
@@ -410,6 +419,10 @@ module.exports = {
                 {
                   title: 'Update Asset Info Transaction Binary Format',
                   path: blockchainPath + 'binary-format/transaction-binary-format/update-asset-info-transaction-binary-format',
+                },
+                {
+                  title: 'Ethereum Transaction Binary Format',
+                  path: blockchainPath + 'binary-format/transaction-binary-format/ethereum-transaction-binary-format',
                 },
               ],
             },
@@ -990,6 +1003,60 @@ module.exports = {
       ],
     },
     {
+      title: 'Version 6 (Stagenet)',
+      path: rideV6Path,
+      children: [
+        {
+          title: 'Call script',
+          path: rideV6Path + 'script/script-types/call-script',
+        },
+        {
+          title: 'Structures',
+          path: rideV6Path + 'structures',
+          children: [
+            {
+              title: 'Invocation',
+              path: rideV6Path + 'structures/common-structures/invocation',
+            },
+            {
+              title: 'InvokeExpressionTransaction',
+              path: rideV6Path + 'structures/transaction-structures/invoke-expression-transaction',
+            },
+          ],
+        },
+        {
+          title: 'Built-in Variables',
+          path: rideV6Path + 'variables/built-in-variables',
+        },
+        {
+          title: 'Built-in Functions',
+          path: rideV6Path + 'functions/built-in-functions',
+          children: [
+            {
+              title: 'Converting Functions',
+              path: rideV6Path + 'functions/built-in-functions/converting-functions',
+            },
+            {
+              title: 'Fold Functions',
+              path: rideV6Path + 'functions/built-in-functions/fold-functions',
+            },
+            {
+              title: 'Math Functions',
+              path: rideV6Path + 'functions/built-in-functions/math-functions',
+            },
+            {
+              title: 'String Functions',
+              path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+          ],
+        },
+        {
+          title: 'Limitations',
+          path: rideV6Path + 'limits',
+        },
+      ],
+    },
+    {
       title: 'Previous Versions: 4 and 3',
       path: rideV4Path,
       children: [
@@ -1562,9 +1629,13 @@ module.exports = {
       title: 'Release Notes',
       path: keepInTouchPath + 'release-notes',
     },
-	{
+    {
       title: 'Release Notes (Node Go)',
       path: keepInTouchPath + 'release-notes-go',
+    },
+    {
+      title: 'MetaMask',
+      path: keepInTouchPath + 'metamask',
     },
     {
       title: 'Saving Failed Transactions',
