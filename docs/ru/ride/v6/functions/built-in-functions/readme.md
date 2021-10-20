@@ -9,7 +9,7 @@
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
 | fraction(Int, Int, Int): Int | Умножает два целых числа и делит на третье без переполнения | 1 |
-| fraction(Int, Int, Int, Union): Int | Умножает два целых числа и делит на третье без переполнения, применяя указанный метод округления | 4 |
+| fraction(Int, Int, Int, Union): Int | Умножает два целых числа и делит на третье без переполнения, применяя указанный метод округления | 1 |
 | fraction(BigInt, BigInt, BigInt): BigInt | Умножает два [больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения | 1 |
 | fraction(BigInt, BigInt, BigInt, Union): BigInt | Умножает два больших целых числа и делит на третье без переполнения, применяя указанный метод округления | 1 |
 | log(Int, Int, Int, Int, Int, Union): Int | Вычисляет логарифм числа по заданному основанию| 100 |
@@ -20,7 +20,6 @@
 | pow(BigInt, Int, BigInt, Int, Int, Union): BigInt | Возводит число в степень с высокой точностью | 270 |
 | sqrt(Int, Int, Int, Union): Int | Извлекает квадратный корень из числа | 2 |
 | sqrt(BigInt, Int, Int, Union): BigInt | Извлекает квадратный корень из числа с высокой точностью | 5 |
-
 
 ## [Функции блокчейна](/ru/ride/functions/built-in-functions/blockchain-functions)
 

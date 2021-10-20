@@ -5,7 +5,7 @@
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
 | [fraction(Int, Int, Int): Int](#fraction) | Умножает два целых числа и делит на третье без переполнения | 1 |
-| [fraction(Int, Int, Int, Union): Int](#fractionintround) | Умножает два целых числа и делит на третье без переполнения, применяя указанный метод округления | 4 |
+| [fraction(Int, Int, Int, Union): Int](#fractionintround) | Умножает два целых числа и делит на третье без переполнения, применяя указанный метод округления | 1 |
 | [fraction(BigInt, BigInt, BigInt): BigInt](#fractionbigint) | Умножает два [больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения | 1 |
 | [fraction(BigInt, BigInt, BigInt, Union): BigInt](#fractionbigintround) | Умножает два больших целых числа](/ru/ride/data-types/bigint) и делит на третье без переполнения, применяя указанный метод округления | 1 |
 | [log(Int, Int, Int, Int, Int, Union): Int](#log) | Вычисляет логарифм числа по заданному основанию | 100 |

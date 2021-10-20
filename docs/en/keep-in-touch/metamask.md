@@ -62,9 +62,7 @@ MetaMask creates the transaction in Ethereum format, signs it with the user's pr
 
 > Users of Waves wallets such as Waves.Exchange, WavesFX and others (applications developed by third-party teams from the community) can transfer tokens to a MetaMask user. Some wallets only support Waves addresses, so you should first convert the recipient address from Ethereum representation to Waves. As a result, a regular [Transfer transaction](/en/blockchain/transaction-type/transfer-transaction) is created, and the recipient will see the received tokens in MetaMask (for custom token, the recipient should add a balance display first).
 
-To convert the token ID from one format to another, use:
-* [Waves Explorer](https://stagenet.wavesexplorer.com/converters)
-* `/eth/assets` endpoint of Node REST API that returns token parameters by ID in Ethereum representation.
+To convert the token ID from one format to another, use [Waves Explorer](https://stagenet.wavesexplorer.com/converters).
 
 ## Script Invocation
 

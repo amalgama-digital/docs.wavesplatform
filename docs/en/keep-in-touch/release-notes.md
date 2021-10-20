@@ -138,10 +138,6 @@
 
 * Added the new transaction type: Invoke Expression.
 
-#### Improvements
-
-* Added the `/eth/assets` endpoint that accepts asset IDs in Ethereum representation (the first 20 bytes of the token ID, HEX encoded) and returns the asset details including asset ID in Waves format (32 bytes, base58 encoded). The asset details in the response are in the same order as IDs in the request.
-
 ### Activation
 
 To activate the improvements listed above, vote for feature #17 “Ride V6, MetaMask support, Invoke Expression”.

@@ -5,7 +5,7 @@
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
 | [fraction(Int, Int, Int): Int](#fraction) | Multiplies and divides [integers](/en/ride/data-types/int) to avoid overflow | 1 |
-| [fraction(Int, Int, Int, Union): Int](#fractionintround) | Multiplies and divides integers to avoid overflow, applying the specified rounding method | 4 |
+| [fraction(Int, Int, Int, Union): Int](#fractionintround) | Multiplies and divides integers to avoid overflow, applying the specified rounding method | 1 |
 | [fraction(BigInt, BigInt, BigInt): BigInt](#fractionbigint) | Multiplies and divides [bid integers](/en/ride/data-types/bigint) to avoid overflow | 1 |
 | [fraction(BigInt, BigInt, BigInt, Union): BigInt](#fractionbigintround) | Multiplies and divides bid integers to avoid overflow, applying the specified rounding method | 1 |
 | [log(Int, Int, Int, Int, Int, Union): Int](#log)| Calculates logarithm of a number to a given base | 100 |

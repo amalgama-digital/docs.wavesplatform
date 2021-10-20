@@ -167,7 +167,7 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
 | fraction(Int, Int, Int): Int | Multiplies and divides integers to avoid overflow | 1 |
-| fraction(Int, Int, Int, Union): Int | Multiplies and divides integers to avoid overflow, applying the specified rounding method | 4 |
+| fraction(Int, Int, Int, Union): Int | Multiplies and divides integers to avoid overflow, applying the specified rounding method | 1 |
 | fraction(BigInt, BigInt, BigInt): BigInt | Multiplies and divides [bid integers](/en/ride/data-types/bigint) to avoid overflow | 1 |
 | fraction(BigInt, BigInt, BigInt, Union): BigInt | Multiplies and divides bid integers to avoid overflow, applying the specified rounding method | 1 |
 | log(Int, Int, Int, Int, Int, Union): Int | Calculates logarithm of a number with a base | 100 |
