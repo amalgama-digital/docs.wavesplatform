@@ -19,7 +19,7 @@ MetaMask support is added in node version 1.4.0 and enabled by feature #17 “Ri
 
 An address of a MetaMask user consists of 20 bytes. A Waves address also contains 20 significant bytes, with addition of a prefix that is the same for all addresses of the blockchain network and a checksum (see also [Address Binary Format](/en/blockchain/binary-format/address-binary-format)). So, each address in MetaMask corresponds to a single Waves address and vice versa: the same 20 bytes are used as the address in the Ethereum representation and as the basis of the address in the Waves format.
 
-:warning: If you generate a key pair and an address from the MetaMask seed phrase according to Waves rules (see [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), you get **another** account; its address does not match the address of the MetaMask user converted to the Waves format. There is no way to get the Waves seed phrase from the MetaMask seed phrase so that they generate the same address.
+:warning: If you generate a private key, public key, and address from the MetaMask seed phrase according to Waves rules (see [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), you get **another** account; its address does not match the address of the MetaMask user converted to the Waves format. There is **no way** to get the Waves seed phrase from the MetaMask seed phrase so that they generate the same address.
 
 In UIs, the MetaMask user address is represented in HEX encoding, and the Waves address in base58. To convert the address from one format to another, use:
 * [Waves Explorer](https://stagenet.wavesexplorer.com/converters),

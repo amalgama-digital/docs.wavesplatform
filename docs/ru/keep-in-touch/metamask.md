@@ -19,7 +19,7 @@
 
 Адрес пользователя MetaMask состоит из 20 байт. Адрес в формате Waves также содержит 20 значимых байт, к которым добавляется префикс, общий для всех адресов сети, и контрольная сумма (см. также раздел [Бинарный формат адреса](/ru/blockchain/binary-format/address-binary-format)). Таким образом, каждому адресу в MetaMask соответствует единственный адрес Waves и наоборот: одни и те же 20 байт используются как адрес в Ethereum-представлении и как основа адреса в формате Waves.
 
-:warning: Если из seed-фразы MetaMask сгенерировать пару ключей и адрес по правилам Waves (см. раздел [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), получится **другой** аккаунт, адрес которого не совпадает с адресом пользователя MetaMask, преобразованным в формат Waves. Из seed-фразы MetaMask невозможно получить seed-фразу Waves, соответствующую тому же адресу.
+:warning: Если из seed-фразы MetaMask сгенерировать закрытый ключ, открытый ключ и адрес по правилам Waves (см. раздел [Cryptographic practical details](/en/blockchain/waves-protocol/cryptographic-practical-details)), получится **другой** аккаунт, адрес которого не совпадает с адресом пользователя MetaMask, преобразованным в формат Waves. Из seed-фразы MetaMask **невозможно** получить seed-фразу Waves, соответствующую тому же адресу.
 
 В интерфейсах адрес пользователя MetaMask представлен в кодировке HEX, а адрес Waves — в base58. Для преобразования адреса из одного формата в другой можно использовать:
 * [Waves Explorer](https://stagenet.wavesexplorer.com/converters),
