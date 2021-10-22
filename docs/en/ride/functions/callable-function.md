@@ -158,7 +158,7 @@ However, if the callable function failed or [threw an exception](/en/ride/except
 
 This rule is applied after activation of feature #15 “Ride V4, VRF, Protobuf, Failed transactions” and doesn't depend on the Standard library version used. Keep it in mind when developing a dApp script. For more information, see the [Transaction Validation](/en/blockchain/transaction/transaction-validation) article.
 
-## <a id="default-callable-function">Default Callable Function
+## Default Callable Function
 
 The default callable function is a function that is named `default` and has no arguments:
 

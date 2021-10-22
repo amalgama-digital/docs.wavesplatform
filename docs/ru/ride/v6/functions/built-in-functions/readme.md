@@ -147,7 +147,7 @@
 | isDataStorageUntouched(Address&#124;Alias): Boolean | Проверяет, что хранилище данных указанного аккаунта никогда не содержало записей | 10 |
 
 
-## [Функции свертки](/ru/ride/functions/built-in-functions/fold-functions)
+## [Функции свертки](/ru/ride/v6/functions/built-in-functions/fold-functions)
 
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
