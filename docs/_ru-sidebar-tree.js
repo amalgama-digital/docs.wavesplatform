@@ -168,6 +168,10 @@ module.exports = {
               title: 'Установка скрипта ассета',
               path: blockchainPath + 'transaction-type/set-asset-script-transaction',
             },
+            {
+              title: 'Ethereum',
+              path: blockchainPath + 'transaction-type/ethereum-transaction',
+            },
           ]
         },
         {

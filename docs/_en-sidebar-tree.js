@@ -168,6 +168,10 @@ module.exports = {
               title: 'Update Asset Info Transaction',
               path: blockchainPath + 'transaction-type/update-asset-info-transaction',
             },
+            {
+              title: 'Ethereum',
+              path: blockchainPath + 'transaction-type/ethereum-transaction',
+            },
           ]
         },
         {
