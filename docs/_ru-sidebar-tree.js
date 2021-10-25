@@ -169,7 +169,7 @@ module.exports = {
               path: blockchainPath + 'transaction-type/set-asset-script-transaction',
             },
             {
-              title: 'Ethereum',
+              title: 'Ethereum-транзакция',
               path: blockchainPath + 'transaction-type/ethereum-transaction',
             },
           ]
