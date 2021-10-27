@@ -540,7 +540,7 @@ module.exports = {
           path: nodePath + 'node-api/transactions',
         },
         {
-          title: 'Денежные поля',
+          title: 'Формат числовых полей',
           path: nodePath + 'node-api/headers',
         },
         {

@@ -540,7 +540,7 @@ module.exports = {
           path: nodePath + 'node-api/transactions',
         },
         {
-          title: 'Monetary Fields',
+          title: 'Numeric Fields Format',
           path: nodePath + 'node-api/headers',
         },
         {
