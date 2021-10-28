@@ -25,9 +25,9 @@ The script code is composed of the following parts:
 The asset script should start with [directives](/en/ride/script/directives):
 
 ```scala
-{- # STDLIB_VERSION 5 # -}
-{- # CONTENT_TYPE EXPRESSION # -}
-{- # SCRIPT_TYPE ACCOUNT # -}
+{-# STDLIB_VERSION 5 #-}
+{-# CONTENT_TYPE EXPRESSION #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
 ```
 
 The above directives tell the compiler that:

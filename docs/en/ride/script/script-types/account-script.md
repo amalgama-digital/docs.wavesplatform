@@ -19,9 +19,9 @@ The script code is composed of the following parts:
 The account script should start with [directives](/en/ride/script/directives):
 
 ```scala
-{- # STDLIB_VERSION 5 # -}
-{- # CONTENT_TYPE EXPRESSION # -}
-{- # SCRIPT_TYPE ACCOUNT # -}
+{-# STDLIB_VERSION 5 #-}
+{-# CONTENT_TYPE EXPRESSION #-}
+{-# SCRIPT_TYPE ACCOUNT #-}
 ```
 
 The above directives tell the compiler that:
@@ -56,7 +56,7 @@ Using the [match ... case](/en/ride/operators/match-case), you can set up differ
 ```
 match tx {
   case t: Order | SetScriptTransaction => false
-  case _ => sigVerify (tx.bodyBytes, tx.proofs [0], tx.senderPublicKey)
+  case _ => sigVerify(tx.bodyBytes, tx.proofs[0], tx.senderPublicKey)
 }
 ```
 
