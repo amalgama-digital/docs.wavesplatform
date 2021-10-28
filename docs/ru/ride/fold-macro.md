@@ -42,43 +42,21 @@ FOLD<5>(arr, 0, sum)    # Результат: 15
 > после компиляции и декомпиляции будет выглядеть так:
 > 
 > ```scala
-> let $list = arr
-> let $size = size($list)
+> let $l = arr
+> let $s = size($l)
 > let $acc0 = 0
-> if (($size == 0))
->    then $acc0
->    else {
->       let $acc1 = sum($acc0, $list[0])
->       if (($size == 1))
->          then $acc1
->          else {
->             let $acc2 = sum($acc1, $list[1])
->             if (($size == 2))
->                then $acc2
->                else {
->                   let $acc3 = sum($acc2, $list[2])
->                   if (($size == 3))
->                   then $acc3
->                      else {
->                         let $acc4 = sum($acc3, $list[3])
->                         if (($size == 4))
->                            then $acc4
->                            else {
->                               let $acc5 = sum($acc4, $list[4])
->                               if (($size == 5))
->                                  then $acc5
->                                  else {
->                                     let $acc6 = sum($acc5, $list[5])
->                                     throw("List size exceed 5")
->                                  }
->                            }
->                      }
->                }
->          }
->    }
+> func 1 ($a,$i) =     if (($i >= $s))
+>    then $a
+>    else sum($a, $l[$i])
+>
+> func 2 ($a,$i) =     if (($i >= $s))
+>    then $a
+>    else throw("List size exceeds 5")
+>
+> 2(1(1(1(1(1($acc0, 0), 1), 2), 3), 4), 5)
 > ```
-> 
-> Такой код вы можете увидеть в Waves Explorer. [Пример](https://testnet.wavesexplorer.com/tx/Cb2vQfkMXRXT94NwyutEz2CV8XFvrLUohMHXRKgRH3HM)
+
+> Такой код вы можете увидеть в Waves Explorer. [Пример](https://testnet.wavesexplorer.com/tx/GaLfaidadeowoZ4vMtEVvJK8RkJiqr5AdPWLvPtTnV4e)
 
 ## Произведение
 
