@@ -6,7 +6,11 @@
 
 [Минимальная комиссия](/ru/blockchain/transaction/transaction-fee) за транзакцию зависит от типа транзакции, наличия скрипта на аккаунте отправителя, использования смарт-ассетов, размера данных, выполняемых вызываемым скриптом действий и т. п.
 
-Для расчета минимальной комиссии можно использовать метод [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateTxFee). В теле запроса укажите данные транзакции в JSON, включая `type` и `senderPublicKey`. Если требуется подсчитать комиссию в спонсорском ассете, укажите в теле запроса поле `feeAssetId`. Поля `sender` и `fee` игнорируются.
+Для расчета минимальной комиссии можно использовать метод [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateTxFee).
+
+:warning: **Внимание!** Для [транзакции вызова скрипта](/ru/blockchain/transaction-type/invoke-script-transaction) метод не учитывает [действия скрипта](/ru/ride/structures/script-actions/), то есть количество токенов, выпущенных в результате вызова.
+
+В теле запроса укажите данные транзакции в JSON, включая `type` и `senderPublicKey`. Если требуется подсчитать комиссию в спонсорском ассете, укажите в теле запроса поле `feeAssetId`. Поля `sender` и `fee` игнорируются.
 
 Пример запроса:
 

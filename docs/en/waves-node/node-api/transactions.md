@@ -6,7 +6,11 @@
 
 The [minimum transaction fee](/en/blockchain/transaction/transaction-fee) depends on the transaction type, whether the script is assigned to the sender's account, smart assets involved, data size, actions performed by the script being invoked, etc.
 
-You can use the [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateTxFee) operation to calculate the minimum fee. In the request body, specify the transaction data in JSON, including `type` and `senderPublicKey`. If you want to calculate the fee in the sponsored asset, specify the `feeAssetId` field in the request body. The `sender` and `fee` fields are ignored.
+You can use the [POST /transactions/calculateFee](https://nodes.wavesnodes.com/api-docs/index.html#/transactions/calculateTxFee) operation to calculate the minimum fee.
+
+:warning: **Please note:** For an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction), the operation does not take into account the [script actions](/en/ride/structures/script-actions/), that is, the number of tokens issued as a result of the invocation.
+
+In the request body, specify the transaction data in JSON, including `type` and `senderPublicKey`. If you want to calculate the fee in the sponsored asset, specify the `feeAssetId` field in the request body. The `sender` and `fee` fields are ignored.
 
 Request example:
 
