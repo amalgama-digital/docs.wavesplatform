@@ -20,5 +20,11 @@
 | Number of payments attached to an invocation | 10 |
 | Total number of [Issue](/en/ride/structures/script-actions/issue), [Reissue](/en/ride/structures/script-actions/reissue), [Burn](/en/ride/structures/script-actions/burn), [SponsorFee](/en/ride/structures/script-actions/sponsor-fee), [ScriptTransfer](/en/ride/structures/script-actions/script-transfer), [Lease](/en/ride/structures/script-actions/lease), and [LeaseCancel](/en/ride/structures/script-actions/lease-cancel) script actions executed by all callable functions in a single transaction | 30 |
 | Total number of [BinaryEntry](/en/ride/structures/script-actions/binary-entry), [BooleanEntry](/en/ride/structures/script-actions/boolean-entry), [DeleteEntry](/en/ride/structures/script-actions/delete-entry), [IntegerEntry](/en/ride/structures/script-actions/int-entry), [StringEntry](/en/ride/structures/script-actions/string-entry) script actions executed by all callable functions in a single transaction | 100 |
-| Total size of data written to the [account data storage](/en/blockchain/account/account-data-storage) by all `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry` script actions executed by a callable function | 5 Kbytes |
-| Total size of data written to the account data storage by all `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry` script actions executed by all callable functions in a single transaction | 15 Kbytes |
+| Total size of data<sup>(1)</sup> written to the [account data storage](/en/blockchain/account/account-data-storage) by all `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry` script actions executed by a callable function | 5 Kbytes |
+| Total size of data<sup>(1)</sup> written to the account data storage by all `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry` script actions executed by all callable functions in a single transaction | 15 Kbytes |
+
+<sup>(1)</sup> The total size of data is calculated as follows:
+
+   ![](./_assets/data-limit.png)
+
+   Here <i>K</i><sub><i>i</i></sub> is an entry key, <i>V</i><sub><i>i</i></sub> is an entry value.
