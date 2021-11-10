@@ -12,6 +12,13 @@ The call script type is designed for to be executed once without assigning to an
 
 The [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/invoke-expression-transaction) structure is used to verify the an Invoke Expression transaction by smart contracts.
 
+## MetaMask Support
+
+* The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
+* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a Transfer transaction. The `proofs` array contains 8 empty values.
+
+[More about MetaMask support on the Waves blockchain](/en/keep-in-touch/metamask)
+
 ## Built-in functions
 
 * Added the [fold](/en/ride/v6/functions/built-in-functions/fold-functions) range of functions, designed to implement operations on a list of values. The functions replace the `FOLD<N>` macro used in previous versions of the Standard Library.
