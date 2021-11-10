@@ -692,8 +692,8 @@ invoke(data: {
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
 | dApp* | | Base58 encoded address or alias (with `alias:T:` prefix) of the dApp whose script should be invoked |
-| fee | | :warning: **Warning!** Default value does not take into account [script actions](/en/ride/structures/script-actions/). For invocation of a dApp script function that issues tokens, which are not NFT, we recommend you to calculate and specify the fee as described in the [Invoke Script Transaction](/en/blockchain/transaction-type/invoke-script-transaction)) article |
-| payment | | Payments attached to the transaction. Maximum of two payments |
+| fee | | :warning: **Warning!** Default value does not take into account [script actions](/en/ride/structures/script-actions/). For an invocation of dApp script function that issues tokens, which are not NFT, we recommend you to calculate and specify the fee as described in the [Invoke Script Transaction](/en/blockchain/transaction-type/invoke-script-transaction) article |
+| payment | | Payments attached to the transaction. Maximum of 10 payments |
 | payment.assetId* | | Base58 encoded ID of the asset to pay. `WAVES` or `null` means WAVES |
 | payment.amount* | | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 | call | Default function should be invoked in the dApp | Parameters for called function |
