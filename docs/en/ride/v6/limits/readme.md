@@ -32,4 +32,4 @@
 
    ![](./_assets/data-limit.png)
 
-   Here <i>K</i><sub><i>i</i></sub> is an entry key, <i>V</i><sub><i>i</i></sub> is an entry value.
+   Here <i>K</i><sub><i>i</i></sub> is a key of the data entry, and <i>V</i><sub><i>i</i></sub> is its value.
