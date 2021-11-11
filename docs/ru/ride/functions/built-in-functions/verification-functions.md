@@ -133,7 +133,7 @@ groth16Verify(vk, proof, inputs)
 
 | Название | Макс. размер `message` | Сложность |
 |:---| :--- | :--- |
-| rsaVerify(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 150 Кбайт | 1000 |
+| rsaVerify(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | Макс. размер `ByteVector` | 1000 |
 | rsaVerify_16Kb(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 16 Кбайт | 500 |
 | rsaVerify_32Kb(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 32 Кбайт | 550 |
 | rsaVerify_64Kb(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 64 Кбайт | 625 |
@@ -171,7 +171,7 @@ groth16Verify(vk, proof, inputs)
 
 | Название | Макс. размер `message` | Сложность |
 |:---| :--- | :--- |
-| sigVerify(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean |150 Кбайт | 200 |
+| sigVerify(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | Макс. размер `ByteVector` | 200 |
 | sigVerify_8Kb(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 8 Кбайт | 47 |
 | sigVerify_16Kb(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 16 Кбайт | 57 |
 | sigVerify_32Kb(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 32 Кбайт | 70 |
