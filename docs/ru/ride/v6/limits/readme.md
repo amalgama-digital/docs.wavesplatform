@@ -23,13 +23,7 @@
 | Количество платежей, приложенных к вызову | 10 |
 | Общее количество действий скрипта [Issue](/ru/ride/structures/script-actions/issue), [Reissue](/ru/ride/structures/script-actions/reissue), [Burn](/ru/ride/structures/script-actions/burn), [SponsorFee](/ru/ride/structures/script-actions/sponsor-fee), [ScriptTransfer](/ru/ride/structures/script-actions/script-transfer), [Lease](/ru/ride/structures/script-actions/lease) и [LeaseCancel](/ru/ride/structures/script-actions/lease-cancel), выполняемых скриптом вызова и всеми вызываемыми функциями в одной транзакции<sup>(1)</sup> | 30 |
 | Общее количество действий скрипта [BinaryEntry](/ru/ride/structures/script-actions/binary-entry), [BooleanEntry](/ru/ride/structures/script-actions/boolean-entry), [DeleteEntry](/ru/ride/structures/script-actions/delete-entry), [IntegerEntry](/ru/ride/structures/script-actions/int-entry), [StringEntry](/ru/ride/structures/script-actions/string-entry), выполняемых скриптом вызова и всеми вызываемыми функциями в одной транзакции<sup>(1)</sup> | 100 |
-| Суммарный размер записей<sup>(2)</sup> [хранилища данных аккаунта](/ru/blockchain/account/account-data-storage) для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых одной вызываемой функцией или скриптом вызова без учета вложенных вызовов | 5 Кбайт |
-| Суммарный размер записей<sup>(2)</sup> хранилища данных аккаунта для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых выполняемых скриптом вызова и всеми вызываемыми функциями в одной транзакции<sup>(1)</sup> | 15 Кбайт |
+| Суммарный размер записей [хранилища данных аккаунта](/ru/blockchain/account/account-data-storage) для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых одной вызываемой функцией или скриптом вызова без учета вложенных вызовов | 5 Кбайт |
+| Суммарный размер записей хранилища данных аккаунта для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых выполняемых скриптом вызова и всеми вызываемыми функциями в одной транзакции<sup>(1)</sup> | 15 Кбайт |
 
 <sup>(1)</sup> Транзакция вызова скрипта или транзакция применения выражения.
-
-<sup>(2)</sup> Суммарный размер записей рассчитывается следующим образом:
-
-   ![](./_assets/data-limit.png)
-
-   Здесь <i>K</i><sub><i>i</i></sub> — ключ записи, <i>V</i><sub><i>i</i></sub> — значение.
