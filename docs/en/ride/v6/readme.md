@@ -27,3 +27,6 @@ The [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/
    * [sqrt(BigInt,Int,Int,Union)](/en/ride/v6/functions/built-in-functions/math-functions#sqrtbigint)
 * For the built-in string functions [makeString](/en/ride/v6/functions/built-in-functions/string-functions#makestring-list-string-string-string) and [split](/en/ride/v6/functions/built-in-functions/string-functions#split-string-string-list-string) added the range of similar functions with different complexity depending on the data size limit. When data size is known in advance, the “cheaper” function can be used.
 * Changed the complexity of certain built-in functions. The complexity is given in the [[Ride v6] Built-in functions](/en/ride/v6/functions/built-in-functions/) article.
+* Changed the limitation on the second parameter of `drop`,` dropRight`, `take`,` takeRight` functions:
+   * for [string functions](/en/ride/v6/functions/built-in-functions/string-functions) a number from 0 to 32,767 (the maximum string length) is allowed,
+   * for [byte array functions](/en/ride/v6/functions/built-in-functions/byte-array-functions) a number from 0 to 165&nbsp;947 (the maximum byte array length) is allowed.

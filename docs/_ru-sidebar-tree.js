@@ -1045,6 +1045,10 @@ module.exports = {
               path: rideV6Path + 'functions/built-in-functions/converting-functions',
             },
             {
+              title: 'Функции массива байтов',
+              path: rideV6Path + 'functions/built-in-functions/byte-array-functions',
+            },
+            {
               title: 'Функции свертки',
               path: rideV6Path + 'functions/built-in-functions/fold-functions',
             },

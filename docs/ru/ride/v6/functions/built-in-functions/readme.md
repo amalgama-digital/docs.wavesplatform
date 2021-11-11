@@ -109,11 +109,11 @@
 
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
-| drop(ByteVector, Int): ByteVector | Возвращает массив байтов без первых `N` байтов | 6 |
-| dropRight(ByteVector, Int): ByteVector | Возвращает массив байтов без последних `N` байтов | 6 |
-| size(ByteVector): Int | Возвращает количество байтов в массиве байтов     | 1 |
+| drop(ByteVector, Int): ByteVector | Возвращает массив байтов без первых `N` байт | 6 |
+| dropRight(ByteVector, Int): ByteVector | Возвращает массив байтов без последних `N` байт | 6 |
+| size(ByteVector): Int | Возвращает количество байтов в массиве байтов | 1 |
 | take(ByteVector, Int): ByteVector | Возвращает первые `N` байтов массива байтов | 6 |
-| takeRight(ByteVector, Int): ByteVector | Возвращает последние `N` байтов массива байтов     | 6 |
+| takeRight(ByteVector, Int): ByteVector | Возвращает последние `N` байт массива байтов | 6 |
 
 ## [Функции объединения](/ru/ride/functions/built-in-functions/union-functions)
 
@@ -176,8 +176,8 @@
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
 | contains(String, String): Boolean | Проверяет, содержится ли строка в строке | 3 |
-| drop(String, Int): String | Удаляет первые `n` символов строки | 20 |
-| dropRight(String, Int): String | Удаляет последние `n` символов строки | 20 |
+| drop(String, Int): String | Возвращает строку без первых `N` символов | 20 |
+| dropRight(String, Int): String | Возвращает строку без последних `N` символов | 20 |
 | indexOf(String, String): Int&#124;Unit | Возвращает индекс первого вхождения подстроки | 3 |
 | indexOf(String, String, Int): Int&#124;Unit | Возвращает индекс первого вхождения подстроки после указанного индекса | 3 |
 | lastIndexOf(String, String): Int&#124;Unit | Возвращает индекс последнего вхождения подстроки | 3 |
@@ -185,8 +185,8 @@
 | makeString(List[String], String): String | Семейство функций.<br>Объединяют строки из списка, используя разделитель | 1–11 |
 | size(String): Int | Возвращает длину строки | 1 |
 | split(String, String): List[String] | Семейство функций.<br>Разбивают строку на список подстрок, используя разделитель | 1–51 |
-| take(String, Int): String | Возвращает первые `n` символов строки | 20 |
-| takeRight(String, Int): String | Возвращает последние `n` символов строки | 20 |
+| take(String, Int): String | Возвращает первые `N` символов строки | 20 |
+| takeRight(String, Int): String | Возвращает последние `N` символов строки | 20 |
 
 ## [Функции транзакции данных](/ru/ride/functions/built-in-functions/data-transaction-functions)
 

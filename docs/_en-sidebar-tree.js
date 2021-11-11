@@ -1037,6 +1037,10 @@ module.exports = {
           path: rideV6Path + 'functions/built-in-functions',
           children: [
             {
+              title: 'Byte Array Functions',
+              path: rideV6Path + 'functions/built-in-functions/byte-array-functions',
+            },
+            {
               title: 'Converting Functions',
               path: rideV6Path + 'functions/built-in-functions/converting-functions',
             },

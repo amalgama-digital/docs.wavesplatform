@@ -5,8 +5,8 @@
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
 | [contains(String, String): Boolean](#contains-string-string-boolean) | Проверяет, содержится ли строка в строке | 3 |
-| [drop(String, Int): String](#drop-string-int-string)  | Удаляет первые `n` символов строки | 20 |
-| [dropRight(String, Int): String](#dropright-string-int-string)  | Удаляет последние `n` символов строки | 20 |
+| [drop(String, Int): String](#drop-string-int-string)  | Возвращает строку без первых `N` символов | 20 |
+| [dropRight(String, Int): String](#dropright-string-int-string)  | Возвращает строку без последних `N` символов | 20 |
 | [indexOf(String, String): Int&#124;Unit](#indexof-string-string-int-unit) | Возвращает индекс первого вхождения подстроки  | 3 |
 | [indexOf(String, String, Int): Int&#124;Unit](#indexof-string-string-int-int-unit)  | Возвращает индекс первого вхождения подстроки после указанного индекса | 3 |
 | [lastIndexOf(String, String): Int&#124;Unit](#lastindexof-string-string-int-unit) | Возвращает индекс последнего вхождения подстроки | 3 |
@@ -14,8 +14,8 @@
 | [makeString(List[String], String): String](#makestring-list-string-string-string) | Семейство функций.<br>Объединяют строки из списка, используя разделитель | 1–11 |
 | [size(String): Int](#size-string-int) | Возвращает длину строки | 1 |
 | [split(String, String): List[String]](#split-string-string-list-string) | Семейство функций.<br>Разбивают строку на список подстрок, используя разделитель | 1–51 |
-| [take(String, Int): String](#take) | Возвращает первые `n` символов строки | 20 |
-| [takeRight(String, Int): String](#take-right)  | Возвращает последние `n` символов строки | 20 |
+| [take(String, Int): String](#take) | Возвращает первые `N` символов строки | 20 |
+| [takeRight(String, Int): String](#take-right)  | Возвращает последние `N` символов строки | 20 |
 
 ## contains(String, String): Boolean
 
@@ -41,7 +41,7 @@ contains(haystack: String, needle: String): Boolean
 
 ## drop(String, Int): String<a id=drop></a>
 
-Удаляет первые `n` символов строки.
+Возвращает строку без первых `N` символов.
 
 ``` ride
 drop(xs: String, number: Int): String
@@ -52,7 +52,7 @@ drop(xs: String, number: Int): String
 | Параметр | Описание |
 | :--- | :--- |
 | `xs`: [String](/ru/ride/data-types/string) | Строка |
-| `number`: [Int](/ru/ride/data-types/int) | Число `n` |
+| `number`: [Int](/ru/ride/data-types/int) | Число `N`. От 0 до 32&nbsp;767 |
 
 ### Примеры
 
@@ -66,7 +66,7 @@ drop("Apple", 15)  # Возвращает пустую строку
 
 ## dropRight(String, Int): String<a id=drop-right></a>
 
-Удаляет последние `n` символов строки.
+Возвращает строку без последних `N` символов.
 
 ``` ride
 dropRight(xs: String, number: Int): String
@@ -77,7 +77,7 @@ dropRight(xs: String, number: Int): String
 | Параметр | Описание |
 | :--- | :--- |
 | `xs`: [String](/ru/ride/data-types/string) | Строка |
-| `number`: [Int](/ru/ride/data-types/int) | Число `n` |
+| `number`: [Int](/ru/ride/data-types/int) | Число `N`. От 0 до 32&nbsp;767 |
 
 ### Примеры
 
@@ -267,7 +267,7 @@ split("Ap.ple", ".")     # Возвращает ["Ap","ple"]
 
 ## take(String, Int): String<a id=take></a>
 
-Возвращает первые n символов строки.
+Возвращает первые `N` символов строки.
 
 ``` ride
 take(xs: String, number: Int): String
@@ -278,7 +278,7 @@ take(xs: String, number: Int): String
 | Параметр | Описание |
 | :--- | :--- |
 | `xs`: [String](/ru/ride/data-types/string) | Строка |
-| `number`: [Int](/ru/ride/data-types/int) | Число `n` |
+| `number`: [Int](/ru/ride/data-types/int) | Число `N`. От 0 до 32&nbsp;767 |
 
 ### Примеры
 
@@ -293,7 +293,7 @@ take("Apple", -10)  # Возвращает ""
 
 ## takeRight(String, Int): String<a id=take-right></a>
 
-Возвращает последние `n` символов строки.
+Возвращает последние `N` символов строки.
 
 ``` ride
 takeRight(xs: String, number: Int): String
@@ -304,7 +304,7 @@ takeRight(xs: String, number: Int): String
 | Параметр | Описание |
 | :--- | :--- |
 | `xs`: [String](/ru/ride/data-types/string) | Строка |
-| `number`: [Int](/ru/ride/data-types/int) | Число `n` |
+| `number`: [Int](/ru/ride/data-types/int) | Число `N`. От 0 до 32&nbsp;767 |
 
 ### Примеры
 

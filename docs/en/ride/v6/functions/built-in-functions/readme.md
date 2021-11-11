@@ -45,9 +45,9 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
-| drop(ByteVector, Int): ByteVector | Returns the byte array without the first `N` bytes | 6 |
-| dropRight(ByteVector, Int): ByteVector | Returns the byte array without the last `N` bytes | 6 |
-| size(ByteVector): Int | Returns the number of bytes in the byte array | 1 |
+| drop(ByteVector, Int): ByteVector | Returns a given byte array without the first `N` bytes | 6 |
+| dropRight(ByteVector, Int): ByteVector | Returns a given byte array without the last `N` bytes | 6 |
+| size(ByteVector): Int | Returns the number of bytes in a byte array | 1 |
 | take(ByteVector, Int): ByteVector | Returns the first `N` bytes of the byte array | 6 |
 | takeRight(ByteVector, Int): ByteVector | Returns the last `N` bytes of the byte array | 6 |
 
@@ -184,8 +184,8 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
 | contains(String, String): Boolean | Checks whether the string contains substring | 3 |
-| drop(String, Int): String | Drops the first `n` characters of a string | 20 |
-| dropRight(String, Int): String | Drops the last `n` characters of a string | 20 |
+| drop(String, Int): String | Returns a given string without the first `N` characters | 20 |
+| dropRight(String, Int): String | Returns a given string without the last `N` characters | 20 |
 | indexOf(String, String): Int&#124;Unit | Returns the index of the first occurrence of a substring | 3 |
 | indexOf(String, String, Int): Int&#124;Unit | Returns the index of the first occurrence of a substring after a certain index | 3 |
 | lastIndexOf(String, String): Int&#124;Unit | Returns the index of the last occurrence of a substring | 3 |
@@ -193,8 +193,8 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | makeString(List[String], String): String | Range of functions.<br>Concatenate list strings adding a separator | 1–11 |
 | size(String): Int | Returns the size of a string | 1 |
 | split(String, String): List[String] | Range of functions.<br>Split a string delimited by a separator into a list of substrings | 1–51 |
-| take(String, Int): String | Takes the first `n` characters from a string | 20 |
-| takeRight(String, Int): String | Takes the last `n` characters from a string | 20 |
+| take(String, Int): String | Takes the first `N` characters from a string | 20 |
+| takeRight(String, Int): String | Takes the last `N` characters from a string | 20 |
 
 ## [Union functions](/en/ride/functions/built-in-functions/union-functions)
 
