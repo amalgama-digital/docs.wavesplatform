@@ -134,7 +134,7 @@ Range of functions. Check that the [RSA](https://en.wikipedia.org/wiki/RSA_%28cr
 
 | Name | Max `message` size | Complexity |
 |:---| :--- | :--- |
-| rsaVerify(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 150 kB | 1000 |
+| rsaVerify(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | Max size of `ByteVector` | 1000 |
 | rsaVerify_16Kb(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 16 kB | 500 |
 | rsaVerify_32Kb(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 32 kB | 550 |
 | rsaVerify_64Kb(digest: digestAlgorithmType, message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 64 kB | 625 |
@@ -172,7 +172,7 @@ Range of functions. Check that the [Curve25519](https://en.wikipedia.org/wiki/C
 
 | Name | Max `message` size | Complexity |
 |:---| :--- | :--- |
-| sigVerify(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean |150 kB | 200 |
+| sigVerify(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | Max size of `ByteVector` | 200 |
 | sigVerify_8Kb(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 8 kB | 47 |
 | sigVerify_16Kb(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 16 kB | 57 |
 | sigVerify_32Kb(message: ByteVector, sig: ByteVector, pub: ByteVector): Boolean | 32 kB | 70 |
