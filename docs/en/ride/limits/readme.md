@@ -23,7 +23,7 @@
 | Total size of data<sup>(1)</sup> written to the [account data storage](/en/blockchain/account/account-data-storage) by all `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry` script actions executed by a callable function | 5 Kbytes |
 | Total size of data<sup>(1)</sup> written to the account data storage by all `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry` script actions executed by all callable functions in a single transaction | 15 Kbytes |
 
-<sup>(1)</sup> The total size of data is calculated as follows:
+<sup>(1)</sup> Before activation of feature #17 “Ride V6, MetaMask support, Invoke Expression”, the total size of data is calculated as follows:
 
    ![](./_assets/data-limit.png)
 

@@ -23,7 +23,7 @@
 | Суммарный размер записей<sup>(1)</sup> [хранилища данных аккаунта](/ru/blockchain/account/account-data-storage) для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых одной вызываемой функцией | 5 Кбайт |
 | Суммарный размер записей<sup>(1)</sup> хранилища данных аккаунта для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых всеми вызываемыми функциями в одной транзакции | 15 Кбайт |
 
-<sup>(1)</sup> Суммарный размер записей рассчитывается следующим образом:
+<sup>(1)</sup> Суммарный размер записей до активации фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression” рассчитывается следующим образом:
 
    ![](./_assets/data-limit.png)
 
