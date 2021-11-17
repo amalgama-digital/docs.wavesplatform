@@ -20,10 +20,10 @@
 | Количество платежей, приложенных к вызову | 10 |
 | Общее количество действий скрипта [Issue](/ru/ride/structures/script-actions/issue), [Reissue](/ru/ride/structures/script-actions/reissue), [Burn](/ru/ride/structures/script-actions/burn), [SponsorFee](/ru/ride/structures/script-actions/sponsor-fee), [ScriptTransfer](/ru/ride/structures/script-actions/script-transfer), [Lease](/ru/ride/structures/script-actions/lease) и [LeaseCancel](/ru/ride/structures/script-actions/lease-cancel), выполняемых всеми вызываемыми функциями в одной транзакции | 30 |
 | Общее количество действий скрипта [BinaryEntry](/ru/ride/structures/script-actions/binary-entry), [BooleanEntry](/ru/ride/structures/script-actions/boolean-entry), [DeleteEntry](/ru/ride/structures/script-actions/delete-entry), [IntegerEntry](/ru/ride/structures/script-actions/int-entry), [StringEntry](/ru/ride/structures/script-actions/string-entry), выполняемых всеми вызываемыми функциями в одной транзакции | 100 |
-| Суммарный размер записей<sup>(1)</sup> [хранилища данных аккаунта](/ru/blockchain/account/account-data-storage) для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых одной вызываемой функцией | 5 Кбайт |
-| Суммарный размер записей<sup>(1)</sup> хранилища данных аккаунта для всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, выполняемых всеми вызываемыми функциями в одной транзакции | 15 Кбайт |
+| Суммарный размер данных<sup>(1)</sup> всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, `DeleteEntry`, выполняемых одной вызываемой функцией | 5 Кбайт |
+| Суммарный размер данных<sup>(1)</sup> всех действий скрипта `BinaryEntry`, `BooleanEntry`, `IntegerEntry`, `StringEntry`, `DeleteEntry`, выполняемых всеми вызываемыми функциями в одной транзакции | 15 Кбайт |
 
-<sup>(1)</sup> Суммарный размер записей до активации фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression” рассчитывается следующим образом:
+<sup>(1)</sup> До активации фичи №&nbsp;17 “Ride V6, MetaMask support, Invoke Expression” суммарный размер данных рассчитывается следующим образом:
 
    ![](./_assets/data-limit.png)
 
