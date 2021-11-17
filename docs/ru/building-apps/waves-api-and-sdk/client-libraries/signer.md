@@ -103,11 +103,17 @@ Signer поддерживает все браузеры, кроме Brave.
    import { ProviderKeeper } from '@waves/provider-keeper';
 
    const signer = new Signer({
-   // Укажите адрес ноды, подключенной к Testnet
+     // Укажите адрес ноды, подключенной к Testnet
      NODE_URL: 'https://nodes-testnet.wavesnodes.com'
    });
-   signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
+   const authData = {
+      data: 'server generated string',
+   }
+   const keeper = new ProviderKeeper(authData);
+   await signer.setProvider(keeper);
    ```
+
+   Обратите внимание: необходимо дождаться инициализации API Waves Keeper на веб-странице, поэтому выполняйте асинхронный вызов функции `setProvider(keeper)` с использованием `await`.
 
 * Для работы с Testnet и Waves.Exchange ProviderCloud:
 
@@ -172,12 +178,15 @@ Signer поддерживает все браузеры, кроме Brave.
    import { Signer } from '@waves/signer';
    import { ProviderKeeper } from '@waves/provider-keeper';
 
-   const signer = new Signer({
-     // Укажите адрес ноды, подключенной к Mainnet
-     NODE_URL: 'https://nodes.wavesnodes.com'
-   });
-   signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
+   const signer = new Signer();
+   const authData = {
+     data: 'server generated string',
+   }
+   const keeper = new ProviderKeeper(authData);
+   await signer.setProvider(keeper);
    ```
+
+   Обратите внимание: необходимо дождаться инициализации API Waves Keeper на веб-странице, поэтому выполняйте асинхронный вызов функции `setProvider(keeper)` с использованием `await`.
 
 * Для работы с Mainnet и Waves.Exchange ProviderCloud:
 

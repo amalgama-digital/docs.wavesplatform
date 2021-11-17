@@ -1214,16 +1214,24 @@ module.exports = [
     to: '/ru/ride',
   },
   {
+    from: '/en/ride/script-performance-tests',
+    to: '/en/ride/',
+  },
+  {
+    from: '/ru/ride/script-performance-tests',
+    to: '/ru/ride/',
+  },
+  {
     from: '/en/smart-contracts/script-performance-tests.html',
-    to: '/en/ride/script-performance-tests',
+    to: '/en/ride/',
   },
   { /* link found on habr */
     from: '/en/smart-contracts/ride-language/script-performance-tests.html',
-    to: '/en/ride/script-performance-tests',
+    to: '/en/ride/',
   },
   { /* link found on medium */
     from: '/en/technical-details/waves-contracts-language-description/script-performance-tests.html',
-    to: '/en/ride/script-performance-tests',
+    to: '/en/ride/',
   },
   {
     from: '/en/smart-contracts/video-tutorials/introduction-to-the-waves-blockchain-waves-smart-accounts-and-waves-smart-assets.html',

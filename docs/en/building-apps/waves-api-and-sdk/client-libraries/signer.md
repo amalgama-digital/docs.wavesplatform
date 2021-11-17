@@ -105,11 +105,17 @@ Add library initialization to your app.
    import { ProviderKeeper } from '@waves/provider-keeper';
 
    const signer = new Signer({
-   // Specify URL of the node on Testnet
+     // Specify URL of the node on Testnet
      NODE_URL: 'https://nodes-testnet.wavesnodes.com'
    });
-   signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
+   const authData = {
+     data: 'server generated string',
+   }
+   const keeper = new ProviderKeeper(authData);
+   await signer.setProvider(keeper);
    ```
+
+   Note: Waves Keeper API initialization on a web page is required, so execute the asynchronous call of the `setProvider(keeper)` function using `await`.
 
 * For Testnet & Waves.Exchange ProviderCloud:
 
@@ -174,12 +180,15 @@ Add library initialization to your app.
    import { Signer } from '@waves/signer';
    import { ProviderKeeper } from '@waves/provider-keeper';
 
-   const signer = new Signer({
-     // Specify URL of the node on Mainnet
-     NODE_URL: 'https://nodes.wavesnodes.com'
-   });
-   signer.setProvider(new ProviderKeeper({data: 'website generated string'}));
+   const signer = new Signer();
+   const authData = {
+     data: 'server generated string',
+   }
+   const keeper = new ProviderKeeper(authData);
+   await signer.setProvider(keeper);
    ```
+
+   Note: Waves Keeper API initialization on a web page is required, so execute the asynchronous call of the `setProvider(keeper)` function using `await`.
 
 * For Mainnet & Waves.Exchange ProviderCloud:
 

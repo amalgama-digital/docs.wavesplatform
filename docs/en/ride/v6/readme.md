@@ -2,8 +2,6 @@
 
 Standard library version 6 is added in node version 1.4.0 and enabled by feature #17 “Ride V6, MetaMask support, Invoke Expression”. Versions 1.4.x are now available for [Stagenet](/en/blockchain/blockchain-network/) only.
 
-> MetaMask support in Ride is described in the [Sign transactions and orders in MetaMask](/en/keep-in-touch/metamask) article.
-
 ## Call Script
 
 Added a new type of script: call script.
@@ -13,6 +11,13 @@ The call script type is designed for to be executed once without assigning to an
 [More about call script](/en/ride/v6/script/script-types/call-script)
 
 The [InvokeExpressionTransaction](/en/ride/v6/structures/transaction-structures/invoke-expression-transaction) structure is used to verify the an Invoke Expression transaction by smart contracts.
+
+## MetaMask Support
+
+* The [addressFromPublicKey](/en/ride/v6/functions/built-in-functions/converting-functions#addressfrompublickey-bytevector-address) function accepts both Waves account public key (32 bytes) and the MetaMask account public key (64 bytes) and returns address in Waves format (26 bytes).
+* The [transferTransactionById](/en/ride/functions/built-in-functions/blockchain-functions#transtransactionbyid) function returns an Ethereum transaction by its ID if the transaction is interpreted as a Transfer transaction. The `proofs` array contains 8 empty values.
+
+[More about MetaMask support on the Waves blockchain](/en/keep-in-touch/metamask)
 
 ## Built-in functions
 
