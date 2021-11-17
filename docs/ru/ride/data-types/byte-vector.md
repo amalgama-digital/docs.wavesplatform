@@ -4,7 +4,7 @@
 
 Чтобы присвоить значение переменной типа `ByteVector`, можно использовать строку в кодировке [Base16](https://en.wikipedia.org/wiki/Hexadecimal#Base16_&#40;Transfer_encoding&#41;), [Base58](https://ru.wikipedia.org/wiki/Base58) или [Base64](https://ru.wikipedia.org/wiki/Base64) с соответствующим префиксом, например:
 
-``` ride
+```scala
 let a = base16'52696465'
 let b = base58'8t38fWQhrYJsqxXtPpiRCEk1g5RJdq9bG5Rkr2N7mDFC'
 let c = base64'UmlkZQ=='
@@ -14,7 +14,7 @@ let c = base64'UmlkZQ=='
 
 Конвертировать [целочисленные](/ru/ride/data-types/int), [логические](/ru/ride/data-types/boolean) и [строковые](/ru/ride/data-types/string) значения в массив байтов можно с помощью функции [toBytes](/ru/ride/functions/built-in-functions/converting-functions):
 
-``` ride
+```scala
 let a = 42.toBytes()
 let b = true.toBytes()
 let c = "Ride".toBytes()

@@ -35,8 +35,8 @@ contains(haystack: String, needle: String): Boolean
 ### Примеры
 
 ```ride
-"hello".contains("hell")   # Возвращает true
-"hello".contains("world")  # Возвращает false
+"hello".contains("hell")    # Возвращает true
+"hello".contains("world")   # Возвращает false
 ```
 
 ## drop(String, Int): String<a id=drop></a>
@@ -57,11 +57,12 @@ drop(xs: String, number: Int): String
 ### Примеры
 
 ```ride
-drop("Apple", 0)   # Возвращает "Apple"
-drop("Apple", 1)   # Возвращает "pple"
-drop("Apple", 3)   # Возвращает "le"
-drop("Apple", 5)   # Возвращает пустую строку
-drop("Apple", 15)  # Возвращает пустую строку
+drop("Apple", 0)     # Возвращает "Apple"
+drop("Apple", 1)     # Возвращает "pple"
+drop("Apple", 3)     # Возвращает "le"
+drop("Apple", 5)     # Возвращает пустую строку
+drop("Apple", 15)    # Возвращает пустую строку
+drop("Apple", -10)   # Завершается ошибкой
 ```
 
 ## dropRight(String, Int): String<a id=drop-right></a>
@@ -82,11 +83,12 @@ dropRight(xs: String, number: Int): String
 ### Примеры
 
 ```ride
-dropRight("Apple", 0)   # Возвращает "Apple"
-dropRight("Apple", 1)   # Возвращает "Appl"
-dropRight("Apple", 3)   # Возвращает "Ap"
-dropRight("Apple", 5)   # Возвращает пустую строку
-dropRight("Apple", 15)  # Возвращает пустую строку
+dropRight("Apple", 0)    # Возвращает "Apple"
+dropRight("Apple", 1)    # Возвращает "Appl"
+dropRight("Apple", 3)    # Возвращает "Ap"
+dropRight("Apple", 5)    # Возвращает пустую строку
+dropRight("Apple", 15)   # Возвращает пустую строку
+dropRight("Apple", -1)   # Завершается ошибкой
 ```
 
 ## indexOf(String, String): Int&#124;Unit<a id=index-of></a>
@@ -107,9 +109,9 @@ indexOf(str: String, substr: String): Int|Unit
 ### Примеры
 
 ```ride
-indexOf("Apple","ple")  # Возвращает 3
-indexOf("Apple","le")   # Возвращает 4
-indexOf("Apple","e")    # Возвращает 5
+indexOf("Apple","ple")   # Возвращает 3
+indexOf("Apple","le")    # Возвращает 4
+indexOf("Apple","e")     # Возвращает 5
 ```
 
 ## indexOf(String, String, Int): Int&#124;Unit
@@ -131,9 +133,9 @@ indexOf(str: String, substr: String, offset: Int): Int|Unit
 ### Примеры
 
 ```ride
-indexOf("Apple","ple", 1)  # Возвращает 2
-indexOf("Apple","le", 2)   # Возвращает 3
-indexOf("Apple","e", 3)    # Возвращает 4
+indexOf("Apple","ple", 1)   # Возвращает 2
+indexOf("Apple","le", 2)    # Возвращает 3
+indexOf("Apple","e", 3)     # Возвращает 4
 ```
 
 ## lastIndexOf(String, String): Int|Unit
@@ -154,9 +156,9 @@ lastIndexOf(str: String, substr: String): Int|Unit
 ### Примеры
 
 ```ride
-lastIndexOf("Apple","pp")  # Возвращает 1
-lastIndexOf("Apple","p")   # Возвращает 2
-lastIndexOf("Apple","s")   # Возвращает unit
+lastIndexOf("Apple","pp")   # Возвращает 1
+lastIndexOf("Apple","p")    # Возвращает 2
+lastIndexOf("Apple","s")    # Возвращает unit
 ```
 
 ## lastIndexOf(String, String, Int): Int|Unit
@@ -178,8 +180,8 @@ lastIndexOf(str: String, substr: String, offset: Int): Int|Unit
 ### Примеры
 
 ```ride
-lastIndexOf("mamamama","ma",4)  # Возвращает 4
-lastIndexOf("mamamama","ma",3)  # Возвращает 2
+lastIndexOf("mamamama","ma",4)   # Возвращает 4
+lastIndexOf("mamamama","ma",3)   # Возвращает 2
 ```
 
 ## makeString(List[String], String): String
@@ -288,7 +290,7 @@ take("Apple", 1)    # Возвращает "A"
 take("Apple", 3)    # Возвращает "App"
 take("Apple", 5)    # Возвращает "Apple"
 take("Apple", 15)   # Возвращает "Apple"
-take("Apple", -10)  # Возвращает ""
+take("Apple", -10)  # Завершается ошибкой
 ```
 
 ## takeRight(String, Int): String<a id=take-right></a>
@@ -309,9 +311,10 @@ takeRight(xs: String, number: Int): String
 ### Примеры
 
 ```ride
-takeRight("Apple", 0)   # Возвращает пустую строку
-takeRight("Apple", 1)   # Возвращает "A"
-takeRight("Apple", 3)   # Возвращает "ple"
-takeRight("Apple", 5)   # Возвращает "Apple"
-takeRight("Apple", 15)  # Возвращает "Apple"
+takeRight("Apple", 0)     # Возвращает пустую строку
+takeRight("Apple", 1)     # Возвращает "A"
+takeRight("Apple", 3)     # Возвращает "ple"
+takeRight("Apple", 5)     # Возвращает "Apple"
+takeRight("Apple", 15)    # Возвращает "Apple"
+takeRight("Apple", -10)   # Завершается ошибкой
 ```

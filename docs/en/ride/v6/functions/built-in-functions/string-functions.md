@@ -5,8 +5,8 @@
 | Name | Description | Complexity | 
 | :--- | :--- | :--- |
 | [contains(String, String): Boolean](#contains-string-string-boolean) | Checks whether the string contains substring | 3 |
-| [drop(String, Int): String](#drop-string-int-string) | Returns a given string without the first `n` characters  | 20 |
-| [dropRight(String, Int): String](#dropright-string-int-string) | Returns a given string without the last `n` characters | 20 |
+| [drop(String, Int): String](#drop-string-int-string) | Returns a given string without the first `N` characters  | 20 |
+| [dropRight(String, Int): String](#dropright-string-int-string) | Returns a given string without the last `N` characters | 20 |
 | [indexOf(String, String): Int&#124;Unit](#indexof-string-string-int-unit) | Returns the index of the first occurrence of a substring | 3 |
 | [indexOf(String, String, Int): Int&#124;Unit](#indexof-string-string-int-int-unit) | Returns the index of the first occurrence of a substring after a certain index | 3 |
 | [lastIndexOf(String, String): Int&#124;Unit](#lastindexof-string-string-int-unit) | Returns the index of the last occurrence of a substring | 3 |
@@ -35,13 +35,13 @@ contains(haystack: String, needle: String): Boolean
 ### Examples
 
 ```ride
-"hello".contains("hell") # Возвращает true
-"hello".contains("world") # Возвращает false
+"hello".contains("hell")    # Returns true
+"hello".contains("world")   # Returns false
 ```
 
 ## drop(String, Int): String<a id="drop"></a>
 
-Returns a given string without the first `n` characters.
+Returns a given string without the first `N` characters.
 
 ``` ride
 drop(xs: String, number: Int): String
@@ -52,16 +52,17 @@ drop(xs: String, number: Int): String
 | Parameter | Description |
 | :--- | :--- |
 | `xs`: [String](/en/ride/data-types/string) | String |
-| `number`: [Int](/en/ride/data-types/int) | Number `N` |
+| `number`: [Int](/en/ride/data-types/int) | Number `N`. From 0 to 32,767 |
 
 ### Examples
 
 ```ride
-drop("Apple", 0) # Returns "Apple"
-drop("Apple", 1) # Returns "pple"
-drop("Apple", 3) # Returns "le"
-drop("Apple", 5) # Returns an empty string
-drop("Apple", 15) # Returns an empty string
+drop("Apple", 0)     # Returns "Apple"
+drop("Apple", 1)     # Returns "pple"
+drop("Apple", 3)     # Returns "le"
+drop("Apple", 5)     # Returns an empty string
+drop("Apple", 15)    # Returns an empty string
+drop("Apple", -10)   # Fails
 ```
 
 ## dropRight(String, Int): String<a id="drop-right"></a>
@@ -77,16 +78,17 @@ dropRight(xs: String, number: Int): String
 | Parameter | Description |
 | :--- | :--- |
 | `xs`: [String](/en/ride/data-types/string) | String |
-| `number`: [Int](/en/ride/data-types/int) | Number `N` |
+| `number`: [Int](/en/ride/data-types/int) | Number `N`. From 0 to 32,767 |
 
 ### Examples
 
 ```ride
-dropRight("Apple", 0) # Returns "Apple"
-dropRight("Apple", 1) # Returns "Appl"
-dropRight("Apple", 3) # Returns "Ap"
-dropRight("Apple", 5) # Returns an empty string
-dropRight("Apple", 15) # Returns an empty string
+dropRight("Apple", 0)    # Returns "Apple"
+dropRight("Apple", 1)    # Returns "Appl"
+dropRight("Apple", 3)    # Returns "Ap"
+dropRight("Apple", 5)    # Returns an empty string
+dropRight("Apple", 15)   # Returns an empty string
+dropRight("Apple", -1)   # Fails
 ```
 
 ## indexOf(String, String): Int|Unit<a id="index-of-string"></a>
@@ -107,9 +109,9 @@ indexOf(str: String, substr: String): Int|Unit
 ### Examples
 
 ```ride
-indexOf("Apple","ple") # Returns 3
-indexOf("Apple","le") # Returns 4
-indexOf("Apple","e") # Returns 5
+indexOf("Apple","ple")   # Returns 3
+indexOf("Apple","le")    # Returns 4
+indexOf("Apple","e")     # Returns 5
 ```
 
 ## indexOf(String, String, Int): Int|Unit<a id="index-of-string-int"></a>
@@ -131,9 +133,9 @@ indexOf(str: String, substr: String, offset: Int): Int|Unit
 ### Examples
 
 ```ride
-indexOf("Apple","ple", 1) # Returns 2
-indexOf("Apple","le", 2) # Returns 3
-indexOf("Apple","e", 3) # Returns 4
+indexOf("Apple","ple", 1)   # Returns 2
+indexOf("Apple","le", 2)    # Returns 3
+indexOf("Apple","e", 3)     # Returns 4
 ```
 
 ## lastIndexOf(String, String): Int|Unit
@@ -154,9 +156,9 @@ lastIndexOf(str: String, substr: String): Int|Unit
 ### Examples
 
 ```ride
-lastIndexOf("Apple","pp") # Returns 1
-lastIndexOf("Apple","p") # Returns 2
-lastIndexOf("Apple","s") # Returns unit
+lastIndexOf("Apple","pp")   # Returns 1
+lastIndexOf("Apple","p")    # Returns 2
+lastIndexOf("Apple","s")    # Returns unit
 ```
 
 ## lastIndexOf(String, String, Int): Int|Unit
@@ -228,9 +230,9 @@ size(xs: String): Int
 ### Examples
 
 ```ride
-size("Ap") # Returns 2
-size("Appl") # Returns 4
-size("Apple") # Returns 5
+size("Ap")      # Returns 2
+size("Appl")    # Returns 4
+size("Apple")   # Returns 5
 ```
 
 ## split(String, String): List[String]<a id="split"></a>
@@ -259,10 +261,10 @@ split(str: String, separator: String): List[String]
 ### Examples
 
 ```ride
-split("A.p.p.l.e", ".") # Returns ["A", "p", "p", "l", "e"]
-split("Apple", ".") # Returns ["Apple"]
-split("Apple", "") # Returns ["A", "p", "p", "l", "e"]
-split("Ap.ple", ".") # Returns ["Ap","ple"]
+split("A.p.p.l.e", ".")    # Returns ["A", "p", "p", "l", "e"]
+split("Apple", ".")        # Returns ["Apple"]
+split("Apple", "")         # Returns ["A", "p", "p", "l", "e"]
+split("Ap.ple", ".")       # Returns ["Ap","ple"]
 ```
 
 ## take(String, Int): String<a id="take"></a>
@@ -278,17 +280,17 @@ take(xs: String, number: Int): String
 | Parameter | Description |
 | :--- | :--- |
 | `xs`: [String](/en/ride/data-types/string) | String |
-| `number`: [Int](/en/ride/data-types/int) | Number `N` |
+| `number`: [Int](/en/ride/data-types/int) | Number `N`. From 0 to 32,767 |
 
 ### Examples
 
 ```ride
-take("Apple", 0) # Returns an empty string
-take("Apple", 1) # Returns "A"
-take("Apple", 3) # Returns "App"
-take("Apple", 5) # Returns "Apple"
-take("Apple", 15) # Returns "Apple"
-take("Apple", -10) # Returns an empty string
+take("Apple", 0)     # Returns an empty string
+take("Apple", 1)     # Returns "A"
+take("Apple", 3)     # Returns "App"
+take("Apple", 5)     # Returns "Apple"
+take("Apple", 15)    # Returns "Apple"
+take("Apple", -10)   # Fails
 ```
 
 ## takeRight(String, Int): String<a id="take-right"></a>
@@ -304,14 +306,15 @@ takeRight(xs: String, number: Int): String
 | Parameter | Description |
 | :--- | :--- |
 | `xs`: [String](/en/ride/data-types/string) | String |
-| `number`: [Int](/en/ride/data-types/int) | Number `N` |
+| `number`: [Int](/en/ride/data-types/int) | Number `N`. From 0 to 32,767 |
 
 ### Examples
 
 ```ride
-takeRight("Apple", 0) # Returns an empty string
-takeRight("Apple", 1) # Returns "A"
-takeRight("Apple", 3) # Returns "ple"
-takeRight("Apple", 5) # Returns "Apple"
-takeRight("Apple", 15) # Returns "Apple"
+takeRight("Apple", 0)     # Returns an empty string
+takeRight("Apple", 1)     # Returns "A"
+takeRight("Apple", 3)     # Returns "ple"
+takeRight("Apple", 5)     # Returns "Apple"
+takeRight("Apple", 15)    # Returns "Apple"
+takeRight("Apple", -10)   # Fails
 ```

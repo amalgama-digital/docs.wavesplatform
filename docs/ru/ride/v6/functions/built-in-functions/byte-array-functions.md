@@ -4,17 +4,17 @@
 
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
-| [drop(ByteVector, Int): ByteVector](#drop) | Возвращает массив байтов без первых `N` байт | 6 |
+| [drop(ByteVector, Int): ByteVector](#drop) | Возвращает [массив байтов](/ru/ride/data-types/byte-vector) без первых `N` байт | 6 |
 | [dropRight(ByteVector, Int): ByteVector](#dropright) | Возвращает массив байтов без последних `N` байт | 6 |
-| [size(ByteVector): Int](#size) | Возвращает количество байтов в массиве байт | 1 |
-| [take(ByteVector, Int): ByteVector](#take) | Возвращает первые `N` байтов массива байт | 6 |
-| [takeRight(ByteVector, Int): ByteVector](#takeright) | Возвращает последние `N` байтов массива байт | 6 |
+| [size(ByteVector): Int](#size) | Возвращает количество байтов в массиве | 1 |
+| [take(ByteVector, Int): ByteVector](#take) | Возвращает первые `N` байт массива байтов | 6 |
+| [takeRight(ByteVector, Int): ByteVector](#takeright) | Возвращает последние `N` байт массива байтов | 6 |
 
 ## drop(ByteVector, Int): ByteVector <a id="drop"></a>
 
-Возвращает массив байтов без первых `N` байт.
+Возвращает [массив байтов](/ru/ride/data-types/byte-vector) без первых `N` байт.
 
-``` ride
+```scala
 drop(xs: ByteVector, number: Int): ByteVector
 ```
 
@@ -27,19 +27,20 @@ drop(xs: ByteVector, number: Int): ByteVector
 
 ### Примеры
 
-``` ride
-drop("Ride".toBytes(), 2)   # Возвращает массив байтов без первых 2 байт
-drop(125.toBytes(), 2)      # Возвращает массив байтов без первых 2 байт
-drop(base16'52696465', 3)   # Возвращает массив байтов без первых 3 байт
-drop(base58'37BPKA', 3)     # Возвращает массив байтов без первых 3 байт
-drop(base64'UmlkZQ==', 3)   # Возвращает массив байтов без первых 3 байт
+```scala
+drop(base64'UmlkZQ==', 1)   # Возвращает base58'cQCt'
+drop(125.toBytes(), 0)      # Возвращает массив байтов целиком: base58'11111113A'
+drop(125.toBytes(), 2)      # Возвращает base58'111113A'
+drop(125.toBytes(), 8)      # Возвращает пустой массив байтов: base58''
+drop(125.toBytes(), 12)     # Возвращает пустой массив байтов: base58''
+drop(125.toBytes(), -1)     # Завершается ошибкой
 ```
 
 ## dropRight(ByteVector, Int): ByteVector <a id="dropright"></a>
 
-Возвращает массив байтов без последних `N` байт.
+Возвращает [массив байтов](/ru/ride/data-types/byte-vector) без последних `N` байт.
 
-``` ride
+```scala
 dropRight(xs: ByteVector, number: Int): ByteVector
 ```
 
@@ -52,19 +53,20 @@ dropRight(xs: ByteVector, number: Int): ByteVector
 
 ### Примеры
 
-``` ride
-dropRight("Ride".toBytes(), 2)  # Возвращает массив байтов без последних 2 байт
-dropRight(125.toBytes(), 2)     # Возвращает массив байтов без последних 2 байт
-dropRight(base16'52696465', 3)  # Возвращает массив байтов без последних 3 байт
-dropRight(base58'37BPKA', 3)    # Возвращает массив байтов без последних 3 байт
-dropRight(base64'UmlkZQ==', 3)  # Возвращает массив байтов без последних 3 байт
+```scala
+dropRight(base16'52696465', 3)    # Возвращает base58'2R'
+dropRight("Ride".toBytes(), 0)    # Возвращает массив байтов целиком: base58'37BPKA'
+dropRight("Ride".toBytes(), 3)    # Возвращает base58'2R'
+dropRight("Ride".toBytes(), 4)    # Возвращает пустой массив байтов: base58''
+dropRight("Ride".toBytes(), 28)   # Возвращает пустой массив байтов: base58''
+dropRight("Ride".toBytes(), -1)   # Завершается ошибкой
 ```
 
 ## size(ByteVector): Int <a id="size"></a>
 
-Возвращает количество байтов в массиве байтов.
+Возвращает количество байтов в [массиве байтов](/ru/ride/data-types/byte-vector).
 
-``` ride
+```scala
 size(byteVector: ByteVector): Int
 ```
 
@@ -76,7 +78,7 @@ size(byteVector: ByteVector): Int
 
 ### Примеры
 
-``` ride
+```scala
 size("Hello".toBytes())         # Возвращает 5
 size("Hello world".toBytes())   # Возвращает 11
 size(64.toBytes())              # Возвращает 8, так как все целые числа в Ride занимают 8 байт
@@ -86,9 +88,9 @@ size(base58'37BPKA')            # Возвращает 4
 
 ## take(ByteVector, Int): ByteVector <a id="take"></a>
 
-Возвращает первые `N` байт массива байтов.
+Возвращает первые `N` байт [массива байтов](/ru/ride/data-types/byte-vector).
 
-``` ride
+```scala
 take(xs: ByteVector, number: Int): ByteVector
 ```
 
@@ -101,18 +103,18 @@ take(xs: ByteVector, number: Int): ByteVector
 
 ### Примеры
 
-``` ride
-take(base58'37BPKA', 0) # Возвращает пустой массив байтов
-take(base58'37BPKA', 1) # Возвращает массив байтов, состоящий из первого байта исходного массива байтов
-take(base58'37BPKA', 15) # Возвращает массив байтов целиком
-take(base58'37BPKA', -10) # Возвращает пустой массив байтов
+```scala
+take(base58'37BPKA', 0)     # Возвращает пустой массив байтов: base58''
+take(base58'37BPKA', 1)     # Возвращает массив байтов, состоящий из первого байта исходного массива: base58'2R'
+take(base58'37BPKA', 15)    # Возвращает массив байтов целиком: base58'37BPKA'
+take(base58'37BPKA', -10)   # Завершается ошибкой
 ```
 
 ## takeRight(ByteVector, Int): ByteVector <a id="takeright"></a>
 
-Возвращает последние `N` байт массива байтов.
+Возвращает последние `N` байт [массива байтов](/ru/ride/data-types/byte-vector).
 
-``` ride
+```scala
 takeRight(xs: ByteVector, number: Int): ByteVector
 ```
 
@@ -125,6 +127,9 @@ takeRight(xs: ByteVector, number: Int): ByteVector
 
 ### Примеры
 
-``` ride
-takeRight(base58'37BPKA', 2) # Возвращает последние 2 байта массива байтов
+```scala
+takeRight(base16'52696465', 0)     # Возвращает пустой массив байтов: base58''
+takeRight(base16'52696465', 1)     # Возвращает массив байтов, состоящий из последнего байта исходного массива: base58'2k'
+takeRight(base16'52696465', 15)    # Возвращает массив байтов целиком: base58'37BPKA'
+takeRight(base16'52696465', -10)   # Завершается ошибкой
 ```

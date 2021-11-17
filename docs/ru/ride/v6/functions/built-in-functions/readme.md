@@ -111,8 +111,8 @@
 | :--- | :--- | :--- |
 | drop(ByteVector, Int): ByteVector | Возвращает массив байтов без первых `N` байт | 6 |
 | dropRight(ByteVector, Int): ByteVector | Возвращает массив байтов без последних `N` байт | 6 |
-| size(ByteVector): Int | Возвращает количество байтов в массиве байтов | 1 |
-| take(ByteVector, Int): ByteVector | Возвращает первые `N` байтов массива байтов | 6 |
+| size(ByteVector): Int | Возвращает количество байтов в массиве | 1 |
+| take(ByteVector, Int): ByteVector | Возвращает первые `N` байт массива байтов | 6 |
 | takeRight(ByteVector, Int): ByteVector | Возвращает последние `N` байт массива байтов | 6 |
 
 ## [Функции объединения](/ru/ride/functions/built-in-functions/union-functions)
