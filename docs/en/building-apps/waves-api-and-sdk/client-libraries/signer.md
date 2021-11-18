@@ -456,7 +456,7 @@ Each create transaction method has optional fields that you don't specify manual
 | Field name | Description | Default value |
 | :--- | :--- | :--- |
 | chainId | 'W'.charCodeAt(0) or 87 means Mainnet<br/>'T'.charCodeAt(0) or 84 means Testnet | Defined by configuration of Waves node that is set in [Constructor](#constructor) |
-| fee | Transaction fee | Calculated automatically as described in [Transaction fee](/en/blockchain/transaction/transaction-fee) section |
+| fee | Transaction fee | The minimum fee, see the [Transaction Fee](/en/blockchain/transaction/transaction-fee) article.<br>:warning: **Please note:** The default value calculated for an [Invoke Script transaction](/en/blockchain/transaction-type/invoke-script-transaction) does not take into account the [script actions](/en/ride/structures/script-actions/), see the [invoke](#invoke) section below |
 | proofs | Array of transaction signatures | Added by `sign` or `broadcast` method (see [How to Sign and Broadcast Transactions](#how-to-sign-and-broadcast-transactions)). If you specify a proof manually, it is also added to the array |
 | senderPublicKey | Base58 encoded public key of transaction sender | Returned by [login](#login) method |
 
@@ -701,8 +701,8 @@ invoke(data: {
 | Parameter name | Default value | Description |
 | :--- | :--- | :--- |
 | dApp* | | Base58 encoded address or alias (with `alias:T:` prefix) of the dApp whose script should be invoked |
-| fee | | We recommend to specify fee depending on number of action performed by called function (see [Transaction Fee](/en/blockchain/transaction/transaction-fee)) |
-| payment | | Payments attached to the transaction. Maximum of two payments |
+| fee | | :warning: **Warning!** Default value does not take into account [script actions](/en/ride/structures/script-actions/). For an invocation of dApp script function that issues tokens, which are not NFT, we recommend you to calculate and specify the fee as described in the [Invoke Script Transaction](/en/blockchain/transaction-type/invoke-script-transaction) article |
+| payment | | Payments attached to the transaction. Maximum of 10 payments |
 | payment.assetId* | | Base58 encoded ID of the asset to pay. `WAVES` or `null` means WAVES |
 | payment.amount* | | Amount of asset multiplied by 10<sup>decimals</sup>. For example, `decimals` of WAVES is 8, so the real amount is multipied by 10<sup>8</sup>. `{ "WAVES": 677728840 }` means 6.77728840 |
 | call | Default function should be invoked in the dApp | Parameters for called function |
