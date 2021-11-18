@@ -68,7 +68,7 @@ FOLD<5>(arr, 1, mult)    # Result: 120
 
 ## Filter
 
-The following code composes an array consisting only of even elements of the original array.
+The following code composes a list consisting only of even numbers from of the original list.
 
 ```scala
 func filterEven(accum: List[Int], next: Int) =
@@ -79,10 +79,52 @@ FOLD<5>(arr, [], filterEven)    # Result: [2, 4]
 
 ## Map
 
-The following code inverts the array, reducing each element by 1:
+The following code inverts the list, reducing each element by 1:
 
 ```scala
 func map(accum: List[Int], next: Int) = (next - 1) :: accum
 let arr = [1, 2, 3, 4, 5]
 FOLD<5>(arr, [], map)    # Result: [4, 3, 2, 1, 0]
+```
+
+## Zip
+
+The following code brings two lists into one. Every two elements with the same index are joined into a structure, and the result is a list of such structures. Similarly, you can join elements into tuples.
+
+```scala
+let keys = ["key1", "key2", "key3"]
+let values = ["value1", "value2", "value3"]
+
+func addStringEntry(accum: (List[StringEntry], Int), nextValue: String) =
+   {
+      let (result, i) = accum
+      (result :+ StringEntry(keys[i], nextValue), i + 1)
+   }
+let r = FOLD<10>(values, ([], 0), addStringEntry)
+r._1
+```
+
+Here we use a [tuple](/en/ride/data-types/tuple) as an accumulator, which contains two elements:
+- the list of [StringEntry](/ru/ride/structures/script-actions/string-entry) structures,
+- the current index in all lists.
+
+The combining function `addStringEntry` forms a `StringEntry` structure which contains a key from the `keys` list and a value from the `values` list. The structure is added to the list of structures (the first element of the accumulator tuple). In addition, the combining function increments the index (the second element of the accumulator tuple).
+
+Result:
+
+```scala
+[
+   StringEntry(
+      key = "key1"
+      value = "value1"
+   ),
+   StringEntry(
+      key = "key2"
+      value = "value2"
+   ),
+   StringEntry(
+      key = "key3"
+      value = "value3"
+   )
+]
 ```
