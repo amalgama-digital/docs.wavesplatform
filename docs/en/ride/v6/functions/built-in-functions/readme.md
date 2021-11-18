@@ -140,9 +140,9 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 
 | Name | Description | Complexity |
 | :--- | :--- | :--- |
-| blake2b256(ByteVector): ByteVector | Range of functions.<br>Hash an array of bytes using [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29) | 10–200 |
-| keccak256(ByteVector): ByteVector | Range of functions.<br>Hash an array of bytes using [Keccak-256](https://keccak.team/files/Keccak-submission-3.pdf) | 10–200 |
-| sha256(ByteVector): ByteVector | Range of functions.<br>Hash an array of bytes using [SHA-256](https://en.wikipedia.org/wiki/SHA-2) | 10–200 |
+| blake2b256(ByteVector): ByteVector | Range of functions.<br>Hash an array of bytes using [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29) | 13–136 |
+| keccak256(ByteVector): ByteVector | Range of functions.<br>Hash an array of bytes using [Keccak-256](https://keccak.team/files/Keccak-submission-3.pdf) | 20–195 |
+| sha256(ByteVector): ByteVector | Range of functions.<br>Hash an array of bytes using [SHA-256](https://en.wikipedia.org/wiki/SHA-2) | 12–118 |
 
 ## [List functions](/en/ride/functions/built-in-functions/list-functions)
 
@@ -214,4 +214,4 @@ A **built-in function** is a [function](/en/ride/functions/) of the [Standard li
 | ecrecover(messageHash: ByteVector, signature: ByteVector) | Recovers public key from the message hash and the [ECDSA](https://en.wikipedia.org/wiki/ECDSA) digital signature | 70 |
 | groth16Verify(ByteVector, ByteVector, ByteVector): Boolean | Range of functions.<br>Check [zk-SNARK](https://media.consensys.net/introduction-to-zksnarks-with-examples-3283b554fc3b) by [groth16](https://eprint.iacr.org/2016/260.pdf) protocol on the bls12-381 curve | 1200–2700 |
 | rsaVerify(digestAlgorithmType, ByteVector, ByteVector, ByteVector): Boolean | Range of functions.<br>Check that the [RSA](https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29) digital signature is valid, i.e. it was created by the owner of the public key | 500–1000  |
-| sigVerify(ByteVector, ByteVector, ByteVector): Boolean | Range of functions.<br>Check that the [Curve25519](https://en.wikipedia.org/wiki/Curve25519) digital signature is valid, i.e. it was created by the owner of the public key | 47–200 |
+| sigVerify(ByteVector, ByteVector, ByteVector): Boolean | Range of functions.<br>Check that the [Curve25519](https://en.wikipedia.org/wiki/Curve25519) digital signature is valid, i.e. it was created by the owner of the public key | 43–180 |

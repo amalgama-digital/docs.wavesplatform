@@ -1045,12 +1045,20 @@ module.exports = {
               path: rideV6Path + 'functions/built-in-functions/fold-functions',
             },
             {
+              title: 'Hashing Functions',
+              path: rideV6Path + 'functions/built-in-functions/hashing-functions',
+            },
+            {
               title: 'Math Functions',
               path: rideV6Path + 'functions/built-in-functions/math-functions',
             },
             {
               title: 'String Functions',
               path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+            {
+              title: 'Verification Functions',
+              path: rideV6Path + 'functions/built-in-functions/verification-functions',
             },
           ],
         },

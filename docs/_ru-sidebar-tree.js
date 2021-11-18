@@ -915,64 +915,64 @@ module.exports = {
       path: ridePath + 'functions/built-in-functions',
       children: [
         {
-          title: 'Функции хранилища данных аккаунта',
-          path: ridePath + 'functions/built-in-functions/account-data-storage-functions',
+          title: 'Математические функции',
+          path: ridePath + 'functions/built-in-functions/math-functions',
         },
         {
           title: 'Функции блокчейна',
           path: ridePath + 'functions/built-in-functions/blockchain-functions',
         },
         {
-          title: 'Функции массива байтов',
-          path: ridePath + 'functions/built-in-functions/byte-array-functions',
-        },
-        {
-          title: 'Функции конвертации',
-          path: ridePath + 'functions/built-in-functions/converting-functions',
-        },
-        {
-          title: 'Функции транзакции данных',
-          path: ridePath + 'functions/built-in-functions/data-transaction-functions',
-        },
-        {
-          title: 'Функции декодирования',
-          path: ridePath + 'functions/built-in-functions/decoding-functions',
-        },
-        {
-          title: 'Функции кодирования',
-          path: ridePath + 'functions/built-in-functions/encoding-functions',
-        },
-        {
-          title: 'Функции исключения',
-          path: ridePath + 'functions/built-in-functions/exception-functions',
-        },
-        {
-          title: 'Функции хеширования',
-          path: ridePath + 'functions/built-in-functions/hashing-functions',
+          title: 'Функции верификации',
+          path: ridePath + 'functions/built-in-functions/verification-functions',
         },
         {
           title: 'Функции вызова dApp из dApp',
           path: ridePath + 'functions/built-in-functions/dapp-to-dapp',
         },
         {
-          title: 'Функции списка',
-          path: ridePath + 'functions/built-in-functions/list-functions',
+          title: 'Функции декодирования',
+          path: ridePath + 'functions/built-in-functions/decoding-functions',
         },
         {
-          title: 'Математические функции',
-          path: ridePath + 'functions/built-in-functions/math-functions',
+          title: 'Функции исключения',
+          path: ridePath + 'functions/built-in-functions/exception-functions',
         },
         {
-          title: 'Функции строки',
-          path: ridePath + 'functions/built-in-functions/string-functions',
+          title: 'Функции кодирования',
+          path: ridePath + 'functions/built-in-functions/encoding-functions',
+        },
+        {
+          title: 'Функции конвертации',
+          path: ridePath + 'functions/built-in-functions/converting-functions',
+        },
+        {
+          title: 'Функции массива байтов',
+          path: ridePath + 'functions/built-in-functions/byte-array-functions',
         },
         {
           title: 'Функции объединения',
           path: ridePath + 'functions/built-in-functions/union-functions',
         },
         {
-          title: 'Функции верификации',
-          path: ridePath + 'functions/built-in-functions/verification-functions',
+          title: 'Функции списка',
+          path: ridePath + 'functions/built-in-functions/list-functions',
+        },
+        {
+          title: 'Функции строки',
+          path: ridePath + 'functions/built-in-functions/string-functions',
+        },
+        {
+          title: 'Функции транзакции данных',
+          path: ridePath + 'functions/built-in-functions/data-transaction-functions',
+        },
+        {
+          title: 'Функции хеширования',
+          path: ridePath + 'functions/built-in-functions/hashing-functions',
+        },
+        {
+          title: 'Функции хранилища данных аккаунта',
+          path: ridePath + 'functions/built-in-functions/account-data-storage-functions',
         },
       ],
     },
@@ -1041,6 +1041,10 @@ module.exports = {
               path: rideV6Path + 'functions/built-in-functions/math-functions',
             },
             {
+              title: 'Функции верификации',
+              path: rideV6Path + 'functions/built-in-functions/verification-functions',
+            },
+            {
               title: 'Функции конвертации',
               path: rideV6Path + 'functions/built-in-functions/converting-functions',
             },
@@ -1051,6 +1055,10 @@ module.exports = {
             {
               title: 'Функции строки',
               path: rideV6Path + 'functions/built-in-functions/string-functions',
+            },
+            {
+              title: 'Функции хеширования',
+              path: rideV6Path + 'functions/built-in-functions/hashing-functions',
             },
           ],
         },

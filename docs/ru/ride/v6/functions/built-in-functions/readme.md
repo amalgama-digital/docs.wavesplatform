@@ -45,7 +45,7 @@
 | ecrecover(messageHash: ByteVector, signature: ByteVector) | Восстанавливает открытый ключ из хеша сообщения и цифровой подписи [ECDSA](https://ru.wikipedia.org/wiki/ECDSA) | 70 |
 | groth16Verify(ByteVector, ByteVector, ByteVector): Boolean | Семейство функций.<br>Осуществляют проверку [zk-SNARK](https://media.consensys.net/introduction-to-zksnarks-with-examples-3283b554fc3b) по протоколу [groth16](https://eprint.iacr.org/2016/260.pdf) на кривой bls12-381 | 1200–2700 |
 | rsaVerify(digestAlgorithmType, ByteVector, ByteVector, ByteVector): Boolean | Семейство функций.<br>Проверяют, что цифровая подпись [RSA](https://ru.wikipedia.org/wiki/RSA) достоверна | 500–1000 |
-| sigVerify(ByteVector, ByteVector, ByteVector): Boolean | Семейство функций.<br>Проверяют, что цифровая подпись [Curve25519](https://en.wikipedia.org/wiki/Curve25519) достоверна | 47–200 |
+| sigVerify(ByteVector, ByteVector, ByteVector): Boolean | Семейство функций.<br>Проверяют, что цифровая подпись [Curve25519](https://en.wikipedia.org/wiki/Curve25519) достоверна | 43–180 |
 
 ## [Функции вызова dApp из dApp](/ru/ride/functions/built-in-functions/dapp-to-dapp)
 
@@ -213,6 +213,6 @@
 
 | Название | Описание | Сложность |
 | :--- | :--- | :--- |
-| blake2b256(ByteVector): ByteVector | Семейство функций.<br>Хешируют массив байтов с помощью алгоритма [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29) | 10–200 |
-| keccak256(ByteVector): ByteVector | Семейство функций.<br>Хешируют массив байтов с помощью алгоритма [Keccak-256](https://keccak.team/files/Keccak-submission-3.pdf) | 10–200 |
-| sha256(ByteVector): ByteVector | Семейство функций.<br>Хешируют массив байтов с помощью алгоритма [SHA-256](https://en.wikipedia.org/wiki/SHA-2) | 10–200 |
+| blake2b256(ByteVector): ByteVector | Семейство функций.<br>Хешируют массив байтов с помощью алгоритма [BLAKE2b-256](https://en.wikipedia.org/wiki/BLAKE_%28hash_function%29) | 13–136 |
+| keccak256(ByteVector): ByteVector | Семейство функций.<br>Хешируют массив байтов с помощью алгоритма [Keccak-256](https://keccak.team/files/Keccak-submission-3.pdf) | 20–195 |
+| sha256(ByteVector): ByteVector | Семейство функций.<br>Хешируют массив байтов с помощью алгоритма [SHA-256](https://en.wikipedia.org/wiki/SHA-2) | 12–118 |
