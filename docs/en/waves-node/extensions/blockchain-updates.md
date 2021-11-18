@@ -1320,7 +1320,7 @@ Unlike in transactions, account addresses in `TransactionMetadata` are given in 
 
 :warning: If the callable function performs a [dApp-to-dApp invocation](/en/ride/advanced/dapp-to-dapp), the `InvokeScriptResult` message contains an `Invocation` message with additional information about the nested invocation. The `Invocation`, in turn, also contains an `InvokeScriptResult` message. Thus, if you want to extract additional information about each script action performed by each of the functions invoked in the transaction, parse all the `InvokeScriptResult` messages recursively.
 
-<details><summary><b>Example of processing nested invocation (TypeScript)</b></summary>
+<details><summary><b>Example of processing nested invocations (TypeScript)</b></summary>
 
 ```ts
 const processInvokeResult = ({
