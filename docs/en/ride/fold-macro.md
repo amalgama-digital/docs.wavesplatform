@@ -89,7 +89,7 @@ FOLD<5>(arr, [], map)    # Result: [4, 3, 2, 1, 0]
 
 ## Zip
 
-The following code brings two lists into one: it creates a structure from every two elements with the same index, and generates a list of such structures. Similarly, you can combine elements into tuples.
+The following code brings two lists into one. Every two elements with the same index are joined into a structure, and the result is a list of such structures. Similarly, you can join elements into tuples.
 
 ```scala
 let keys = ["key1", "key2", "key3"]
@@ -105,10 +105,10 @@ r._1
 ```
 
 Here we use a [tuple](/en/ride/data-types/tuple) as an accumulator, which contains two elements:
-- the generated list of [StringEntry](/ru/ride/structures/script-actions/string-entry) structures,
+- the list of [StringEntry](/ru/ride/structures/script-actions/string-entry) structures,
 - the current index in all lists.
 
-The combining function `addStringEntry` creates a `StringEntry` structure which contains a key from the `keys` list and a value from the `values` list and adds the structure to the list of structures. In addition, the combining function increments the index (the second element of the accumulator tuple).
+The combining function `addStringEntry` forms a `StringEntry` structure which contains a key from the `keys` list and a value from the `values` list. The structure is added to the list of structures (the first element of the accumulator tuple). In addition, the combining function increments the index (the second element of the accumulator tuple).
 
 Result:
 
