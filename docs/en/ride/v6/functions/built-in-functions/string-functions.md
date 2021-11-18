@@ -312,7 +312,7 @@ takeRight(xs: String, number: Int): String
 
 ```ride
 takeRight("Apple", 0)     # Returns an empty string
-takeRight("Apple", 1)     # Returns "A"
+takeRight("Apple", 1)     # Returns "e"
 takeRight("Apple", 3)     # Returns "ple"
 takeRight("Apple", 5)     # Returns "Apple"
 takeRight("Apple", 15)    # Returns "Apple"
