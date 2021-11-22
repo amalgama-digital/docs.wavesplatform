@@ -34,7 +34,7 @@ Examples:
    f3([12,"Ride"])[0].exactAs[Int]         # Returns 12
    f3(88)                                  # Fails
    ```
-
+<!--
 In the following example, the `second` function returns the value used by the `first` function (see the [dApp-to-dApp Invocation](/en/ride/advanced/dapp-to-dapp) article):
 
 ```scala
@@ -55,6 +55,7 @@ func second() = {
   ( [], 42 )
 }
 ```
+-->
 
 ## match ... case
 

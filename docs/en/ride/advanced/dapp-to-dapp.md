@@ -56,7 +56,7 @@ Parameters:
 strict z = invoke(dapp,foo,args,[AttachedPayment(unit,100000000)])
 ```
 
-The return value is of type `Any`, which means any valid type. You can extract a particular type from it using `as[T]` and `exactAs[T]` macros or the `match ... case` operator, see the [Any](/en/ride/data-types/any) article.
+The return value is of type `Any`, which means any valid type. You can extract a particular type from it using<!-- `as[T]` and `exactAs[T]` macros or --> the `match ... case` operator, see the [Any](/en/ride/data-types/any) article.
 
 The `invoke` and `reentrantInvoke` functions differ only in the [reentrancy restriction](/en/ride/functions/built-in-functions/dapp-to-dapp#reentrancy).
 

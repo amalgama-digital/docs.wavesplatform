@@ -57,7 +57,7 @@ Result: [[1, 2], 1, 2, "3", "4"]
 
 The built-in list functions are presented in the [List Functions](/en/ride/functions/built-in-functions/list-functions) article.
 
-Operations on a list can be implemented via the [FOLD<N>](/ru/ride/fold-macro) macro. The size of the list must be known in advance.
+Operations on a list can be implemented via the [FOLD&lt;N&gt;](/ru/ride/fold-macro) macro. The size of the list must be known in advance.
 
 ## List As Function Argument
 
