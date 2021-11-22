@@ -1,5 +1,9 @@
 # Обновления в документации
 
+## Ноябрь
+
+* [Макрос FOLD&lt;N&gt;](/ru/ride/fold-macro) — <span style="color:green">обновлено</span>: добавлен пример с `zip`.
+
 ## Октябрь
 
 ### Ride

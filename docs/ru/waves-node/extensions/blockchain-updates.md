@@ -1321,6 +1321,40 @@ API Blockchain Updates предоставляет три функции:
 
 :warning: Если вызываемая функция выполняет [вызов dApp из dApp](/ru/ride/advanced/dapp-to-dapp), `InvokeScriptResult` содержит сообщение `Invocation` с дополнительной информацией о вложенном вызове. `Invocation`, в свою очередь, также содержит `InvokeScriptResult`. Таким образом, если требуется извлечь дополнительную информацию о каждом действии, выполненном каждой из функций, вызываемых в транзакции, необходимо проанализировать все `InvokeScriptResult` рекурсивно.
 
+<details><summary><b>Пример обработки вложенных вызовов (TypeScript)</b></summary>
+
+```ts
+const processInvokeResult = ({
+      dApp,
+      call,
+      stateChanges,
+      payments,
+   }: _waves_InvokeScriptResult_Invocation__Output): InvokeScript[] => {
+      const script: InvokeScript = {
+         id,
+         timestamp,
+         dApp: crypto.base58Encode(dApp),
+         account,
+         arguments: call.args,
+         call: {
+            function: call.function,
+         },
+         sequence: this.sequence++,
+         payments: R.map(toAmount, payments),
+         transfers: R.map(toTransfer, stateChanges.transfers),
+         issues: R.map(toAmount, stateChanges.issues),
+         reissues: R.map(toAmount, stateChanges.reissues),
+         stateChanges: R.map(toStateChange, stateChanges.data),
+         assets,
+      };
+      return R.flatten([
+         script,
+         stateChanges.invokes.map(processInvokeResult),
+      ]);
+   };
+```
+</details>
+
 #### Для транзакции перевода
 
 | Имя поля | Тип | Описание |

@@ -1,5 +1,9 @@
 # Documentation Updates
 
+## November
+
+* [FOLD&lt;N&gt; Macro](/en/ride/fold-macro) — <span style="color:green">updated</span>: added `zip` example.
+
 ## October
 
 ### Ride
