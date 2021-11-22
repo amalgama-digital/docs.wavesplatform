@@ -17,7 +17,7 @@ Invokes a dApp [callable function](/en/ride/functions/callable-function), with r
 invoke(dApp: Address|Alias, function: String, arguments: List[Any], payments: List[AttachedPayments]): Any
 ```
 
-`Any` means any valid type. You can extract a particular type from it using<!-- `as[T]` and `exactAs[T]` macros or --> the `match ... case` operator, see the [Any](/en/ride/data-types/any) article.
+`Any` means any valid type. You can extract a particular type from it using<!-- `as[T]` and `exactAs[T]` macros or --> the `match ... case` operator, see the [example](#example).
 
 The `invoke` function can be used by a callable function of a [dApp script](/en/ride/script/script-types/dapp-script), but not by a [verifier function](/en/ride/functions/verifier-function), [account script](/en/ride/script/script-types/account-script) or [asset script](/en/ride/script/script-types/asset-script).
 

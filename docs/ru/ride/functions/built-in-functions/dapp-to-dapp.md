@@ -17,7 +17,7 @@ sidebarDepth: 3
 invoke(dApp: Address|Alias, function: String, arguments: List[Any], payments: List[AttachedPayments]): Any
 ```
 
-`Any` означает любой допустимый тип. Извлечь из него конкретный тип можно с помощью<!-- макросов `as[T]` и `exactAs[T]` или --> оператора `match ... case`, см. раздел [Any](/ru/ride/data-types/any).
+`Any` означает любой допустимый тип. Извлечь из него конкретный тип можно с помощью<!-- макросов `as[T]` и `exactAs[T]` или --> оператора `match ... case`, см. [пример](#пример).
 
 Функция `invoke` может использоваться только вызываемой функцией [dApp-скрипта](/ru/ride/script/script-types/dapp-script), но не [функцией-верификатором](/ru/ride/functions/verifier-function), [скриптом аккаунта](/ru/ride/script/script-types/account-script) или [скриптом ассета](/ru/ride/script/script-types/asset-script).
 
