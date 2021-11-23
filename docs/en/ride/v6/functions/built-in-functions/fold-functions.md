@@ -71,5 +71,5 @@ The following code inverts the array, reducing each element by 1:
 ```scala
 func map(accum: List[Int], next: Int) = (next - 1) :: accum
 let arr = [1, 2, 3, 4, 5]
-fold_20>(arr, [], map)    # Result: [4, 3, 2, 1, 0]
+fold_20(arr, [], map)    # Result: [4, 3, 2, 1, 0]
 ```
