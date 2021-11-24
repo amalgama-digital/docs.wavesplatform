@@ -131,6 +131,12 @@ module.exports = {
             {
               title: 'Обмен',
               path: blockchainPath + 'transaction-type/exchange-transaction',
+              children: [
+                {
+                  title: 'Order',
+                  path: blockchainPath + 'order',
+                },
+              ],
             },
             {
               title: 'Обновление информации ассета',
@@ -253,10 +259,6 @@ module.exports = {
     {
       title: 'Оракул',
       path: blockchainPath + 'oracle',
-    },
-    {
-      title: 'Ордер',
-      path: blockchainPath + 'order',
     },
     {
       title: 'Протоколы и форматы данных',

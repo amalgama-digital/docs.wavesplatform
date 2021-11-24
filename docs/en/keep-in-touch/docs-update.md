@@ -1,5 +1,9 @@
 # Documentation Updates
 
+## November
+
+* [Order](/en/blockchain/order) — <span style="color:green">updated</span>
+
 ## October
 
 ### Ride

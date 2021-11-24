@@ -115,6 +115,12 @@ module.exports = {
             {
               title: 'Exchange Transaction',
               path: blockchainPath + 'transaction-type/exchange-transaction',
+              children: [
+                {
+                  title: 'Order',
+                  path: blockchainPath + 'order',
+                },
+              ],
             },
             {
               title: 'Genesis Transaction',
@@ -253,10 +259,6 @@ module.exports = {
     {
       title: 'Oracle',
       path: blockchainPath + 'oracle',
-    },
-    {
-      title: 'Order',
-      path: blockchainPath + 'order',
     },
     {
       title: 'Protocols & Data formats',
