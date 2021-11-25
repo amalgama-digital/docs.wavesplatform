@@ -97,8 +97,8 @@ let values = ["value1", "value2", "value3"]
 
 func addStringEntry(accum: (List[StringEntry], Int), nextValue: String) =
    {
-      let (result, i) = accum
-      (result :+ StringEntry(keys[i], nextValue), i + 1)
+      let (result, j) = accum
+      (result :+ StringEntry(keys[j], nextValue), j + 1)
    }
 let r = FOLD<10>(values, ([], 0), addStringEntry)
 r._1
