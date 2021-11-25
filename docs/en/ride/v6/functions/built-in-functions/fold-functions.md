@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # [Ride v6] Fold Functions
 
 :warning: This is the documentation for the Standard Library version 6, which is currently available for [Stagenet](/en/blockchain/blockchain-network/) only.
@@ -35,9 +39,9 @@ If the list contains more than `N` elements, the `fold_<N>` function fails.
 | `accumulator` | Initial value |
 | `function` | Combining function that accepts two input parameters: the intermediate result and the next element of the list |
 
-### Examples
+## Examples
 
-#### Sum
+### Sum
 
 ```scala
 func sum(accum: Int, next: Int) = accum + next
@@ -45,7 +49,7 @@ let arr = [1,2,3,4,5]
 fold_20(arr, 0, sum)    # Result: 15
 ```
 
-#### Product
+### Product
 
 ```scala
 func mult(accum: Int, next: Int) = accum * next
@@ -53,7 +57,7 @@ let arr = [1,2,3,4,5]
 fold_20(arr, 1, mult)    # Result: 120
 ```
 
-#### Filter
+### Filter
 
 The following code composes an array consisting only of even elements of the original array.
 
@@ -64,7 +68,7 @@ let arr = [1,2,3,4,5]
 fold_20(arr, [], filterEven)    # Result: [2, 4]
 ```
 
-#### Map
+### Map
 
 The following code inverts the array, reducing each element by 1:
 
@@ -72,4 +76,46 @@ The following code inverts the array, reducing each element by 1:
 func map(accum: List[Int], next: Int) = (next - 1) :: accum
 let arr = [1, 2, 3, 4, 5]
 fold_20>(arr, [], map)    # Result: [4, 3, 2, 1, 0]
+```
+
+### Zip
+
+The following code brings two lists into one. Every two elements with the same index are joined into a structure, and the result is a list of such structures. Similarly, you can join elements into tuples.
+
+```scala
+let keys = ["key1", "key2", "key3"]
+let values = ["value1", "value2", "value3"]
+
+func addStringEntry(accum: (List[StringEntry], Int), nextValue: String) =
+   {
+      let (result, j) = accum
+      (result :+ StringEntry(keys[j], nextValue), j + 1)
+   }
+let r = fold_20(values, ([], 0), addStringEntry)
+r._1
+```
+
+Here we use a [tuple](/en/ride/data-types/tuple) as an accumulator, which contains two elements:
+- the list of [StringEntry](/ru/ride/structures/script-actions/string-entry) structures,
+- the current index in all lists.
+
+The combining function `addStringEntry` forms a `StringEntry` structure which contains a key from the `keys` list and a value from the `values` list. The structure is added to the list of structures (the first element of the accumulator tuple). In addition, the combining function increments the index (the second element of the accumulator tuple).
+
+Result:
+
+```scala
+[
+   StringEntry(
+      key = "key1"
+      value = "value1"
+   ),
+   StringEntry(
+      key = "key2"
+      value = "value2"
+   ),
+   StringEntry(
+      key = "key3"
+      value = "value3"
+   )
+]
 ```
