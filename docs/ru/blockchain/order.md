@@ -44,11 +44,11 @@ JSON-представление ордера в [REST API](/ru/waves-node/node-a
 | *sender* | [Адрес](/ru/blockchain/account/address) отправителя ордера: байты в кодировке base58 |
 | senderPublicKey | [Открытый ключ](/ru/blockchain/account/#открытый-и-закрытый-кnючи-аккаунта) отправителя ордера: байты в кодировке base58 |
 | matcher_public_key | Открытый ключ матчера, на который отправлен ордер: байты в кодировке base58 |
-| assetPair.amountAsset | ID amount-ассета: байты в кодировке base58.<br>`null` означает WAVES |
-| assetPair.priceAsset | ID price-ассета: байты в кодировке base58.<br>`null` означает WAVES |
+| assetPair.amountAsset | ID amount-ассета (базовой валюты): байты в кодировке base58.<br>`null` означает WAVES |
+| assetPair.priceAsset | ID price-ассета (валюты котировки): байты в кодировке base58.<br>`null` означает WAVES |
 | orderType | Тип ордера:<br>• buy — отправитель покупает amount-ассет,<br>• sell — отправитель продает amount-ассет |
 | amount | Количество amount-ассета. Целое число, выраженное в [атомарных единицах](/ru/blockchain/token/#атомарная-единица) ассета |
-| price | Стоимость 1 amount-ассета, выраженная в price-ассете, умноженная на коэффициент:<br>• 10<sup>8</sup> для ордера версии 4;<br>• 10<sup>`8 + priceAssetDecimals – amountAssetDecimals`</sup> для ордера версии 3, 2 или 1, где `amountAssetDecimals`, `priceAssetDecimals` — количество знаков после запятой (параметр токена).<br>Целое число. См. [пояснение](#explanation) ниже |
+| price | Стоимость 1 amount-ассета, выраженная в price-ассете, умноженная на коэффициент:<br>• 10<sup>8</sup> для ордера версии 4;<br>• 10<sup>`8 + priceAssetDecimals – amountAssetDecimals`</sup> для ордера версии 3, 2 или 1, где `amountAssetDecimals`, `priceAssetDecimals` — количество знаков после запятой ([параметр токена](/ru/blockchain/token/)).<br>Целое число. См. [пояснение](#explanation) ниже |
 | timestamp | Временная метка ордера, указанная отправителем: Unix-время в миллисекундах |
 | expiration | Окончание срока действия ордера: Unix-время в миллисекундах |
 | matcherFee | [Комиссия матчера](/ru/blockchain/transaction-type/exchange-transaction#комиссия-матчера). Целое число, выраженное в атомарных единицах токена комиссии |
@@ -65,9 +65,11 @@ Amount-ассетом является [NSBT](https://wavesexplorer.com/tx/6nSpV
 
 Price-ассетом является WAVES, `priceAssetDecimals` равно 8.
 
-Значение `amount` равно 15,637504 × 10<sup>`amountAssetDecimals`</sup> = 15637504.
+Значение `amount` в ордере равно 15,637504 × 10<sup>`amountAssetDecimals`</sup> = 15637504.
 
-Значение `price` равно 1,21140511 × <sup>`8 + priceAssetDecimals – amountAssetDecimals`</sup> = 12114051100 (поскольку это ордер версии 3).
+Значение `price` в ордере равно 1,21140511 × <sup>`8 + priceAssetDecimals – amountAssetDecimals`</sup> = 12114051100 (поскольку это ордер версии 3).
+
+Представление `amount` и `price` в виде целых чисел позволяет избежать проблемы точности вычислений.
 
 <br>
 <details><summary>▶ Расчет количества price-ассета</summary>
