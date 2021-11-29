@@ -37,7 +37,7 @@ java -jar {*}.jar {*}.conf
 
 ## Дополнительная безопасность
 
-Для дополнительной безопасности рекомендуется хранить кошелек и файл конфигурации в зашифрованном разделе диска. Можно использовать, например, [BitLocker](https://docs.microsoft.com/ru-ru/windows/security/information-protection/bitlocker/bitlocker-overview), [TrueCrypt](http://truecrypt.sourceforge.net/), [AxCrypt](https://www.axcrypt.net/), [FreeOTFE](https://sourceforge.net/projects/freeotfe.mirror/), [GostCrypt](https://www.gostcrypt.org/), [VeraCrypt](https://www.veracrypt.fr/) и пр. **Выбирайте приложение на свой страх и риск!**
+Для дополнительной безопасности рекомендуется хранить кошелек и файл конфигурации в зашифрованном разделе диска. Можно использовать, например, [BitLocker](https://docs.microsoft.com/ru-ru/windows/security/information-protection/bitlocker/bitlocker-overview), [AxCrypt](https://www.axcrypt.net/), [FreeOTFE](https://sourceforge.net/projects/freeotfe.mirror/), [GostCrypt](https://www.gostcrypt.org/), [VeraCrypt](https://www.veracrypt.fr/) и пр. **Выбирайте приложение на свой страх и риск!**
 
 Также, возможно, вы захотите ограничить использование зашифрованных папок для некоторых пользователей. Подробно об этом [тут](https://technet.microsoft.com/en-us/library/cc754344%28v=ws.11%29.aspx).
 

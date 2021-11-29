@@ -38,7 +38,7 @@ java -jar {*}.jar {*}.conf
 ## Additional Security
 
 
-For added security, it is recommended to store your wallet and configuration applications on an encrypted partition. You can use software like [BitLocker](https://docs.microsoft.com/ru-ru/windows/security/information-protection/bitlocker/bitlocker-overview), [TrueCrypt](http://truecrypt.sourceforge.net/), [AxCrypt](https://www.axcrypt.net/), [FreeOTFE](https://sourceforge.net/projects/freeotfe.mirror/), [GostCrypt](https://www.gostcrypt.org/), [VeraCrypt](https://www.veracrypt.fr/) or else. You choose this application **at your own risk**!
+For added security, it is recommended to store your wallet and configuration applications on an encrypted partition. You can use software like [BitLocker](https://docs.microsoft.com/ru-ru/windows/security/information-protection/bitlocker/bitlocker-overview), [AxCrypt](https://www.axcrypt.net/), [FreeOTFE](https://sourceforge.net/projects/freeotfe.mirror/), [GostCrypt](https://www.gostcrypt.org/), [VeraCrypt](https://www.veracrypt.fr/) or else. You choose this application **at your own risk**!
 
 Also, you may want to limit the use of node folders to designated users only. You can read about it [here](https://technet.microsoft.com/en-us/library/cc754344%28v=ws.11%29.aspx).
 
