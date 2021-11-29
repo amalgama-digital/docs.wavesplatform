@@ -212,17 +212,11 @@ dApp on Mainnet will have a different address  — remember to change the addres
 
 > :bulb: You can [enable sponsorship](/en/blockchain/waves-protocol/sponsored-fee) to make the application free for users and pay the script invocations fees yourself.
 
-### 5.3. Register in dApp Directories
+### 5.3. Register on DappRadar
 
-To promote your application, add it to popular dApp directories:
+[DappRadar](https://dappradar.com) is the leading platform for decentralized application discovery and analysis. Submit your dApp there to promote it.
 
-* [dAppOcean](https://www.dappocean.io) — the ecosystem of decentralized applications based on the Waves blockchain.
-
-   <input value="Submit dApp" type="button" onclick="location.href='https://www.dappocean.io/dapps/submit'" />
-
-* [DappRadar](https://dappradar.com) — the leading global platform for discovering and analyzing dApps.
-
-   <input value="Submit dApp" type="button" onclick="location.href='https://dappradar.com/submit-dapp'" />
+<input value="Submit dApp" type="button" onclick="location.href='https://dappradar.com/submit-dapp'" />
 
 ## What's next
 

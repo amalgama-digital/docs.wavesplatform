@@ -38,4 +38,4 @@ Smart contracts can use blockchain data: the current height, account balances, a
 * [SIGN Art](https://sign-art.app/) is a web gallery of Blockchain-Certified Digital Art and a marketplace for NFTs. Artists can create a portfolio of digital creations, tokenize and sell NFTs. Collectors can buy NFTs and display NFT-collection.
 * [Waves DAO](https://dao.wavesassociation.org/) (decentralized autonomous organization) is the Waves Association’s decision-making framework for supporting initiatives and projects based on the Waves protocol.
 
-For more examples of Waves-based apps, visit [dAppOcean](https://www.dappocean.io/).
+<!-- For more examples of Waves-based apps, visit [dAppOcean](https://www.dappocean.io/).-->
