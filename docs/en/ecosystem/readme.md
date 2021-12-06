@@ -31,6 +31,7 @@ The Waves ecosystem offers variety of projects and products developed by the com
 
 * [Waves Ducks](https://wavesducks.com): a game focused on collectible digital duck images of celebrities and memes in the NFT format. The game motivates the community to promote the Waves ecosystem.
 * [SIGN Art](https://sign-art.app): a web gallery of Blockchain-Certified Digital Art and a marketplace for NFTs. Artists can create a portfolio of digital creations, tokenize and sell NFTs. Collectors can buy NFTs and display NFT-collection.
+* [WavesPunks](https://wavespunks.com/): is the first collection of digital punks on Waves blockchain, dedicated both to the major milestones in cryptocurrency history and to the role of Waves blockchain in it.
 
 ## Blockchain Explorers
 
